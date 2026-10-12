@@ -16,7 +16,6 @@
 | File Name | Format | Profile Type | Shooting Advice |
 | :--- | :---: | :--- | :--- |
 | [`Kodak_Ektachrome_Cross_Process_EtoC.pf2`](Kodak_Ektachrome_Cross_Process_EtoC.pf2) | `.PF2` | Kodak Ektachrome Reversal Film | Vibrant colors, nature, cross-processing experiments. |
-| [`Kodak_Ektachrome_Cross_Process_v1.pf2`](Kodak_Ektachrome_Cross_Process_v1.pf2) | `.PF2` | Kodak Ektachrome Reversal Film | Vibrant colors, nature, cross-processing experiments. |
 | [`Kodak_Ektachrome_EES_Color_Slide.pf2`](Kodak_Ektachrome_EES_Color_Slide.pf2) | `.PF2` | Kodak Ektachrome Reversal Film | Vibrant colors, nature, cross-processing experiments. |
 | [`Kodak_Kodachrome_25_Contrast.pf2`](Kodak_Kodachrome_25_Contrast.pf2) | `.PF2` | Kodak Kodachrome Slide Film | Punchy reds, rich contrast, vintage editorial. |
 | [`Kodak_Kodachrome_Warm_RetroKrum.pf3`](Kodak_Kodachrome_Warm_RetroKrum.pf3) | `.PF3` | Kodak Kodachrome Slide Film | Punchy reds, rich contrast, vintage editorial. |

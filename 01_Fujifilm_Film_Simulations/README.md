@@ -34,7 +34,6 @@
 | [`Fuji_Provia_100F_RDPIII.pf2`](Fuji_Provia_100F_RDPIII.pf2) | `.PF2` | Fujifilm Provia Slide Film | Neutral reference standard, general photography. |
 | [`Fuji_Reala_Style_LSB.pf2`](Fuji_Reala_Style_LSB.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Fuji_Superia_Reala_Mint_Greens.pf2`](Fuji_Superia_Reala_Mint_Greens.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
-| [`Fuji_Velvia_100F_RVP_Classic.pf2`](Fuji_Velvia_100F_RVP_Classic.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
 | [`Fuji_Velvia_100F_RVP_Mild.pf2`](Fuji_Velvia_100F_RVP_Mild.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
 | [`Fuji_Velvia_100F_RVP_Neutral.pf2`](Fuji_Velvia_100F_RVP_Neutral.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
 | [`Fuji_Velvia_100F_RVP_Vivid.pf2`](Fuji_Velvia_100F_RVP_Vivid.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
@@ -44,7 +43,6 @@
 | [`Fuji_Velvia_by_Giosi_v1.pf2`](Fuji_Velvia_by_Giosi_v1.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
 | [`Fuji_Velvia_by_Giosi_v2.pf2`](Fuji_Velvia_by_Giosi_v2.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
 | [`Fuji_Velvia_Official_Picture_Style.pf2`](Fuji_Velvia_Official_Picture_Style.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
-| [`Fuji_Velvia_Original.pf2`](Fuji_Velvia_Original.pf2) | `.PF2` | Fujifilm Velvia Slide Film | Vivid landscapes, architecture, dramatic sunsets. |
 
 ---
 [⬅ Back to Repository Root](../README.md)

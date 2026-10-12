@@ -1,11 +1,11 @@
 # Canon Picture Styles Library (.pf2 & .pf3)
 
 [![Canon](https://img.shields.io/badge/Canon-EOS%20M%20%7C%20EOS%20R%20%7C%20DSLR-red.svg)](https://canon.com)
-[![Presets](https://img.shields.io/badge/Presets-227%20Profiles-blue.svg)](.)
+[![Presets](https://img.shields.io/badge/Presets-186%20Profiles-blue.svg)](.)
 [![Formats](https://img.shields.io/badge/Formats-.pf2%20%7C%20.pf3-success.svg)](.)
 [![License](https://img.shields.io/badge/License-Community%20%2F%20Free-orange.svg)](LICENSE)
 
-A comprehensively curated, categorized, and cleaned collection of **227 Picture Styles (`.pf2` and `.pf3`)** for Canon cameras.
+A comprehensively curated, categorized, and cleaned collection of **186 Picture Styles (`.pf2` and `.pf3`)** for Canon cameras.
 
 This library consolidates the greatest community profiles, official discontinued Canon styles, iconic film simulations (**Fujifilm**, **Kodak**, **Agfa**), industry-standard video Log profiles (**Technicolor CineStyle**, **Flaat**, **Marvels Cine**), and aesthetic looks (**Kevin Wang**, **Lomography**, **Infrared**).
 
@@ -39,7 +39,7 @@ These Picture Style profiles (`.pf2` and `.pf3`) are fully compatible with virtu
 > [!NOTE]
 > **JPEG vs RAW Shooters:**
 > * **JPEG Shooting:** The style's tone curve and color matrix are permanently baked directly into the JPEG file straight out of camera (*SOOC*).
-> * **RAW Shooting:** The RAW file preserves all sensor data. When opened in **Canon Digital Photo Professional (DPP 4)**, the style is selected as the default profile, and you can switch between all 227 styles at any time in post-production with zero quality loss.
+> * **RAW Shooting:** The RAW file preserves all sensor data. When opened in **Canon Digital Photo Professional (DPP 4)**, the style is selected as the default profile, and you can switch between all 186 styles at any time in post-production with zero quality loss.
 
 ---
 

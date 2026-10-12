@@ -16,16 +16,9 @@
 | File Name | Format | Profile Type | Shooting Advice |
 | :--- | :---: | :--- | :--- |
 | [`Canon_Snapshot_Portrait_Official.pf2`](Canon_Snapshot_Portrait_Official.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Canon_Snapshot_Portrait_Original.pf2`](Canon_Snapshot_Portrait_Original.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Canon_Snapshot_Portrait_Pro.pf2`](Canon_Snapshot_Portrait_Pro.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Canon_Snapshot_Portrait_WW07.pf2`](Canon_Snapshot_Portrait_WW07.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Canon_Studio_Portrait_Official.pf2`](Canon_Studio_Portrait_Official.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Canon_Studio_Portrait_Original.pf2`](Canon_Studio_Portrait_Original.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Canon_Studio_Portrait_Pro.pf2`](Canon_Studio_Portrait_Pro.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Canon_Studio_Portrait_Variant_1.pf2`](Canon_Studio_Portrait_Variant_1.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Canon_Studio_Portrait_Variant_2.pf2`](Canon_Studio_Portrait_Variant_2.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Canon_Studio_Portrait_Variant_3.pf2`](Canon_Studio_Portrait_Variant_3.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Canon_Studio_Portrait_WW06.pf2`](Canon_Studio_Portrait_WW06.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Cinema_Filmic_Portrait.pf3`](Cinema_Filmic_Portrait.pf3) | `.PF3` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Portrait_BeautyShot_Fashion_1.pf2`](Portrait_BeautyShot_Fashion_1.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Portrait_BeautyShot_Fashion_3.pf2`](Portrait_BeautyShot_Fashion_3.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
@@ -39,7 +32,6 @@
 | [`Portrait_NDlike_Camera.pf2`](Portrait_NDlike_Camera.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Portrait_NDlike_LSB.pf2`](Portrait_NDlike_LSB.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 | [`Portrait_Soft_Silk_Skin.pf2`](Portrait_Soft_Silk_Skin.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
-| [`Portrait_Soft_Silk_Skin_alt.pf2`](Portrait_Soft_Silk_Skin_alt.pf2) | `.PF2` | Kodak Portra Negative Film | Natural light portraits, weddings, lifestyle. |
 
 ---
 [⬅ Back to Repository Root](../README.md)

@@ -24,7 +24,6 @@
 | [`Nikon_35mm_Whibal_Calibrated.pf2`](Nikon_35mm_Whibal_Calibrated.pf2) | `.PF2` | Nikon D2X Color Science | Classic DSLR color reproduction on Canon sensors. |
 | [`Nikon_D2X_Color_Profile.pf2`](Nikon_D2X_Color_Profile.pf2) | `.PF2` | Nikon D2X Color Science | Classic DSLR color reproduction on Canon sensors. |
 | [`Olympus_Blue_Deep_Sky.pf2`](Olympus_Blue_Deep_Sky.pf2) | `.PF2` | Olympus Color Science | Deep sapphire skies and coastal landscapes. |
-| [`Olympus_Blue_v01.pf2`](Olympus_Blue_v01.pf2) | `.PF2` | Olympus Color Science | Deep sapphire skies and coastal landscapes. |
 | [`Pentax_K_Color_Emulation.pf2`](Pentax_K_Color_Emulation.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 
 ---

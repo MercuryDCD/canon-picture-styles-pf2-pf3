@@ -40,8 +40,6 @@
 | [`Cinema_Movielike_Final.pf2`](Cinema_Movielike_Final.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Cinema_Movielike_LSB.pf2`](Cinema_Movielike_LSB.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Cinema_NorthWest_Moody_Greens.pf3`](Cinema_NorthWest_Moody_Greens.pf3) | `.PF3` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
-| [`Cinema_Proctor_v1.pf2`](Cinema_Proctor_v1.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
-| [`Cinema_Proctor_v2.pf2`](Cinema_Proctor_v2.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Cinema_R6L_Flat_Soda.pf2`](Cinema_R6L_Flat_Soda.pf2) | `.PF2` | Cinematic / Flat Log Curve | Video recording, maximum dynamic range, requires color grading. |
 | [`Cinema_SuperFlat_Marcus.pf2`](Cinema_SuperFlat_Marcus.pf2) | `.PF2` | Cinematic / Flat Log Curve | Video recording, maximum dynamic range, requires color grading. |
 | [`Cinema_SuperFlat_v1.pf2`](Cinema_SuperFlat_v1.pf2) | `.PF2` | Cinematic / Flat Log Curve | Video recording, maximum dynamic range, requires color grading. |
@@ -52,7 +50,6 @@
 | [`Flaat_4_Dynamic_Range_Maximum.pf2`](Flaat_4_Dynamic_Range_Maximum.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Marvels_Advanced_3.3_Grading.pf2`](Marvels_Advanced_3.3_Grading.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Marvels_Advanced_3.4_Cinematic.pf2`](Marvels_Advanced_3.4_Cinematic.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
-| [`Marvels_Cine_1.2_DSLR_Cinema.pf2`](Marvels_Cine_1.2_DSLR_Cinema.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Marvels_Cine_1.2_Release.pf2`](Marvels_Cine_1.2_Release.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Marvels_Cine_2.1_Panalog.pf2`](Marvels_Cine_2.1_Panalog.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
 | [`Panavision_Genesis_Panalog_Cinema.pf2`](Panavision_Genesis_Panalog_Cinema.pf2) | `.PF2` | Creative Custom Picture Style | Artistic expression and stylized in-camera grading. |
