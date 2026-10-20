@@ -124,14 +124,20 @@ def build_data():
                 "author": author
             })
 
-    # Fotos de muestra
+    # Fotos de muestra patrón (11 escenas)
     samples_dir = REPO_DIR / "samples"
     sample_items = [
-        {"id": "portrait", "name": "Retrato & Piel", "file": "samples/01_portrait_skin.jpg", "desc": "Tonalidades de piel y sombras faciales"},
-        {"id": "landscape", "name": "Paisaje & Cielo", "file": "samples/02_landscape_nature.jpg", "desc": "Cielos azules, agua y vegetación lejana"},
-        {"id": "greens", "name": "Follaje & Naturaleza", "file": "samples/03_foliage_greens.jpg", "desc": "Saturación de verdes clorofila y luces altas"},
-        {"id": "urban", "name": "Arquitectura Urbana", "file": "samples/04_architecture_urban.jpg", "desc": "Líneas rectas, texturas y contraste medio"},
-        {"id": "hdr", "name": "Luz & Rango Dinámico", "file": "samples/05_high_dynamic_range.jpg", "desc": "Transición de altas luces a sombras profundas"}
+        {"id": "scene_1", "name": "1. Retrato & Piel", "file": "samples/01_portrait_skin.jpg", "desc": "Tonos de piel y sombras suaves"},
+        {"id": "scene_2", "name": "2. Retrato Contraste", "file": "samples/02_portrait_contrast.jpg", "desc": "Contraste facial y luces medias"},
+        {"id": "scene_3", "name": "3. Retrato Exterior", "file": "samples/03_portrait_outdoor.jpg", "desc": "Luz solar directa y tonos naturales"},
+        {"id": "scene_4", "name": "4. Paisaje & Cielo", "file": "samples/04_landscape_nature.jpg", "desc": "Cielos azules, agua y vegetación lejana"},
+        {"id": "scene_5", "name": "5. Follaje & Naturaleza", "file": "samples/05_foliage_greens.jpg", "desc": "Verdes clorofila y saturación vegetal"},
+        {"id": "scene_6", "name": "6. Arquitectura Urbana", "file": "samples/06_architecture_urban.jpg", "desc": "Líneas rectas, texturas y contraste medio"},
+        {"id": "scene_7", "name": "7. Escena Street", "file": "samples/07_urban_street.jpg", "desc": "Contraste urbano y sombras densas"},
+        {"id": "scene_8", "name": "8. Alto Rango Dinámico", "file": "samples/08_high_dynamic_range.jpg", "desc": "Transición de altas luces a sombras profundas"},
+        {"id": "scene_9", "name": "9. Atardecer Golden Hour", "file": "samples/09_sunset_golden.jpg", "desc": "Tonos dorados y gradación cálida"},
+        {"id": "scene_10", "name": "10. Interior & Ambiente", "file": "samples/10_indoor_ambient.jpg", "desc": "Luz artificial y sombras interiores"},
+        {"id": "scene_11", "name": "11. Texturas & Detalle", "file": "samples/11_textures_detail.jpg", "desc": "Nitidez, microcontraste y definición fina"}
     ]
 
     # Validar muestras existentes

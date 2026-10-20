@@ -206,7 +206,8 @@
             display: none;
             flex-direction: column;
             gap: 8px;
-            min-width: 290px;
+            min-width: 380px;
+            max-width: 440px;
             animation: fadeInDown 0.15s ease;
         }
 
@@ -230,8 +231,11 @@
 
         .photo-thumbs-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 8px;
+            max-height: 340px;
+            overflow-y: auto;
+            padding-right: 2px;
         }
 
         .photo-thumb-card {
@@ -917,6 +921,43 @@
             gap: 6px;
         }
 
+        .triage-view-mode-group {
+            display: inline-flex;
+            background: #0d0e12;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .triage-display-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 700;
+            font-family: inherit;
+            padding: 4px 9px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .triage-display-btn:hover {
+            color: var(--text-main);
+        }
+
+        .triage-display-btn.active {
+            background: #1e293b;
+            color: var(--accent);
+            border: 1px solid #334155;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+        }
+
         .btn-triage {
             display: inline-flex;
             align-items: center;
@@ -1018,6 +1059,15 @@
             background: #000;
         }
 
+        .triage-single-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         #carouselGlCanvas {
             max-width: 100%;
             max-height: 100%;
@@ -1028,6 +1078,137 @@
 
         #carouselGlCanvas.fit-contain { object-fit: contain; }
         #carouselGlCanvas.fit-cover { object-fit: cover; width: 100%; height: 100%; }
+
+        /* VISTA MULTI-ESCENAS SIMULTÁNEAS EN CARRUSEL */
+        .triage-multi-wrap {
+            width: 100%;
+            height: 100%;
+            display: none;
+            padding: 12px 16px 70px;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        .triage-multi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            width: 100%;
+            align-content: start;
+        }
+
+        @media (max-width: 1400px) {
+            .triage-multi-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 900px) {
+            .triage-multi-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .triage-multi-grid { grid-template-columns: 1fr; }
+        }
+
+        .triage-scene-card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .triage-scene-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+
+        .triage-scene-card.active-focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .triage-scene-canvas-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            background: #050608;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .triage-scene-canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .triage-scene-footer {
+            padding: 6px 10px;
+            background: rgba(16, 18, 26, 0.95);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .triage-scene-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .triage-scene-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .triage-scene-badge.after {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.35);
+        }
+
+        .triage-scene-badge.before {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.35);
+        }
+
+        .triage-scene-hint {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            color: #fff;
+            font-size: 9px;
+            font-weight: 600;
+            padding: 3px 7px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            opacity: 0;
+            transition: opacity 0.15s ease;
+            pointer-events: none;
+        }
+
+        .triage-scene-card:hover .triage-scene-hint {
+            opacity: 1;
+        }
 
         /* CORTINA SPLIT A/B EN EL CARRUSEL */
         .carousel-split-bar {
@@ -1102,9 +1283,9 @@
             bottom: 16px;
             left: 16px;
             z-index: 30;
-            background: rgba(13, 15, 22, 0.88);
+            background: rgba(13, 15, 22, 0.90);
             backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius-md);
             padding: 12px 16px;
             max-width: 440px;
@@ -1112,17 +1293,41 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .triage-meta-hud.minimized {
-            opacity: 0.3;
-            transform: scale(0.95);
+        .triage-meta-hud.collapsed {
+            padding: 6px 12px;
+            max-width: 280px;
+            background: rgba(13, 15, 22, 0.80);
+            border-color: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
         }
 
-        .triage-meta-hud.minimized:hover {
-            opacity: 1;
-            transform: scale(1);
+        .triage-meta-hud.collapsed .triage-hud-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .triage-meta-hud.collapsed .triage-hud-body {
+            display: none !important;
+        }
+
+        .btn-hud-toggle {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 11px;
+            line-height: 1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.15s ease;
+        }
+
+        .btn-hud-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
 
         .triage-hud-header {
@@ -1874,6 +2079,16 @@
                         <span id="triageModeText" class="triage-mode-text">DESPUÉS (PRESET)</span>
                     </div>
 
+                    <!-- Conmutador: 11 Escenas vs Foto Grande -->
+                    <div class="triage-view-mode-group" title="Modo de visualización del carrusel (Atajo: G)">
+                        <button id="btnTriageModeMulti" class="triage-display-btn active" title="Ver 11 escenas patrón a la vez (G)">
+                            ⊞ 11 Escenas
+                        </button>
+                        <button id="btnTriageModeSingle" class="triage-display-btn" title="Ver foto individual a gran tamaño (G)">
+                            🔲 Foto Grande
+                        </button>
+                    </div>
+
                     <!-- Modo de Cola: Pendientes vs Todos -->
                     <div class="triage-filter-group" title="Modo de criba">
                         <button id="btnTriageQueuePending" class="triage-filter-pill active" title="Bucle continuo de pendientes (excluye guardados y descartados)">Solo Pendientes</button>
@@ -1911,38 +2126,48 @@
 
             <!-- VIEWPORT DEL CARRUSEL CON WEBGL 2.0 -->
             <div class="triage-viewport-wrap" id="triageViewportWrap">
-                <canvas id="carouselGlCanvas" class="fit-contain"></canvas>
+                <!-- VISTA INDIVIDUAL (FOTO GRANDE) -->
+                <div class="triage-single-wrap" id="triageSingleWrap" style="display: none;">
+                    <canvas id="carouselGlCanvas" class="fit-contain"></canvas>
 
-                <div class="triage-badge-fl-left">ORIGINAL</div>
-                <div class="triage-badge-fl-right" id="triageRightBadge">PRESET APLICADO</div>
+                    <div class="triage-badge-fl-left">ORIGINAL</div>
+                    <div class="triage-badge-fl-right" id="triageRightBadge">PRESET APLICADO</div>
 
-                <!-- Botón de encuadre en el carrusel -->
-                <button id="btnTriageFit" class="triage-btn-fit" title="Alternar entre foto completa y recorte lleno (Atajo: F)">
-                    ⛶ <span id="triageFitText">Foto Completa</span>
-                </button>
+                    <!-- Botón de encuadre en el carrusel -->
+                    <button id="btnTriageFit" class="triage-btn-fit" title="Alternar entre foto completa y recorte lleno (Atajo: F)">
+                        ⛶ <span id="triageFitText">Foto Completa</span>
+                    </button>
 
-                <!-- Cortina partida A/B interactiva -->
-                <div class="carousel-split-bar" id="carouselSplitBar" style="left: 50%;">
-                    <div class="carousel-split-handle">↔</div>
+                    <!-- Cortina partida A/B interactiva -->
+                    <div class="carousel-split-bar" id="carouselSplitBar" style="left: 50%;">
+                        <div class="carousel-split-handle">↔</div>
+                    </div>
+                </div>
+
+                <!-- VISTA MULTI-ESCENAS (11 ESCENAS SIMULTÁNEAS) -->
+                <div class="triage-multi-wrap" id="triageMultiWrap" style="display: block;">
+                    <div class="triage-multi-grid" id="triageMultiGrid"></div>
                 </div>
 
                 <!-- PANEL FLOTANTE DE METADATOS (HUD) -->
                 <div class="triage-meta-hud" id="triageMetaHud">
                     <div class="triage-hud-header">
                         <span class="triage-hud-title" id="hudPresetTitle">Nombre Preset</span>
-                        <button id="btnToggleHudMin" style="background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:11px;" title="Minimizar metadatos">▾</button>
+                        <button id="btnToggleHudMin" class="btn-hud-toggle" title="Ocultar información (▾)">▾</button>
                     </div>
-                    <div class="triage-hud-field">
-                        <span class="triage-hud-label">Perfil Tonal (Look)</span>
-                        <p class="triage-hud-text" id="hudMetaLook">-</p>
-                    </div>
-                    <div class="triage-hud-field">
-                        <span class="triage-hud-label">Uso Recomendado</span>
-                        <p class="triage-hud-text" id="hudMetaBestFor">-</p>
-                    </div>
-                    <div class="triage-hud-field">
-                        <span class="triage-hud-label">Herencia / Emulsión</span>
-                        <p class="triage-hud-text" id="hudMetaHeritage">-</p>
+                    <div class="triage-hud-body" id="triageHudBody">
+                        <div class="triage-hud-field">
+                            <span class="triage-hud-label">Perfil Tonal (Look)</span>
+                            <p class="triage-hud-text" id="hudMetaLook">-</p>
+                        </div>
+                        <div class="triage-hud-field">
+                            <span class="triage-hud-label">Uso Recomendado</span>
+                            <p class="triage-hud-text" id="hudMetaBestFor">-</p>
+                        </div>
+                        <div class="triage-hud-field">
+                            <span class="triage-hud-label">Herencia / Emulsión</span>
+                            <p class="triage-hud-text" id="hudMetaHeritage">-</p>
+                        </div>
                     </div>
                 </div>
 
@@ -1953,6 +2178,7 @@
                     <div class="triage-shortcut-item"><kbd>D</kbd> Descartar</div>
                     <div class="triage-shortcut-item"><kbd>S</kbd> Saltar</div>
                     <div class="triage-shortcut-item"><kbd>M</kbd> ⭐ Top</div>
+                    <div class="triage-shortcut-item"><kbd>G</kbd> 11 Escenas/Grande</div>
                     <div class="triage-shortcut-item"><kbd>F</kbd> Encuadre</div>
                     <div class="triage-shortcut-item"><kbd>R</kbd> Reiniciar</div>
                     <div class="triage-shortcut-item"><kbd>← / →</kbd> Navegar</div>
@@ -2361,6 +2587,54 @@
                         customCard.classList.add('active');
                     }
 
+                    // Integrar foto propia en la matriz de 11 escenas si no existía
+                    if (offscreenLutEngine) {
+                        let customEntry = multiSceneData.find(e => e.isCustom);
+                        const container = document.getElementById('triageMultiGrid');
+                        if (!customEntry && container) {
+                            const card = document.createElement('div');
+                            card.className = 'triage-scene-card active-focus';
+                            card.innerHTML = `
+                                <div class="triage-scene-canvas-wrap">
+                                    <canvas class="triage-scene-canvas" width="600" height="400"></canvas>
+                                    <span class="triage-scene-hint">🔍 Clic para ampliar</span>
+                                </div>
+                                <div class="triage-scene-footer">
+                                    <span class="triage-scene-title" title="Tu foto: ${file.name}">⭐ Tu foto: ${file.name}</span>
+                                    <span class="triage-scene-badge after">PRESET</span>
+                                </div>
+                            `;
+                            const canvas = card.querySelector('.triage-scene-canvas');
+                            const badge = card.querySelector('.triage-scene-badge');
+                            customEntry = {
+                                sample: { id: 'custom', name: file.name },
+                                img: img,
+                                texture: offscreenLutEngine.createImageTexture(img),
+                                canvas: canvas,
+                                badge: badge,
+                                card: card,
+                                isReady: true,
+                                isCustom: true
+                            };
+                            card.addEventListener('click', () => {
+                                activeImageSource = img;
+                                activeImageName = file.name;
+                                setTriageDisplayMode('single');
+                                showToast(`Ampliando tu foto: ${file.name}`);
+                            });
+                            multiSceneData.unshift(customEntry);
+                            container.insertBefore(card, container.firstChild);
+                        } else if (customEntry) {
+                            customEntry.img = img;
+                            customEntry.texture = offscreenLutEngine.createImageTexture(img);
+                            customEntry.card.querySelector('.triage-scene-title').innerText = `⭐ Tu foto: ${file.name}`;
+                        }
+                        if (customEntry) {
+                            customEntry.canvas.width = 600;
+                            customEntry.canvas.height = Math.round(600 * (img.naturalHeight / img.naturalWidth));
+                        }
+                    }
+
                     if (currentView === 'grid') renderAllVisibleCards();
                     else renderCurrentTriage();
 
@@ -2715,6 +2989,9 @@
             document.getElementById('hudMetaHeritage').innerText = p.heritage || 'Emulación EOS';
 
             // Renderizado en WebGL 2.0
+            if (triageDisplayMode === 'multi') {
+                renderTriageMultiGrid(p);
+            }
             if (carouselLutEngine && activeImageSource) {
                 carouselLutEngine.setIntensity(globalIntensity);
                 carouselLutEngine.render({ showBefore: isTriageBefore });
@@ -2725,8 +3002,149 @@
         function toggleTriageBeforeAfter() {
             isTriageBefore = !isTriageBefore;
             updateTriageModeUI();
+            if (triageDisplayMode === 'multi') {
+                renderTriageMultiGrid();
+            }
             if (carouselLutEngine) {
                 carouselLutEngine.render({ showBefore: isTriageBefore });
+            }
+        }
+
+        // ==========================================
+        // LÓGICA DE 11 ESCENAS SIMULTÁNEAS EN CARRUSEL
+        // ==========================================
+        let triageDisplayMode = localStorage.getItem('canon_triage_display_mode') || 'multi';
+        const multiSceneData = [];
+        let currentMultiLutTex = null;
+
+        function initMultiSceneGrid() {
+            const container = document.getElementById('triageMultiGrid');
+            if (!container || !window.CANON_SAMPLES) return;
+            container.innerHTML = '';
+            multiSceneData.length = 0;
+
+            window.CANON_SAMPLES.forEach((sample, idx) => {
+                const card = document.createElement('div');
+                card.className = 'triage-scene-card';
+                card.setAttribute('data-scene-id', sample.id);
+                card.setAttribute('data-scene-idx', idx);
+                card.innerHTML = `
+                    <div class="triage-scene-canvas-wrap">
+                        <canvas class="triage-scene-canvas" width="600" height="400"></canvas>
+                        <span class="triage-scene-hint">🔍 Clic para ampliar</span>
+                    </div>
+                    <div class="triage-scene-footer">
+                        <span class="triage-scene-title" title="${sample.name}: ${sample.desc}">${sample.name}</span>
+                        <span class="triage-scene-badge after">PRESET</span>
+                    </div>
+                `;
+
+                const canvas = card.querySelector('.triage-scene-canvas');
+                const badge = card.querySelector('.triage-scene-badge');
+
+                const entry = {
+                    sample: sample,
+                    img: null,
+                    texture: null,
+                    canvas: canvas,
+                    badge: badge,
+                    card: card,
+                    isReady: false
+                };
+                multiSceneData.push(entry);
+
+                card.addEventListener('click', () => {
+                    loadSamplePhoto(sample);
+                    setTriageDisplayMode('single');
+                    showToast(`Ampliando: ${sample.name} (Pulsa G para volver a 11 escenas)`);
+                });
+
+                container.appendChild(card);
+
+                const img = new Image();
+                img.onload = () => {
+                    entry.img = img;
+                    entry.canvas.width = 600;
+                    entry.canvas.height = Math.round(600 * (img.naturalHeight / img.naturalWidth));
+                    if (offscreenLutEngine) {
+                        entry.texture = offscreenLutEngine.createImageTexture(img);
+                        entry.isReady = true;
+                        if (currentView === 'carousel' && triageDisplayMode === 'multi') {
+                            renderSingleMultiSceneCard(entry, currentMultiLutTex);
+                        }
+                    }
+                };
+                img.src = sample.file;
+            });
+        }
+
+        function renderSingleMultiSceneCard(entry, lutTex) {
+            if (!entry || !entry.isReady || !entry.texture || !offscreenLutEngine) return;
+            try {
+                offscreenLutEngine.renderTo2DCanvas(entry.canvas, lutTex, {
+                    imageTexture: entry.texture,
+                    intensity: globalIntensity,
+                    splitEnabled: false,
+                    showBefore: isTriageBefore
+                });
+                if (entry.badge) {
+                    if (isTriageBefore) {
+                        entry.badge.className = 'triage-scene-badge before';
+                        entry.badge.innerText = 'ORIGINAL';
+                    } else {
+                        entry.badge.className = 'triage-scene-badge after';
+                        entry.badge.innerText = 'PRESET';
+                    }
+                }
+            } catch (err) {
+                console.warn('Error renderizando escena multi:', err);
+            }
+        }
+
+        async function renderTriageMultiGrid(preset = null) {
+            const queue = getTriageQueue();
+            if (queue.length === 0) return;
+            const p = preset || queue[triageQueueIndex];
+            if (!p || !offscreenLutEngine) return;
+
+            try {
+                currentMultiLutTex = await offscreenLutEngine.getLutTexture(p.lut);
+            } catch (err) {
+                console.warn('Error cargando LUT para multi-grid:', err);
+            }
+
+            for (let i = 0; i < multiSceneData.length; i++) {
+                renderSingleMultiSceneCard(multiSceneData[i], currentMultiLutTex);
+            }
+        }
+
+        function setTriageDisplayMode(mode) {
+            triageDisplayMode = mode;
+            localStorage.setItem('canon_triage_display_mode', mode);
+
+            const btnMulti = document.getElementById('btnTriageModeMulti');
+            const btnSingle = document.getElementById('btnTriageModeSingle');
+            const wrapMulti = document.getElementById('triageMultiWrap');
+            const wrapSingle = document.getElementById('triageSingleWrap');
+
+            if (btnMulti) btnMulti.classList.toggle('active', mode === 'multi');
+            if (btnSingle) btnSingle.classList.toggle('active', mode === 'single');
+
+            if (mode === 'multi') {
+                if (wrapMulti) wrapMulti.style.display = 'block';
+                if (wrapSingle) wrapSingle.style.display = 'none';
+                renderTriageMultiGrid();
+            } else {
+                if (wrapMulti) wrapMulti.style.display = 'none';
+                if (wrapSingle) wrapSingle.style.display = 'flex';
+                if (carouselLutEngine) {
+                    const queue = getTriageQueue();
+                    if (queue.length > 0 && triageQueueIndex < queue.length) {
+                        const p = queue[triageQueueIndex];
+                        carouselLutEngine.loadLut(p.lut);
+                        carouselLutEngine.render({ showBefore: isTriageBefore });
+                    }
+                }
             }
         }
 
@@ -3297,10 +3715,28 @@
             document.getElementById('btnExportSavedJSON').addEventListener('click', exportSavedJSON);
             document.getElementById('btnRestoreAllDiscarded').addEventListener('click', restoreAllDiscarded);
 
-            // Minimizar HUD
-            document.getElementById('btnToggleHudMin').addEventListener('click', () => {
-                document.getElementById('triageMetaHud').classList.toggle('minimized');
+            // Botones de Modo 11 Escenas vs Foto Grande
+            document.getElementById('btnTriageModeMulti').addEventListener('click', () => setTriageDisplayMode('multi'));
+            document.getElementById('btnTriageModeSingle').addEventListener('click', () => setTriageDisplayMode('single'));
+
+            // Minimizar / Colapsar HUD con flecha
+            const triageHud = document.getElementById('triageMetaHud');
+            const btnToggleHudMin = document.getElementById('btnToggleHudMin');
+            const setHudCollapsed = (collapsed) => {
+                triageHud.classList.toggle('collapsed', collapsed);
+                btnToggleHudMin.innerHTML = collapsed ? '▴' : '▾';
+                btnToggleHudMin.title = collapsed ? 'Expandir información (▴)' : 'Ocultar información (▾)';
+                localStorage.setItem('canon_triage_hud_collapsed', collapsed ? '1' : '0');
+            };
+
+            btnToggleHudMin.addEventListener('click', (e) => {
+                e.stopPropagation();
+                setHudCollapsed(!triageHud.classList.contains('collapsed'));
             });
+
+            if (localStorage.getItem('canon_triage_hud_collapsed') === '1') {
+                setHudCollapsed(true);
+            }
 
             // Atajos de Teclado Unificados
             window.addEventListener('keydown', (e) => {
@@ -3334,6 +3770,9 @@
                     } else if (e.key === 'r' || e.key === 'R') {
                         e.preventDefault();
                         restartCarousel();
+                    } else if (e.key === 'g' || e.key === 'G') {
+                        e.preventDefault();
+                        setTriageDisplayMode(triageDisplayMode === 'multi' ? 'single' : 'multi');
                     } else if (e.key === 'f' || e.key === 'F') {
                         e.preventDefault();
                         toggleFitMode();
@@ -3430,7 +3869,9 @@
             setupModalControls();
 
             if (window.CANON_SAMPLES && window.CANON_SAMPLES.length > 0) {
+                initMultiSceneGrid();
                 loadSamplePhoto(window.CANON_SAMPLES[0]);
+                setTriageDisplayMode(triageDisplayMode);
             }
 
             applyFilters();

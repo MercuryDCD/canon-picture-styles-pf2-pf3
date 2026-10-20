@@ -295,12 +295,30 @@ class LutEngine {
         gl.bindVertexArray(null);
     }
 
+    createImageTexture(imageSource) {
+        if (!this.isSupported || !imageSource) return null;
+        const gl = this.gl;
+        const tex = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, tex);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, imageSource);
+        gl.bindTexture(gl.TEXTURE_2D, null);
+        return tex;
+    }
+
     /**
      * Renderiza usando la GPU en el canvas WebGL offscreen y transfiere el resultado
      * a un canvas 2D de destino (por ejemplo, una tarjeta del catálogo).
      */
     renderTo2DCanvas(target2DCanvas, lutTexture, options = {}) {
-        if (!this.isSupported || !this.program || !this.currentImage) return false;
+        if (!this.isSupported || !this.program) return false;
+
+        const sourceTex = options.imageTexture || this.imageTexture;
+        if (!sourceTex) return false;
 
         const gl = this.gl;
         const tw = target2DCanvas.width;
@@ -315,7 +333,7 @@ class LutEngine {
         gl.useProgram(this.program);
 
         gl.activeTexture(gl.TEXTURE0);
-        gl.bindTexture(gl.TEXTURE_2D, this.imageTexture);
+        gl.bindTexture(gl.TEXTURE_2D, sourceTex);
         gl.uniform1i(this.locations.u_image, 0);
 
         gl.activeTexture(gl.TEXTURE1);

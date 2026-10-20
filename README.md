@@ -47,17 +47,11 @@ A high-efficiency workflow designed for rapid criba and curating your personal p
 
 ---
 
-### How to Run Locally (Offline)
-Double-click **`START_CATALOG.bat`** in this folder (or run `python -m http.server 8080`) and open:
+### Running Offline / Locally
+If you clone or download this repository, double-click **`START_CATALOG.bat`** (or execute `python -m http.server 8080`) and visit:
 ```text
 http://localhost:8080/index.html
 ```
-
-### How to Deploy on GitHub Pages
-1. Go to your repository **Settings** → **Pages**.
-2. Under **Build and deployment** → **Source**, select **Deploy from a branch**.
-3. Select branch **`main`** and folder **`/ (root)`**, then click **Save**.
-4. GitHub Pages will serve the static WebGL app live at `https://<username>.github.io/<repo>/`.
 
 ---
 
