@@ -1,45 +1,99 @@
-# Canon Picture Styles Library (.pf2 & .pf3)
+# Canon Picture Styles & 3D LUTs Library (.pf2 & .pf3)
 
 [![Canon](https://img.shields.io/badge/Canon-EOS%20M%20%7C%20EOS%20R%20%7C%20DSLR-red.svg)](https://canon.com)
-[![Presets](https://img.shields.io/badge/Presets-186%20Profiles-blue.svg)](.)
-[![Formats](https://img.shields.io/badge/Formats-.pf2%20%7C%20.pf3-success.svg)](.)
+[![Presets](https://img.shields.io/badge/Presets-550%20Profiles-blue.svg)](.)
+[![Formats](https://img.shields.io/badge/Formats-.pf2%20%7C%20.pf3%20%7C%20.bin%20%7C%20Hald%20PNG-success.svg)](.)
+[![Live Demo](https://img.shields.io/badge/Demo-Interactive%20Web%20Catalog-brightgreen.svg)](https://mercurydcd.github.io/canon-picture-styles-pf2-pf3/)
 [![License](https://img.shields.io/badge/License-Community%20%2F%20Free-orange.svg)](LICENSE)
 
-A comprehensively curated, categorized, and cleaned collection of **186 Picture Styles (`.pf2` and `.pf3`)** for Canon cameras.
+A comprehensively curated, categorized, and standardized collection of **550 Picture Styles (`.pf2` & `.pf3`) and 3D LUTs** for Canon EOS cameras, Digital Photo Professional (DPP 4), and post-production suites.
 
-This library consolidates the greatest community profiles, official discontinued Canon styles, iconic film simulations (**Fujifilm**, **Kodak**, **Agfa**), industry-standard video Log profiles (**Technicolor CineStyle**, **Flaat**, **Marvels Cine**), and aesthetic looks (**Kevin Wang**, **Lomography**, **Infrared**).
-
-All file names have been standardized into clear, human-readable English terminology, organized across 7 distinct categories with detailed documentation for each preset.
+This library consolidates community classics, discontinued Canon styles, iconic analog film simulations (**Fujifilm**, **Kodak**, **Ilford**, **Agfa**, **Polaroid**, **Rollei**), cinematic Log curves (**Technicolor CineStyle**, **Marvels Cine**, **Flaat**), and modern digital color profiles (**Fujifilm X-Trans III**, **Pixelmator Pro**, **PictureFX**), unified into **7 semantic macro-categories** based on photographic aesthetics.
 
 ---
 
-## 📂 Repository Structure
+## 🌐 Interactive Web Catalog & Triage Suite (`index.html`)
 
-| Category | Profiles | Description |
-| :--- | :---: | :--- |
-| [**`01_Fujifilm_Film_Simulations`**](./01_Fujifilm_Film_Simulations) | 28 | Astia 100F, Provia 100F (RDP III), Velvia 50/100F (RVP), Pro Neg Hi/Std, Pro 400H, Superia Reala, FP-100C |
-| [**`02_Kodak_Film_Simulations`**](./02_Kodak_Film_Simulations) | 9 | Kodak Portra 400/160, Kodachrome 25/64 (RetroKrum), Ektachrome EES & Cross-Process |
-| [**`03_Cinema_and_Log`**](./03_Cinema_and_Log) | 41 | Technicolor CineStyle, Marvels Cine, Similaar Flaat (1-4), Panavision Genesis, California Cowboy, EuroTrip |
-| [**`04_Black_and_White_Monochrome`**](./04_Black_and_White_Monochrome) | 14 | Kodak T-Max 400, Kodak Tri-X (T-Rex), Filmic B&W, fine-art monochrome tonal curves (1 to 5) |
-| [**`05_Portraits_and_Skin_Tones`**](./05_Portraits_and_Skin_Tones) | 25 | Canon Official Studio & Snapshot, LightFace, cportrait clean skin, Bounced Flash, Hanayome Bridal |
-| [**`06_Classic_Cameras_and_Brands`**](./06_Classic_Cameras_and_Brands) | 11 | Nikon D2X, Olympus Deep Blue, Agfa RSX II, Pentax K, Canon 5D Classic & 1Ds Mark II sensor science |
-| [**`07_Creative_and_Lomo`**](./07_Creative_and_Lomo) | 99 | Kevin Wang Japanese Style (Pastel), LOMO vignette, Infrared (IR), Canon Nostalgia, Twilight, Emerald |
+You can explore, filter, compare, and triage all **550 Picture Styles live in your browser** with zero external dependencies and 100% client-side GPU acceleration.
+
+> 🚀 **[Try the Live Web Catalog on GitHub Pages](https://mercurydcd.github.io/canon-picture-styles-pf2-pf3/)**
+
+The platform features two synchronized operational modes (toggle with `V` or the top-left switch):
+
+### 1. 🗂️ Mosaico (550 Matrix Grid)
+* **Instant Visual Matrix:** See all 550 profiles rendered in real time on any photograph using WebGL 2.0 trilinear 3D LUT interpolation ($< 0.2\text{ ms}$ per preset).
+* **Visual Photo Selector:** Switch between pre-bundled curated scenes (Portrait, Landscape, Foliage Greens, Urban Architecture, High Dynamic Range) or drop your own photos.
+* **Universal RAW & JPG Loader:** Drag & drop any **JPG, PNG, WebP**, or **Canon RAW (`.CR3` / `.CR2` / `.CRW`)** — embedded full-resolution previews are extracted in-client in $< 20\text{ ms}$.
+* **Realtime Filtering:** Instant search by name, film emulsion, or creator (*"Velvia"*, *"Portra"*, *"Tri-X"*, *"CineStyle"*, *"Classic Chrome"*), category filtering, and ⭐ Favorites toggle.
+* **A/B Split Curtain Modal:** Click any preset card to open full-screen inspection with an interactive 60 fps split curtain, detailed metadata sheet, and $0\dots 100\%$ intensity slider.
+* **Direct File Downloads:** Download camera-ready `.pf3` or `.pf2` files directly from each card.
+
+### 2. ⚡ Carrusel (Fast 1-by-1 Triage View)
+A high-efficiency workflow designed for rapid criba and curating your personal presets:
+* **Full-Screen Canvas:** Evaluates the active preset at maximum resolution on your chosen photograph.
+* **Continuous Queue Loop:** Automatically filters out already saved or discarded styles so you only evaluate pending profiles.
+* **Floating Metadata HUD:** Displays Tonal Profile (Look), Recommended Usage, Historical Emulsion Heritage, and Creator in an unobtrusive translucent panel.
+* **Keyboard Hotkeys for Rapid Triage:**
+  * `Space` or `B`: Instant Before / After toggle (Original JPG vs Preset applied).
+  * `K` or `Enter` or `→`: **Keep (Mantener)** — Saves to favorites and advances to next pending.
+  * `D` or `←`: **Discard (Descartar)** — Excludes from the loop and advances.
+  * `S` or `↓`: **Skip (Saltar)** — Defers to the end of the loop without discarding.
+  * `M`: **⭐ Real Favorite** — Marks as a top starred favorite.
+  * `F`: **Encuadre (Fit)** — Toggles between full photo (*contain*) and edge-to-edge crop (*cover*).
+  * `R`: **Restart Loop** — Recovers discarded/skipped presets to re-evaluate, preserving saved favorites.
+  * `Backspace` or `↑`: Step back to the previous preset.
+  * `V`: Switch between Matrix (Mosaico) and Carousel (Carrusel) mode.
+* **Favorites & Discarded Drawer:** Slide-in management panel to review selections, copy slot assignments formatted for **Canon EOS Utility 3** (User Defined 1, 2, 3), and export your collection to JSON.
+
+---
+
+### How to Run Locally (Offline)
+Double-click **`START_CATALOG.bat`** in this folder (or run `python -m http.server 8080`) and open:
+```text
+http://localhost:8080/index.html
+```
+
+### How to Deploy on GitHub Pages
+1. Go to your repository **Settings** → **Pages**.
+2. Under **Build and deployment** → **Source**, select **Deploy from a branch**.
+3. Select branch **`main`** and folder **`/ (root)`**, then click **Save**.
+4. GitHub Pages will serve the static WebGL app live at `https://<username>.github.io/<repo>/`.
+
+---
+
+## 📂 Intuitive Repository Structure (7 Macro-Categories)
+
+Every category folder in this repository is designed to be self-contained and intuitive:
+1. **Camera-Ready Styles (`.pf3` / `.pf2`):** Located directly in each category root for instant loading via Canon EOS Utility 3 or USB WPD.
+2. **Digital 3D LUTs (`luts_bin/`):** $33^3$ hardware-accelerated binary matrices (107,811 bytes uint8 RGB) for GPU rendering, WebGL, and color grading engines.
+3. **Original Assets (`source_luts/`):** Pristine source files (Hald CLUT PNGs Level 12 $1728 \times 1728$, `.cube` LUTs, etc.) preserving exact author colorimetry and metadata.
+
+| Category | Profiles | Formats Included | Description & Iconic Looks |
+| :--- | :---: | :---: | :--- |
+| [**`01_Fujifilm`**](./01_Fujifilm) | 103 | `.pf2`, `.pf3`, `.bin`, Hald PNG | All Fuji simulations united: Provia, Velvia (50, 100, 100F), Astia, Classic Chrome, Superia (100–1600), Pro Neg (Hi/Std), Reala, Pro 160S/160C/400H/800Z, Fortia, Sensia, Natura 1600, X-Trans III sensor emulations. |
+| [**`02_Kodak`**](./02_Kodak) | 58 | `.pf2`, `.pf3`, `.bin`, Hald PNG | All Kodak color films: Portra (160, 400, 800, NC, VC, UC), Kodachrome (25, 64, 200), Ektachrome (E100G, E100VS, E200, 64), Crowdak V3, Elite Chrome Extra Color, Royal Gold, Ultramax, Gold 100/200/400. |
+| [**`03_Black_and_White`**](./03_Black_and_White) | 95 | `.pf2`, `.pf3`, `.bin`, Hald PNG | Complete monochrome catalog: Ilford (HP5 Plus, FP4, Delta 100/400/3200, Pan F Plus, XP2), Fuji Acros (Standard, +G, +R, +Ye) & Neopan, Kodak (Tri-X 320/400, T-Max 100/400/3200, Plus-X, Panatomic-X, BW400CN), Rollei (IR 400, Ortho 25, Retro), Polaroid 665/667/672, Agfa APX, ZilverFX (01–10, InfraRed), Sepia. |
+| [**`04_Cinema_and_Log`**](./04_Cinema_and_Log) | 40 | `.pf2`, `.pf3`, `.bin` | Video & cinema grading: Technicolor CineStyle, Similaar Flaat (1–4 Maximum DR), Kodak 2393 Print Film, Marvels Cine (1.2, 2.1 Panalog, 3.3, 3.4), Panavision Genesis Panalog, Bleach Bypass, Teal & Orange, Futuristic Bleak, CandleLight. |
+| [**`05_Vintage_and_Instant`**](./05_Vintage_and_Instant) | 94 | `.pf2`, `.pf3`, `.bin`, Hald PNG | Instant and retro films: Polaroid color (PX-70, PX-680, Time-Zero, 600, 669, 690, Polachrome, Spectra), Agfa (Ultra 100, Vista, Optima, RSX II 100 Color Slide), Lomography (Redscale 100, Color Tiger, X-Pro, Toy Camera, Holga). |
+| [**`06_Portraits_and_Brands`**](./06_Portraits_and_Brands) | 26 | `.pf2`, `.pf3`, `.bin` | Classic camera sensors & dedicated skin tones: Leica, Nikon D2X, Olympus Deep Blue, Canon Studio & Snapshot, Canon 5D Classic Mint/Neutral, Canon 1Ds Mark II, BeautyShot, Fair Skin, Bridal Hanayome, LightFace. |
+| [**`07_Creative_and_Artistic`**](./07_Creative_and_Artistic) | 134 | `.pf2`, `.pf3`, `.bin`, Hald PNG | Contemporary & artistic looks: Pixelmator Pro suite (Bright, Calm, Dramatic, Flamboyant, Intense, Vintage, Warm), PictureFX (GoldFX Summer Heat/Sunset, AnalogFX Old Style), Kevin Wang Japanese Pastel Anime, Infrared Fake/Half/IR, Wagokoro, CreativePack film looks. |
+| [**`Favorites`**](./Favorites) | 27+ | `.pf2`, `.pf3` | Curated top selections and camera User 1, 2 & 3 slot configurations. |
 
 ---
 
 ## 📷 Camera Compatibility
 
-These Picture Style profiles (`.pf2` and `.pf3`) are fully compatible with virtually all modern and classic Canon EOS cameras, including:
+These Picture Style profiles (`.pf2` and `.pf3`) are compatible with all modern and classic Canon EOS cameras:
 
+* **Canon EOS R Series (Mirrorless):** EOS R, RP, R3, R5, R6, R6 Mark II, R7, R8, R10, R50, R100 (via EOS Utility 3 or Canon Style Studio USB bypass).
 * **Canon EOS M Series:** EOS M100, M200, M50, M50 Mark II, M6, M6 Mark II, M5, M3, M10, original EOS M.
-* **Canon EOS R Series (Mirrorless):** EOS R, RP, R3, R5, R6, R6 Mark II, R7, R8, R10, R50, R100 (via EOS Utility 3).
 * **Canon EOS DSLRs:** 1D series, 5D series (Classic, Mk II, Mk III, Mk IV), 6D series, 7D series, 80D, 90D, Rebel / xxxD / xxxxD series.
-* **Canon PowerShot:** High-end models supporting custom Picture Styles (G1X, G3X, G5X, etc.).
+* **Canon Cinema EOS:** C100, C200, C300 (supporting standard Picture Style files).
 
 > [!NOTE]
 > **JPEG vs RAW Shooters:**
-> * **JPEG Shooting:** The style's tone curve and color matrix are permanently baked directly into the JPEG file straight out of camera (*SOOC*).
-> * **RAW Shooting:** The RAW file preserves all sensor data. When opened in **Canon Digital Photo Professional (DPP 4)**, the style is selected as the default profile, and you can switch between all 186 styles at any time in post-production with zero quality loss.
+> * **JPEG Shooting:** The style's 3D LUT, tone curve, and color matrix are permanently baked directly into the in-camera JPEG (*SOOC* — Straight Out Of Camera).
+> * **RAW Shooting:** The RAW file preserves all sensor data. When opened in **Canon Digital Photo Professional (DPP 4)**, the Picture Style is selected as the default rendering profile and can be switched losslessly at any time.
 
 ---
 
@@ -47,44 +101,44 @@ These Picture Style profiles (`.pf2` and `.pf3`) are fully compatible with virtu
 
 Canon cameras allow loading up to **3 custom Picture Styles** simultaneously into the camera's memory slots (**User Defined 1**, **User Defined 2**, and **User Defined 3**).
 
-### Step-by-Step Installation via Canon EOS Utility 3:
-1. **Connect Camera:** Turn on your camera and connect it to your PC via USB cable (recommended for maximum stability) or Wi-Fi.
-2. **Open EOS Utility:** Launch **Canon EOS Utility 3** on your computer.
-3. **Camera Settings:** Click on **`Camera settings`** (or **`Remote Shooting`**).
-4. **Register Picture Style:** In the shooting panel, select the camera icon tab and click **`Register Picture Style File`**.
-5. **Select Slot:** Choose one of the 3 user slots (**User Defined 1**, **User Defined 2**, or **User Defined 3**).
-6. **Browse & Upload:** Click the folder icon, navigate to this library, select your preferred `.pf2` or `.pf3` file, and click **`Apply`** / **`OK`**.
-7. **Disconnect:** Once loaded, disconnect the camera safely.
+### Method 1: Canon EOS Utility 3 (Standard)
+1. Turn on your camera and connect it to your PC via USB cable.
+2. Launch **Canon EOS Utility 3** on your computer.
+3. Click on **`Camera settings`** (or **`Remote Shooting`**).
+4. Click **`Register Picture Style File`**.
+5. Select a slot (**User Defined 1**, **User Defined 2**, or **User Defined 3**).
+6. Browse to this repository, select any `.pf2` or `.pf3` file, and click **`Apply`** / **`OK`**.
+
+### Method 2: Canon Style Studio (Direct USB WPD Bypass)
+For mirrorless bodies (EOS RP, R8, etc.) where EOS Utility might re-quantize custom LUTs, use the included standalone **Canon Style Studio** (`START_CANON_STYLE_STUDIO.bat`):
+1. Connect camera via USB.
+2. Click **`Send to Camera`**.
+3. Select slot **User Def. 1, 2, or 3** — the loader injects the uncompressed 12-bit LUT payload directly via Windows WPD.
 
 ---
 
-## 💡 In-Camera Calibration & Tuning Tips
+## 🔬 Color Science & 3D LUT Engine
 
-Every Picture Style serves as a base mathematical curve. You can fine-tune the look directly in your camera menu:
-
-* **Contrast (`-4` to `+4`):** If a film simulation feels too aggressive in harsh midday light, drop contrast by `-1` or `-2` to recover shadow and highlight details.
-* **Saturation (`-4` to `+4`):** For slide film looks (like *Velvia*), lowering saturation by `-1` can yield a more modern cinematic balance.
-* **Sharpness (Strength / Fineness / Threshold):** For authentic analog grit, lower in-camera digital sharpness (`Strength: 1-2`) so the image doesn't appear overly digital.
-* **White Balance (WB Shift):** To achieve warmer golden hour aesthetics (popular in Kodak Portra recipes), shift your White Balance towards **A (Amber) +2** to **+4** and **M (Magenta) +1**.
+This repository is built around a precision mathematical color grading pipeline:
+* **Hardware-Accelerated WebGL 2.0:** Uses 3D volumetric textures (`sampler3D`) with native GPU trilinear interpolation for instantaneous grading at 60–120 fps.
+* **12-bit Quantization:** Downsamples LUT matrices to Canon's official $33^3$ format (`0x40001070` and `0x40001071`) while preserving color linearity.
+* **Full Firmware Validation:** Compiled with Canon's official `EdsCFParse.dll` runtime from Picture Style Editor, guaranteeing 100% valid CRC checksums and camera firmware compliance.
 
 ---
 
 ## 📜 Credits & Acknowledgments
 
-This repository is an archival preservation effort honoring the independent color scientists and photographers who crafted these profiles over two decades of Canon digital photography:
-
+Honoring the color scientists and photographers who developed these looks over two decades:
 * **Thomas Fransson:** Creator of the native `.pf3` film simulation suites (*Astia Pack*, *Portra EDR/STD*, *California Cowboy*, *T-Rex B&W*, *Crowdak*, *Filmic*).
 * **Vision Wrangler (Cinescopophilia):** Curator of the legendary 158-style community archive.
 * **Kevin Wang:** Author of the celebrated *Japanese Style* pastel and *LOMO* color palettes.
 * **Martin Beek (Marvels Film):** Pioneer of independent cinema profiles (*Marvels Cine*).
 * **Similaar:** Creator of the *Flaat* dynamic range Log series.
-* **Canon Inc.:** Designer of the official Picture Style architecture, Picture Style Editor, and legacy camera profiles.
+* **LvClFER:** Developer of *Canon Style Studio* and the independent serializer research.
+* **Canon Inc.:** Creator of the Picture Style architecture and DPP/PSE image engines.
 
 ---
 
 ## ⚖ Disclaimer
 
 *Canon*, *EOS*, and *Picture Style* are registered trademarks of Canon Inc. This repository is non-commercial, created for educational, creative, and historical preservation purposes.
-
----
-⭐ *If you find this library useful, consider starring the repository!*

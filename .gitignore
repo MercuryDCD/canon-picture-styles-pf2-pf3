@@ -10,5 +10,10 @@ $RECYCLE.BIN/
 *.tmp
 *.temp
 *.log
+__pycache__/
+*.pyc
+*.pyo
 .vscode/
 .idea/
+GEMINI.md
+gemini.md

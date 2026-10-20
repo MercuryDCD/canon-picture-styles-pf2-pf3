@@ -1,0 +1,21 @@
+# Auto-detect text files and perform LF normalization
+* text=auto
+
+# Binary files - preserve exact bytes (do not convert line endings)
+*.bin binary
+*.pf2 binary
+*.pf3 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.cr3 binary
+*.cr2 binary
+*.crw binary
+
+# Explicit text normalization
+*.md text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.py text eol=lf
+*.bat text eol=crlf

@@ -1,0 +1,3442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canon Picture Styles — Catálogo Interactivo & Triaje Rápido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <script src="lut_engine.js"></script>
+    <script src="presets_data.js"></script>
+    <style>
+        :root {
+            --bg-body: #08090d;
+            --bg-surface: #10121a;
+            --bg-card: #151822;
+            --bg-card-hover: #1b1f2d;
+            --border-color: #222634;
+            --border-highlight: #333a4f;
+            --text-main: #f3f4f6;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.25);
+            --star-color: #f59e0b;
+            --star-glow: rgba(245, 158, 11, 0.3);
+            --danger: #ef4444;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --color-before: #ef4444;
+            --color-after: #10b981;
+            --color-keep: #f59e0b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        /* BARRA SUPERIOR STICKY ULTRA COMPACTA (48px) */
+        header.top-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 15, 22, 0.94);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 6px 18px;
+            min-height: 48px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 1100px) {
+            header.top-header {
+                padding: 6px 12px;
+                gap: 8px;
+            }
+            .header-center {
+                order: 3;
+                max-width: 100%;
+                width: 100%;
+                margin: 4px 0 0;
+            }
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-right: 2px;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, #e11d48, #be123c);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .brand-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        /* CONMUTADOR DE VISTAS (MOSAICO vs CARRUSEL) */
+        .view-mode-tabs {
+            display: flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .view-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 700;
+            font-family: inherit;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .view-tab-btn:hover {
+            color: var(--text-main);
+        }
+
+        .view-tab-btn.active {
+            background: var(--border-highlight);
+            color: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+        }
+
+        .tab-icon {
+            font-size: 12px;
+        }
+
+        /* SELECTOR VISUAL DE FOTOS (DROPDOWN POPOVER) */
+        .visual-photo-dropdown-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .photo-picker-trigger {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 3px 6px 3px 4px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+
+        .photo-picker-trigger:hover, .photo-picker-trigger.active {
+            border-color: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .active-photo-preview {
+            width: 36px;
+            height: 24px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+            background: #000;
+        }
+
+        .dropdown-arrow {
+            font-size: 10px;
+            color: var(--text-dim);
+            transition: transform 0.2s ease;
+        }
+
+        .photo-picker-trigger.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .photo-picker-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            z-index: 150;
+            background: rgba(16, 18, 26, 0.96);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 290px;
+            animation: fadeInDown 0.15s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .photo-picker-menu.open {
+            display: flex;
+        }
+
+        .photo-picker-header {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: var(--text-dim);
+            padding-left: 2px;
+        }
+
+        .photo-thumbs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .photo-thumb-card {
+            position: relative;
+            aspect-ratio: 3 / 2;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            background: #000;
+        }
+
+        .photo-thumb-card:hover {
+            border-color: var(--text-muted);
+            transform: scale(1.04);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .photo-thumb-card.active {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .photo-thumb-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-thumb-upload {
+            position: relative;
+            aspect-ratio: 3 / 2;
+            border-radius: 6px;
+            border: 2px dashed rgba(56, 189, 248, 0.4);
+            background: rgba(56, 189, 248, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            color: var(--accent);
+        }
+
+        .photo-thumb-upload:hover {
+            border-color: var(--accent);
+            background: rgba(56, 189, 248, 0.15);
+            transform: scale(1.04);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .photo-thumb-upload span.icon { font-size: 16px; }
+        .photo-thumb-upload span.label {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SELECTORES DESPLEGABLES COMPACTOS */
+        .select-group {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2px 6px 2px 8px;
+            transition: all 0.15s ease;
+        }
+
+        .select-group:focus-within, .select-group:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .select-icon {
+            font-size: 13px;
+            color: var(--text-dim);
+            pointer-events: none;
+        }
+
+        .compact-select {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 12px;
+            font-weight: 500;
+            font-family: inherit;
+            padding: 4px 4px;
+            outline: none;
+            cursor: pointer;
+            max-width: 180px;
+        }
+
+        .compact-select option {
+            background: #12141c;
+            color: #f3f4f6;
+            padding: 8px;
+        }
+
+        .btn-icon-upload {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            color: var(--accent);
+            cursor: pointer;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .btn-icon-upload:hover {
+            background: rgba(56, 189, 248, 0.25);
+            color: #fff;
+        }
+
+        .header-center {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            max-width: 320px;
+            margin: 0 8px;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .search-input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 12px;
+            font-family: inherit;
+            padding: 5px 10px 5px 28px;
+            border-radius: 6px;
+            outline: none;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 9px;
+            color: var(--text-dim);
+            font-size: 12px;
+            pointer-events: none;
+        }
+
+        .btn-clear-search {
+            position: absolute;
+            right: 8px;
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            font-size: 12px;
+            display: none;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .status-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 4px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .status-pill strong { color: var(--text-main); }
+
+        /* SLIDER INTENSIDAD GLOBAL */
+        .intensity-control {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-card);
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .intensity-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .intensity-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 65px;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .intensity-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 11px;
+            height: 11px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 6px var(--accent-glow);
+        }
+
+        .intensity-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--text-main);
+            min-width: 28px;
+        }
+
+        /* DENSIDAD DE GRILLA */
+        .view-density-group {
+            display: flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .density-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 4px 7px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: all 0.15s ease;
+        }
+
+        .density-btn:hover { color: var(--text-main); }
+        .density-btn.active { background: var(--border-highlight); color: #fff; }
+
+        /* BOTÓN TOGGLE FAVORITOS */
+        .fav-filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.15s ease;
+        }
+
+        .fav-filter-btn.active {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: var(--star-color);
+            color: var(--star-color);
+            box-shadow: 0 0 10px var(--star-glow);
+        }
+
+        .global-before-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .global-before-btn:active, .global-before-btn.holding {
+            background: #e11d48;
+            color: #fff;
+            border-color: #f43f5e;
+        }
+
+        /* CONTENEDOR PRINCIPAL Y PANELES */
+        main.catalog-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .view-panel {
+            width: 100%;
+        }
+
+        #viewGrid {
+            padding: 12px 18px 60px;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        /* ========================================================= */
+        /* VISTA 1: GRID DE TARJETAS (MOSAICO)                      */
+        /* ========================================================= */
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .preset-grid.density-compact {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .preset-grid.density-large {
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 20px;
+        }
+
+        .preset-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+            position: relative;
+        }
+
+        .preset-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-highlight);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            background: var(--bg-card-hover);
+        }
+
+        .card-header {
+            padding: 10px 12px 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .card-tags {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            overflow: hidden;
+        }
+
+        .badge-cat {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 12px;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-format {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .btn-star {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-star:hover {
+            color: var(--star-color);
+            transform: scale(1.15);
+        }
+
+        .btn-star.favorited {
+            color: var(--star-color);
+            text-shadow: 0 0 8px var(--star-glow);
+        }
+
+        .card-canvas-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: var(--card-aspect, 3 / 2);
+            background: #000;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card-canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: filter 0.15s ease;
+        }
+
+        .card-canvas-shimmer {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .card-overlay-actions {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+
+        .preset-card:hover .card-overlay-actions {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .btn-quick-peek {
+            background: rgba(16, 18, 26, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-quick-peek:hover {
+            background: var(--border-highlight);
+            border-color: #fff;
+        }
+
+        .btn-download-quick {
+            background: rgba(16, 18, 26, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-download-quick:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .card-footer {
+            padding: 10px 12px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .preset-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .preset-look {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ========================================================= */
+        /* VISTA 2: CARRUSEL DE TRIAJE RÁPIDO (1 A 1 CON TECLADO)    */
+        /* ========================================================= */
+        .view-panel-carousel {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: calc(100vh - 48px);
+            background: #06070a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* BARRA SUPERIOR DE TRIAJE */
+        .triage-topbar {
+            height: 52px;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            gap: 12px;
+            z-index: 20;
+            flex-shrink: 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+        }
+
+        .triage-info-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 280px;
+        }
+
+        .triage-preset-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 240px;
+        }
+
+        .triage-badge-queue {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            background: #1e293b;
+            color: #38bdf8;
+            border: 1px solid #334155;
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .triage-skipped-pill {
+            font-size: 10px;
+            font-weight: 700;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        /* CENTRO: MODO ANTES/DESPUÉS + FILTRO COLA */
+        .triage-center-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .triage-mode-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #090a0f;
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .triage-mode-indicator:hover {
+            border-color: var(--border-highlight);
+        }
+
+        .triage-indicator-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--color-after);
+            transition: background 0.15s ease;
+        }
+
+        .triage-mode-text {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            color: #6ee7b7;
+        }
+
+        .triage-mode-indicator.is-before .triage-indicator-dot { background: var(--color-before); }
+        .triage-mode-indicator.is-before .triage-mode-text { color: #fca5a5; }
+
+        .triage-filter-group {
+            display: inline-flex;
+            background: #090a0f;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2px;
+            gap: 2px;
+        }
+
+        .triage-filter-pill {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .triage-filter-pill:hover { color: var(--text-main); }
+        .triage-filter-pill.active {
+            background: #1e293b;
+            color: #38bdf8;
+            border: 1px solid #334155;
+        }
+
+        /* DERECHA: BOTONES DE ACCIÓN RÁPIDA */
+        .triage-actions-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-triage {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .btn-triage-discard {
+            background: #1e293b;
+            color: #f87171;
+            border-color: #475569;
+        }
+        .btn-triage-discard:hover {
+            background: #991b1b;
+            color: #fff;
+            border-color: #ef4444;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-triage-skip {
+            background: #1e293b;
+            color: #38bdf8;
+            border-color: #334155;
+        }
+        .btn-triage-skip:hover {
+            background: #0284c7;
+            color: #fff;
+            border-color: #38bdf8;
+        }
+
+        .btn-triage-keep {
+            background: #d97706;
+            color: #fff;
+            border-color: #f59e0b;
+        }
+        .btn-triage-keep:hover {
+            background: #b45309;
+            box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+            transform: scale(1.02);
+        }
+
+        .btn-triage-star {
+            background: #1e293b;
+            color: var(--star-color);
+            border-color: #475569;
+            padding: 6px 10px;
+        }
+        .btn-triage-star:hover {
+            background: rgba(245, 158, 11, 0.2);
+            border-color: var(--star-color);
+        }
+        .btn-triage-star.favorited {
+            background: rgba(245, 158, 11, 0.3);
+            border-color: var(--star-color);
+            box-shadow: 0 0 10px var(--star-glow);
+        }
+
+        .btn-triage-drawer {
+            background: #10121a;
+            color: #cbd5e1;
+            border-color: var(--border-color);
+        }
+        .btn-triage-drawer:hover {
+            background: #1e293b;
+            color: #fff;
+            border-color: var(--border-highlight);
+        }
+
+        .btn-triage-restart {
+            background: transparent;
+            color: #a78bfa;
+            border-color: rgba(167, 139, 250, 0.3);
+            padding: 6px 8px;
+        }
+        .btn-triage-restart:hover {
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            border-color: #8b5cf6;
+        }
+
+        /* VIEWPORT CENTRAL DEL CARRUSEL */
+        .triage-viewport-wrap {
+            flex: 1;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #carouselGlCanvas {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            transition: object-fit 0.15s ease;
+        }
+
+        #carouselGlCanvas.fit-contain { object-fit: contain; }
+        #carouselGlCanvas.fit-cover { object-fit: cover; width: 100%; height: 100%; }
+
+        /* CORTINA SPLIT A/B EN EL CARRUSEL */
+        .carousel-split-bar {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #fff;
+            z-index: 25;
+            cursor: ew-resize;
+            box-shadow: 0 0 10px rgba(0,0,0,0.8);
+            display: none;
+        }
+
+        .carousel-split-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+
+        /* INSIGNIAS FLOTANTES DE ORIGINAL Y PRESET */
+        .triage-badge-fl-left {
+            position: absolute;
+            top: 14px;
+            left: 18px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .triage-badge-fl-right {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: rgba(16, 185, 129, 0.25);
+            backdrop-filter: blur(8px);
+            color: #34d399;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        /* PANEL FLOTANTE DE METADATOS (HUD INFERIOR IZQUIERDO) */
+        .triage-meta-hud {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            z-index: 30;
+            background: rgba(13, 15, 22, 0.88);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            max-width: 440px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .triage-meta-hud.minimized {
+            opacity: 0.3;
+            transform: scale(0.95);
+        }
+
+        .triage-meta-hud.minimized:hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .triage-hud-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 6px;
+        }
+
+        .triage-hud-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .triage-hud-field {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .triage-hud-label {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+        }
+
+        .triage-hud-text {
+            font-size: 11px;
+            line-height: 1.35;
+            color: var(--text-muted);
+        }
+
+        /* BARRA FLOTANTE DE ATAJOS (HUD INFERIOR CENTRAL) */
+        .triage-shortcuts-hud {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(13, 15, 22, 0.82);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
+            padding: 6px 18px;
+            z-index: 30;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .triage-shortcuts-hud:hover {
+            opacity: 1;
+            background: rgba(13, 15, 22, 0.95);
+        }
+
+        .triage-shortcut-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            color: #94a3b8;
+            white-space: nowrap;
+        }
+
+        .triage-shortcut-item kbd {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.08);
+            color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* BOTÓN DE ENCUADRE FLOTANTE */
+        .triage-btn-fit {
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(13, 15, 22, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.15s ease;
+        }
+
+        .triage-btn-fit:hover {
+            background: #1e293b;
+            color: #fff;
+            border-color: #38bdf8;
+        }
+
+        /* PANTALLA EMPTY STATE (FIN DE CRIBA) */
+        .triage-empty-state {
+            display: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            inset: 0;
+            background: #08090d;
+            z-index: 15;
+            padding: 20px;
+        }
+
+        .triage-empty-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 36px 32px;
+            text-align: center;
+            max-width: 480px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .triage-empty-icon { font-size: 42px; }
+        .triage-empty-title { font-size: 20px; font-weight: 700; color: #fff; }
+        .triage-empty-desc { font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+
+        /* DRAWER LATERAL DE FAVORITOS & DESCARTADOS */
+        .triage-drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 250;
+            display: none;
+        }
+
+        .triage-drawer-overlay.open { display: block; }
+
+        .triage-drawer {
+            position: fixed;
+            top: 0;
+            right: -480px;
+            bottom: 0;
+            width: 460px;
+            max-width: 90vw;
+            background: var(--bg-surface);
+            border-left: 1px solid var(--border-color);
+            z-index: 260;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.6);
+        }
+
+        .triage-drawer.open { right: 0; }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .drawer-tabs {
+            display: flex;
+            gap: 6px;
+        }
+
+        .drawer-tab {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .drawer-tab:hover { color: #fff; background: #1e293b; }
+        .drawer-tab.active { background: #1e293b; color: #38bdf8; border-color: #334155; }
+
+        .drawer-close-btn {
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .drawer-close-btn:hover { color: #fff; }
+
+        .drawer-body {
+            flex: 1;
+            padding: 16px 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .drawer-toolbar {
+            display: flex;
+            gap: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .drawer-action-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .drawer-action-btn:hover { color: #fff; border-color: var(--border-highlight); }
+
+        .drawer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .saved-item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            position: relative;
+        }
+
+        .saved-item-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .saved-item-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .saved-item-meta {
+            font-size: 10px;
+            color: var(--text-dim);
+        }
+
+        .saved-item-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .btn-item-del {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 2px 6px;
+        }
+        .btn-item-del:hover { color: #f87171; }
+
+        /* MODAL DE GUARDAR CON NOTA EN CARRUSEL */
+        .keep-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .keep-modal-backdrop.open { display: flex; }
+
+        .keep-modal-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-lg);
+            width: 440px;
+            max-width: 90vw;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .keep-input-field {
+            width: 100%;
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-family: inherit;
+            outline: none;
+        }
+        .keep-input-field:focus { border-color: var(--color-keep); }
+
+        /* ========================================================= */
+        /* MODAL DE INSPECCIÓN A/B (DESDE EL MOSAICO)                */
+        /* ========================================================= */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .modal-backdrop.open { display: flex; opacity: 1; }
+
+        .modal-window {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 1200px;
+            height: 90vh;
+            max-height: 820px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-header {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-title { font-size: 18px; font-weight: 700; color: #fff; }
+
+        .modal-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .modal-close-btn:hover { color: #fff; }
+
+        .modal-body {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .modal-viewport-area {
+            flex: 1;
+            background: #000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .modal-gl-canvas {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .viewport-badge-left {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            pointer-events: none;
+        }
+
+        .viewport-badge-right {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(16, 185, 129, 0.25);
+            backdrop-filter: blur(8px);
+            color: #34d399;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            pointer-events: none;
+        }
+
+        .split-curtain-bar {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #fff;
+            z-index: 10;
+            cursor: ew-resize;
+            box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .split-curtain-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+
+        .modal-sidebar {
+            width: 340px;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            overflow-y: auto;
+            gap: 20px;
+        }
+
+        .meta-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .meta-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+        }
+
+        .meta-text {
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-main);
+        }
+
+        .meta-actions-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+        }
+
+        .btn-download-modal {
+            background: var(--accent);
+            color: #000;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: var(--radius-md);
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-download-modal:hover {
+            box-shadow: 0 0 16px var(--accent-glow);
+            transform: translateY(-1px);
+        }
+
+        .modal-nav-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .modal-nav-btn {
+            flex: 1;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.15s ease;
+            text-align: center;
+        }
+
+        .modal-nav-btn:hover {
+            color: #fff;
+            border-color: var(--border-highlight);
+        }
+
+        /* OVERLAY DRAG & DROP GLOBAL */
+        .drag-drop-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 400;
+            background: rgba(8, 9, 13, 0.92);
+            border: 4px dashed var(--accent);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+            pointer-events: none;
+        }
+
+        .drag-drop-overlay.active { display: flex; }
+
+        .drag-icon {
+            font-size: 48px;
+            color: var(--accent);
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-12px); }
+        }
+
+        .drag-title { font-size: 24px; font-weight: 700; color: #fff; }
+        .drag-sub { font-size: 14px; color: var(--text-muted); }
+
+        /* TOAST NOTIFICACIONES */
+        .toast-box {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 500;
+            background: rgba(16, 18, 26, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-highlight);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            display: none;
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--border-highlight); }
+    </style>
+</head>
+<body>
+
+    <!-- DRAG & DROP OVERLAY -->
+    <div id="dragDropOverlay" class="drag-drop-overlay">
+        <div class="drag-icon">📸</div>
+        <div class="drag-title">Suelta tu foto para procesar el catálogo</div>
+        <div class="drag-sub">Formatos soportados: RAW Canon (.CR3 / .CR2 / .CRW) y JPG / PNG / WebP</div>
+    </div>
+
+    <!-- HEADER SUPERIOR ULTRA COMPACTO -->
+    <header class="top-header">
+        <!-- IZQUIERDA: MARCA + PESTAÑAS VISTA + FOTO DROPDOWN + CATEGORIA DROPDOWN -->
+        <div class="header-left">
+            <div class="brand-box" title="Canon Picture Styles Suite">
+                <span class="brand-badge">EOS</span>
+                <span class="brand-title">Picture Styles</span>
+            </div>
+
+            <!-- Conmutador de Vistas (Mosaico vs Carrusel) -->
+            <div class="view-mode-tabs" role="tablist">
+                <button id="tabViewGrid" class="view-tab-btn active" title="Vista Mosaico (550 presets) - Tecla V">
+                    <span class="tab-icon">🗂️</span> Mosaico
+                </button>
+                <button id="tabViewCarousel" class="view-tab-btn" title="Criba Rápida 1 a 1 (Carrusel) - Tecla V">
+                    <span class="tab-icon">⚡</span> Carrusel
+                </button>
+            </div>
+
+            <!-- Selector Visual de Foto de Prueba -->
+            <div class="visual-photo-dropdown-wrap" id="photoDropdownWrap">
+                <button class="photo-picker-trigger" id="photoPickerTrigger" title="Seleccionar foto de prueba">
+                    <img id="activePhotoThumb" class="active-photo-preview" src="samples/01_portrait_skin.jpg" alt="Foto">
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+
+                <!-- Menú desplegable visual -->
+                <div class="photo-picker-menu" id="photoPickerMenu">
+                    <div class="photo-picker-header">Foto de prueba</div>
+                    <div class="photo-thumbs-grid" id="photoThumbsGrid"></div>
+                </div>
+                <button class="btn-icon-upload" id="btnUploadTrigger" title="Subir foto propia (.CR3 / .CR2 / JPG / PNG)" style="margin-left: 4px;">
+                    <span>📁</span> Subir
+                </button>
+                <input type="file" id="fileInput" accept=".cr3,.cr2,.crw,.jpg,.jpeg,.png,.webp" style="display: none;">
+            </div>
+
+            <!-- Desplegable Categoría -->
+            <div class="select-group" id="headerCategorySelectWrap" title="Filtrar por macro-categoría">
+                <span class="select-icon">📂</span>
+                <select id="categorySelect" class="compact-select"></select>
+            </div>
+        </div>
+
+        <!-- CENTRO: BUSCADOR (VISIBLE EN MOSAICO) -->
+        <div class="header-center" id="headerSearchWrap">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar preset, película o creador...">
+                <button id="btnClearSearch" class="btn-clear-search">✕</button>
+            </div>
+        </div>
+
+        <!-- DERECHA: FAVORITOS + INTENSIDAD + DENSIDAD + ORIGINAL + CONTEO -->
+        <div class="header-right">
+            <!-- Favoritos -->
+            <button id="btnFavFilter" class="fav-filter-btn" title="Filtrar solo favoritos ⭐">
+                <span>⭐</span> <span id="favCountText">0</span>
+            </button>
+
+            <!-- Intensidad Global -->
+            <div class="intensity-control" title="Intensidad global de la gradación (0-100%)">
+                <span class="intensity-label">LUT</span>
+                <input type="range" id="globalIntensity" class="intensity-slider" min="0" max="100" value="100">
+                <span id="globalIntensityText" class="intensity-val">100%</span>
+            </div>
+
+            <!-- Densidad de Rejilla (Solo activa en Mosaico) -->
+            <div class="view-density-group" id="densityGroupWrap" title="Tamaño de miniaturas">
+                <button class="density-btn" data-density="compact" title="Vista compacta (más miniaturas)">▪▪▪</button>
+                <button class="density-btn active" data-density="normal" title="Vista estándar">◼◼</button>
+                <button class="density-btn" data-density="large" title="Vista grande">◼</button>
+            </div>
+
+            <!-- Botón Global Original (Espacio) -->
+            <button class="global-before-btn" id="btnHoldBefore" title="Mantén pulsado o presiona la barra ESPACIO para ver el original">
+                👁️ Original
+            </button>
+
+            <!-- Conteo de presets -->
+            <div class="status-pill" id="statusPill" title="Presets visibles / Total">
+                <strong id="visibleCountText">550</strong>/<span id="totalCountText">550</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="catalog-container">
+        <!-- ========================================================= -->
+        <!-- VISTA 1: GRID DE PRESETS (MOSAICO 550)                    -->
+        <!-- ========================================================= -->
+        <div id="viewGrid" class="view-panel">
+            <div id="presetsGrid" class="preset-grid"></div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- VISTA 2: CARRUSEL DE TRIAJE RÁPIDO 1 A 1                  -->
+        <!-- ========================================================= -->
+        <div id="viewCarousel" class="view-panel-carousel" style="display: none;">
+            <!-- TOPBAR DE TRIAJE -->
+            <div class="triage-topbar">
+                <div class="triage-info-box">
+                    <span id="triageFormatBadge" class="badge-format">PF3</span>
+                    <span id="triageCatBadge" class="badge-cat" style="background: #0284c7; color: #fff;">Fujifilm</span>
+                    <span id="triagePresetName" class="triage-preset-name">Nombre Preset</span>
+                    <span id="triageQueueBadge" class="triage-badge-queue">1 / 480 restantes</span>
+                    <span id="triageSkippedBadge" class="triage-skipped-pill">↷ Saltado</span>
+                </div>
+
+                <div class="triage-center-controls">
+                    <!-- Botón Modo Antes / Después -->
+                    <div id="btnTriageToggleMode" class="triage-mode-indicator" title="Alternar Antes/Después (Atajo: ESPACIO o B)">
+                        <div class="triage-indicator-dot"></div>
+                        <span id="triageModeText" class="triage-mode-text">DESPUÉS (PRESET)</span>
+                    </div>
+
+                    <!-- Modo de Cola: Pendientes vs Todos -->
+                    <div class="triage-filter-group" title="Modo de criba">
+                        <button id="btnTriageQueuePending" class="triage-filter-pill active" title="Bucle continuo de pendientes (excluye guardados y descartados)">Solo Pendientes</button>
+                        <button id="btnTriageQueueAll" class="triage-filter-pill" title="Navegar por el catálogo completo">Todos</button>
+                    </div>
+
+                    <!-- Desplegable Carpeta / Categoría en Carrusel -->
+                    <div class="select-group" title="Filtrar carrusel por carpeta">
+                        <span class="select-icon">📁</span>
+                        <select id="triageFolderSelect" class="compact-select"></select>
+                    </div>
+                </div>
+
+                <div class="triage-actions-group">
+                    <button id="btnTriageDiscard" class="btn-triage btn-triage-discard" title="Descartar estilo y pasar al siguiente (Atajo: D o Flecha Izq)">
+                        <span>✕</span> Descartar (D)
+                    </button>
+                    <button id="btnTriageSkip" class="btn-triage btn-triage-skip" title="Posponer en bucle sin descartar (Atajo: S o Flecha Abajo)">
+                        <span>↷</span> Saltar (S)
+                    </button>
+                    <button id="btnTriageKeep" class="btn-triage btn-triage-keep" title="Guardar en favoritos y avanzar (Atajo: K o ENTER o Flecha Der)">
+                        <span>★</span> Mantener (K)
+                    </button>
+                    <button id="btnTriageStar" class="btn-triage btn-triage-star" title="Marcar como favorito estrella (Atajo: M)">
+                        ⭐
+                    </button>
+                    <button id="btnTriageRestart" class="btn-triage btn-triage-restart" title="Reiniciar bucle de pendientes (Atajo: R)">
+                        ↺ Reset
+                    </button>
+                    <button id="btnTriageDrawer" class="btn-triage btn-triage-drawer" title="Ver lista de favoritos y descartados">
+                        ⭐ Guardados (<span id="triageDrawerBadge">0</span>)
+                    </button>
+                </div>
+            </div>
+
+            <!-- VIEWPORT DEL CARRUSEL CON WEBGL 2.0 -->
+            <div class="triage-viewport-wrap" id="triageViewportWrap">
+                <canvas id="carouselGlCanvas" class="fit-contain"></canvas>
+
+                <div class="triage-badge-fl-left">ORIGINAL</div>
+                <div class="triage-badge-fl-right" id="triageRightBadge">PRESET APLICADO</div>
+
+                <!-- Botón de encuadre en el carrusel -->
+                <button id="btnTriageFit" class="triage-btn-fit" title="Alternar entre foto completa y recorte lleno (Atajo: F)">
+                    ⛶ <span id="triageFitText">Foto Completa</span>
+                </button>
+
+                <!-- Cortina partida A/B interactiva -->
+                <div class="carousel-split-bar" id="carouselSplitBar" style="left: 50%;">
+                    <div class="carousel-split-handle">↔</div>
+                </div>
+
+                <!-- PANEL FLOTANTE DE METADATOS (HUD) -->
+                <div class="triage-meta-hud" id="triageMetaHud">
+                    <div class="triage-hud-header">
+                        <span class="triage-hud-title" id="hudPresetTitle">Nombre Preset</span>
+                        <button id="btnToggleHudMin" style="background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:11px;" title="Minimizar metadatos">▾</button>
+                    </div>
+                    <div class="triage-hud-field">
+                        <span class="triage-hud-label">Perfil Tonal (Look)</span>
+                        <p class="triage-hud-text" id="hudMetaLook">-</p>
+                    </div>
+                    <div class="triage-hud-field">
+                        <span class="triage-hud-label">Uso Recomendado</span>
+                        <p class="triage-hud-text" id="hudMetaBestFor">-</p>
+                    </div>
+                    <div class="triage-hud-field">
+                        <span class="triage-hud-label">Herencia / Emulsión</span>
+                        <p class="triage-hud-text" id="hudMetaHeritage">-</p>
+                    </div>
+                </div>
+
+                <!-- BARRA FLOTANTE DE ATAJOS DE TECLADO -->
+                <div class="triage-shortcuts-hud" id="triageShortcutsHud">
+                    <div class="triage-shortcut-item"><kbd>Espacio</kbd> Antes/Después</div>
+                    <div class="triage-shortcut-item"><kbd>K / Enter</kbd> Mantener</div>
+                    <div class="triage-shortcut-item"><kbd>D</kbd> Descartar</div>
+                    <div class="triage-shortcut-item"><kbd>S</kbd> Saltar</div>
+                    <div class="triage-shortcut-item"><kbd>M</kbd> ⭐ Top</div>
+                    <div class="triage-shortcut-item"><kbd>F</kbd> Encuadre</div>
+                    <div class="triage-shortcut-item"><kbd>R</kbd> Reiniciar</div>
+                    <div class="triage-shortcut-item"><kbd>← / →</kbd> Navegar</div>
+                </div>
+
+                <!-- PANTALLA EMPTY STATE (FIN DE CRIBA) -->
+                <div class="triage-empty-state" id="triageEmptyState">
+                    <div class="triage-empty-card">
+                        <div class="triage-empty-icon">🎉</div>
+                        <h2 class="triage-empty-title" id="emptyStateTitle">¡Criba Completada!</h2>
+                        <p class="triage-empty-desc" id="emptyStateDesc">
+                            Has clasificado todos los estilos de esta selección.<br>
+                            Tus favoritos están guardados y listos.
+                        </p>
+                        <div style="display: flex; gap: 10px; margin-top: 8px;">
+                            <button id="btnEmptyRestart" class="btn-triage btn-triage-keep">↺ Reiniciar bucle</button>
+                            <button id="btnEmptyViewGrid" class="btn-triage btn-triage-drawer">🗂️ Ver en Mosaico</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- DRAWER LATERAL DE FAVORITOS & DESCARTADOS -->
+    <div class="triage-drawer-overlay" id="triageDrawerOverlay"></div>
+    <div class="triage-drawer" id="triageDrawer">
+        <div class="drawer-header">
+            <div class="drawer-tabs">
+                <button id="tabDrawerSaved" class="drawer-tab active">⭐ Favoritos (<span id="drawerSavedCount">0</span>)</button>
+                <button id="tabDrawerDiscarded" class="drawer-tab">✕ Descartados (<span id="drawerDiscardedCount">0</span>)</button>
+            </div>
+            <button id="btnDrawerClose" class="drawer-close-btn" title="Cerrar panel">✕</button>
+        </div>
+        <div class="drawer-body">
+            <!-- Sección Guardados -->
+            <div id="drawerSavedSection" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="drawer-toolbar">
+                    <button id="btnCopyForEOS" class="drawer-action-btn" title="Copiar nombres para las ranuras de cámara Canon EOS">
+                        📋 Copiar para EOS Utility (Top 3)
+                    </button>
+                    <button id="btnExportSavedJSON" class="drawer-action-btn" title="Exportar archivo JSON con tus favoritos">
+                        💾 Exportar JSON
+                    </button>
+                </div>
+                <div class="drawer-list" id="drawerSavedList"></div>
+            </div>
+
+            <!-- Sección Descartados -->
+            <div id="drawerDiscardedSection" style="display: none; flex-direction: column; gap: 10px;">
+                <div class="drawer-toolbar">
+                    <button id="btnRestoreAllDiscarded" class="drawer-action-btn" style="color: #38bdf8;">
+                        ↺ Recuperar todos los descartados
+                    </button>
+                </div>
+                <div class="drawer-list" id="drawerDiscardedList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE GUARDAR CON NOTA EN CARRUSEL -->
+    <div id="carouselKeepModal" class="keep-modal-backdrop">
+        <div class="keep-modal-box">
+            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">★ Guardar en Favoritos</h3>
+            <p style="font-size: 12px; color: var(--text-muted);">Puedes asignarle un nombre personalizado o notas para tu sesión:</p>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Nombre personalizado</label>
+                <input type="text" id="keepModalCustomName" class="keep-input-field">
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Nota / Sensación tonal</label>
+                <input type="text" id="keepModalCustomDesc" class="keep-input-field" placeholder="Ej: Tonos cálidos para retratos en golden hour...">
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px;">
+                <button id="btnKeepModalCancel" class="btn-triage" style="background: transparent; color: var(--text-muted); border-color: var(--border-color);">Cancelar</button>
+                <button id="btnKeepModalConfirm" class="btn-triage btn-triage-keep">Guardar (Enter)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE INSPECCIÓN DETALLADA A/B (DESDE EL MOSAICO) -->
+    <div id="modalInspection" class="modal-backdrop">
+        <div class="modal-window">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span id="modalCatBadge" class="badge-cat">Categoría</span>
+                    <span id="modalFormatBadge" class="badge-format">PF3</span>
+                    <h2 id="modalPresetTitle" class="modal-title">Nombre del Preset</h2>
+                    <button id="modalStarBtn" class="btn-star" title="Marcar como favorito">⭐</button>
+                </div>
+                <button id="modalCloseBtn" class="modal-close-btn" title="Cerrar (Esc)">✕</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-viewport-area" id="modalViewport">
+                    <canvas id="modalGlCanvas" class="modal-gl-canvas"></canvas>
+                    <div class="viewport-badge-left">ORIGINAL</div>
+                    <div class="viewport-badge-right" id="modalRightBadge">PRESET</div>
+                    <div class="split-curtain-bar" id="modalSplitBar" style="left: 50%;">
+                        <div class="split-curtain-handle">↔</div>
+                    </div>
+                </div>
+
+                <div class="modal-sidebar">
+                    <div class="meta-section">
+                        <div class="meta-field">
+                            <span class="meta-label">Perfil Tonal (Look)</span>
+                            <p class="meta-text" id="modalMetaLook">-</p>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">Uso Recomendado</span>
+                            <p class="meta-text" id="modalMetaBestFor">-</p>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">Emulsión / Herencia Histórica</span>
+                            <p class="meta-text" id="modalMetaHeritage">-</p>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">Origen / Autor</span>
+                            <p class="meta-text" id="modalMetaAuthor">-</p>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">Intensidad en Modal</span>
+                            <div class="intensity-control" style="margin-top: 4px;">
+                                <input type="range" id="modalIntensitySlider" class="intensity-slider" min="0" max="100" value="100" style="width: 100%;">
+                                <span id="modalIntensityVal" class="intensity-val">100%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="meta-actions-box">
+                        <a id="modalDownloadBtn" href="#" download class="btn-download-modal">
+                            <span>⬇</span> Descargar Archivo para Cámara
+                        </a>
+                        <div class="modal-nav-row">
+                            <button id="modalPrevBtn" class="modal-nav-btn">← Anterior (←)</button>
+                            <button id="modalNextBtn" class="modal-nav-btn">Siguiente (→) →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast-box"></div>
+
+    <script>
+    /**
+     * Canon Picture Styles Suite - Plataforma Unificada
+     * Modos: Mosaico General (550 presets) & Carrusel de Triaje Rápido 1 a 1.
+     * Persistencia y sincronización compartida al 100% con compare_saved y triage_app.
+     */
+    (function() {
+        // ==========================================
+        // ESTADO GLOBAL & PERSISTENCIA
+        // ==========================================
+        let currentView = 'grid'; // 'grid' | 'carousel'
+        let currentCategory = 'ALL';
+        let filterOnlyFavorites = false;
+        let searchQuery = '';
+        let globalIntensity = 1.0;
+        let isGlobalBefore = false;
+
+        let activeImageSource = null;
+        let activeImageThumb = null;
+        let activeImageName = '';
+
+        // Conjuntos sincronizados con localStorage
+        let realFavoritesSet = new Set();  // canon_real_favorites (Array<string>)
+        let savedPresetsList = [];          // canon_triage_saved (Array<Object>)
+        let discardedIdsSet = new Set();   // canon_triage_discarded (Array<string>)
+        let skippedIdsSet = new Set();     // canon_triage_skipped (Array<string>)
+        let fitMode = 'contain';            // canon_triage_fit ('contain' | 'cover')
+
+        // Estado del Carrusel
+        let triageFilterMode = 'pending';  // 'pending' | 'all'
+        let triageSelectedFolder = 'all';  // 'all' | category_id
+        let triageQueueIndex = 0;
+        let isTriageBefore = false;
+        let activeDrawerTab = 'saved';     // 'saved' | 'discarded'
+
+        // Motores WebGL 2.0
+        let offscreenLutEngine = null;
+        let modalLutEngine = null;
+        let carouselLutEngine = null;
+
+        let filteredPresets = [];
+        let currentModalIndex = -1;
+        let thumbCache = new Map();
+
+        // Mapeo retrocompatible de identificadores antiguos a canónicos
+        function migrateId(rawId) {
+            if (!rawId) return rawId;
+            if (window.CANON_PRESETS.some(p => p.id === rawId)) return rawId;
+            const stem = rawId.includes('__') ? rawId.split('__')[1] : rawId;
+            const match = window.CANON_PRESETS.find(p => 
+                p.id === rawId || 
+                p.name === stem || 
+                p.filename === stem || 
+                p.filename.startsWith(stem + '.') || 
+                p.id.endsWith('__' + stem)
+            );
+            return match ? match.id : rawId;
+        }
+
+        function loadStorageState() {
+            try {
+                // 1. canon_real_favorites & canon_catalog_favorites
+                const rawReal = JSON.parse(localStorage.getItem('canon_real_favorites') || localStorage.getItem('canon_catalog_favorites') || '[]');
+                realFavoritesSet = new Set(rawReal.map(migrateId));
+
+                // 2. canon_triage_saved
+                const rawSaved = JSON.parse(localStorage.getItem('canon_triage_saved') || '[]');
+                savedPresetsList = rawSaved.map(s => {
+                    const mid = migrateId(s.id);
+                    const p = window.CANON_PRESETS.find(item => item.id === mid);
+                    return {
+                        id: mid,
+                        preset_name: s.preset_name || (p ? p.name : mid),
+                        filename: s.filename || (p ? p.filename : mid),
+                        category: s.category || (p ? p.catLabel : ''),
+                        custom_name: s.custom_name || s.preset_name || (p ? p.name : mid),
+                        custom_desc: s.custom_desc || (p ? p.look : ''),
+                        saved_at: s.saved_at || new Date().toISOString()
+                    };
+                });
+
+                // Unir favoritos bidireccionalmente
+                savedPresetsList.forEach(s => realFavoritesSet.add(s.id));
+                realFavoritesSet.forEach(id => {
+                    if (!savedPresetsList.some(s => s.id === id)) {
+                        const p = window.CANON_PRESETS.find(item => item.id === id);
+                        if (p) {
+                            savedPresetsList.push({
+                                id: p.id,
+                                preset_name: p.name,
+                                filename: p.filename,
+                                category: p.catLabel,
+                                custom_name: p.name,
+                                custom_desc: p.look,
+                                saved_at: new Date().toISOString()
+                            });
+                        }
+                    }
+                });
+
+                // 3. canon_triage_discarded
+                const rawDiscarded = JSON.parse(localStorage.getItem('canon_triage_discarded') || '[]');
+                discardedIdsSet = new Set(rawDiscarded.map(migrateId));
+
+                // 4. canon_triage_skipped
+                const rawSkipped = JSON.parse(localStorage.getItem('canon_triage_skipped') || '[]');
+                skippedIdsSet = new Set(rawSkipped.map(migrateId));
+
+                // 5. Preferencias
+                fitMode = localStorage.getItem('canon_triage_fit') || 'contain';
+                triageFilterMode = localStorage.getItem('canon_triage_filter_mode') || 'pending';
+                triageSelectedFolder = localStorage.getItem('canon_triage_selected_folder') || 'all';
+
+                persistAllState();
+                updateAllBadges();
+            } catch (err) {
+                console.error('[Storage] Error cargando estado:', err);
+            }
+        }
+
+        function persistAllState() {
+            try {
+                const favArray = Array.from(realFavoritesSet);
+                localStorage.setItem('canon_real_favorites', JSON.stringify(favArray));
+                localStorage.setItem('canon_catalog_favorites', JSON.stringify(favArray));
+                localStorage.setItem('canon_triage_saved', JSON.stringify(savedPresetsList));
+                localStorage.setItem('canon_triage_discarded', JSON.stringify(Array.from(discardedIdsSet)));
+                localStorage.setItem('canon_triage_skipped', JSON.stringify(Array.from(skippedIdsSet)));
+                localStorage.setItem('canon_triage_fit', fitMode);
+                localStorage.setItem('canon_triage_filter_mode', triageFilterMode);
+                localStorage.setItem('canon_triage_selected_folder', triageSelectedFolder);
+            } catch (err) {
+                console.error('[Storage] Error persistiendo estado:', err);
+            }
+        }
+
+        function updateAllBadges() {
+            const count = realFavoritesSet.size;
+            const favCountText = document.getElementById('favCountText');
+            if (favCountText) favCountText.innerText = count;
+
+            const triageDrawerBadge = document.getElementById('triageDrawerBadge');
+            if (triageDrawerBadge) triageDrawerBadge.innerText = savedPresetsList.length;
+
+            const drawerSavedCount = document.getElementById('drawerSavedCount');
+            if (drawerSavedCount) drawerSavedCount.innerText = savedPresetsList.length;
+
+            const drawerDiscardedCount = document.getElementById('drawerDiscardedCount');
+            if (drawerDiscardedCount) drawerDiscardedCount.innerText = discardedIdsSet.size;
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            if (!t) return;
+            t.innerText = msg;
+            t.style.display = 'block';
+            clearTimeout(t._timer);
+            t._timer = setTimeout(() => {
+                t.style.display = 'none';
+            }, 2400);
+        }
+
+        // ==========================================
+        // MOTORES WEBGL 2.0
+        // ==========================================
+        function initEngines() {
+            offscreenLutEngine = new LutEngine();
+            modalLutEngine = new LutEngine(document.getElementById('modalGlCanvas'));
+            carouselLutEngine = new LutEngine(document.getElementById('carouselGlCanvas'));
+        }
+
+        function updateThumbSource(img) {
+            const maxW = 400;
+            const w = img.naturalWidth || img.videoWidth || img.width;
+            const h = img.naturalHeight || img.videoHeight || img.height;
+            const scale = Math.min(maxW / w, 1.0);
+            const tw = Math.round(w * scale);
+            const th = Math.round(h * scale);
+
+            const c = document.createElement('canvas');
+            c.width = tw;
+            c.height = th;
+            const ctx = c.getContext('2d');
+            ctx.drawImage(img, 0, 0, tw, th);
+
+            activeImageThumb = c;
+            offscreenLutEngine.setImage(activeImageThumb);
+            thumbCache.clear();
+
+            document.documentElement.style.setProperty('--card-aspect', `${w} / ${h}`);
+        }
+
+        async function loadSamplePhoto(sample) {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = () => {
+                activeImageSource = img;
+                activeImageName = sample.name;
+                updateThumbSource(img);
+                if (modalLutEngine) modalLutEngine.setImage(img);
+                if (carouselLutEngine) carouselLutEngine.setImage(img);
+
+                const triggerImg = document.getElementById('activePhotoThumb');
+                if (triggerImg) triggerImg.src = sample.file;
+
+                document.querySelectorAll('#photoThumbsGrid .photo-thumb-card').forEach(c => {
+                    c.classList.toggle('active', c.getAttribute('data-sample-id') === sample.id);
+                });
+
+                if (currentView === 'grid') {
+                    renderAllVisibleCards();
+                } else {
+                    renderCurrentTriage();
+                }
+                showToast(`Foto cambiada: ${sample.name}`);
+            };
+            img.src = sample.file;
+        }
+
+        async function handleUserPhotoFile(file) {
+            try {
+                showToast(`Leyendo ${file.name}...`);
+                const res = await RawPreviewExtractor.loadFile(file);
+                const img = new Image();
+                img.onload = () => {
+                    activeImageSource = img;
+                    activeImageName = file.name;
+                    updateThumbSource(img);
+                    if (modalLutEngine) modalLutEngine.setImage(img);
+                    if (carouselLutEngine) carouselLutEngine.setImage(img);
+
+                    const triggerImg = document.getElementById('activePhotoThumb');
+                    if (triggerImg) triggerImg.src = res.url;
+
+                    document.querySelectorAll('#photoThumbsGrid .photo-thumb-card').forEach(c => c.classList.remove('active'));
+                    const grid = document.getElementById('photoThumbsGrid');
+                    let customCard = grid.querySelector('.photo-thumb-card.custom-upload');
+                    if (!customCard) {
+                        customCard = document.createElement('div');
+                        customCard.className = 'photo-thumb-card custom-upload active';
+                        customCard.innerHTML = `<img src="${res.url}" alt="Foto propia">`;
+                        customCard.addEventListener('click', () => {
+                            activeImageSource = img;
+                            activeImageName = file.name;
+                            updateThumbSource(img);
+                            if (modalLutEngine) modalLutEngine.setImage(img);
+                            if (carouselLutEngine) carouselLutEngine.setImage(img);
+                            if (triggerImg) triggerImg.src = res.url;
+                            document.querySelectorAll('#photoThumbsGrid .photo-thumb-card').forEach(c => c.classList.remove('active'));
+                            customCard.classList.add('active');
+                            document.getElementById('photoPickerMenu').classList.remove('open');
+                            document.getElementById('photoPickerTrigger').classList.remove('active');
+                            if (currentView === 'grid') renderAllVisibleCards();
+                            else renderCurrentTriage();
+                        });
+                        grid.insertBefore(customCard, grid.firstChild);
+                    } else {
+                        customCard.querySelector('img').src = res.url;
+                        customCard.classList.add('active');
+                    }
+
+                    if (currentView === 'grid') renderAllVisibleCards();
+                    else renderCurrentTriage();
+
+                    showToast(`Foto propia cargada: ${file.name}`);
+                };
+                img.src = res.url;
+            } catch (err) {
+                alert(`Error al procesar archivo: ${err.message}`);
+            }
+        }
+
+        // ==========================================
+        // VISTA 1: GRID & MOSAICO
+        // ==========================================
+        let observer = null;
+        function setupIntersectionObserver() {
+            if (observer) observer.disconnect();
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        const presetId = card.getAttribute('data-preset-id');
+                        renderCard(card, presetId);
+                    }
+                });
+            }, { rootMargin: '200px 0px 200px 0px' });
+
+            document.querySelectorAll('.preset-card').forEach(c => observer.observe(c));
+        }
+
+        async function renderCard(card, presetId) {
+            if (!activeImageThumb || !offscreenLutEngine) return;
+            const p = window.CANON_PRESETS.find(item => item.id === presetId);
+            if (!p) return;
+
+            const canvas = card.querySelector('.card-canvas');
+            if (!canvas) return;
+
+            if (canvas.width !== activeImageThumb.width || canvas.height !== activeImageThumb.height) {
+                canvas.width = activeImageThumb.width;
+                canvas.height = activeImageThumb.height;
+            }
+
+            const ctx = canvas.getContext('2d');
+            if (isGlobalBefore) {
+                ctx.drawImage(activeImageThumb, 0, 0);
+                const shimmer = card.querySelector('.card-canvas-shimmer');
+                if (shimmer) shimmer.style.display = 'none';
+                return;
+            }
+
+            const cacheKey = `${p.id}_${globalIntensity.toFixed(2)}`;
+            if (thumbCache.has(cacheKey)) {
+                ctx.drawImage(thumbCache.get(cacheKey), 0, 0);
+                const shimmer = card.querySelector('.card-canvas-shimmer');
+                if (shimmer) shimmer.style.display = 'none';
+                return;
+            }
+
+            try {
+                const lutTex = await offscreenLutEngine.getLutTexture(p.lut);
+                offscreenLutEngine.renderTo2DCanvas(canvas, lutTex, {
+                    intensity: globalIntensity,
+                    splitEnabled: false,
+                    showBefore: false
+                });
+
+                const cachedCanvas = document.createElement('canvas');
+                cachedCanvas.width = canvas.width;
+                cachedCanvas.height = canvas.height;
+                cachedCanvas.getContext('2d').drawImage(canvas, 0, 0);
+                thumbCache.set(cacheKey, cachedCanvas);
+
+                const shimmer = card.querySelector('.card-canvas-shimmer');
+                if (shimmer) shimmer.style.display = 'none';
+            } catch (err) {
+                console.warn(`Error renderizando tarjeta ${p.id}:`, err);
+            }
+        }
+
+        function renderAllVisibleCards() {
+            document.querySelectorAll('.preset-card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight + 250 && rect.bottom > -250) {
+                    renderCard(card, card.getAttribute('data-preset-id'));
+                }
+            });
+        }
+
+        function applyFilters() {
+            const q = searchQuery.toLowerCase().trim();
+
+            filteredPresets = window.CANON_PRESETS.filter(p => {
+                if (currentCategory !== 'ALL' && p.cat !== currentCategory) return false;
+                if (filterOnlyFavorites && !realFavoritesSet.has(p.id)) return false;
+                if (q) {
+                    const matchName = p.name.toLowerCase().includes(q);
+                    const matchLook = p.look.toLowerCase().includes(q);
+                    const matchHerit = p.heritage.toLowerCase().includes(q);
+                    const matchAuthor = p.author.toLowerCase().includes(q);
+                    if (!matchName && !matchLook && !matchHerit && !matchAuthor) return false;
+                }
+                return true;
+            });
+
+            document.getElementById('visibleCountText').innerText = filteredPresets.length;
+            document.getElementById('totalCountText').innerText = window.CANON_PRESETS.length;
+
+            const grid = document.getElementById('presetsGrid');
+            grid.innerHTML = '';
+
+            if (filteredPresets.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; padding: 60px 20px; text-align: center; color: var(--text-dim);">
+                        <p style="font-size: 18px; margin-bottom: 8px;">No se encontraron perfiles coincidentes</p>
+                        <p style="font-size: 13px;">Prueba a cambiar los filtros o el término de búsqueda.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+
+            filteredPresets.forEach((p, idx) => {
+                const card = document.createElement('div');
+                card.className = 'preset-card';
+                card.setAttribute('data-preset-id', p.id);
+                card.setAttribute('data-index', idx);
+
+                const isFav = realFavoritesSet.has(p.id);
+                const catColor = window.CANON_CATEGORIES.find(c => c.id === p.cat)?.color || { border: '#38bdf8', badge: '#0284c7' };
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="card-tags">
+                            <span class="badge-cat" style="background: ${catColor.badge}; color: #fff;">${p.catLabel}</span>
+                            <span class="badge-format">${p.format}</span>
+                        </div>
+                        <button class="btn-star ${isFav ? 'favorited' : ''}" title="Marcar favorito" data-star-id="${p.id}">⭐</button>
+                    </div>
+                    <div class="card-canvas-wrap">
+                        <canvas class="card-canvas"></canvas>
+                        <div class="card-canvas-shimmer"></div>
+                        <div class="card-overlay-actions">
+                            <button class="btn-quick-peek" data-peek-id="${p.id}">👁️ Original</button>
+                            <a class="btn-download-quick" href="${p.download}" download="${p.filename}" title="Descargar archivo">
+                                <span>⬇</span> ${p.format}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="preset-name" title="${p.name}">${p.name}</div>
+                        <div class="preset-look" title="${p.look}">${p.look}</div>
+                    </div>
+                `;
+
+                card.querySelector('.card-canvas-wrap').addEventListener('click', (e) => {
+                    if (e.target.closest('.card-overlay-actions')) return;
+                    openModal(idx);
+                });
+                card.querySelector('.card-footer').addEventListener('click', () => openModal(idx));
+
+                card.querySelector('.btn-star').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleFavorite(p.id, e.currentTarget);
+                });
+
+                const peekBtn = card.querySelector('.btn-quick-peek');
+                const canvas = card.querySelector('.card-canvas');
+                let isPeeking = false;
+
+                const startPeek = (e) => {
+                    e.stopPropagation();
+                    isPeeking = true;
+                    if (activeImageThumb) ctxDrawOriginal(canvas);
+                };
+                const stopPeek = (e) => {
+                    e.stopPropagation();
+                    if (isPeeking) {
+                        isPeeking = false;
+                        renderCard(card, p.id);
+                    }
+                };
+
+                peekBtn.addEventListener('mousedown', startPeek);
+                peekBtn.addEventListener('mouseup', stopPeek);
+                peekBtn.addEventListener('mouseleave', stopPeek);
+                peekBtn.addEventListener('touchstart', startPeek, { passive: true });
+                peekBtn.addEventListener('touchend', stopPeek);
+
+                fragment.appendChild(card);
+            });
+
+            grid.appendChild(fragment);
+            setupIntersectionObserver();
+        }
+
+        function ctxDrawOriginal(canvas) {
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(activeImageThumb, 0, 0);
+        }
+
+        function toggleFavorite(id, starBtn) {
+            const p = window.CANON_PRESETS.find(item => item.id === id);
+            if (realFavoritesSet.has(id)) {
+                realFavoritesSet.delete(id);
+                savedPresetsList = savedPresetsList.filter(s => s.id !== id);
+                if (starBtn) starBtn.classList.remove('favorited');
+                showToast('Eliminado de favoritos');
+            } else {
+                realFavoritesSet.add(id);
+                discardedIdsSet.delete(id);
+                skippedIdsSet.delete(id);
+                if (!savedPresetsList.some(s => s.id === id)) {
+                    savedPresetsList.push({
+                        id: id,
+                        preset_name: p ? p.name : id,
+                        filename: p ? p.filename : id,
+                        category: p ? p.catLabel : '',
+                        custom_name: p ? p.name : id,
+                        custom_desc: p ? p.look : '',
+                        saved_at: new Date().toISOString()
+                    });
+                }
+                if (starBtn) starBtn.classList.add('favorited');
+                showToast('Añadido a favoritos ⭐');
+            }
+
+            persistAllState();
+            updateAllBadges();
+            updateDrawerLists();
+
+            if (filterOnlyFavorites) applyFilters();
+        }
+
+        // ==========================================
+        // VISTA 2: CARRUSEL DE TRIAJE RÁPIDO
+        // ==========================================
+        function getTriageQueue() {
+            let list = window.CANON_PRESETS;
+            if (triageSelectedFolder !== 'all') {
+                list = list.filter(p => p.cat === triageSelectedFolder);
+            }
+
+            if (triageFilterMode === 'pending') {
+                // Bucle continuo: excluye guardados y descartados
+                return list.filter(p => !realFavoritesSet.has(p.id) && !discardedIdsSet.has(p.id));
+            } else {
+                return list;
+            }
+        }
+
+        function populateTriageFolderSelect() {
+            const sel = document.getElementById('triageFolderSelect');
+            if (!sel) return;
+
+            let html = `<option value="all">📁 Todas las carpetas (${getPendingCountForFolder('all')} pend. / ${window.CANON_PRESETS.length})</option>`;
+
+            window.CANON_CATEGORIES.forEach(c => {
+                const pend = getPendingCountForFolder(c.id);
+                html += `<option value="${c.id}">${c.num}. ${c.label} (${pend} pend. / ${c.count})</option>`;
+            });
+
+            sel.innerHTML = html;
+            sel.value = triageSelectedFolder;
+        }
+
+        function getPendingCountForFolder(folderId) {
+            let list = window.CANON_PRESETS;
+            if (folderId !== 'all') {
+                list = list.filter(p => p.cat === folderId);
+            }
+            return list.filter(p => !realFavoritesSet.has(p.id) && !discardedIdsSet.has(p.id)).length;
+        }
+
+        function onTriageFolderChange(val) {
+            triageSelectedFolder = val;
+            localStorage.setItem('canon_triage_selected_folder', triageSelectedFolder);
+            triageQueueIndex = 0;
+            isTriageBefore = false;
+            updateTriageModeUI();
+            renderCurrentTriage();
+            showToast(`📁 Filtrando carrusel por carpeta`);
+        }
+
+        function setTriageFilterMode(mode) {
+            triageFilterMode = mode;
+            localStorage.setItem('canon_triage_filter_mode', triageFilterMode);
+
+            document.getElementById('btnTriageQueuePending').classList.toggle('active', mode === 'pending');
+            document.getElementById('btnTriageQueueAll').classList.toggle('active', mode === 'all');
+
+            triageQueueIndex = 0;
+            isTriageBefore = false;
+            updateTriageModeUI();
+            renderCurrentTriage();
+        }
+
+        function renderCurrentTriage() {
+            const queue = getTriageQueue();
+            const emptyState = document.getElementById('triageEmptyState');
+            const hud = document.getElementById('triageMetaHud');
+
+            populateTriageFolderSelect();
+            updateAllBadges();
+
+            if (queue.length === 0) {
+                emptyState.style.display = 'flex';
+                hud.style.display = 'none';
+                document.getElementById('triagePresetName').innerText = 'Fin del triaje';
+                document.getElementById('triageQueueBadge').innerText = '0 / 0';
+                document.getElementById('triageSkippedBadge').style.display = 'none';
+
+                const catObj = window.CANON_CATEGORIES.find(c => c.id === triageSelectedFolder);
+                const folderLabel = (triageSelectedFolder === 'all') ? 'el catálogo entero' : (catObj ? catObj.label : triageSelectedFolder);
+                document.getElementById('emptyStateTitle').innerText = (triageSelectedFolder === 'all') ? '¡Criba completada!' : `¡Carpeta completada: ${folderLabel}!`;
+                document.getElementById('emptyStateDesc').innerHTML = `Has clasificado todos los estilos de <b>${folderLabel}</b>.<br>Tienes <b style="color: #f59e0b;">${realFavoritesSet.size}</b> favoritos guardados y <b style="color: #f87171;">${discardedIdsSet.size}</b> descartados.<br><br>Pulsa "Reiniciar bucle" para una nueva pasada o cambia de carpeta.`;
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            hud.style.display = 'flex';
+
+            if (triageQueueIndex >= queue.length) triageQueueIndex = 0;
+            if (triageQueueIndex < 0) triageQueueIndex = queue.length - 1;
+
+            const p = queue[triageQueueIndex];
+
+            // Datos de la cabecera del carrusel
+            document.getElementById('triagePresetName').innerText = p.name;
+            document.getElementById('triagePresetName').title = p.name;
+            document.getElementById('triageFormatBadge').innerText = p.format;
+            document.getElementById('triageCatBadge').innerText = p.catLabel;
+
+            const catColor = window.CANON_CATEGORIES.find(c => c.id === p.cat)?.color || { badge: '#0284c7' };
+            document.getElementById('triageCatBadge').style.background = catColor.badge;
+
+            document.getElementById('triageQueueBadge').innerText = (triageFilterMode === 'pending') ?
+                `${triageQueueIndex + 1} / ${queue.length} restantes` :
+                `${triageQueueIndex + 1} / ${queue.length}`;
+
+            document.getElementById('triageSkippedBadge').style.display = skippedIdsSet.has(p.id) ? 'inline-block' : 'none';
+
+            // Botón estrella
+            const starBtn = document.getElementById('btnTriageStar');
+            starBtn.classList.toggle('favorited', realFavoritesSet.has(p.id));
+
+            // Metadatos HUD
+            document.getElementById('hudPresetTitle').innerText = p.name;
+            document.getElementById('hudMetaLook').innerText = p.look || 'Sin descripción';
+            document.getElementById('hudMetaBestFor').innerText = p.bestFor || 'General';
+            document.getElementById('hudMetaHeritage').innerText = p.heritage || 'Emulación EOS';
+
+            // Renderizado en WebGL 2.0
+            if (carouselLutEngine && activeImageSource) {
+                carouselLutEngine.setIntensity(globalIntensity);
+                carouselLutEngine.render({ showBefore: isTriageBefore });
+                carouselLutEngine.loadLut(p.lut);
+            }
+        }
+
+        function toggleTriageBeforeAfter() {
+            isTriageBefore = !isTriageBefore;
+            updateTriageModeUI();
+            if (carouselLutEngine) {
+                carouselLutEngine.render({ showBefore: isTriageBefore });
+            }
+        }
+
+        function updateTriageModeUI() {
+            const btn = document.getElementById('btnTriageToggleMode');
+            const txt = document.getElementById('triageModeText');
+            const rBadge = document.getElementById('triageRightBadge');
+
+            if (isTriageBefore) {
+                btn.classList.add('is-before');
+                txt.innerText = 'ANTES (ORIGINAL)';
+                rBadge.innerText = 'ORIGINAL (SIN PROCESAR)';
+                rBadge.style.color = '#f87171';
+            } else {
+                btn.classList.remove('is-before');
+                txt.innerText = 'DESPUÉS (PRESET)';
+                rBadge.innerText = 'PRESET APLICADO';
+                rBadge.style.color = '#34d399';
+            }
+        }
+
+        function discardCurrentTriage() {
+            const queue = getTriageQueue();
+            if (queue.length === 0) return;
+            const p = queue[triageQueueIndex];
+
+            discardedIdsSet.add(p.id);
+            realFavoritesSet.delete(p.id);
+            savedPresetsList = savedPresetsList.filter(s => s.id !== p.id);
+            skippedIdsSet.delete(p.id);
+
+            persistAllState();
+            showToast(`✕ Descartado: ${p.name}`);
+
+            isTriageBefore = false;
+            updateTriageModeUI();
+
+            if (triageFilterMode === 'pending') {
+                const nextQueue = getTriageQueue();
+                if (nextQueue.length > 0) {
+                    triageQueueIndex = triageQueueIndex % nextQueue.length;
+                }
+            } else {
+                triageQueueIndex = (triageQueueIndex + 1) % queue.length;
+            }
+
+            renderCurrentTriage();
+        }
+
+        function skipCurrentTriage() {
+            const queue = getTriageQueue();
+            if (queue.length === 0) return;
+            const p = queue[triageQueueIndex];
+
+            skippedIdsSet.add(p.id);
+            persistAllState();
+            showToast(`↷ Saltado: ${p.name}`);
+
+            isTriageBefore = false;
+            updateTriageModeUI();
+
+            triageQueueIndex = (triageQueueIndex + 1) % queue.length;
+            renderCurrentTriage();
+        }
+
+        function keepCurrentTriage(customName = '', customDesc = '') {
+            const queue = getTriageQueue();
+            if (queue.length === 0) return;
+            const p = queue[triageQueueIndex];
+
+            realFavoritesSet.add(p.id);
+            discardedIdsSet.delete(p.id);
+            skippedIdsSet.delete(p.id);
+
+            const finalName = customName.trim() || p.name;
+            const finalDesc = customDesc.trim() || p.look;
+
+            // Actualizar o insertar en savedPresetsList
+            const existingIdx = savedPresetsList.findIndex(s => s.id === p.id);
+            if (existingIdx !== -1) {
+                savedPresetsList[existingIdx].custom_name = finalName;
+                savedPresetsList[existingIdx].custom_desc = finalDesc;
+            } else {
+                savedPresetsList.push({
+                    id: p.id,
+                    preset_name: p.name,
+                    filename: p.filename,
+                    category: p.catLabel,
+                    custom_name: finalName,
+                    custom_desc: finalDesc,
+                    saved_at: new Date().toISOString()
+                });
+            }
+
+            persistAllState();
+            showToast(`★ Guardado en favoritos: ${finalName}`);
+
+            isTriageBefore = false;
+            updateTriageModeUI();
+
+            if (triageFilterMode === 'pending') {
+                const nextQueue = getTriageQueue();
+                if (nextQueue.length > 0) {
+                    triageQueueIndex = triageQueueIndex % nextQueue.length;
+                }
+            } else {
+                triageQueueIndex = (triageQueueIndex + 1) % queue.length;
+            }
+
+            renderCurrentTriage();
+        }
+
+        function toggleRealFavoriteCurrent() {
+            const queue = getTriageQueue();
+            if (queue.length === 0) return;
+            const p = queue[triageQueueIndex];
+            toggleFavorite(p.id, document.getElementById('btnTriageStar'));
+            renderCurrentTriage();
+        }
+
+        function stepBackTriage() {
+            const queue = getTriageQueue();
+            if (queue.length <= 1) return;
+            triageQueueIndex = (triageQueueIndex - 1 + queue.length) % queue.length;
+            isTriageBefore = false;
+            updateTriageModeUI();
+            renderCurrentTriage();
+        }
+
+        function restartCarousel() {
+            const countFav = realFavoritesSet.size;
+            const ok = confirm(`¿Reiniciar el bucle de triaje?\\n\\nSe recuperarán los estilos descartados y saltados para volver a evaluarlos.\\n\\n✓ Tus ${countFav} favoritos guardados se mantienen intactos.`);
+            if (!ok) return;
+
+            discardedIdsSet.clear();
+            skippedIdsSet.clear();
+            triageQueueIndex = 0;
+            isTriageBefore = false;
+
+            persistAllState();
+            updateTriageModeUI();
+            renderCurrentTriage();
+            showToast(`🔄 Bucle reiniciado. Se mantienen tus ${countFav} favoritos intactos.`);
+        }
+
+        function toggleFitMode() {
+            fitMode = (fitMode === 'contain') ? 'cover' : 'contain';
+            localStorage.setItem('canon_triage_fit', fitMode);
+            applyFitMode();
+        }
+
+        function applyFitMode() {
+            const canvas = document.getElementById('carouselGlCanvas');
+            const txt = document.getElementById('triageFitText');
+            if (fitMode === 'contain') {
+                canvas.className = 'fit-contain';
+                if (txt) txt.innerText = 'Foto Completa';
+            } else {
+                canvas.className = 'fit-cover';
+                if (txt) txt.innerText = 'Recorte Lleno';
+            }
+        }
+
+        // ==========================================
+        // DRAWER DE FAVORITOS & DESCARTADOS
+        // ==========================================
+        function toggleDrawer(open = null) {
+            const drawer = document.getElementById('triageDrawer');
+            const overlay = document.getElementById('triageDrawerOverlay');
+            const shouldOpen = open !== null ? open : !drawer.classList.contains('open');
+
+            drawer.classList.toggle('open', shouldOpen);
+            overlay.classList.toggle('open', shouldOpen);
+
+            if (shouldOpen) {
+                updateDrawerLists();
+            }
+        }
+
+        function switchDrawerTab(tab) {
+            activeDrawerTab = tab;
+            document.getElementById('tabDrawerSaved').classList.toggle('active', tab === 'saved');
+            document.getElementById('tabDrawerDiscarded').classList.toggle('active', tab === 'discarded');
+
+            document.getElementById('drawerSavedSection').style.display = tab === 'saved' ? 'flex' : 'none';
+            document.getElementById('drawerDiscardedSection').style.display = tab === 'discarded' ? 'flex' : 'none';
+
+            updateDrawerLists();
+        }
+
+        function updateDrawerLists() {
+            // Lista de Favoritos Guardados
+            const savedContainer = document.getElementById('drawerSavedList');
+            savedContainer.innerHTML = '';
+
+            if (savedPresetsList.length === 0) {
+                savedContainer.innerHTML = `<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:30px;">Aún no has guardado ningún preset.</div>`;
+            } else {
+                savedPresetsList.forEach((item, idx) => {
+                    const card = document.createElement('div');
+                    card.className = 'saved-item-card';
+                    card.innerHTML = `
+                        <div class="saved-item-top">
+                            <span class="saved-item-title">#${idx+1} ${item.custom_name}</span>
+                            <button class="btn-item-del" title="Eliminar de favoritos" data-del-id="${item.id}">✕</button>
+                        </div>
+                        ${item.custom_desc ? `<div class="saved-item-desc">"${item.custom_desc}"</div>` : ''}
+                        <div class="saved-item-meta">${item.filename} · ${item.category}</div>
+                    `;
+                    card.querySelector('.btn-item-del').addEventListener('click', () => {
+                        removeSavedItem(item.id);
+                    });
+                    savedContainer.appendChild(card);
+                });
+            }
+
+            // Lista de Descartados
+            const discardedContainer = document.getElementById('drawerDiscardedList');
+            discardedContainer.innerHTML = '';
+
+            if (discardedIdsSet.size === 0) {
+                discardedContainer.innerHTML = `<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:30px;">No hay presets descartados.</div>`;
+            } else {
+                const discList = window.CANON_PRESETS.filter(p => discardedIdsSet.has(p.id));
+                discList.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = 'saved-item-card';
+                    card.innerHTML = `
+                        <div class="saved-item-top">
+                            <span class="saved-item-title" style="font-weight:500;">${p.name}</span>
+                            <button class="drawer-action-btn" style="padding:2px 8px;font-size:10px;color:#38bdf8;" data-restore-id="${p.id}">↺ Recuperar</button>
+                        </div>
+                        <div class="saved-item-meta">${p.filename} · ${p.catLabel}</div>
+                    `;
+                    card.querySelector('[data-restore-id]').addEventListener('click', () => {
+                        restoreDiscardedItem(p.id);
+                    });
+                    discardedContainer.appendChild(card);
+                });
+            }
+
+            updateAllBadges();
+        }
+
+        function removeSavedItem(id) {
+            realFavoritesSet.delete(id);
+            savedPresetsList = savedPresetsList.filter(s => s.id !== id);
+            persistAllState();
+            updateDrawerLists();
+            if (currentView === 'grid') applyFilters();
+            else renderCurrentTriage();
+            showToast('Eliminado de favoritos');
+        }
+
+        function restoreDiscardedItem(id) {
+            discardedIdsSet.delete(id);
+            persistAllState();
+            updateDrawerLists();
+            if (currentView === 'carousel') renderCurrentTriage();
+            showToast('↺ Preset devuelto al bucle');
+        }
+
+        function restoreAllDiscarded() {
+            if (discardedIdsSet.size === 0) return;
+            if (confirm(`¿Recuperar los ${discardedIdsSet.size} presets descartados?`)) {
+                discardedIdsSet.clear();
+                persistAllState();
+                updateDrawerLists();
+                if (currentView === 'carousel') renderCurrentTriage();
+                showToast('↺ Todos los descartados han vuelto al bucle');
+            }
+        }
+
+        function copySavedForEOS() {
+            if (savedPresetsList.length === 0) {
+                alert('Aún no has guardado ningún estilo.');
+                return;
+            }
+            let text = "=== MIS ESTILOS SELECCIONADOS PARA CANON EOS ===\n";
+            savedPresetsList.slice(0, 3).forEach((s, idx) => {
+                text += `Ranura Usuario ${idx+1}: ${s.filename} --> [${s.custom_name}]\n`;
+            });
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`¡Copiado al portapapeles!\n\n${text}`);
+            });
+        }
+
+        function exportSavedJSON() {
+            if (savedPresetsList.length === 0) {
+                alert('No hay favoritos guardados para exportar.');
+                return;
+            }
+            const blob = new Blob([JSON.stringify(savedPresetsList, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'mis_estilos_canon_favoritos.json';
+            a.click();
+        }
+
+        // ==========================================
+        // CONMUTADOR DE VISTAS (MOSAICO vs CARRUSEL)
+        // ==========================================
+        function switchView(view) {
+            if (currentView === view) return;
+            currentView = view;
+
+            const tabGrid = document.getElementById('tabViewGrid');
+            const tabCarousel = document.getElementById('tabViewCarousel');
+            const viewGrid = document.getElementById('viewGrid');
+            const viewCarousel = document.getElementById('viewCarousel');
+            const searchWrap = document.getElementById('headerSearchWrap');
+            const densityWrap = document.getElementById('densityGroupWrap');
+            const catSelectWrap = document.getElementById('headerCategorySelectWrap');
+
+            if (view === 'grid') {
+                tabGrid.classList.add('active');
+                tabCarousel.classList.remove('active');
+                viewGrid.style.display = 'block';
+                viewCarousel.style.display = 'none';
+                searchWrap.style.display = 'flex';
+                densityWrap.style.display = 'flex';
+                catSelectWrap.style.display = 'flex';
+                renderAllVisibleCards();
+            } else {
+                tabGrid.classList.remove('active');
+                tabCarousel.classList.add('active');
+                viewGrid.style.display = 'none';
+                viewCarousel.style.display = 'flex';
+                searchWrap.style.display = 'none';
+                densityWrap.style.display = 'none';
+                catSelectWrap.style.display = 'none';
+                applyFitMode();
+                renderCurrentTriage();
+            }
+        }
+
+        // ==========================================
+        // MODAL DE INSPECCIÓN DETALLADA (MOSAICO)
+        // ==========================================
+        const modal = document.getElementById('modalInspection');
+        const modalSplitBar = document.getElementById('modalSplitBar');
+        const modalViewport = document.getElementById('modalViewport');
+        let isModalSplitDragging = false;
+        let modalSplitPos = 0.5;
+
+        function openModal(index) {
+            if (index < 0 || index >= filteredPresets.length) return;
+            currentModalIndex = index;
+            const p = filteredPresets[index];
+
+            document.getElementById('modalPresetTitle').innerText = p.name;
+            document.getElementById('modalCatBadge').innerText = p.catLabel;
+            document.getElementById('modalFormatBadge').innerText = p.format;
+
+            const catColor = window.CANON_CATEGORIES.find(c => c.id === p.cat)?.color || { badge: '#0284c7' };
+            document.getElementById('modalCatBadge').style.background = catColor.badge;
+
+            document.getElementById('modalMetaLook').innerText = p.look;
+            document.getElementById('modalMetaBestFor').innerText = p.bestFor;
+            document.getElementById('modalMetaHeritage').innerText = p.heritage;
+            document.getElementById('modalMetaAuthor').innerText = p.author;
+
+            const dlBtn = document.getElementById('modalDownloadBtn');
+            dlBtn.href = p.download;
+            dlBtn.download = p.filename;
+
+            const starBtn = document.getElementById('modalStarBtn');
+            starBtn.classList.toggle('favorited', realFavoritesSet.has(p.id));
+
+            modalIntensitySlider.value = Math.round(globalIntensity * 100);
+            document.getElementById('modalIntensityVal').innerText = `${Math.round(globalIntensity * 100)}%`;
+
+            if (modalLutEngine && activeImageSource) {
+                modalLutEngine.setImage(activeImageSource);
+                modalLutEngine.setIntensity(globalIntensity);
+                modalLutEngine.setSplit(modalSplitPos, true);
+                modalLutEngine.loadLut(p.lut);
+            }
+
+            modal.classList.add('open');
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+            currentModalIndex = -1;
+        }
+
+        // ==========================================
+        // CONFIGURACIÓN DE EVENTOS
+        // ==========================================
+        function setupUIEvents() {
+            const fileInput = document.getElementById('fileInput');
+
+            // Tabs Mosaico vs Carrusel
+            document.getElementById('tabViewGrid').addEventListener('click', () => switchView('grid'));
+            document.getElementById('tabViewCarousel').addEventListener('click', () => switchView('carousel'));
+
+            // Selector visual de foto de prueba
+            const photoGrid = document.getElementById('photoThumbsGrid');
+            const pickerTrigger = document.getElementById('photoPickerTrigger');
+            const pickerMenu = document.getElementById('photoPickerMenu');
+
+            window.CANON_SAMPLES.forEach((s, idx) => {
+                const card = document.createElement('div');
+                card.className = `photo-thumb-card ${idx === 0 ? 'active' : ''}`;
+                card.setAttribute('data-sample-id', s.id);
+                card.innerHTML = `<img src="${s.file}" alt="Muestra">`;
+                card.addEventListener('click', () => {
+                    loadSamplePhoto(s);
+                    pickerMenu.classList.remove('open');
+                    pickerTrigger.classList.remove('active');
+                });
+                photoGrid.appendChild(card);
+            });
+
+            const uploadCard = document.createElement('div');
+            uploadCard.className = 'photo-thumb-upload';
+            uploadCard.title = 'Subir foto propia (.CR3 / .CR2 / JPG / PNG)';
+            uploadCard.innerHTML = `<span class="icon">📁</span><span class="label">Subir</span>`;
+            uploadCard.addEventListener('click', () => {
+                if (fileInput) fileInput.click();
+                pickerMenu.classList.remove('open');
+                pickerTrigger.classList.remove('active');
+            });
+            photoGrid.appendChild(uploadCard);
+
+            pickerTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = pickerMenu.classList.toggle('open');
+                pickerTrigger.classList.toggle('active', isOpen);
+            });
+
+            document.addEventListener('click', (e) => {
+                const wrap = document.getElementById('photoDropdownWrap');
+                if (wrap && !wrap.contains(e.target)) {
+                    pickerMenu.classList.remove('open');
+                    pickerTrigger.classList.remove('active');
+                }
+            });
+
+            const uploadBtn = document.getElementById('btnUploadTrigger');
+            if (uploadBtn && fileInput) uploadBtn.addEventListener('click', () => fileInput.click());
+            if (fileInput) {
+                fileInput.addEventListener('change', (e) => {
+                    if (e.target.files && e.target.files[0]) {
+                        handleUserPhotoFile(e.target.files[0]);
+                    }
+                });
+            }
+
+            // Drag & Drop universal
+            const overlay = document.getElementById('dragDropOverlay');
+            window.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                overlay.classList.add('active');
+            });
+            window.addEventListener('dragleave', (e) => {
+                if (e.clientX <= 0 || e.clientY <= 0) overlay.classList.remove('active');
+            });
+            window.addEventListener('drop', (e) => {
+                e.preventDefault();
+                overlay.classList.remove('active');
+                if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                    handleUserPhotoFile(e.dataTransfer.files[0]);
+                }
+            });
+
+            // Desplegable Categoría en cabecera (Mosaico)
+            const categorySelect = document.getElementById('categorySelect');
+            const allOpt = document.createElement('option');
+            allOpt.value = 'ALL';
+            allOpt.innerText = `Todas las categorías (${window.CANON_PRESETS.length})`;
+            categorySelect.appendChild(allOpt);
+
+            window.CANON_CATEGORIES.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.id;
+                opt.innerText = `${c.num}. ${c.label} (${c.count})`;
+                categorySelect.appendChild(opt);
+            });
+
+            categorySelect.addEventListener('change', (e) => {
+                currentCategory = e.target.value;
+                applyFilters();
+            });
+
+            // Buscador
+            const searchInput = document.getElementById('searchInput');
+            const clearBtn = document.getElementById('btnClearSearch');
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                clearBtn.style.display = searchQuery ? 'block' : 'none';
+                applyFilters();
+            });
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                searchQuery = '';
+                clearBtn.style.display = 'none';
+                applyFilters();
+            });
+
+            // Filtro Favoritos
+            const favBtn = document.getElementById('btnFavFilter');
+            favBtn.addEventListener('click', () => {
+                filterOnlyFavorites = !filterOnlyFavorites;
+                favBtn.classList.toggle('active', filterOnlyFavorites);
+                applyFilters();
+            });
+
+            // Slider Intensidad Global
+            const globalIntensitySlider = document.getElementById('globalIntensity');
+            globalIntensitySlider.addEventListener('input', (e) => {
+                globalIntensity = parseInt(e.target.value, 10) / 100.0;
+                document.getElementById('globalIntensityText').innerText = `${e.target.value}%`;
+                thumbCache.clear();
+                if (currentView === 'grid') renderAllVisibleCards();
+                else renderCurrentTriage();
+            });
+
+            // Densidad de Rejilla
+            document.querySelectorAll('.density-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.density-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const density = btn.getAttribute('data-density');
+                    document.getElementById('presetsGrid').className = `preset-grid density-${density}`;
+                });
+            });
+
+            // Botón Hold Before
+            const holdBtn = document.getElementById('btnHoldBefore');
+            const setGlobalBefore = (state) => {
+                if (isGlobalBefore === state) return;
+                isGlobalBefore = state;
+                holdBtn.classList.toggle('holding', state);
+                if (currentView === 'grid') renderAllVisibleCards();
+            };
+            holdBtn.addEventListener('mousedown', () => setGlobalBefore(true));
+            window.addEventListener('mouseup', () => setGlobalBefore(false));
+            holdBtn.addEventListener('touchstart', () => setGlobalBefore(true), { passive: true });
+            window.addEventListener('touchend', () => setGlobalBefore(false));
+
+            // ==========================================
+            // EVENTOS ESPECÍFICOS DEL CARRUSEL DE TRIAJE
+            // ==========================================
+            document.getElementById('btnTriageToggleMode').addEventListener('click', toggleTriageBeforeAfter);
+            document.getElementById('btnTriageDiscard').addEventListener('click', discardCurrentTriage);
+            document.getElementById('btnTriageSkip').addEventListener('click', skipCurrentTriage);
+            document.getElementById('btnTriageKeep').addEventListener('click', () => keepCurrentTriage());
+            document.getElementById('btnTriageStar').addEventListener('click', toggleRealFavoriteCurrent);
+            document.getElementById('btnTriageRestart').addEventListener('click', restartCarousel);
+            document.getElementById('btnTriageFit').addEventListener('click', toggleFitMode);
+            document.getElementById('btnEmptyRestart').addEventListener('click', restartCarousel);
+            document.getElementById('btnEmptyViewGrid').addEventListener('click', () => switchView('grid'));
+
+            document.getElementById('btnTriageQueuePending').addEventListener('click', () => setTriageFilterMode('pending'));
+            document.getElementById('btnTriageQueueAll').addEventListener('click', () => setTriageFilterMode('all'));
+            document.getElementById('triageFolderSelect').addEventListener('change', (e) => onTriageFolderChange(e.target.value));
+
+            // Drawer
+            document.getElementById('btnTriageDrawer').addEventListener('click', () => toggleDrawer(true));
+            document.getElementById('btnDrawerClose').addEventListener('click', () => toggleDrawer(false));
+            document.getElementById('triageDrawerOverlay').addEventListener('click', () => toggleDrawer(false));
+            document.getElementById('tabDrawerSaved').addEventListener('click', () => switchDrawerTab('saved'));
+            document.getElementById('tabDrawerDiscarded').addEventListener('click', () => switchDrawerTab('discarded'));
+            document.getElementById('btnCopyForEOS').addEventListener('click', copySavedForEOS);
+            document.getElementById('btnExportSavedJSON').addEventListener('click', exportSavedJSON);
+            document.getElementById('btnRestoreAllDiscarded').addEventListener('click', restoreAllDiscarded);
+
+            // Minimizar HUD
+            document.getElementById('btnToggleHudMin').addEventListener('click', () => {
+                document.getElementById('triageMetaHud').classList.toggle('minimized');
+            });
+
+            // Atajos de Teclado Unificados
+            window.addEventListener('keydown', (e) => {
+                if (document.activeElement === searchInput || document.activeElement.tagName === 'INPUT') {
+                    if (e.key === 'Escape') searchInput.blur();
+                    return;
+                }
+
+                // Cambio de vista con tecla V
+                if (e.key === 'v' || e.key === 'V') {
+                    switchView(currentView === 'grid' ? 'carousel' : 'grid');
+                    return;
+                }
+
+                if (currentView === 'carousel') {
+                    if (e.code === 'Space' || e.key === 'b' || e.key === 'B') {
+                        e.preventDefault();
+                        toggleTriageBeforeAfter();
+                    } else if (e.key === 'd' || e.key === 'D' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        discardCurrentTriage();
+                    } else if (e.key === 's' || e.key === 'S' || e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        skipCurrentTriage();
+                    } else if (e.key === 'k' || e.key === 'K' || e.key === 'ArrowRight' || e.key === 'Enter') {
+                        e.preventDefault();
+                        keepCurrentTriage();
+                    } else if (e.key === 'm' || e.key === 'M') {
+                        e.preventDefault();
+                        toggleRealFavoriteCurrent();
+                    } else if (e.key === 'r' || e.key === 'R') {
+                        e.preventDefault();
+                        restartCarousel();
+                    } else if (e.key === 'f' || e.key === 'F') {
+                        e.preventDefault();
+                        toggleFitMode();
+                    } else if (e.key === 'Backspace' || e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        stepBackTriage();
+                    } else if (e.key === 'Escape') {
+                        toggleDrawer(false);
+                    }
+                } else {
+                    // Vista Mosaico
+                    if (e.code === 'Space') {
+                        e.preventDefault();
+                        setGlobalBefore(true);
+                    } else if (e.key === 'Escape') {
+                        closeModal();
+                    } else if (modal.classList.contains('open')) {
+                        if (e.key === 'ArrowLeft' && currentModalIndex > 0) openModal(currentModalIndex - 1);
+                        else if (e.key === 'ArrowRight' && currentModalIndex < filteredPresets.length - 1) openModal(currentModalIndex + 1);
+                    }
+                }
+            });
+
+            window.addEventListener('keyup', (e) => {
+                if (currentView === 'grid' && e.code === 'Space') {
+                    e.preventDefault();
+                    setGlobalBefore(false);
+                }
+            });
+
+            // Sincronización reactiva entre pestañas
+            window.addEventListener('storage', (e) => {
+                if (e.key === 'canon_real_favorites' || e.key === 'canon_triage_saved' || e.key === 'canon_triage_discarded') {
+                    loadStorageState();
+                    if (currentView === 'grid') applyFilters();
+                    else renderCurrentTriage();
+                }
+            });
+        }
+
+        function setupModalControls() {
+            document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            document.getElementById('modalPrevBtn').addEventListener('click', () => {
+                if (currentModalIndex > 0) openModal(currentModalIndex - 1);
+            });
+            document.getElementById('modalNextBtn').addEventListener('click', () => {
+                if (currentModalIndex < filteredPresets.length - 1) openModal(currentModalIndex + 1);
+            });
+
+            document.getElementById('modalStarBtn').addEventListener('click', () => {
+                if (currentModalIndex >= 0) {
+                    const p = filteredPresets[currentModalIndex];
+                    toggleFavorite(p.id, document.getElementById('modalStarBtn'));
+                    const cardStar = document.querySelector(`.preset-card[data-preset-id="${p.id}"] .btn-star`);
+                    if (cardStar) cardStar.classList.toggle('favorited', realFavoritesSet.has(p.id));
+                }
+            });
+
+            const onMove = (e) => {
+                if (!isModalSplitDragging) return;
+                const rect = modalViewport.getBoundingClientRect();
+                const clientX = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+                let pos = (clientX - rect.left) / rect.width;
+                pos = Math.max(0.02, Math.min(0.98, pos));
+                modalSplitPos = pos;
+                modalSplitBar.style.left = `${(pos * 100).toFixed(2)}%`;
+                if (modalLutEngine) modalLutEngine.setSplit(pos, true);
+            };
+
+            modalViewport.addEventListener('mousedown', (e) => { isModalSplitDragging = true; onMove(e); });
+            window.addEventListener('mousemove', onMove);
+            window.addEventListener('mouseup', () => { isModalSplitDragging = false; });
+            modalViewport.addEventListener('touchstart', (e) => { isModalSplitDragging = true; onMove(e); }, { passive: true });
+            window.addEventListener('touchmove', onMove, { passive: true });
+            window.addEventListener('touchend', () => { isModalSplitDragging = false; });
+
+            const modalIntensitySlider = document.getElementById('modalIntensitySlider');
+            modalIntensitySlider.addEventListener('input', (e) => {
+                const val = parseInt(e.target.value, 10) / 100.0;
+                document.getElementById('modalIntensityVal').innerText = `${e.target.value}%`;
+                if (modalLutEngine) modalLutEngine.setIntensity(val);
+            });
+        }
+
+        // ==========================================
+        // PUNTO DE ENTRADA
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            initEngines();
+            loadStorageState();
+            setupUIEvents();
+            setupModalControls();
+
+            if (window.CANON_SAMPLES && window.CANON_SAMPLES.length > 0) {
+                loadSamplePhoto(window.CANON_SAMPLES[0]);
+            }
+
+            applyFilters();
+            applyFitMode();
+        });
+    })();
+    </script>
+</body>
+</html>
