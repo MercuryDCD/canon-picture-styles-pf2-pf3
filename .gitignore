@@ -17,3 +17,9 @@ __pycache__/
 .idea/
 GEMINI.md
 gemini.md
+
+# Local test & preview files (untracked)
+dev.html
+dev_*.html
+START_DEV.bat
+test.html

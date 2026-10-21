@@ -102,10 +102,12 @@ def build_data():
             download_rel = f"{cat_name}/{pf.name}"
 
             # Sintetizar descripciones si no vinieran
-            look = m.get("look") or f"Perfil de color {cat_label} calibrado para cámaras Canon EOS."
-            best_for = m.get("bestFor") or "Fotografía general, viajes y retrato."
+            look = m.get("look") or f"{cat_label} color profile calibrated for Canon EOS cameras."
+            best_for = m.get("bestFor") or "General photography, travel, and portraiture."
             heritage = m.get("heritage") or cat_label
             author = m.get("author") or "Canon EOS Community"
+            source = m.get("source") or ""
+            is_lut = "source_luts" in source or source.lower().endswith(".png") or source.lower().endswith(".cube")
 
             presets.append({
                 "id": f"{cat_name}__{pf.stem}",
@@ -121,23 +123,25 @@ def build_data():
                 "look": look,
                 "bestFor": best_for,
                 "heritage": heritage,
-                "author": author
+                "author": author,
+                "source": source,
+                "isLut": is_lut
             })
 
     # Fotos de muestra patrón (11 escenas)
     samples_dir = REPO_DIR / "samples"
     sample_items = [
-        {"id": "scene_1", "name": "1. Retrato & Piel", "file": "samples/01_portrait_skin.jpg", "desc": "Tonos de piel y sombras suaves"},
-        {"id": "scene_2", "name": "2. Retrato Contraste", "file": "samples/02_portrait_contrast.jpg", "desc": "Contraste facial y luces medias"},
-        {"id": "scene_3", "name": "3. Retrato Exterior", "file": "samples/03_portrait_outdoor.jpg", "desc": "Luz solar directa y tonos naturales"},
-        {"id": "scene_4", "name": "4. Paisaje & Cielo", "file": "samples/04_landscape_nature.jpg", "desc": "Cielos azules, agua y vegetación lejana"},
-        {"id": "scene_5", "name": "5. Follaje & Naturaleza", "file": "samples/05_foliage_greens.jpg", "desc": "Verdes clorofila y saturación vegetal"},
-        {"id": "scene_6", "name": "6. Arquitectura Urbana", "file": "samples/06_architecture_urban.jpg", "desc": "Líneas rectas, texturas y contraste medio"},
-        {"id": "scene_7", "name": "7. Escena Street", "file": "samples/07_urban_street.jpg", "desc": "Contraste urbano y sombras densas"},
-        {"id": "scene_8", "name": "8. Alto Rango Dinámico", "file": "samples/08_high_dynamic_range.jpg", "desc": "Transición de altas luces a sombras profundas"},
-        {"id": "scene_9", "name": "9. Atardecer Golden Hour", "file": "samples/09_sunset_golden.jpg", "desc": "Tonos dorados y gradación cálida"},
-        {"id": "scene_10", "name": "10. Interior & Ambiente", "file": "samples/10_indoor_ambient.jpg", "desc": "Luz artificial y sombras interiores"},
-        {"id": "scene_11", "name": "11. Texturas & Detalle", "file": "samples/11_textures_detail.jpg", "desc": "Nitidez, microcontraste y definición fina"}
+        {"id": "scene_1", "name": "1. Portrait & Skin", "file": "samples/01_portrait_skin.jpg", "desc": "Skin tones and soft shadows"},
+        {"id": "scene_2", "name": "2. High-Contrast Portrait", "file": "samples/02_portrait_contrast.jpg", "desc": "Facial contrast and midtones"},
+        {"id": "scene_3", "name": "3. Outdoor Portrait", "file": "samples/03_portrait_outdoor.jpg", "desc": "Direct sunlight and natural tones"},
+        {"id": "scene_4", "name": "4. Landscape & Sky", "file": "samples/04_landscape_nature.jpg", "desc": "Blue skies, water, and distant foliage"},
+        {"id": "scene_5", "name": "5. Foliage & Nature", "file": "samples/05_foliage_greens.jpg", "desc": "Chlorophyll greens and botanical saturation"},
+        {"id": "scene_6", "name": "6. Urban Architecture", "file": "samples/06_architecture_urban.jpg", "desc": "Straight lines, textures, and medium contrast"},
+        {"id": "scene_7", "name": "7. Street Scene", "file": "samples/07_urban_street.jpg", "desc": "Urban contrast and dense shadows"},
+        {"id": "scene_8", "name": "8. High Dynamic Range", "file": "samples/08_high_dynamic_range.jpg", "desc": "Highlight roll-off and deep shadows"},
+        {"id": "scene_9", "name": "9. Golden Hour Sunset", "file": "samples/09_sunset_golden.jpg", "desc": "Golden tones and warm gradation"},
+        {"id": "scene_10", "name": "10. Indoor & Ambient", "file": "samples/10_indoor_ambient.jpg", "desc": "Artificial lighting and interior shadows"},
+        {"id": "scene_11", "name": "11. Textures & Detail", "file": "samples/11_textures_detail.jpg", "desc": "Sharpness, micro-contrast, and fine detail"}
     ]
 
     # Validar muestras existentes

@@ -86,69 +86,69 @@ window.CANON_CATEGORIES = [
 window.CANON_SAMPLES = [
   {
     "id": "scene_1",
-    "name": "1. Retrato & Piel",
+    "name": "1. Portrait & Skin",
     "file": "samples/01_portrait_skin.jpg",
-    "desc": "Tonos de piel y sombras suaves"
+    "desc": "Skin tones and soft shadows"
   },
   {
     "id": "scene_2",
-    "name": "2. Retrato Contraste",
+    "name": "2. High-Contrast Portrait",
     "file": "samples/02_portrait_contrast.jpg",
-    "desc": "Contraste facial y luces medias"
+    "desc": "Facial contrast and midtones"
   },
   {
     "id": "scene_3",
-    "name": "3. Retrato Exterior",
+    "name": "3. Outdoor Portrait",
     "file": "samples/03_portrait_outdoor.jpg",
-    "desc": "Luz solar directa y tonos naturales"
+    "desc": "Direct sunlight and natural tones"
   },
   {
     "id": "scene_4",
-    "name": "4. Paisaje & Cielo",
+    "name": "4. Landscape & Sky",
     "file": "samples/04_landscape_nature.jpg",
-    "desc": "Cielos azules, agua y vegetación lejana"
+    "desc": "Blue skies, water, and distant foliage"
   },
   {
     "id": "scene_5",
-    "name": "5. Follaje & Naturaleza",
+    "name": "5. Foliage & Nature",
     "file": "samples/05_foliage_greens.jpg",
-    "desc": "Verdes clorofila y saturación vegetal"
+    "desc": "Chlorophyll greens and botanical saturation"
   },
   {
     "id": "scene_6",
-    "name": "6. Arquitectura Urbana",
+    "name": "6. Urban Architecture",
     "file": "samples/06_architecture_urban.jpg",
-    "desc": "Líneas rectas, texturas y contraste medio"
+    "desc": "Straight lines, textures, and medium contrast"
   },
   {
     "id": "scene_7",
-    "name": "7. Escena Street",
+    "name": "7. Street Scene",
     "file": "samples/07_urban_street.jpg",
-    "desc": "Contraste urbano y sombras densas"
+    "desc": "Urban contrast and dense shadows"
   },
   {
     "id": "scene_8",
-    "name": "8. Alto Rango Dinámico",
+    "name": "8. High Dynamic Range",
     "file": "samples/08_high_dynamic_range.jpg",
-    "desc": "Transición de altas luces a sombras profundas"
+    "desc": "Highlight roll-off and deep shadows"
   },
   {
     "id": "scene_9",
-    "name": "9. Atardecer Golden Hour",
+    "name": "9. Golden Hour Sunset",
     "file": "samples/09_sunset_golden.jpg",
-    "desc": "Tonos dorados y gradación cálida"
+    "desc": "Golden tones and warm gradation"
   },
   {
     "id": "scene_10",
-    "name": "10. Interior & Ambiente",
+    "name": "10. Indoor & Ambient",
     "file": "samples/10_indoor_ambient.jpg",
-    "desc": "Luz artificial y sombras interiores"
+    "desc": "Artificial lighting and interior shadows"
   },
   {
     "id": "scene_11",
-    "name": "11. Texturas & Detalle",
+    "name": "11. Textures & Detail",
     "file": "samples/11_textures_detail.jpg",
-    "desc": "Nitidez, microcontraste y definición fina"
+    "desc": "Sharpness, micro-contrast, and fine detail"
   }
 ];
 
@@ -167,7 +167,9 @@ window.CANON_PRESETS = [
     "look": "Subdued color palette with earthy undertones, muted reds, and dense shadows.",
     "bestFor": "Street documentary, architectural details, and overcast urban travel.",
     "heritage": "Community recreation of Fujifilm Classic Chrome for Canon EOS bodies.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Canassic-Chrome-v0-1.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_160C_1",
@@ -183,7 +185,9 @@ window.CANON_PRESETS = [
     "look": "High contrast with dense shadows and deep saturated primaries (-1 EV underexposure pull).",
     "bestFor": "Edgy studio fashion, editorial portraits, and graphic street daylight.",
     "heritage": "Fujicolor Pro 160C (C for Contrast) professional color negative.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 160C 1 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_160C_2",
@@ -199,7 +203,9 @@ window.CANON_PRESETS = [
     "look": "Box-speed baseline: crisp commercial contrast, neutral daylight primaries, and fine grain.",
     "bestFor": "Commercial fashion, clean daylight architecture, and product stills.",
     "heritage": "Fujicolor Pro 160C standard exposure balance.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 160C 2.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_160C_3_Plus",
@@ -215,7 +221,9 @@ window.CANON_PRESETS = [
     "look": "Softened contrast with pastel color shift and clean highlights (+1 EV overexposure push).",
     "bestFor": "Airy portraits, soft daylight lifestyle, and outdoor weddings.",
     "heritage": "Fujicolor Pro 160C exposed +1 stop for softer tones.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 160C 3 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_160C_4_Plus_Plus",
@@ -231,7 +239,9 @@ window.CANON_PRESETS = [
     "look": "Ethereal low-contrast palette with milky lifted shadows and delicate pastels (+2 EV overexposure).",
     "bestFor": "High-key fine-art, bridal portraits, and spring lifestyle.",
     "heritage": "Fujicolor Pro 160C pushed +2 stops for an ethereal look.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 160C 4 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_400H_1",
@@ -247,7 +257,9 @@ window.CANON_PRESETS = [
     "look": "Denser mint greens and contrasty shadows with subtle cyan tint (-1 EV pull).",
     "bestFor": "Moody environmental portraits and editorial outdoor shoots.",
     "heritage": "Fujicolor Pro 400H underexposed for richer shadow tones.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 400H 1 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_400H_2",
@@ -263,7 +275,9 @@ window.CANON_PRESETS = [
     "look": "Standard 0 EV balance: signature fresh mint greens, gentle skin tones, and cool cyan shadows.",
     "bestFor": "Weddings, natural light portraits, and outdoor lifestyle.",
     "heritage": "Fujicolor Pro 400H professional color negative film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 400H 2.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_400H_3_Plus",
@@ -279,7 +293,9 @@ window.CANON_PRESETS = [
     "look": "Luminous mint greens, delicate peach skin, and airy pastel highlights (+1 EV push).",
     "bestFor": "Fine-art weddings, spring outdoor portraits, and maternity sessions.",
     "heritage": "Fujicolor Pro 400H overexposed +1 stop (the classic fine-art wedding look).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 400H 3 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_400H_4_Plus_Plus",
@@ -295,7 +311,9 @@ window.CANON_PRESETS = [
     "look": "Milky shadows, ultra-soft contrast, and luminous pale skin tones (+2 EV push).",
     "bestFor": "High-key romantic bridal shoots and ethereal lifestyle photography.",
     "heritage": "Fujicolor Pro 400H overexposed +2 stops for maximum pastel softness.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 400H 4 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_800Z_1",
@@ -311,7 +329,9 @@ window.CANON_PRESETS = [
     "look": "Punchy warm contrast with deep amber cast in low-light shadows (-1 EV pull).",
     "bestFor": "Concert stages, nightlife, and moody documentary portraits.",
     "heritage": "Fujicolor Pro 800Z (NPZ 800) high-speed color negative.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 800Z 1 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_800Z_2",
@@ -327,7 +347,9 @@ window.CANON_PRESETS = [
     "look": "Standard 0 EV high-speed negative: balanced warm saturation and bold micro-contrast under mixed lighting.",
     "bestFor": "Low-light events, twilight festivals, and nighttime street reportage.",
     "heritage": "Fujicolor Pro 800Z (NPZ 800), high-speed press and concert film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 800Z 2.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_800Z_3_Plus",
@@ -343,7 +365,9 @@ window.CANON_PRESETS = [
     "look": "High-speed pushed color negative with lifted shadows and amber warmth.",
     "bestFor": "Low-light indoor concerts, clubs, and night events.",
     "heritage": "Fujicolor Pro 800Z pushed exposure calibration.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 800Z 3 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_800Z_4_Plus_Plus",
@@ -359,7 +383,9 @@ window.CANON_PRESETS = [
     "look": "High-speed pushed color negative with lifted shadows and amber warmth.",
     "bestFor": "Low-light indoor concerts, clubs, and night events.",
     "heritage": "Fujicolor Pro 800Z pushed exposure calibration.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji 800Z 4 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_100_Generic",
@@ -375,7 +401,9 @@ window.CANON_PRESETS = [
     "look": "Gentle saturation, creamy skin tones, and very smooth highlight roll-off.",
     "bestFor": "Portraits, bridal photography, and high-contrast daylight scenes.",
     "heritage": "Fujichrome Astia 100F (RAP), engineered specifically for flattering portraiture.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Astia 100 Generic.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_100F",
@@ -391,7 +419,9 @@ window.CANON_PRESETS = [
     "look": "Gentle saturation, creamy skin tones, and very smooth highlight roll-off.",
     "bestFor": "Portraits, bridal photography, and high-contrast daylight scenes.",
     "heritage": "Fujichrome Astia 100F (RAP), engineered specifically for flattering portraiture.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Astia 100F.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_100F_Soft_Slide",
@@ -407,7 +437,9 @@ window.CANON_PRESETS = [
     "look": "Gentle saturation, creamy skin tones, and very smooth highlight roll-off.",
     "bestFor": "Portraits, bridal photography, and high-contrast daylight scenes.",
     "heritage": "Fujichrome Astia 100F (RAP), engineered specifically for flattering portraiture.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Astia 100F.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_Pop_2_Max_Saturation",
@@ -423,7 +455,9 @@ window.CANON_PRESETS = [
     "look": "Gentle Astia skin tones with selectively boosted primary saturation.",
     "bestFor": "Fashion outdoors, travel portraits, and bright family sessions.",
     "heritage": "Astia 100F tuned for modern punchy display.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Astia_Pop_2_Max_Saturation.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_Pop_Punchy",
@@ -439,7 +473,9 @@ window.CANON_PRESETS = [
     "look": "Gentle Astia skin tones with selectively boosted primary saturation.",
     "bestFor": "Fashion outdoors, travel portraits, and bright family sessions.",
     "heritage": "Astia 100F tuned for modern punchy display.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Astia_Pop_Punchy.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_Retro_Lifted_Shadows",
@@ -455,7 +491,9 @@ window.CANON_PRESETS = [
     "look": "Soft slide palette with lifted matte shadows and muted vintage highlights.",
     "bestFor": "Retro fashion, nostalgic travel, and fine-art lifestyle.",
     "heritage": "Fujichrome Astia with a lifted matte tone curve.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Astia_Retro_Lifted_Shadows.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_Vintage_2_High_Contrast",
@@ -471,7 +509,9 @@ window.CANON_PRESETS = [
     "look": "Soft slide palette with lifted matte shadows and muted vintage highlights.",
     "bestFor": "Retro fashion, nostalgic travel, and fine-art lifestyle.",
     "heritage": "Fujichrome Astia with a lifted matte tone curve.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Astia_Vintage_2_High_Contrast.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Astia_Vintage_Soft",
@@ -487,7 +527,9 @@ window.CANON_PRESETS = [
     "look": "Soft slide palette with lifted matte shadows and muted vintage highlights.",
     "bestFor": "Retro fashion, nostalgic travel, and fine-art lifestyle.",
     "heritage": "Fujichrome Astia with a lifted matte tone curve.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Astia_Vintage_Soft.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_FP-100C_Instant_Color",
@@ -503,7 +545,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Standard instant print).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_FP-100C_Instant_Color.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_1",
@@ -519,7 +563,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Dense pull -1 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 1 --.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_2",
@@ -535,7 +581,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Dense pull -1 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 2 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_3",
@@ -551,7 +599,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Box speed 0 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 3.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_4_Alt",
@@ -567,7 +617,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Box speed 0 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 4 Alt.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_5_Plus",
@@ -583,7 +635,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Luminous pastel push +1/+2 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 5 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_6_Plus_Plus",
@@ -599,7 +653,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Luminous pastel push +1/+2 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 6 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_7_Plus_Plus_Alt",
@@ -615,7 +671,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Luminous pastel push +1/+2 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 7 ++ Alt.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_8_Plus_Plus_Plus",
@@ -631,7 +689,9 @@ window.CANON_PRESETS = [
     "look": "Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Luminous pastel push +1/+2 EV).",
     "bestFor": "Fine-art studio portraits, instant aesthetic sessions, and retro lifestyle.",
     "heritage": "Fujifilm FP-100c, the benchmark professional peel-apart instant packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c 8 +++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Cool_1",
@@ -647,7 +707,9 @@ window.CANON_PRESETS = [
     "look": "Cool-toned peel-apart instant print with cyan-blue shadow bias (Dense pull -1 EV).",
     "bestFor": "Fine-art studio portraits, contemporary fashion, and cool daylight.",
     "heritage": "Fujifilm FP-100c Cool instant packfilm variant.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Cool 1 --.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Cool_2",
@@ -663,7 +725,9 @@ window.CANON_PRESETS = [
     "look": "Cool-toned peel-apart instant print with cyan-blue shadow bias (Dense pull -1 EV).",
     "bestFor": "Fine-art studio portraits, contemporary fashion, and cool daylight.",
     "heritage": "Fujifilm FP-100c Cool instant packfilm variant.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Cool 2 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Cool_3",
@@ -679,7 +743,9 @@ window.CANON_PRESETS = [
     "look": "Cool-toned peel-apart instant print with cyan-blue shadow bias (Box speed 0 EV).",
     "bestFor": "Fine-art studio portraits, contemporary fashion, and cool daylight.",
     "heritage": "Fujifilm FP-100c Cool instant packfilm variant.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Cool 3.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Cool_4_Plus",
@@ -695,7 +761,9 @@ window.CANON_PRESETS = [
     "look": "Cool-toned peel-apart instant print with cyan-blue shadow bias (Overexposed pastel push +1/+2 EV).",
     "bestFor": "Fine-art studio portraits, contemporary fashion, and cool daylight.",
     "heritage": "Fujifilm FP-100c Cool instant packfilm variant.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Cool 4 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Cool_5_Plus_Plus",
@@ -711,7 +779,9 @@ window.CANON_PRESETS = [
     "look": "Cool-toned peel-apart instant print with cyan-blue shadow bias (Overexposed pastel push +1/+2 EV).",
     "bestFor": "Fine-art studio portraits, contemporary fashion, and cool daylight.",
     "heritage": "Fujifilm FP-100c Cool instant packfilm variant.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Cool 5 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Negative_1",
@@ -727,7 +797,9 @@ window.CANON_PRESETS = [
     "look": "Raw peel-apart reclaimed negative look with bleached emulsion artifacts (Dense negative pull).",
     "bestFor": "Experimental portraits, album covers, and grunge fine-art stills.",
     "heritage": "Reclaimed bleached paper negative from Fuji FP-100c packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Negative 1 --.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Negative_2",
@@ -743,7 +815,9 @@ window.CANON_PRESETS = [
     "look": "Raw peel-apart reclaimed negative look with bleached emulsion artifacts (Dense negative pull).",
     "bestFor": "Experimental portraits, album covers, and grunge fine-art stills.",
     "heritage": "Reclaimed bleached paper negative from Fuji FP-100c packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Negative 2 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Negative_3",
@@ -759,7 +833,9 @@ window.CANON_PRESETS = [
     "look": "Raw peel-apart reclaimed negative look with bleached emulsion artifacts (Raw negative bleach wash).",
     "bestFor": "Experimental portraits, album covers, and grunge fine-art stills.",
     "heritage": "Reclaimed bleached paper negative from Fuji FP-100c packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Negative 3.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Negative_4_Plus",
@@ -775,7 +851,9 @@ window.CANON_PRESETS = [
     "look": "Raw peel-apart reclaimed negative look with bleached emulsion artifacts (Solarized metallic sheen).",
     "bestFor": "Experimental portraits, album covers, and grunge fine-art stills.",
     "heritage": "Reclaimed bleached paper negative from Fuji FP-100c packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Negative 4 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Negative_5_Plus_Plus",
@@ -791,7 +869,9 @@ window.CANON_PRESETS = [
     "look": "Raw peel-apart reclaimed negative look with bleached emulsion artifacts (Solarized metallic sheen).",
     "bestFor": "Experimental portraits, album covers, and grunge fine-art stills.",
     "heritage": "Reclaimed bleached paper negative from Fuji FP-100c packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Negative 5 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Negative_6_Plus_Plus_Alt",
@@ -807,7 +887,9 @@ window.CANON_PRESETS = [
     "look": "Raw peel-apart reclaimed negative look with bleached emulsion artifacts (Solarized metallic sheen).",
     "bestFor": "Experimental portraits, album covers, and grunge fine-art stills.",
     "heritage": "Reclaimed bleached paper negative from Fuji FP-100c packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Negative 6 ++ Alt.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_FP_100c_Negative_7_Plus_Plus_Plus",
@@ -823,7 +905,9 @@ window.CANON_PRESETS = [
     "look": "Raw peel-apart reclaimed negative look with bleached emulsion artifacts (Solarized metallic sheen).",
     "bestFor": "Experimental portraits, album covers, and grunge fine-art stills.",
     "heritage": "Reclaimed bleached paper negative from Fuji FP-100c packfilm.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji FP-100c Negative 7 +++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Frontier_Digital_Minilab",
@@ -839,7 +923,9 @@ window.CANON_PRESETS = [
     "look": "Crisp digital minilab look with punchy primary colors and clean paper whites.",
     "bestFor": "Casual family portraiture, minilab prints, and colorful street snaps.",
     "heritage": "Fuji Frontier digital minilab laser exposure on Crystal Archive paper.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Frontier_Digital_Minilab.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Pro_160C_Color_Negative",
@@ -855,7 +941,9 @@ window.CANON_PRESETS = [
     "look": "Crisp commercial contrast, vibrant yet faithful primary colors, and fine grain acutance.",
     "bestFor": "Commercial fashion, clean daylight architecture, and product stills.",
     "heritage": "Fujicolor Pro 160C professional color negative emulsion.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Pro_160C_Color_Negative.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Pro_160S_Soft_Skin",
@@ -871,7 +959,9 @@ window.CANON_PRESETS = [
     "look": "Soft contrast (S for Smooth) with natural skin tones and progressive highlight transitions.",
     "bestFor": "Studio and outdoor portraiture under hard directional lighting.",
     "heritage": "Fujicolor Pro 160S, formulated specifically for social and wedding portraiture.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Pro_160S_Soft_Skin.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Pro_400H_Color_Portrait",
@@ -887,7 +977,9 @@ window.CANON_PRESETS = [
     "look": "Signature wedding palette: soft mint greens, flattering skin tones, and cool cyan shadows.",
     "bestFor": "Weddings, natural light portraits, and outdoor lifestyle.",
     "heritage": "Fujicolor Pro 400H, the benchmark professional portrait negative film.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Pro_400H_Color_Portrait.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_ProNeg_Cinematic",
@@ -903,7 +995,9 @@ window.CANON_PRESETS = [
     "look": "Professional portrait negative response: Std (flat neutral contrast for studio strobes).",
     "bestFor": "Studio portraiture, headshots, and controlled strobe lighting.",
     "heritage": "Fujifilm X-series Pro Neg film simulation.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_ProNeg_Cinematic.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_ProNeg_Hi_Skin_Contrast",
@@ -919,7 +1013,9 @@ window.CANON_PRESETS = [
     "look": "Professional portrait negative response: Hi (enhanced contrast and skin definition).",
     "bestFor": "Studio portraiture, headshots, and controlled strobe lighting.",
     "heritage": "Fujifilm X-series Pro Neg film simulation.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_ProNeg_Hi_Skin_Contrast.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_ProNeg_Std_Soft_Skin",
@@ -935,7 +1031,9 @@ window.CANON_PRESETS = [
     "look": "Professional portrait negative response: Std (flat neutral contrast for studio strobes).",
     "bestFor": "Studio portraiture, headshots, and controlled strobe lighting.",
     "heritage": "Fujifilm X-series Pro Neg film simulation.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_ProNeg_Std_Soft_Skin.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Provia_100_Generic",
@@ -951,7 +1049,9 @@ window.CANON_PRESETS = [
     "look": "Neutral, highly balanced color rendition with faithful primaries and clean highlights.",
     "bestFor": "General-purpose photography, architectural documentation, and studio commercial work.",
     "heritage": "Fujichrome Provia 100F (RDPIII), Fujifilm's professional baseline E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Provia 100 Generic.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Provia_100F",
@@ -967,7 +1067,9 @@ window.CANON_PRESETS = [
     "look": "Neutral, highly balanced color rendition with faithful primaries and clean highlights.",
     "bestFor": "General-purpose photography, architectural documentation, and studio commercial work.",
     "heritage": "Fujichrome Provia 100F (RDPIII), Fujifilm's professional baseline E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Provia 100F.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Provia_100F_RDPIII",
@@ -983,7 +1085,9 @@ window.CANON_PRESETS = [
     "look": "Neutral, highly balanced color rendition with faithful primaries and clean highlights.",
     "bestFor": "General-purpose photography, architectural documentation, and studio commercial work.",
     "heritage": "Fujichrome Provia 100F (RDPIII), Fujifilm's professional baseline E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Provia 100F.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Provia_400F",
@@ -999,7 +1103,9 @@ window.CANON_PRESETS = [
     "look": "Neutral, highly balanced color rendition with faithful primaries and clean highlights.",
     "bestFor": "General-purpose photography, architectural documentation, and studio commercial work.",
     "heritage": "Fujichrome Provia 100F (RDPIII), Fujifilm's professional baseline E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Provia 400F.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Provia_400X",
@@ -1015,7 +1121,9 @@ window.CANON_PRESETS = [
     "look": "Neutral, highly balanced color rendition with faithful primaries and clean highlights.",
     "bestFor": "General-purpose photography, architectural documentation, and studio commercial work.",
     "heritage": "Fujichrome Provia 100F (RDPIII), Fujifilm's professional baseline E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Provia 400X.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Reala_Style_LSB",
@@ -1031,7 +1139,9 @@ window.CANON_PRESETS = [
     "look": "Refined skin tone rendering with superior color fidelity and no green cast under mixed light.",
     "bestFor": "Close-up beauty portraits, delicate botanical petals, and natural light.",
     "heritage": "Fujicolor Reala 100, legendary 4th-color-layer cyan technology emulsion (1989).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Reala_Style_LSB.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Sensia_100",
@@ -1047,7 +1157,9 @@ window.CANON_PRESETS = [
     "look": "Warm slide palette with natural saturation and warm golden highlights.",
     "bestFor": "Summer travel, Mediterranean landscapes, and sunny holidays.",
     "heritage": "Fujichrome Sensia, consumer-grade E-6 transparency film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Sensia 100.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_100_1",
@@ -1063,7 +1175,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 100 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 100, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 100 1 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_100_2",
@@ -1079,7 +1193,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 100 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 100, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 100 2.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_100_3_Plus",
@@ -1095,7 +1211,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 100 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 100, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 100 3 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_100_4_Plus_Plus",
@@ -1111,7 +1229,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 100 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 100, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 100 4 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_1600_1",
@@ -1127,7 +1247,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 1600 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 1600, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 1600 1 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_1600_2",
@@ -1143,7 +1265,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 1600 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 1600, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 1600 2.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_1600_3_Plus",
@@ -1159,7 +1283,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 1600 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 1600, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 1600 3 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_1600_4_Plus_Plus",
@@ -1175,7 +1301,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 1600 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 1600, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 1600 4 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_200",
@@ -1191,7 +1319,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 200 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 200, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 200.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_200_XPRO",
@@ -1207,7 +1337,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 200 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 200, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 200 XPRO.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_400_1",
@@ -1223,7 +1355,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 400 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 400, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 400 1 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_400_2",
@@ -1239,7 +1373,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 400 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 400, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 400 2.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_400_3_Plus",
@@ -1255,7 +1391,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 400 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 400, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 400 3 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_400_4_Plus_Plus",
@@ -1271,7 +1409,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 400 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 400, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 400 4 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_800_1",
@@ -1287,7 +1427,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 800 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 800, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 800 1 -.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_800_2",
@@ -1303,7 +1445,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 800 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 800, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 800 2.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_800_3_Plus",
@@ -1319,7 +1463,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 800 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 800, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 800 3 +.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_800_4_Plus_Plus",
@@ -1335,7 +1481,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 800 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 800, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia 800 4 ++.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_HG_1600",
@@ -1351,7 +1499,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 1600 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 1600, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia HG 1600.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_Reala_100",
@@ -1367,7 +1517,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 100 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 100, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia Reala 100.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_Reala_Mint_Greens",
@@ -1383,7 +1535,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 200 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 200, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Superia_Reala_Mint_Greens.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Superia_X_Tra_800",
@@ -1399,7 +1553,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 800 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 800, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Superia X-Tra 800.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_100_Generic",
@@ -1415,7 +1571,9 @@ window.CANON_PRESETS = [
     "look": "Ultra-saturated slide look with deep cyan skies, vibrant foliage, and strong contrast.",
     "bestFor": "Scenic landscapes, mountain ranges, and vibrant autumn foliage.",
     "heritage": "Fujichrome Velvia E-6 reversal film family.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Velvia 100 Generic.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_100F_RVP_Mild",
@@ -1431,7 +1589,9 @@ window.CANON_PRESETS = [
     "look": "High color saturation with a softened contrast curve preserving shadow detail.",
     "bestFor": "Nature photography and outdoor travel with high ambient contrast.",
     "heritage": "Fujichrome Velvia 100F (RVP 100F) with reduced S-curve contrast.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Velvia_100F_RVP_Mild.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_100F_RVP_Neutral",
@@ -1447,7 +1607,9 @@ window.CANON_PRESETS = [
     "look": "Vivid color rendition with neutral color balance avoiding heavy magenta casts.",
     "bestFor": "Commercial outdoor product and architectural landscapes.",
     "heritage": "Fujichrome Velvia 100F calibrated for neutral highlight balance.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Velvia_100F_RVP_Neutral.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_100F_RVP_Vivid",
@@ -1463,7 +1625,9 @@ window.CANON_PRESETS = [
     "look": "Vivid saturation with clean highlight roll-off and neutral magenta balance.",
     "bestFor": "Travel, nature, and scenic outdoor photography.",
     "heritage": "Fujichrome Velvia 100F, fine-grain E-6 reversal emulsion.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Velvia_100F_RVP_Vivid.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_100F_Vivid",
@@ -1479,7 +1643,9 @@ window.CANON_PRESETS = [
     "look": "Vivid saturation with clean highlight roll-off and neutral magenta balance.",
     "bestFor": "Travel, nature, and scenic outdoor photography.",
     "heritage": "Fujichrome Velvia 100F, fine-grain E-6 reversal emulsion.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Velvia_100F_Vivid.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_50",
@@ -1495,7 +1661,9 @@ window.CANON_PRESETS = [
     "look": "Extremely high saturation, punchy warm reds, deep cyan skies, and bold blacks.",
     "bestFor": "Landscapes, coastal scenery, botanical gardens, and vibrant sunsets.",
     "heritage": "Fujichrome Velvia 50 (RVP, introduced 1990), iconic E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Velvia 50.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_50_Landscape",
@@ -1511,7 +1679,9 @@ window.CANON_PRESETS = [
     "look": "Hyper-vivid landscape tuning: intense cyan/blue skies and saturated mountain greens.",
     "bestFor": "Outdoor landscapes, alpine panoramas, and nature under direct sun.",
     "heritage": "Fujichrome Velvia 50 (RVP), the gold standard transparency film for landscape photographers.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Velvia 50.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_50_RVP_Saturated",
@@ -1527,7 +1697,9 @@ window.CANON_PRESETS = [
     "look": "Maximum saturation push with dense blacks and vibrant primary colors.",
     "bestFor": "Botanical macros, dramatic sunsets, and vibrant travel scenes.",
     "heritage": "Fujichrome Velvia 50 (RVP) pushed for extra chrominance.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji Velvia 50.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_by_Giosi_v1",
@@ -1543,7 +1715,9 @@ window.CANON_PRESETS = [
     "look": "Velvia color palette balanced with a softened tone curve for portrait compatibility (v1 (initial calibration)).",
     "bestFor": "Environmental portraits, travel portraits, and outdoor events.",
     "heritage": "Custom Velvia tuning by Italian colorist Giosi.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Velvia_by_Giosi_v1.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_by_Giosi_v2",
@@ -1559,7 +1733,9 @@ window.CANON_PRESETS = [
     "look": "Velvia color palette balanced with a softened tone curve for portrait compatibility (v2 (refined skin tone curve)).",
     "bestFor": "Environmental portraits, travel portraits, and outdoor events.",
     "heritage": "Custom Velvia tuning by Italian colorist Giosi.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Velvia_by_Giosi_v2.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_Velvia_Official_Picture_Style",
@@ -1575,7 +1751,9 @@ window.CANON_PRESETS = [
     "look": "Ultra-saturated slide look with deep cyan skies, vibrant foliage, and strong contrast.",
     "bestFor": "Scenic landscapes, mountain ranges, and vibrant autumn foliage.",
     "heritage": "Fujichrome Velvia E-6 reversal film family.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fuji_Velvia_Official_Picture_Style.pf2",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Astia",
@@ -1591,7 +1769,9 @@ window.CANON_PRESETS = [
     "look": "Gentle saturation, creamy skin tones, and very smooth highlight roll-off.",
     "bestFor": "Portraits, bridal photography, and high-contrast daylight scenes.",
     "heritage": "Fujichrome Astia 100F (RAP), engineered specifically for flattering portraiture.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Astia.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Classic_Chrome",
@@ -1607,7 +1787,9 @@ window.CANON_PRESETS = [
     "look": "Muted saturation with gentle warm-brown bias, soft reds, and deep contrasty shadows.",
     "bestFor": "Photojournalism, street photography, and understated documentary essays.",
     "heritage": "Emulates Fujifilm's acclaimed Classic Chrome film simulation mode.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Classic Chrome.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Mono",
@@ -1623,7 +1805,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Mono).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Mono.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Mono_Plus_G",
@@ -1639,7 +1823,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Mono Plus G).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Mono+G.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Mono_Plus_R",
@@ -1655,7 +1841,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Mono Plus R).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Mono+R.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Mono_Plus_Ye",
@@ -1671,7 +1859,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Mono Plus Ye).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Mono+Ye.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Pro_Neg_Hi",
@@ -1687,7 +1877,9 @@ window.CANON_PRESETS = [
     "look": "Professional portrait negative response: Hi (enhanced contrast and skin definition).",
     "bestFor": "Studio portraiture, headshots, and controlled strobe lighting.",
     "heritage": "Fujifilm X-series Pro Neg film simulation.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Pro Neg Hi.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Pro_Neg_Std",
@@ -1703,7 +1895,9 @@ window.CANON_PRESETS = [
     "look": "Professional portrait negative response: Std (flat neutral contrast for studio strobes).",
     "bestFor": "Studio portraiture, headshots, and controlled strobe lighting.",
     "heritage": "Fujifilm X-series Pro Neg film simulation.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Pro Neg Std.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Provia",
@@ -1719,7 +1913,9 @@ window.CANON_PRESETS = [
     "look": "Neutral, highly balanced color rendition with faithful primaries and clean highlights.",
     "bestFor": "General-purpose photography, architectural documentation, and studio commercial work.",
     "heritage": "Fujichrome Provia 100F (RDPIII), Fujifilm's professional baseline E-6 slide film.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Provia.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fuji_XTrans_III_Velvia",
@@ -1735,7 +1931,9 @@ window.CANON_PRESETS = [
     "look": "Ultra-saturated slide look with deep cyan skies, vibrant foliage, and strong contrast.",
     "bestFor": "Scenic landscapes, mountain ranges, and vibrant autumn foliage.",
     "heritage": "Fujichrome Velvia E-6 reversal film family.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/01_Fujifilm/source_luts/Fuji XTrans III - Velvia.png",
+    "isLut": true
   },
   {
     "id": "01_Fujifilm__Fujifilm_Astia_100F",
@@ -1751,7 +1949,9 @@ window.CANON_PRESETS = [
     "look": "Gentle saturation, creamy skin tones, and very smooth highlight roll-off.",
     "bestFor": "Portraits, bridal photography, and high-contrast daylight scenes.",
     "heritage": "Fujichrome Astia 100F (RAP), engineered specifically for flattering portraiture.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fujifilm_Astia_100F.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fujifilm_Superia_100",
@@ -1767,7 +1967,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 100 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 100, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fujifilm_Superia_100.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fujifilm_Superia_200",
@@ -1783,7 +1985,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant, cheerful color negative palette with accentuated greens and blues (ISO 200 tuning).",
     "bestFor": "Casual travel, daytime street photography, and nostalgic snapshots.",
     "heritage": "Fujicolor Superia 200, the ubiquitous consumer color negative film (1998-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fujifilm_Superia_200.pf3",
+    "isLut": false
   },
   {
     "id": "01_Fujifilm__Fujifilm_X-Trans_III_Velvia",
@@ -1799,7 +2003,9 @@ window.CANON_PRESETS = [
     "look": "Ultra-saturated slide look with deep cyan skies, vibrant foliage, and strong contrast.",
     "bestFor": "Scenic landscapes, mountain ranges, and vibrant autumn foliage.",
     "heritage": "Fujichrome Velvia E-6 reversal film family.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/01_Fujifilm/Fujifilm_X-Trans_III_Velvia.pf3",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_E_100_GX_Ektachrome_100",
@@ -1815,7 +2021,9 @@ window.CANON_PRESETS = [
     "look": "Neutral, clean transparency color balance with cool blues and true whites.",
     "bestFor": "Landscapes, commercial travel, and architectural documentation.",
     "heritage": "Kodak Professional Ektachrome E100G / E100 (E-6 process).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak E-100 GX Ektachrome 100.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Ektachrome_100_VS",
@@ -1831,7 +2039,9 @@ window.CANON_PRESETS = [
     "look": "Vivid Saturation (VS): intense primary colors, deep cobalt skies, and punchy contrast.",
     "bestFor": "Nature landscapes, outdoor sports, and dramatic travel scenes.",
     "heritage": "Kodak Professional Ektachrome E100VS (Vivid Saturation) E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Ektachrome 100 VS.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Ektachrome_100_VS_Generic",
@@ -1847,7 +2057,9 @@ window.CANON_PRESETS = [
     "look": "Vivid Saturation (VS): intense primary colors, deep cobalt skies, and punchy contrast.",
     "bestFor": "Nature landscapes, outdoor sports, and dramatic travel scenes.",
     "heritage": "Kodak Professional Ektachrome E100VS (Vivid Saturation) E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Ektachrome 100 VS Generic.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Ektachrome_Cross_Process_EtoC",
@@ -1863,7 +2075,9 @@ window.CANON_PRESETS = [
     "look": "Cross-process (E-6 slide in C-41 chemistry): radical green-cyan shadow shifts and boosted contrast.",
     "bestFor": "Artistic fashion, music videos, and edgy experimental stills.",
     "heritage": "Analog lab cross-processing of Kodak Ektachrome.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Ektachrome_Cross_Process_EtoC.pf2",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_Ektachrome_EES_Color_Slide",
@@ -1879,7 +2093,9 @@ window.CANON_PRESETS = [
     "look": "High-speed pushed slide look with gritty shadows and bold warm highlights.",
     "bestFor": "Rock concerts, night events, and gritty documentary.",
     "heritage": "Kodak Ektachrome EES 800/1600 pushed transparency film.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Ektachrome_EES_Color_Slide.pf2",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_Ektar_100",
@@ -1895,7 +2111,9 @@ window.CANON_PRESETS = [
     "look": "Ultra-vivid saturation, ultra-fine grain, and high acutance with bold primary reds and blues.",
     "bestFor": "Scenic landscapes, automotive photography, commercial travel, and nature.",
     "heritage": "Kodak Ektar 100, marketed as the world's finest grain color negative film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Ektar 100.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Elite_100_XPro",
@@ -1911,7 +2129,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant consumer slide palette with punchy warm reds and deep blue skies.",
     "bestFor": "Holiday travel, sunny outdoor sports, and vivid landscape.",
     "heritage": "Kodak Elite Chrome Extra Color (EBX) 100 E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Elite 100 XPRO.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Elite_100_XPRO_FilmSim",
@@ -1927,7 +2147,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant consumer slide palette with punchy warm reds and deep blue skies.",
     "bestFor": "Holiday travel, sunny outdoor sports, and vivid landscape.",
     "heritage": "Kodak Elite Chrome Extra Color (EBX) 100 E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Elite 100 XPRO.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Elite_Chrome_200",
@@ -1943,7 +2165,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant consumer slide palette with punchy warm reds and deep blue skies.",
     "bestFor": "Holiday travel, sunny outdoor sports, and vivid landscape.",
     "heritage": "Kodak Elite Chrome Extra Color (EBX) 100 E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Elite Chrome 200.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Elite_Chrome_400",
@@ -1959,7 +2183,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant consumer slide palette with punchy warm reds and deep blue skies.",
     "bestFor": "Holiday travel, sunny outdoor sports, and vivid landscape.",
     "heritage": "Kodak Elite Chrome Extra Color (EBX) 100 E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Elite Chrome 400.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Elite_Color_200",
@@ -1975,7 +2201,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant consumer slide palette with punchy warm reds and deep blue skies.",
     "bestFor": "Holiday travel, sunny outdoor sports, and vivid landscape.",
     "heritage": "Kodak Elite Chrome Extra Color (EBX) 100 E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Elite Color 200.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Elite_Color_400",
@@ -1991,7 +2219,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant consumer slide palette with punchy warm reds and deep blue skies.",
     "bestFor": "Holiday travel, sunny outdoor sports, and vivid landscape.",
     "heritage": "Kodak Elite Chrome Extra Color (EBX) 100 E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Elite Color 400.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Elite_ExtraColor_100",
@@ -2007,7 +2237,9 @@ window.CANON_PRESETS = [
     "look": "Vibrant consumer slide palette with punchy warm reds and deep blue skies.",
     "bestFor": "Holiday travel, sunny outdoor sports, and vivid landscape.",
     "heritage": "Kodak Elite Chrome Extra Color (EBX) 100 E-6 slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Elite ExtraColor 100.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Kodachrome_200",
@@ -2023,7 +2255,9 @@ window.CANON_PRESETS = [
     "look": "Gritty grain appearance, warm earthy tones, and subdued cyan/blue saturation.",
     "bestFor": "Retro documentary, dusk cityscapes, and vintage street scenes.",
     "heritage": "Kodachrome 200 high-speed reversal film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Kodachrome 200.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Kodachrome_25",
@@ -2039,7 +2273,9 @@ window.CANON_PRESETS = [
     "look": "High contrast, razor-sharp acutance, warm red/yellow bias, and deep blacks.",
     "bestFor": "Classic architecture, sunny landscapes, and historic documentary.",
     "heritage": "Eastman Kodak Kodachrome 25 (K-14 process), legendary fine-grain slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Kodachrome 25.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Kodachrome_25_Contrast",
@@ -2055,7 +2291,9 @@ window.CANON_PRESETS = [
     "look": "High contrast, razor-sharp acutance, warm red/yellow bias, and deep blacks.",
     "bestFor": "Classic architecture, sunny landscapes, and historic documentary.",
     "heritage": "Eastman Kodak Kodachrome 25 (K-14 process), legendary fine-grain slide film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Kodachrome 25.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Kodachrome_64",
@@ -2071,7 +2309,9 @@ window.CANON_PRESETS = [
     "look": "Iconic mid-century color balance: vibrant reds, warm yellows, and authentic documentary tones.",
     "bestFor": "Photojournalism, street reportage, and vintage travel essays.",
     "heritage": "Kodachrome 64, National Geographic's definitive documentary film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Kodachrome 64.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Kodachrome_64_Generic",
@@ -2087,7 +2327,9 @@ window.CANON_PRESETS = [
     "look": "Iconic mid-century color balance: vibrant reds, warm yellows, and authentic documentary tones.",
     "bestFor": "Photojournalism, street reportage, and vintage travel essays.",
     "heritage": "Kodachrome 64, National Geographic's definitive documentary film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Kodachrome 64 Generic.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Kodachrome_Warm_RetroKrum",
@@ -2103,7 +2345,9 @@ window.CANON_PRESETS = [
     "look": "Warm nostalgic palette with rich reds, golden ochres, and classic print contrast.",
     "bestFor": "Retro street, travel memories, and analog-style portraits.",
     "heritage": "Kodachrome family reversal film recreations.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Kodachrome_Warm_RetroKrum.pf3",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_1",
@@ -2119,7 +2363,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 1: dense shadows (-1 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_2",
@@ -2135,7 +2381,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_3_Plus",
@@ -2151,7 +2399,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_4_Plus_Plus",
@@ -2167,7 +2417,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_NC_1",
@@ -2183,7 +2435,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 1: dense shadows (-1 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 NC 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_NC_2",
@@ -2199,7 +2453,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 NC 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_NC_3_Plus",
@@ -2215,7 +2471,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 NC 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_NC_4_Plus_Plus",
@@ -2231,7 +2489,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 NC 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_VC_1",
@@ -2247,7 +2507,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 1: dense shadows (-1 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 VC 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_VC_2",
@@ -2263,7 +2525,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 VC 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_VC_3_Plus",
@@ -2279,7 +2543,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 VC 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160_VC_4_Plus_Plus",
@@ -2295,7 +2561,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 160 VC 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_160NC_Natural_Color",
@@ -2311,7 +2579,9 @@ window.CANON_PRESETS = [
     "look": "Muted contrast with lifted shadows and soft intimate colors in low ambient light.",
     "bestFor": "Candlelit interiors, twilight street scenes, and available-light lifestyle without flash.",
     "heritage": "Fujicolor Natura 1600, paired with the f/1.9 Natura Classica camera.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Portra_160NC_Natural_Color.pf2",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_1",
@@ -2327,7 +2597,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 1: dense shadows (-1 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_2",
@@ -2343,7 +2615,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_3_Plus",
@@ -2359,7 +2633,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_4_Plus_Plus",
@@ -2375,7 +2651,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_Extended_DR",
@@ -2391,7 +2669,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant dr: dr.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Portra_400_Extended_DR.pf3",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_NC_1",
@@ -2407,7 +2687,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 1: dense shadows (-1 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 NC 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_NC_2",
@@ -2423,7 +2705,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 NC 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_NC_3_Plus",
@@ -2439,7 +2723,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 NC 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_NC_4_Plus_Plus",
@@ -2455,7 +2741,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 NC 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_Standard",
@@ -2471,7 +2759,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant standard: standard.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Portra_400_Standard.pf3",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_UC",
@@ -2487,7 +2777,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant uc: uc.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Portra_400_UC.pf3",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_UC_1",
@@ -2503,7 +2795,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 1: dense shadows (-1 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 UC 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_UC_2",
@@ -2519,7 +2813,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 UC 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_UC_3_Plus",
@@ -2535,7 +2831,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 UC 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_UC_4_Plus_Plus",
@@ -2551,7 +2849,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 UC 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_VC_1",
@@ -2567,7 +2867,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 1: dense shadows (-1 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 VC 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_VC_2",
@@ -2583,7 +2885,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 VC 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_VC_3_Plus",
@@ -2599,7 +2903,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 VC 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_400_VC_4_Plus_Plus",
@@ -2615,7 +2921,9 @@ window.CANON_PRESETS = [
     "look": "Kodak Portra 400 exposure matrix variant plus: plus.",
     "bestFor": "Daylight portraits, golden hour, and natural light lifestyle.",
     "heritage": "Kodak Professional Portra 400 exposure matrix.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 400 VC 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_800_1",
@@ -2631,7 +2939,9 @@ window.CANON_PRESETS = [
     "look": "Warm vintage color balance, coarser grain structure, and glowing amber skin under low light.",
     "bestFor": "Concerts, night street scenes, and moody interior portraits.",
     "heritage": "Kodak Professional Portra 800 high-speed color negative.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 800 1 -.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_800_2",
@@ -2647,7 +2957,9 @@ window.CANON_PRESETS = [
     "look": "Warm vintage color balance, coarser grain structure, and glowing amber skin under low light.",
     "bestFor": "Concerts, night street scenes, and moody interior portraits.",
     "heritage": "Kodak Professional Portra 800 high-speed color negative.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 800 2.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_800_3_Plus",
@@ -2663,7 +2975,9 @@ window.CANON_PRESETS = [
     "look": "Warm vintage color balance, coarser grain structure, and glowing amber skin under low light.",
     "bestFor": "Concerts, night street scenes, and moody interior portraits.",
     "heritage": "Kodak Professional Portra 800 high-speed color negative.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 800 3 +.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_800_4_Plus_Plus",
@@ -2679,7 +2993,9 @@ window.CANON_PRESETS = [
     "look": "Warm vintage color balance, coarser grain structure, and glowing amber skin under low light.",
     "bestFor": "Concerts, night street scenes, and moody interior portraits.",
     "heritage": "Kodak Professional Portra 800 high-speed color negative.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 800 4 ++.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_800_HC",
@@ -2695,7 +3011,9 @@ window.CANON_PRESETS = [
     "look": "Warm vintage color balance, coarser grain structure, and glowing amber skin under low light.",
     "bestFor": "Concerts, night street scenes, and moody interior portraits.",
     "heritage": "Kodak Professional Portra 800 high-speed color negative.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/02_Kodak/source_luts/Kodak Portra 800 HC.png",
+    "isLut": true
   },
   {
     "id": "02_Kodak__Kodak_Portra_Soft_Skin_Tones",
@@ -2711,7 +3029,9 @@ window.CANON_PRESETS = [
     "look": "Warm peach skin tones, golden highlight roll-off, and legendary exposure latitude.",
     "bestFor": "Weddings, daylight portraits, editorial fashion, and travel documentary.",
     "heritage": "Kodak Professional Portra 400, the industry benchmark portrait film.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/02_Kodak/Kodak_Portra_Soft_Skin_Tones.pf2",
+    "isLut": false
   },
   {
     "id": "02_Kodak__Thomas Fransson CrowdakV3",
@@ -2727,7 +3047,9 @@ window.CANON_PRESETS = [
     "look": "Custom Kodachrome emulation with warm vintage tones and punchy contrast.",
     "bestFor": "Outdoor documentary, sunny street photography, and vintage car shows.",
     "heritage": "Thomas Fransson's analog Kodachrome tuning for Canon DSLRs.",
-    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*"
+    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*",
+    "source": "presets Canon.pf3/02_Kodak/Thomas Fransson CrowdakV3.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Agfa_APX_100",
@@ -2743,7 +3065,9 @@ window.CANON_PRESETS = [
     "look": "Traditional German monochrome palette: crisp midtones and rich silvery blacks (ISO 100).",
     "bestFor": "Street reportage, architecture, and expressive portraits.",
     "heritage": "Agfa APX 100, classic emulsion produced in Leverkusen, Germany.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Agfa APX 100.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Agfa_APX_25",
@@ -2759,7 +3083,9 @@ window.CANON_PRESETS = [
     "look": "Traditional German monochrome palette: crisp midtones and rich silvery blacks (ISO 25).",
     "bestFor": "Street reportage, architecture, and expressive portraits.",
     "heritage": "Agfa APX 25, classic emulsion produced in Leverkusen, Germany.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Agfa APX 25.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Cinema_Filmic_BW",
@@ -2775,7 +3101,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade bw).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Cinema_Filmic_BW.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_1",
@@ -2791,7 +3119,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b 1 --.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_2",
@@ -2807,7 +3137,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b 2 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_3",
@@ -2823,7 +3155,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b 3.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_4_Plus",
@@ -2839,7 +3173,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b 4 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_5_Plus_Plus",
@@ -2855,7 +3191,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b 5 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_6_Plus_Plus_Plus",
@@ -2871,7 +3209,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b 6 +++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_HC",
@@ -2887,7 +3227,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b HC.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_Negative_1",
@@ -2903,7 +3245,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b Negative 1 --.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_Negative_2",
@@ -2919,7 +3263,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b Negative 2 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_Negative_3",
@@ -2935,7 +3281,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b Negative 3.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_Negative_4_Plus",
@@ -2951,7 +3299,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b Negative 4 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_Negative_5_Plus_Plus",
@@ -2967,7 +3317,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b Negative 5 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_Negative_6_Plus_Plus_Plus",
@@ -2983,7 +3335,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b Negative 6 +++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_FP_3000b_Negative_Early",
@@ -2999,7 +3353,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji FP-3000b Negative Early.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_Neopan_1600_1",
@@ -3015,7 +3371,9 @@ window.CANON_PRESETS = [
     "look": "High-contrast street monochrome with deep rich blacks and gritty acutance (ISO 1600).",
     "bestFor": "Nighttime street photography, subway documentary, and bold portraits.",
     "heritage": "Fujifilm Neopan Professional 1600 black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji Neopan 1600 1 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_Neopan_1600_2",
@@ -3031,7 +3389,9 @@ window.CANON_PRESETS = [
     "look": "High-contrast street monochrome with deep rich blacks and gritty acutance (ISO 1600).",
     "bestFor": "Nighttime street photography, subway documentary, and bold portraits.",
     "heritage": "Fujifilm Neopan Professional 1600 black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji Neopan 1600 2.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_Neopan_1600_3_Plus",
@@ -3047,7 +3407,9 @@ window.CANON_PRESETS = [
     "look": "High-contrast street monochrome with deep rich blacks and gritty acutance (ISO 1600).",
     "bestFor": "Nighttime street photography, subway documentary, and bold portraits.",
     "heritage": "Fujifilm Neopan Professional 1600 black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji Neopan 1600 3 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_Neopan_1600_4_Plus_Plus",
@@ -3063,7 +3425,9 @@ window.CANON_PRESETS = [
     "look": "High-contrast street monochrome with deep rich blacks and gritty acutance (ISO 1600).",
     "bestFor": "Nighttime street photography, subway documentary, and bold portraits.",
     "heritage": "Fujifilm Neopan Professional 1600 black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji Neopan 1600 4 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_Neopan_Acros_100",
@@ -3079,7 +3443,9 @@ window.CANON_PRESETS = [
     "look": "Ultra-fine grain, smooth tonal transitions, and clinical acutance [Red filter (black skies, dramatic clouds)].",
     "bestFor": "Fine-art landscape, architecture, and refined street photography.",
     "heritage": "Fujifilm Neopan 100 Acros, world-renowned for reciprocity and fine grain.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji Neopan Acros 100.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_XTrans_III_Acros",
@@ -3095,7 +3461,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Acros).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji XTrans III - Acros.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_XTrans_III_Acros_Plus_G",
@@ -3111,7 +3479,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Acros Plus G).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji XTrans III - Acros+G.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_XTrans_III_Acros_Plus_R",
@@ -3127,7 +3497,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Acros Plus R).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji XTrans III - Acros+R.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_XTrans_III_Acros_Plus_Ye",
@@ -3143,7 +3515,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Acros Plus Ye).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji XTrans III - Acros+Ye.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fuji_XTrans_III_Sepia",
@@ -3159,7 +3533,9 @@ window.CANON_PRESETS = [
     "look": "Digital simulation of Fujifilm X-Trans III sensor profile (Fuji Sepia).",
     "bestFor": "General street, documentary, and travel photography.",
     "heritage": "Direct extraction from Fujifilm X-Trans III processor engine.",
-    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*"
+    "author": "Fujifilm Corporation *(Pack: Fuji X-Trans III Sensor Profile Extraction)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Fuji XTrans III - Sepia.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Fujifilm_Acros_R",
@@ -3175,7 +3551,9 @@ window.CANON_PRESETS = [
     "look": "Ultra-fine grain, smooth tonal transitions, and clinical acutance [Red filter (black skies, dramatic clouds)].",
     "bestFor": "Fine-art landscape, architecture, and refined street photography.",
     "heritage": "Fujifilm Neopan 100 Acros, world-renowned for reciprocity and fine grain.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Fujifilm_Acros_R.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Ilford_Delta_100",
@@ -3191,7 +3569,9 @@ window.CANON_PRESETS = [
     "look": "Modern tabular crystal grain (Core-Shell), crisp micro-contrast, and deep blacks (ISO 100).",
     "bestFor": "High-detail architecture, studio portraits, and low-light concerts.",
     "heritage": "Ilford Delta 100 Professional tabular grain film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford Delta 100.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_Delta_3200_1",
@@ -3207,7 +3587,9 @@ window.CANON_PRESETS = [
     "look": "Modern tabular crystal grain (Core-Shell), crisp micro-contrast, and deep blacks (ISO 3200).",
     "bestFor": "High-detail architecture, studio portraits, and low-light concerts.",
     "heritage": "Ilford Delta 3200 Professional tabular grain film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford Delta 3200 1 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_Delta_3200_2",
@@ -3223,7 +3605,9 @@ window.CANON_PRESETS = [
     "look": "Modern tabular crystal grain (Core-Shell), crisp micro-contrast, and deep blacks (ISO 3200).",
     "bestFor": "High-detail architecture, studio portraits, and low-light concerts.",
     "heritage": "Ilford Delta 3200 Professional tabular grain film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford Delta 3200 2.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_Delta_3200_3_Plus",
@@ -3239,7 +3623,9 @@ window.CANON_PRESETS = [
     "look": "Modern tabular crystal grain (Core-Shell), crisp micro-contrast, and deep blacks (ISO 3200).",
     "bestFor": "High-detail architecture, studio portraits, and low-light concerts.",
     "heritage": "Ilford Delta 3200 Professional tabular grain film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford Delta 3200 3 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_Delta_3200_4_Plus_Plus",
@@ -3255,7 +3641,9 @@ window.CANON_PRESETS = [
     "look": "Modern tabular crystal grain (Core-Shell), crisp micro-contrast, and deep blacks (ISO 3200).",
     "bestFor": "High-detail architecture, studio portraits, and low-light concerts.",
     "heritage": "Ilford Delta 3200 Professional tabular grain film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford Delta 3200 4 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_Delta_400",
@@ -3271,7 +3659,9 @@ window.CANON_PRESETS = [
     "look": "Modern tabular crystal grain (Core-Shell), crisp micro-contrast, and deep blacks (ISO 400).",
     "bestFor": "High-detail architecture, studio portraits, and low-light concerts.",
     "heritage": "Ilford Delta 400 Professional tabular grain film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford Delta 400.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_FP4_Plus_125",
@@ -3287,7 +3677,9 @@ window.CANON_PRESETS = [
     "look": "Fine grain, high acutance, and balanced tonal separation across midtones.",
     "bestFor": "Studio portraiture, architecture, and daylight landscapes.",
     "heritage": "Ilford FP4 Plus (ISO 125), classic medium-speed black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford FP4 Plus 125.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_HP5_1",
@@ -3303,7 +3695,9 @@ window.CANON_PRESETS = [
     "look": "Classic cubic grain, medium-low contrast, and forgiving exposure latitude (Dense shadow pull -1 EV).",
     "bestFor": "Street photography, documentary, photojournalism, and everyday B&W.",
     "heritage": "Ilford HP5 Plus (ISO 400), benchmark British monochrome emulsion since 1976.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford HP5 1 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_HP5_2",
@@ -3319,7 +3713,9 @@ window.CANON_PRESETS = [
     "look": "Classic cubic grain, medium-low contrast, and forgiving exposure latitude (Standard box speed).",
     "bestFor": "Street photography, documentary, photojournalism, and everyday B&W.",
     "heritage": "Ilford HP5 Plus (ISO 400), benchmark British monochrome emulsion since 1976.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford HP5 2.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_HP5_3_Plus",
@@ -3335,7 +3731,9 @@ window.CANON_PRESETS = [
     "look": "Classic cubic grain, medium-low contrast, and forgiving exposure latitude (High-key push +1/+2 EV).",
     "bestFor": "Street photography, documentary, photojournalism, and everyday B&W.",
     "heritage": "Ilford HP5 Plus (ISO 400), benchmark British monochrome emulsion since 1976.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford HP5 3 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_HP5_4_Plus_Plus",
@@ -3351,7 +3749,9 @@ window.CANON_PRESETS = [
     "look": "Classic cubic grain, medium-low contrast, and forgiving exposure latitude (High-key push +1/+2 EV).",
     "bestFor": "Street photography, documentary, photojournalism, and everyday B&W.",
     "heritage": "Ilford HP5 Plus (ISO 400), benchmark British monochrome emulsion since 1976.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford HP5 4 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_HP5_Plus_400",
@@ -3367,7 +3767,9 @@ window.CANON_PRESETS = [
     "look": "Classic cubic grain, medium-low contrast, and forgiving exposure latitude (High-key push +1/+2 EV).",
     "bestFor": "Street photography, documentary, photojournalism, and everyday B&W.",
     "heritage": "Ilford HP5 Plus (ISO 400), benchmark British monochrome emulsion since 1976.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford HP5 Plus 400.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_HP_5",
@@ -3383,7 +3785,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Ilford HP 5' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Ilford_HP_5.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Ilford_HPS_800",
@@ -3399,7 +3803,9 @@ window.CANON_PRESETS = [
     "look": "Gritty high-speed vintage grain with bold contrast and compressed midtones.",
     "bestFor": "Gritty street documentary, concert stages, and low-light night scenes.",
     "heritage": "Ilford HPS vintage high-speed press film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford HPS 800.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_Pan_F_Plus_50",
@@ -3415,7 +3821,9 @@ window.CANON_PRESETS = [
     "look": "Virtually grain-free, razor-sharp edge contrast, and deep velvety blacks.",
     "bestFor": "Bright sunny landscapes, still life, and high-detail architecture.",
     "heritage": "Ilford Pan F Plus (ISO 50), ultra-fine grain slow film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford Pan F Plus 50.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Ilford_XP2",
@@ -3431,7 +3839,9 @@ window.CANON_PRESETS = [
     "look": "Exceptionally smooth tonal gradations with dye-cloud chromogenic grain.",
     "bestFor": "Flattering black and white portraiture, bridal, and soft natural light.",
     "heritage": "Ilford XP2 Super 400, chromogenic C-41 process B&W film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Ilford XP2.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_BW_400_CN",
@@ -3447,7 +3857,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak BW 400 CN' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak BW 400 CN.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_HIE_(HS_Infra)",
@@ -3463,7 +3875,9 @@ window.CANON_PRESETS = [
     "look": "Infrared glow: glowing white foliage (Wood effect), inky black skies, and ethereal halation.",
     "bestFor": "Surreal landscapes, sunny foliage, and dreamlike architectural photography.",
     "heritage": "Kodak High-Speed Infrared (HIE) film without anti-halation backing.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak HIE (HS Infra).png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_HIE_HS_Infra",
@@ -3479,7 +3893,9 @@ window.CANON_PRESETS = [
     "look": "Infrared glow: glowing white foliage (Wood effect), inky black skies, and ethereal halation.",
     "bestFor": "Surreal landscapes, sunny foliage, and dreamlike architectural photography.",
     "heritage": "Kodak High-Speed Infrared (HIE) film without anti-halation backing.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Kodak_HIE_HS_Infra.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Kodak_T-Max_3200",
@@ -3495,7 +3911,9 @@ window.CANON_PRESETS = [
     "look": "Linear tonal scale, microscopic T-Grain structure, and high technical precision (ISO 3200).",
     "bestFor": "Scientific documentation, gallery fine-art, studio, and architecture.",
     "heritage": "Kodak Professional T-Max 3200 tabular-grain black and white film.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Kodak_T-Max_3200.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Kodak_T_Max_100",
@@ -3511,7 +3929,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak T Max 100' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak T-Max 100.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_T_Max_400",
@@ -3527,7 +3947,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak T Max 400' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak T-Max 400.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TMAX_3200_1",
@@ -3543,7 +3965,9 @@ window.CANON_PRESETS = [
     "look": "Linear tonal scale, microscopic T-Grain structure, and high technical precision (ISO 3200).",
     "bestFor": "Scientific documentation, gallery fine-art, studio, and architecture.",
     "heritage": "Kodak Professional T-Max 3200 tabular-grain black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TMAX 3200 1 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TMAX_3200_2",
@@ -3559,7 +3983,9 @@ window.CANON_PRESETS = [
     "look": "Linear tonal scale, microscopic T-Grain structure, and high technical precision (ISO 3200).",
     "bestFor": "Scientific documentation, gallery fine-art, studio, and architecture.",
     "heritage": "Kodak Professional T-Max 3200 tabular-grain black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TMAX 3200 2.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TMAX_3200_3_Alt",
@@ -3575,7 +4001,9 @@ window.CANON_PRESETS = [
     "look": "Linear tonal scale, microscopic T-Grain structure, and high technical precision (ISO 3200).",
     "bestFor": "Scientific documentation, gallery fine-art, studio, and architecture.",
     "heritage": "Kodak Professional T-Max 3200 tabular-grain black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TMAX 3200 3 Alt.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TMAX_3200_4_Plus",
@@ -3591,7 +4019,9 @@ window.CANON_PRESETS = [
     "look": "Linear tonal scale, microscopic T-Grain structure, and high technical precision (ISO 3200).",
     "bestFor": "Scientific documentation, gallery fine-art, studio, and architecture.",
     "heritage": "Kodak Professional T-Max 3200 tabular-grain black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TMAX 3200 4 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TMAX_3200_5_Plus_Plus",
@@ -3607,7 +4037,9 @@ window.CANON_PRESETS = [
     "look": "Linear tonal scale, microscopic T-Grain structure, and high technical precision (ISO 3200).",
     "bestFor": "Scientific documentation, gallery fine-art, studio, and architecture.",
     "heritage": "Kodak Professional T-Max 3200 tabular-grain black and white film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TMAX 3200 5 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TMAX_400_Monochrome",
@@ -3623,7 +4055,9 @@ window.CANON_PRESETS = [
     "look": "Linear tonal scale, microscopic T-Grain structure, and high technical precision (ISO 400).",
     "bestFor": "Scientific documentation, gallery fine-art, studio, and architecture.",
     "heritage": "Kodak Professional T-Max 400 tabular-grain black and white film.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Kodak_TMAX_400_Monochrome.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Kodak_TRI_X_400_1",
@@ -3639,7 +4073,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak TRI X 400 1' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TRI-X 400 1 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TRI_X_400_2",
@@ -3655,7 +4091,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak TRI X 400 2' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TRI-X 400 2.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TRI_X_400_3_Alt",
@@ -3671,7 +4109,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak TRI X 400 3 Alt' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TRI-X 400 3 Alt.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TRI_X_400_4_Plus",
@@ -3687,7 +4127,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak TRI X 400 4 Plus' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TRI-X 400 4 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TRI_X_400_5_Plus_Plus",
@@ -3703,7 +4145,9 @@ window.CANON_PRESETS = [
     "look": "Custom artistic color grade engineered for the 'Kodak TRI X 400 5 Plus Plus' aesthetic.",
     "bestFor": "Creative photography, mood-driven styling, and unique personal projects.",
     "heritage": "Canon EOS community custom picture style.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Kodak TRI-X 400 5 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Kodak_TriX_T-Rex_2_Punchy",
@@ -3719,7 +4163,9 @@ window.CANON_PRESETS = [
     "look": "Punchy contrast, signature gritty grain structure, and deep authoritative blacks (Punchy contrast).",
     "bestFor": "Photojournalism, street photography, and dramatic environmental portraits.",
     "heritage": "Kodak Professional Tri-X 400 (400TX), the definitive documentary photo film.",
-    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*"
+    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*",
+    "source": "presets Canon.pf3/03_Black_and_White/Kodak_TriX_T-Rex_2_Punchy.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Kodak_TriX_T-Rex_High_Contrast",
@@ -3735,7 +4181,9 @@ window.CANON_PRESETS = [
     "look": "Punchy contrast, signature gritty grain structure, and deep authoritative blacks (Classic).",
     "bestFor": "Photojournalism, street photography, and dramatic environmental portraits.",
     "heritage": "Kodak Professional Tri-X 400 (400TX), the definitive documentary photo film.",
-    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*"
+    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*",
+    "source": "presets Canon.pf3/03_Black_and_White/Kodak_TriX_T-Rex_High_Contrast.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Kodak_TriX_T-Rex_Lifted_Shadows",
@@ -3751,7 +4199,9 @@ window.CANON_PRESETS = [
     "look": "Punchy contrast, signature gritty grain structure, and deep authoritative blacks (Lifted shadows).",
     "bestFor": "Photojournalism, street photography, and dramatic environmental portraits.",
     "heritage": "Kodak Professional Tri-X 400 (400TX), the definitive documentary photo film.",
-    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*"
+    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*",
+    "source": "presets Canon.pf3/03_Black_and_White/Kodak_TriX_T-Rex_Lifted_Shadows.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__LeHungPhotography.com_BNW",
@@ -3767,7 +4217,9 @@ window.CANON_PRESETS = [
     "look": "High-contrast editorial B&W with aggressive facial micro-contrast and deep blacks.",
     "bestFor": "Edgy male portraiture, musicians, athletes, and expressive character studies.",
     "heritage": "Created by Vietnamese editorial photographer Le Hung.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/LeHungPhotography.com_BNW.pf3",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW99_Classic",
@@ -3783,7 +4235,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade classic).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW99_Classic.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW_1_Soft",
@@ -3799,7 +4253,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade soft).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW_1_Soft.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW_2_Medium",
@@ -3815,7 +4271,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade medium).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW_2_Medium.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW_3_Contrast",
@@ -3831,7 +4289,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade contrast).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW_3_Contrast.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW_4_Dramatic",
@@ -3847,7 +4307,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade dramatic).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW_4_Dramatic.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW_5_Deep",
@@ -3863,7 +4325,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade deep).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW_5_Deep.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW_Highlights_H",
@@ -3879,7 +4343,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade h).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW_Highlights_H.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_BW_Portrait_P",
@@ -3895,7 +4361,9 @@ window.CANON_PRESETS = [
     "look": "Graduated black and white contrast curve (Grade p).",
     "bestFor": "All-round monochrome adjusted to scene lighting contrast.",
     "heritage": "Canon community custom monochrome curve series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_BW_Portrait_P.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Monochrome_Eyer_Artistic",
@@ -3911,7 +4379,9 @@ window.CANON_PRESETS = [
     "look": "Painterly B&W with lifted matte blacks, airy midtones, and soft highlights.",
     "bestFor": "Intimate street scenes, moody travel, and fine-art monochrome.",
     "heritage": "Designed by Chinese photographer Eyer for an etching-print aesthetic.",
-    "author": "Eyer *(Pack: Eyer Creative Color Styles)*"
+    "author": "Eyer *(Pack: Eyer Creative Color Styles)*",
+    "source": "presets Canon.pf3/03_Black_and_White/Monochrome_Eyer_Artistic.pf2",
+    "isLut": false
   },
   {
     "id": "03_Black_and_White__Polaroid_664",
@@ -3927,7 +4397,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 664.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_1",
@@ -3943,7 +4415,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 1 --.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_2",
@@ -3959,7 +4433,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 2 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_3",
@@ -3975,7 +4451,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 3.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_4_Plus",
@@ -3991,7 +4469,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 4 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_5_Plus_Plus",
@@ -4007,7 +4487,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 5 ++.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_Negative_1",
@@ -4023,7 +4505,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 Negative 1 -.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_Negative_2",
@@ -4039,7 +4523,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 Negative 2.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_Negative_3_Plus",
@@ -4055,7 +4541,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 Negative 3 +.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_665_Negative_HC",
@@ -4071,7 +4559,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 665 Negative HC.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_667",
@@ -4087,7 +4577,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 667.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Polaroid_672",
@@ -4103,7 +4595,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Polaroid 672.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Rollei_IR_400",
@@ -4119,7 +4613,9 @@ window.CANON_PRESETS = [
     "look": "Near-infrared spectral response with deep skies and sharp technical acutance.",
     "bestFor": "Landscape with deep skies, technical documentation, and architecture.",
     "heritage": "Rollei IR 400 near-infrared film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Rollei IR 400.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Rollei_IR_400_FilmSim",
@@ -4135,7 +4631,9 @@ window.CANON_PRESETS = [
     "look": "Near-infrared spectral response with deep skies and sharp technical acutance.",
     "bestFor": "Landscape with deep skies, technical documentation, and architecture.",
     "heritage": "Rollei IR 400 near-infrared film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Rollei IR 400.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Rollei_Ortho_25",
@@ -4151,7 +4649,9 @@ window.CANON_PRESETS = [
     "look": "Orthochromatic (red-blind) high micro-contrast: dark lips/skin, stark skies.",
     "bestFor": "Dramatic portraits, architectural graphics, and copy-stand work.",
     "heritage": "Rollei Ortho 25 technical orthochromatic film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Rollei Ortho 25.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Rollei_Ortho_25_FilmSim",
@@ -4167,7 +4667,9 @@ window.CANON_PRESETS = [
     "look": "Orthochromatic (red-blind) high micro-contrast: dark lips/skin, stark skies.",
     "bestFor": "Dramatic portraits, architectural graphics, and copy-stand work.",
     "heritage": "Rollei Ortho 25 technical orthochromatic film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Rollei Ortho 25.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Rollei_Retro_100_Tonal",
@@ -4183,7 +4685,9 @@ window.CANON_PRESETS = [
     "look": "Near-infrared spectral response with deep skies and sharp technical acutance.",
     "bestFor": "Landscape with deep skies, technical documentation, and architecture.",
     "heritage": "Rollei IR 400 near-infrared film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Rollei Retro 100 Tonal.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__Rollei_Retro_80s",
@@ -4199,7 +4703,9 @@ window.CANON_PRESETS = [
     "look": "Near-infrared spectral response with deep skies and sharp technical acutance.",
     "bestFor": "Landscape with deep skies, technical documentation, and architecture.",
     "heritage": "Rollei IR 400 near-infrared film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/Rollei Retro 80s.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__ZilverFX_B&W_Solarization",
@@ -4215,7 +4721,9 @@ window.CANON_PRESETS = [
     "look": "Artisanal darkroom print emulation recreating silver gelatin and baryta papers (B&W Solarization).",
     "bestFor": "Gallery prints, collector portfolios, and fine-art monochrome.",
     "heritage": "Christian Bloch's PictureFX ZilverFX digital darkroom suite.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/ZilverFX-B&W-Solarization.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__ZilverFX_InfraRed",
@@ -4231,7 +4739,9 @@ window.CANON_PRESETS = [
     "look": "Infrared glow: glowing white foliage (Wood effect), inky black skies, and ethereal halation.",
     "bestFor": "Surreal landscapes, sunny foliage, and dreamlike architectural photography.",
     "heritage": "Kodak High-Speed Infrared (HIE) film without anti-halation backing.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/ZilverFX-InfraRed.png",
+    "isLut": true
   },
   {
     "id": "03_Black_and_White__ZilverFX_Vintage_B&W",
@@ -4247,7 +4757,9 @@ window.CANON_PRESETS = [
     "look": "Artisanal darkroom print emulation recreating silver gelatin and baryta papers (Vintage B&W).",
     "bestFor": "Gallery prints, collector portfolios, and fine-art monochrome.",
     "heritage": "Christian Bloch's PictureFX ZilverFX digital darkroom suite.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/03_Black_and_White/source_luts/ZilverFX-Vintage-B&W.png",
+    "isLut": true
   },
   {
     "id": "04_Cinema_and_Log__Cinema_1L_Natural_Look",
@@ -4263,7 +4775,9 @@ window.CANON_PRESETS = [
     "look": "Muted contrast with lifted shadows and soft intimate colors in low ambient light.",
     "bestFor": "Candlelit interiors, twilight street scenes, and available-light lifestyle without flash.",
     "heritage": "Fujicolor Natura 1600, paired with the f/1.9 Natura Classica camera.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_1L_Natural_Look.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_300_Bleach_Bypass",
@@ -4279,7 +4793,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_300_Bleach_Bypass.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_AdvancedFlat_Log",
@@ -4295,7 +4811,9 @@ window.CANON_PRESETS = [
     "look": "Maximally flattened gamma curve squeezing sensor dynamic range into an 8-bit space.",
     "bestFor": "Video shooting in harsh midday sun to avoid highlight clipping before grading.",
     "heritage": "Guerrilla flat curve created by Cinema5D forum filmmakers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_AdvancedFlat_Log.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_California_Cowboy_Bonus",
@@ -4311,7 +4829,9 @@ window.CANON_PRESETS = [
     "look": "Warm dusty ochres, amber sunset highlights, and earthy shadows evoking 1970s westerns.",
     "bestFor": "Golden hour portraits, desert landscapes, and indie music videos.",
     "heritage": "Thomas Fransson's 1970s cinema grade for Canon EOS.",
-    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*"
+    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_California_Cowboy_Bonus.pf3",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_California_Cowboy_Warm",
@@ -4327,7 +4847,9 @@ window.CANON_PRESETS = [
     "look": "Warm dusty ochres, amber sunset highlights, and earthy shadows evoking 1970s westerns.",
     "bestFor": "Golden hour portraits, desert landscapes, and indie music videos.",
     "heritage": "Thomas Fransson's 1970s cinema grade for Canon EOS.",
-    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*"
+    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_California_Cowboy_Warm.pf3",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Cinegrey_Desaturated",
@@ -4343,7 +4865,9 @@ window.CANON_PRESETS = [
     "look": "Heavy desaturation with deep contrasty blacks for a grim detective thriller aesthetic.",
     "bestFor": "Crime drama, rainy cityscapes, and somber photojournalism (David Fincher style).",
     "heritage": "Cinema DSLR community color grade inspired by films like *Zodiac*.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Cinegrey_Desaturated.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_CrookedPathFlat_2.0",
@@ -4359,7 +4883,9 @@ window.CANON_PRESETS = [
     "look": "Elevated shadow gamma curve balancing bright exteriors with dark interiors.",
     "bestFor": "Run-and-gun indie filmmaking and high-contrast documentary shooting.",
     "heritage": "Developed by Crooked Path Films for independent Canon 5D Mk II productions.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_CrookedPathFlat_2.0.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_CrookedPathFlat_2.1",
@@ -4375,7 +4901,9 @@ window.CANON_PRESETS = [
     "look": "Elevated shadow gamma curve balancing bright exteriors with dark interiors.",
     "bestFor": "Run-and-gun indie filmmaking and high-contrast documentary shooting.",
     "heritage": "Developed by Crooked Path Films for independent Canon 5D Mk II productions.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_CrookedPathFlat_2.1.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_CrookedPathFlat_3.0",
@@ -4391,7 +4919,9 @@ window.CANON_PRESETS = [
     "look": "Elevated shadow gamma curve balancing bright exteriors with dark interiors.",
     "bestFor": "Run-and-gun indie filmmaking and high-contrast documentary shooting.",
     "heritage": "Developed by Crooked Path Films for independent Canon 5D Mk II productions.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_CrookedPathFlat_3.0.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_CrookedPathFlat_3.0_Graded",
@@ -4407,7 +4937,9 @@ window.CANON_PRESETS = [
     "look": "Elevated shadow gamma curve balancing bright exteriors with dark interiors.",
     "bestFor": "Run-and-gun indie filmmaking and high-contrast documentary shooting.",
     "heritage": "Developed by Crooked Path Films for independent Canon 5D Mk II productions.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_CrookedPathFlat_3.0_Graded.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_CrookedPathFlat_High_Gamma",
@@ -4423,7 +4955,9 @@ window.CANON_PRESETS = [
     "look": "Elevated shadow gamma curve balancing bright exteriors with dark interiors.",
     "bestFor": "Run-and-gun indie filmmaking and high-contrast documentary shooting.",
     "heritage": "Developed by Crooked Path Films for independent Canon 5D Mk II productions.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_CrookedPathFlat_High_Gamma.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_CrookedPathFlat_Highlight_Safe",
@@ -4439,7 +4973,9 @@ window.CANON_PRESETS = [
     "look": "Elevated shadow gamma curve balancing bright exteriors with dark interiors.",
     "bestFor": "Run-and-gun indie filmmaking and high-contrast documentary shooting.",
     "heritage": "Developed by Crooked Path Films for independent Canon 5D Mk II productions.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_CrookedPathFlat_Highlight_Safe.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_EuroTrip_Cool_Tones",
@@ -4455,7 +4991,9 @@ window.CANON_PRESETS = [
     "look": "Cool muted cyan shadows, restrained skin saturation, and somber European indie film tone.",
     "bestFor": "Overcast travel, contemporary architecture, and moody road-trip photography.",
     "heritage": "European independent cinema color palette for Canon DSLRs.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_EuroTrip_Cool_Tones.pf3",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_ExtraFlat_SuperLog",
@@ -4471,7 +5009,9 @@ window.CANON_PRESETS = [
     "look": "Maximally flattened gamma curve squeezing sensor dynamic range into an 8-bit space.",
     "bestFor": "Video shooting in harsh midday sun to avoid highlight clipping before grading.",
     "heritage": "Guerrilla flat curve created by Cinema5D forum filmmakers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_ExtraFlat_SuperLog.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Filmic_Base",
@@ -4487,7 +5027,9 @@ window.CANON_PRESETS = [
     "look": "Gentle cinematic S-curve with lifted blacks and soft highlight transitions.",
     "bestFor": "Narrative drama, short films, and character portraits ready straight out of camera.",
     "heritage": "Thomas Fransson filmic curve for Canon DSLRs.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Filmic_Base.pf3",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Flat_Plus10",
@@ -4503,7 +5045,9 @@ window.CANON_PRESETS = [
     "look": "Maximally flattened gamma curve squeezing sensor dynamic range into an 8-bit space.",
     "bestFor": "Video shooting in harsh midday sun to avoid highlight clipping before grading.",
     "heritage": "Guerrilla flat curve created by Cinema5D forum filmmakers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Flat_Plus10.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Flat_Plus20",
@@ -4519,7 +5063,9 @@ window.CANON_PRESETS = [
     "look": "Maximally flattened gamma curve squeezing sensor dynamic range into an 8-bit space.",
     "bestFor": "Video shooting in harsh midday sun to avoid highlight clipping before grading.",
     "heritage": "Guerrilla flat curve created by Cinema5D forum filmmakers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Flat_Plus20.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Giles_FilmLook",
@@ -4535,7 +5081,9 @@ window.CANON_PRESETS = [
     "look": "Subtle cool shadows with warm golden highlights mimicking 16mm indie film stock.",
     "bestFor": "Short narrative films, indie music videos, and retro documentary.",
     "heritage": "Created by filmmaker Giles Clement for Canon EOS cinema shooting.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Giles_FilmLook.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_High_Gamma_Curve_5",
@@ -4551,7 +5099,9 @@ window.CANON_PRESETS = [
     "look": "Significantly raised shadow gamma for monitoring and shooting in dark environments.",
     "bestFor": "Low-light interiors and night street shooting with high shadow visibility.",
     "heritage": "Technical high-gamma monitoring profile.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_High_Gamma_Curve_5.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Huelight_Motion",
@@ -4567,7 +5117,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Huelight_Motion.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_JPL_Warm_Light",
@@ -4583,7 +5135,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_JPL_Warm_Light.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Movielike_Final",
@@ -4599,7 +5153,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Movielike_Final.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_Movielike_LSB",
@@ -4615,7 +5171,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_Movielike_LSB.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_NorthWest_Moody_Greens",
@@ -4631,7 +5189,9 @@ window.CANON_PRESETS = [
     "look": "Deep mossy greens, damp shadows, and cool misty tones inspired by the Pacific Northwest.",
     "bestFor": "Misty pine forests, mountain trails, and atmospheric mystery scenes (Twin Peaks aesthetic).",
     "heritage": "Independent cinematic profile inspired by Pacific Northwest television cinematography.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_NorthWest_Moody_Greens.pf3",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_R6L_Flat_Soda",
@@ -4647,7 +5207,9 @@ window.CANON_PRESETS = [
     "look": "Pastel desaturation with milky lifted blacks and soft skin tones (Sundance indie film look).",
     "bestFor": "Indie lifestyle, nostalgic music videos, and relaxed narrative scenes.",
     "heritage": "Developed by filmmaking collective R6L for Canon DSLRs.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_R6L_Flat_Soda.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_SuperFlat_Marcus",
@@ -4663,7 +5225,9 @@ window.CANON_PRESETS = [
     "look": "Maximally flattened gamma curve squeezing sensor dynamic range into an 8-bit space.",
     "bestFor": "Video shooting in harsh midday sun to avoid highlight clipping before grading.",
     "heritage": "Guerrilla flat curve created by Cinema5D forum filmmakers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_SuperFlat_Marcus.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_SuperFlat_v1",
@@ -4679,7 +5243,9 @@ window.CANON_PRESETS = [
     "look": "Maximally flattened gamma curve squeezing sensor dynamic range into an 8-bit space.",
     "bestFor": "Video shooting in harsh midday sun to avoid highlight clipping before grading.",
     "heritage": "Guerrilla flat curve created by Cinema5D forum filmmakers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_SuperFlat_v1.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Cinema_War_Aggressive_Contrast",
@@ -4695,7 +5261,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Cinema_War_Aggressive_Contrast.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Filmic Base by Thomas F",
@@ -4711,7 +5279,9 @@ window.CANON_PRESETS = [
     "look": "Gentle cinematic S-curve with lifted blacks and soft highlight transitions.",
     "bestFor": "Narrative drama, short films, and character portraits ready straight out of camera.",
     "heritage": "Thomas Fransson filmic curve for Canon DSLRs.",
-    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*"
+    "author": "Thomas Fransson *(Pack: Thomas Fransson Analog Picture Styles)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Filmic Base by Thomas F.pf3",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Flaat_1_Dynamic_Range_Base",
@@ -4727,7 +5297,9 @@ window.CANON_PRESETS = [
     "look": "Progressive log curve expanding dynamic range by +0.5 EV while protecting skin tone SNR.",
     "bestFor": "Cinematic video and high-contrast stills ready for fast color grading.",
     "heritage": "Similaar Flaat 1 curve, engineered via sensor densitometry on Canon DIGIC DSLRs.",
-    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*"
+    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Flaat_1_Dynamic_Range_Base.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Flaat_2_Dynamic_Range_Medium",
@@ -4743,7 +5315,9 @@ window.CANON_PRESETS = [
     "look": "Progressive log curve expanding dynamic range by +1.0 EV while protecting skin tone SNR.",
     "bestFor": "Cinematic video and high-contrast stills ready for fast color grading.",
     "heritage": "Similaar Flaat 2 curve, engineered via sensor densitometry on Canon DIGIC DSLRs.",
-    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*"
+    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Flaat_2_Dynamic_Range_Medium.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Flaat_3_Dynamic_Range_High",
@@ -4759,7 +5333,9 @@ window.CANON_PRESETS = [
     "look": "Progressive log curve expanding dynamic range by +1.5 EV while protecting skin tone SNR.",
     "bestFor": "Cinematic video and high-contrast stills ready for fast color grading.",
     "heritage": "Similaar Flaat 3 curve, engineered via sensor densitometry on Canon DIGIC DSLRs.",
-    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*"
+    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Flaat_3_Dynamic_Range_High.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Flaat_4_Dynamic_Range_Maximum",
@@ -4775,7 +5351,9 @@ window.CANON_PRESETS = [
     "look": "Progressive log curve expanding dynamic range by +2.0 EV while protecting skin tone SNR.",
     "bestFor": "Cinematic video and high-contrast stills ready for fast color grading.",
     "heritage": "Similaar Flaat 4 curve, engineered via sensor densitometry on Canon DIGIC DSLRs.",
-    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*"
+    "author": "Similaar *(Pack: Flaat Dynamic Range Suite)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Flaat_4_Dynamic_Range_Maximum.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Kodak_2393",
@@ -4791,7 +5369,9 @@ window.CANON_PRESETS = [
     "look": "Rich theatrical projection look: deep contrast, teal-biased shadows, and warm candlelit highlights.",
     "bestFor": "Cinematic finishing, dramatic stills, and stylized music videos.",
     "heritage": "Kodak 2393 Vision Color Print Film, industry-standard theater projection stock.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Kodak_2393.pf3",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Marvels_Advanced_3.3_Grading",
@@ -4807,7 +5387,9 @@ window.CANON_PRESETS = [
     "look": "Film-like highlight shoulder roll-off and protected skin tones out-of-camera (Ver 3.3).",
     "bestFor": "Independent narrative cinema, music videos, and cinematic stills without heavy grading.",
     "heritage": "Created by Dutch cinematographer Martin Beek (Marvels Film) for Canon EOS.",
-    "author": "Martin Beek *(Pack: Marvels Cine Series)*"
+    "author": "Martin Beek *(Pack: Marvels Cine Series)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Marvels_Advanced_3.3_Grading.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Marvels_Advanced_3.4_Cinematic",
@@ -4823,7 +5405,9 @@ window.CANON_PRESETS = [
     "look": "Film-like highlight shoulder roll-off and protected skin tones out-of-camera (Ver 3.4).",
     "bestFor": "Independent narrative cinema, music videos, and cinematic stills without heavy grading.",
     "heritage": "Created by Dutch cinematographer Martin Beek (Marvels Film) for Canon EOS.",
-    "author": "Martin Beek *(Pack: Marvels Cine Series)*"
+    "author": "Martin Beek *(Pack: Marvels Cine Series)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Marvels_Advanced_3.4_Cinematic.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Marvels_Cine_1.2_Release",
@@ -4839,7 +5423,9 @@ window.CANON_PRESETS = [
     "look": "Film-like highlight shoulder roll-off and protected skin tones out-of-camera (Ver 1.2).",
     "bestFor": "Independent narrative cinema, music videos, and cinematic stills without heavy grading.",
     "heritage": "Created by Dutch cinematographer Martin Beek (Marvels Film) for Canon EOS.",
-    "author": "Martin Beek *(Pack: Marvels Cine Series)*"
+    "author": "Martin Beek *(Pack: Marvels Cine Series)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Marvels_Cine_1.2_Release.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Marvels_Cine_2.1_Panalog",
@@ -4855,7 +5441,9 @@ window.CANON_PRESETS = [
     "look": "Film-like highlight shoulder roll-off and protected skin tones out-of-camera (Ver 2.1 Panalog).",
     "bestFor": "Independent narrative cinema, music videos, and cinematic stills without heavy grading.",
     "heritage": "Created by Dutch cinematographer Martin Beek (Marvels Film) for Canon EOS.",
-    "author": "Martin Beek *(Pack: Marvels Cine Series)*"
+    "author": "Martin Beek *(Pack: Marvels Cine Series)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Marvels_Cine_2.1_Panalog.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Panavision_Genesis_Panalog_Cinema",
@@ -4871,7 +5459,9 @@ window.CANON_PRESETS = [
     "look": "Panalog logarithmic transfer curve with neutral cinema colorimetry.",
     "bestFor": "Professional digital cinematography and high-end narrative cinema stills.",
     "heritage": "Panavision Genesis 35mm digital cinema camera color matrix.",
-    "author": "Panavision & Independent Cinema Lab *(Pack: Panavision Genesis Cine Series)*"
+    "author": "Panavision & Independent Cinema Lab *(Pack: Panavision Genesis Cine Series)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Panavision_Genesis_Panalog_Cinema.pf2",
+    "isLut": false
   },
   {
     "id": "04_Cinema_and_Log__Technicolor_CineStyle_Flat_Log",
@@ -4887,7 +5477,9 @@ window.CANON_PRESETS = [
     "look": "Extreme low-contrast log curve with lifted black level (IRE 16) maximizing sensor latitude.",
     "bestFor": "Video recording and RAW stills strictly intended for grading in DaVinci Resolve / Premiere.",
     "heritage": "Developed jointly by Technicolor and Canon (2011) for the EOS 5D Mark II.",
-    "author": "Technicolor & Canon *(Pack: Technicolor CineStyle Official Release)*"
+    "author": "Technicolor & Canon *(Pack: Technicolor CineStyle Official Release)*",
+    "source": "presets Canon.pf3/04_Cinema_and_Log/Technicolor_CineStyle_Flat_Log.pf2",
+    "isLut": false
   },
   {
     "id": "05_Vintage_and_Instant__Agfa_Precisa_100",
@@ -4903,7 +5495,9 @@ window.CANON_PRESETS = [
     "look": "Warm European color palette with rich reds, golden skin tones, and accessible retro contrast.",
     "bestFor": "Street photography, summer holiday memories, and casual family snapshots.",
     "heritage": "Agfa Vista and Optima color negative films produced in Leverkusen, Germany.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Agfa Precisa 100.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Agfa_RSX_II_100_Color_Slide",
@@ -4919,7 +5513,9 @@ window.CANON_PRESETS = [
     "look": "Professional transparency film with dense deep tones, fine grain, and neutral German color balance.",
     "bestFor": "Landscape, architecture, and fine-art color photography.",
     "heritage": "Agfachrome RSX II 100, Agfa's flagship professional E-6 slide film.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/Agfa_RSX_II_100_Color_Slide.pf2",
+    "isLut": false
   },
   {
     "id": "05_Vintage_and_Instant__Agfa_Ultra_Color_100",
@@ -4935,7 +5531,9 @@ window.CANON_PRESETS = [
     "look": "Explosive saturation in reds, yellows, and blues with high punchy contrast.",
     "bestFor": "Vibrant architecture, retro carnivals, vintage automobiles, and summer street scenes.",
     "heritage": "Agfa Ultra 100 (originally Ultra 50), the most saturated color negative film ever produced.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Agfa Ultra Color 100.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Agfa_Ultra_Color_100_FilmSim",
@@ -4951,7 +5549,9 @@ window.CANON_PRESETS = [
     "look": "Explosive saturation in reds, yellows, and blues with high punchy contrast.",
     "bestFor": "Vibrant architecture, retro carnivals, vintage automobiles, and summer street scenes.",
     "heritage": "Agfa Ultra 100 (originally Ultra 50), the most saturated color negative film ever produced.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Agfa Ultra Color 100.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Agfa_Vista_200",
@@ -4967,7 +5567,9 @@ window.CANON_PRESETS = [
     "look": "Warm European color palette with rich reds, golden skin tones, and accessible retro contrast.",
     "bestFor": "Street photography, summer holiday memories, and casual family snapshots.",
     "heritage": "Agfa Vista and Optima color negative films produced in Leverkusen, Germany.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Agfa Vista 200.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__KevinWang_Lomo_Saturated_Vignette",
@@ -4983,7 +5585,9 @@ window.CANON_PRESETS = [
     "look": "Heavy vignette, saturated warm colors, and lo-fi plastic lens contrast.",
     "bestFor": "Experimental street photography, festivals, and casual fun portraits.",
     "heritage": "Inspired by the Lomography movement and vintage plastic-lens cameras (Lomo LC-A, Holga).",
-    "author": "Kevin Wang *(Pack: Kevin Wang Color Works)*"
+    "author": "Kevin Wang *(Pack: Kevin Wang Color Works)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/KevinWang_Lomo_Saturated_Vignette.pf2",
+    "isLut": false
   },
   {
     "id": "05_Vintage_and_Instant__Lomography_Redscale_100",
@@ -4999,7 +5603,9 @@ window.CANON_PRESETS = [
     "look": "Radical red, orange, and golden amber color cast with dense fiery shadows.",
     "bestFor": "Conceptual art, concert photography, experimental portraits, and sunset silhouettes.",
     "heritage": "Simulates exposing color film from the reverse (dorsal) side through the red dye layer.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Lomography Redscale 100.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Lomography_Redscale_100_FilmSim",
@@ -5015,7 +5621,9 @@ window.CANON_PRESETS = [
     "look": "Radical red, orange, and golden amber color cast with dense fiery shadows.",
     "bestFor": "Conceptual art, concert photography, experimental portraits, and sunset silhouettes.",
     "heritage": "Simulates exposing color film from the reverse (dorsal) side through the red dye layer.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Lomography Redscale 100.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Lomography_X_Pro_Slide_200",
@@ -5031,7 +5639,9 @@ window.CANON_PRESETS = [
     "look": "Heavy vignette, saturated warm colors, and lo-fi plastic lens contrast.",
     "bestFor": "Experimental street photography, festivals, and casual fun portraits.",
     "heritage": "Inspired by the Lomography movement and vintage plastic-lens cameras (Lomo LC-A, Holga).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Lomography X-Pro Slide 200.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_1",
@@ -5047,7 +5657,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_2",
@@ -5063,7 +5675,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_3",
@@ -5079,7 +5693,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_4_Plus",
@@ -5095,7 +5711,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_5_Plus_Plus",
@@ -5111,7 +5729,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_6_Plus_Plus_Plus",
@@ -5127,7 +5747,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 6 +++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_Cold",
@@ -5143,7 +5765,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/Polaroid_669_Cold.pf3",
+    "isLut": false
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_Cold_1",
@@ -5159,7 +5783,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 Cold 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_Cold_2",
@@ -5175,7 +5801,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 Cold 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_Cold_3",
@@ -5191,7 +5819,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 Cold 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_669_Cold_4_Plus",
@@ -5207,7 +5837,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 669 Cold 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_1",
@@ -5223,7 +5855,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_2",
@@ -5239,7 +5873,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_3",
@@ -5255,7 +5891,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_4_Plus",
@@ -5271,7 +5909,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_5_Plus_Plus",
@@ -5287,7 +5927,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Cold_1",
@@ -5303,7 +5945,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Cold 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Cold_2",
@@ -5319,7 +5963,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Cold 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Cold_3",
@@ -5335,7 +5981,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Cold 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Cold_4_Plus",
@@ -5351,7 +5999,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Cold 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Cold_5_Plus_Plus",
@@ -5367,7 +6017,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Warm amber shift).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Cold 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Warm",
@@ -5383,7 +6035,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/Polaroid_690_Warm.pf3",
+    "isLut": false
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Warm_1",
@@ -5399,7 +6053,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Warm 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Warm_2",
@@ -5415,7 +6071,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Warm 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Warm_3",
@@ -5431,7 +6089,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Warm 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Warm_4_Plus",
@@ -5447,7 +6107,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Warm 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_690_Warm_5_Plus_Plus",
@@ -5463,7 +6125,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid 690 Warm 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Polachrome",
@@ -5479,7 +6143,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Polachrome.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Polachrome_FilmSim",
@@ -5495,7 +6161,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Polachrome.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX-100UV__Cold",
@@ -5511,7 +6179,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/Polaroid_PX-100UV__Cold.pf3",
+    "isLut": false
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Cold_1",
@@ -5527,7 +6197,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Cold 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Cold_2",
@@ -5543,7 +6215,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Cold 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Cold_3",
@@ -5559,7 +6233,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Cold 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Cold_4_Plus",
@@ -5575,7 +6251,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Cold 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Cold_5_Plus_Plus",
@@ -5591,7 +6269,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Cold 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Cold_6_Plus_Plus_Plus",
@@ -5607,7 +6287,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Cold 6 +++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Warm_1",
@@ -5623,7 +6305,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Warm 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Warm_2",
@@ -5639,7 +6323,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Warm 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Warm_3",
@@ -5655,7 +6341,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Warm 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Warm_4_Plus",
@@ -5671,7 +6359,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Warm 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Warm_5_Plus_Plus",
@@ -5687,7 +6377,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Warm 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_100UV_Plus_Warm_6_Plus_Plus_Plus",
@@ -5703,7 +6395,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-100UV+ Warm 6 +++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_1",
@@ -5719,7 +6413,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_2",
@@ -5735,7 +6431,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_3",
@@ -5751,7 +6449,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_4_Plus",
@@ -5767,7 +6467,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_5_Plus_Plus",
@@ -5783,7 +6485,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Cold_1",
@@ -5799,7 +6503,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Cold 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Cold_2",
@@ -5815,7 +6521,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Cold 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Cold_3",
@@ -5831,7 +6539,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Cold 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Cold_4_Plus",
@@ -5847,7 +6557,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Cold 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Cold_5_Plus_Plus",
@@ -5863,7 +6575,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Cold 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Cold_6_Plus_Plus_Alt",
@@ -5879,7 +6593,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Cold 6 ++ Alt.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Warm_1",
@@ -5895,7 +6611,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Warm 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Warm_2",
@@ -5911,7 +6629,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Warm 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Warm_3",
@@ -5927,7 +6647,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Warm 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Warm_4_Plus",
@@ -5943,7 +6665,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Warm 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_680_Warm_5_Plus_Plus",
@@ -5959,7 +6683,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-680 Warm 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_1",
@@ -5975,7 +6701,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_2",
@@ -5991,7 +6719,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_3",
@@ -6007,7 +6737,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_4_Plus",
@@ -6023,7 +6755,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_5_Plus_Plus",
@@ -6039,7 +6773,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_6_Plus_Plus_Plus",
@@ -6055,7 +6791,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 6 +++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Cold_1",
@@ -6071,7 +6809,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Cold 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Cold_2",
@@ -6087,7 +6827,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Cold 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Cold_3",
@@ -6103,7 +6845,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Cold 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Cold_4_Plus",
@@ -6119,7 +6863,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Cold 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Cold_5_Plus_Plus",
@@ -6135,7 +6881,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (PX experimental chemistry).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Cold 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Warm_1",
@@ -6151,7 +6899,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Warm 1 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Warm_2",
@@ -6167,7 +6917,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Warm 2 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Warm_3",
@@ -6183,7 +6935,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Warm 3.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Warm_4_Plus",
@@ -6199,7 +6953,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Warm 4 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_PX_70_Warm_5_Plus_Plus",
@@ -6215,7 +6971,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid PX-70 Warm 5 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero",
@@ -6231,7 +6989,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/Polaroid_Time_Zero.pf3",
+    "isLut": false
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_1",
@@ -6247,7 +7007,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) 1 ---.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_2",
@@ -6263,7 +7025,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) 2 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_3",
@@ -6279,7 +7043,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) 3 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_4",
@@ -6295,7 +7061,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) 4.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_5_Plus",
@@ -6311,7 +7079,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) 5 +.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_6_Plus_Plus",
@@ -6327,7 +7097,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) 6 ++.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_Cold_1",
@@ -6343,7 +7115,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) Cold 1 ---.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_Cold_2",
@@ -6359,7 +7133,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) Cold 2 --.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_Cold_3",
@@ -6375,7 +7151,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) Cold 3 -.png",
+    "isLut": true
   },
   {
     "id": "05_Vintage_and_Instant__Polaroid_Time_Zero_(Expired)_Cold_4",
@@ -6391,7 +7169,9 @@ window.CANON_PRESETS = [
     "look": "Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens (Cool cyan fade).",
     "bestFor": "Spontaneous portraits, nostalgic travel diaries, retro fashion, and lifestyle.",
     "heritage": "Recreates classic Polaroid instant print chemistries (SX-70, 600, Time-Zero, 669/690).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/05_Vintage_and_Instant/source_luts/Polaroid Time Zero (Expired) Cold 4.png",
+    "isLut": true
   },
   {
     "id": "06_Portraits_and_Brands__Canon_1Ds_MarkII_Color_Profile",
@@ -6407,7 +7187,9 @@ window.CANON_PRESETS = [
     "look": "Studio flagship color science with neutral reds, rich skin tonal depth, and linear studio shadow roll-off.",
     "bestFor": "Controlled studio fashion and commercial portraiture.",
     "heritage": "Canon EOS-1Ds Mark II (16.7 MP full-frame CMOS sensor, 2004).",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_1Ds_MarkII_Color_Profile.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Canon_5D_Classic_Mint",
@@ -6423,7 +7205,9 @@ window.CANON_PRESETS = [
     "look": "Organic, painterly skin rendering from the original 2005 5D sensor (Mint (subtle cool green-cyan bias in shadows)).",
     "bestFor": "Intimate portraits with fast prime lenses (50mm / 85mm) in available light.",
     "heritage": "Replicates the beloved 12.8 MP CMOS sensor color science of the original Canon EOS 5D (2005).",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_5D_Classic_Mint.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Canon_5D_Classic_Neutral",
@@ -6439,7 +7223,9 @@ window.CANON_PRESETS = [
     "look": "Organic, painterly skin rendering from the original 2005 5D sensor (Neutral (classic warm analog skin)).",
     "bestFor": "Intimate portraits with fast prime lenses (50mm / 85mm) in available light.",
     "heritage": "Replicates the beloved 12.8 MP CMOS sensor color science of the original Canon EOS 5D (2005).",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_5D_Classic_Neutral.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Canon_5D_MarkIII_Neutral",
@@ -6455,7 +7241,9 @@ window.CANON_PRESETS = [
     "look": "Strictly linear colorimetric response with zero artificial contrast or saturation boost.",
     "bestFor": "Scientific documentation, artwork reprography, and studio calibration.",
     "heritage": "Factory neutral baseline profile of the Canon EOS 5D Mark III (2012).",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_5D_MarkIII_Neutral.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Canon_Snapshot_Portrait_Official",
@@ -6471,7 +7259,9 @@ window.CANON_PRESETS = [
     "look": "Crisp snapshot contrast with natural daylight skin tones and balanced vibrance.",
     "bestFor": "Casual family portraiture, daytime events, and outdoor social gatherings.",
     "heritage": "Official Canon Picture Style developed for natural outdoor snapshots.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_Snapshot_Portrait_Official.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Canon_Studio_Portrait_Official",
@@ -6487,7 +7277,9 @@ window.CANON_PRESETS = [
     "look": "Canon studio strobe color science: Official CPS studio profile.",
     "bestFor": "Studio fashion, corporate headshots, and formal event coverage.",
     "heritage": "Official Canon Picture Style developed for Canon Professional Services (CPS).",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_Studio_Portrait_Official.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Canon_Studio_Portrait_Pro",
@@ -6503,7 +7295,9 @@ window.CANON_PRESETS = [
     "look": "Canon studio strobe color science: Pro studio curve.",
     "bestFor": "Studio fashion, corporate headshots, and formal event coverage.",
     "heritage": "Official Canon Picture Style developed for Canon Professional Services (CPS).",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_Studio_Portrait_Pro.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Canon_Studio_Portrait_Variant_3",
@@ -6519,7 +7313,9 @@ window.CANON_PRESETS = [
     "look": "Canon studio strobe color science: Variant 3 (lifted midtones for bright high-key setups).",
     "bestFor": "Studio fashion, corporate headshots, and formal event coverage.",
     "heritage": "Official Canon Picture Style developed for Canon Professional Services (CPS).",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Canon_Studio_Portrait_Variant_3.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Cinema_Filmic_Portrait",
@@ -6535,7 +7331,9 @@ window.CANON_PRESETS = [
     "look": "Gentle cinematic S-curve with lifted blacks and soft highlight transitions.",
     "bestFor": "Narrative drama, short films, and character portraits ready straight out of camera.",
     "heritage": "Thomas Fransson filmic curve for Canon DSLRs.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Cinema_Filmic_Portrait.pf3",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__GAF_500_Vintage_Film",
@@ -6551,7 +7349,9 @@ window.CANON_PRESETS = [
     "look": "Prominent grain appearance, warm earthy browns, and gritty 1970s slide film colors.",
     "bestFor": "Retro fashion, rock music festivals, and vintage lifestyle.",
     "heritage": "GAF Anscochrome 500, the definitive high-speed slide film of the 1970s rock era.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/GAF_500_Vintage_Film.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Nikon_35mm_Whibal_Calibrated",
@@ -6567,7 +7367,9 @@ window.CANON_PRESETS = [
     "look": "Clean technical color rendition with punchy greens, rich yellows, and crisp micro-contrast.",
     "bestFor": "Landscape, wildlife, sports, and documentary requiring classic Nikon color response.",
     "heritage": "Emulates the legendary 'D2X Mode' color science from the flagship Nikon D2X DSLR (2004).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Nikon_35mm_Whibal_Calibrated.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Nikon_D2X_Color_Profile",
@@ -6583,7 +7385,9 @@ window.CANON_PRESETS = [
     "look": "Clean technical color rendition with punchy greens, rich yellows, and crisp micro-contrast.",
     "bestFor": "Landscape, wildlife, sports, and documentary requiring classic Nikon color response.",
     "heritage": "Emulates the legendary 'D2X Mode' color science from the flagship Nikon D2X DSLR (2004).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Nikon_D2X_Color_Profile.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Olympus_Blue_Deep_Sky",
@@ -6599,7 +7403,9 @@ window.CANON_PRESETS = [
     "look": "Vivid cobalt skies ('Olympus Blue'), bright clean whites, and lively Mediterranean saturation.",
     "bestFor": "Coastal landscapes, marine architecture, and bright sunny holiday travel.",
     "heritage": "Inspired by the Kodak CCD 4/3 sensor color rendition of the Olympus E-1 and E-300.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Olympus_Blue_Deep_Sky.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Pentax_K_Color_Emulation",
@@ -6615,7 +7421,9 @@ window.CANON_PRESETS = [
     "look": "Warm natural greens, luminous yellows, and earthy organic landscape saturation.",
     "bestFor": "Mountain hiking, rural landscapes, and outdoor travel.",
     "heritage": "Emulates the outdoor landscape color response of the Pentax K series (K-5, K-7).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Pentax_K_Color_Emulation.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_BeautyShot_Fashion_1",
@@ -6631,7 +7439,9 @@ window.CANON_PRESETS = [
     "look": "Cosmetic beauty profile: Standard cosmetic skin smoothing and radiant midtones.",
     "bestFor": "Beauty editorial, commercial cosmetics, bridal close-ups, and headshots.",
     "heritage": "Studio portrait profile developed by Asian commercial portrait photographers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_BeautyShot_Fashion_1.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_BeautyShot_Fashion_3",
@@ -6647,7 +7457,9 @@ window.CANON_PRESETS = [
     "look": "Cosmetic beauty profile: High-key glow with softened micro-contrast.",
     "bestFor": "Beauty editorial, commercial cosmetics, bridal close-ups, and headshots.",
     "heritage": "Studio portrait profile developed by Asian commercial portrait photographers.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_BeautyShot_Fashion_3.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_Bounced_Flash",
@@ -6663,7 +7475,9 @@ window.CANON_PRESETS = [
     "look": "Compensated midtones and shadow fill tuned for on-camera flash bounced from ceilings or walls.",
     "bestFor": "Event reportage, wedding receptions, and indoor parties with flash.",
     "heritage": "Event photographer community profile optimized for bounce flash.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_Bounced_Flash.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_Bridal_Hanayome_Fair_Skin",
@@ -6679,7 +7493,9 @@ window.CANON_PRESETS = [
     "look": "Bright porcelain skin rendering with luminous midtones and gentle highlight compression.",
     "bestFor": "Bridal portraiture (Hanayome means bride in Japanese) and high-key female portraits.",
     "heritage": "Japanese and Korean wedding studio color profiles for flawless skin tones.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_Bridal_Hanayome_Fair_Skin.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_cportrait_V1_Clean_Skin",
@@ -6695,7 +7511,9 @@ window.CANON_PRESETS = [
     "look": "Soft contrast with silky skin highlights and smooth background roll-off.",
     "bestFor": "Window-lit indoor portraits and soft natural light photography.",
     "heritage": "Custom Canon community curves designed to tame digital CMOS sensor hardness.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_cportrait_V1_Clean_Skin.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_cportrait_V2_Clean_Skin",
@@ -6711,7 +7529,9 @@ window.CANON_PRESETS = [
     "look": "Soft contrast with silky skin highlights and smooth background roll-off.",
     "bestFor": "Window-lit indoor portraits and soft natural light photography.",
     "heritage": "Custom Canon community curves designed to tame digital CMOS sensor hardness.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_cportrait_V2_Clean_Skin.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_LightFace_Bright_Skin",
@@ -6727,7 +7547,9 @@ window.CANON_PRESETS = [
     "look": "Bright porcelain skin rendering with luminous midtones and gentle highlight compression.",
     "bestFor": "Bridal portraiture (Hanayome means bride in Japanese) and high-key female portraits.",
     "heritage": "Japanese and Korean wedding studio color profiles for flawless skin tones.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_LightFace_Bright_Skin.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_ND_SkinColor_LSB",
@@ -6743,7 +7565,9 @@ window.CANON_PRESETS = [
     "look": "Neutral Density (ND) simulation with subdued magenta and controlled redness for natural skin tones.",
     "bestFor": "Outdoor natural light portraits and commercial headshots.",
     "heritage": "Korean portrait photographer community (Yesol Studio / ND series).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_ND_SkinColor_LSB.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_ND_Yesol_Skin_Tone",
@@ -6759,7 +7583,9 @@ window.CANON_PRESETS = [
     "look": "Neutral Density (ND) simulation with subdued magenta and controlled redness for natural skin tones.",
     "bestFor": "Outdoor natural light portraits and commercial headshots.",
     "heritage": "Korean portrait photographer community (Yesol Studio / ND series).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_ND_Yesol_Skin_Tone.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_NDlike_Camera",
@@ -6775,7 +7601,9 @@ window.CANON_PRESETS = [
     "look": "Neutral Density (ND) simulation with subdued magenta and controlled redness for natural skin tones.",
     "bestFor": "Outdoor natural light portraits and commercial headshots.",
     "heritage": "Korean portrait photographer community (Yesol Studio / ND series).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_NDlike_Camera.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_NDlike_LSB",
@@ -6791,7 +7619,9 @@ window.CANON_PRESETS = [
     "look": "Neutral Density (ND) simulation with subdued magenta and controlled redness for natural skin tones.",
     "bestFor": "Outdoor natural light portraits and commercial headshots.",
     "heritage": "Korean portrait photographer community (Yesol Studio / ND series).",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_NDlike_LSB.pf2",
+    "isLut": false
   },
   {
     "id": "06_Portraits_and_Brands__Portrait_Soft_Silk_Skin",
@@ -6807,7 +7637,9 @@ window.CANON_PRESETS = [
     "look": "Soft contrast with silky skin highlights and smooth background roll-off.",
     "bestFor": "Window-lit indoor portraits and soft natural light photography.",
     "heritage": "Custom Canon community curves designed to tame digital CMOS sensor hardness.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/06_Portraits_and_Brands/Portrait_Soft_Silk_Skin.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__AnalogFX_Anno_1870_Color",
@@ -6823,7 +7655,9 @@ window.CANON_PRESETS = [
     "look": "Recreation of 19th-century alternative photographic prints: cyanotypes, sulfur, and albumen washes.",
     "bestFor": "Fine-art photography, album artwork, and historical period recreations.",
     "heritage": "PictureFX AnalogFX series by Christian Bloch.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/AnalogFX-Anno-1870-Color.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__AnalogFX_Old_Style_I",
@@ -6839,7 +7673,9 @@ window.CANON_PRESETS = [
     "look": "Recreation of 19th-century alternative photographic prints: cyanotypes, sulfur, and albumen washes.",
     "bestFor": "Fine-art photography, album artwork, and historical period recreations.",
     "heritage": "PictureFX AnalogFX series by Christian Bloch.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/AnalogFX-Old-Style-I.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__AnalogFX_Old_Style_II",
@@ -6855,7 +7691,9 @@ window.CANON_PRESETS = [
     "look": "Recreation of 19th-century alternative photographic prints: cyanotypes, sulfur, and albumen washes.",
     "bestFor": "Fine-art photography, album artwork, and historical period recreations.",
     "heritage": "PictureFX AnalogFX series by Christian Bloch.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/AnalogFX-Old-Style-II.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__AnalogFX_Old_Style_III",
@@ -6871,7 +7709,9 @@ window.CANON_PRESETS = [
     "look": "Recreation of 19th-century alternative photographic prints: cyanotypes, sulfur, and albumen washes.",
     "bestFor": "Fine-art photography, album artwork, and historical period recreations.",
     "heritage": "PictureFX AnalogFX series by Christian Bloch.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/AnalogFX-Old-Style-III.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__AnalogFX_Sepia_Color",
@@ -6887,7 +7727,9 @@ window.CANON_PRESETS = [
     "look": "Warm sulfur-toned monochrome with deep brown-black shadows and creamy antique highlights.",
     "bestFor": "Period recreations, heritage architecture, and nostalgic portraits.",
     "heritage": "Emulates chemical sodium sulfide bath toning for silver prints.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/AnalogFX-Sepia-Color.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__AnalogFX_Soft_Sepia_I",
@@ -6903,7 +7745,9 @@ window.CANON_PRESETS = [
     "look": "Warm sulfur-toned monochrome with deep brown-black shadows and creamy antique highlights.",
     "bestFor": "Period recreations, heritage architecture, and nostalgic portraits.",
     "heritage": "Emulates chemical sodium sulfide bath toning for silver prints.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/AnalogFX-Soft-Sepia-I.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__AnalogFX_Soft_Sepia_II",
@@ -6919,7 +7763,9 @@ window.CANON_PRESETS = [
     "look": "Warm sulfur-toned monochrome with deep brown-black shadows and creamy antique highlights.",
     "bestFor": "Period recreations, heritage architecture, and nostalgic portraits.",
     "heritage": "Emulates chemical sodium sulfide bath toning for silver prints.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/AnalogFX-Soft-Sepia-II.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Anime",
@@ -6935,7 +7781,9 @@ window.CANON_PRESETS = [
     "look": "Milky high-key highlights, airy lifted shadows, and soft pastel pink/cyan tones.",
     "bestFor": "Cosplay, anime-style portraiture, spring blossoms, and kawaii youth fashion.",
     "heritage": "Created by Taiwanese photographer Kevin Wang for Canon EOS bodies.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Anime.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__BleachBypass1",
@@ -6951,7 +7799,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/BleachBypass1.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__BleachBypass2",
@@ -6967,7 +7817,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/BleachBypass2.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__BleachBypass3",
@@ -6983,7 +7835,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/BleachBypass3.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__BleachBypass4",
@@ -6999,7 +7853,9 @@ window.CANON_PRESETS = [
     "look": "Severe desaturation with harsh contrast, crushed shadows, and hard metallic highlights.",
     "bestFor": "Gritty war dramas, action scenes, and stark urban documentary.",
     "heritage": "Emulates the chemical bleach bypass (silver retention) process in cinema labs.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/BleachBypass4.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Bright",
@@ -7015,7 +7871,9 @@ window.CANON_PRESETS = [
     "look": "Contemporary color grading with mathematically balanced curves (Bright palette).",
     "bestFor": "Editorial fashion, modern lifestyle, social media content, and design lookbooks.",
     "heritage": "Designed by the color science team at Pixelmator Team (Vilnius, Lithuania) for Pixelmator Pro.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Bright.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Calm",
@@ -7031,7 +7889,9 @@ window.CANON_PRESETS = [
     "look": "Contemporary color grading with mathematically balanced curves (Calm palette).",
     "bestFor": "Editorial fashion, modern lifestyle, social media content, and design lookbooks.",
     "heritage": "Designed by the color science team at Pixelmator Team (Vilnius, Lithuania) for Pixelmator Pro.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Calm.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__CandleLight",
@@ -7047,7 +7907,9 @@ window.CANON_PRESETS = [
     "look": "Bathes the scene in extreme low-temperature warmth (~2000K) mimicking open flame illumination.",
     "bestFor": "Intimate candlelit dinners, historical fireplace scenes, and cozy night portraits.",
     "heritage": "Created to recreate cinema shot entirely by candlelight (Stanley Kubrick's *Barry Lyndon*).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/CandleLight.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Autumn_Hues_Original",
@@ -7063,7 +7925,9 @@ window.CANON_PRESETS = [
     "look": "Targeted spectral boost for red-amber foliage; green trees stay natural while autumn leaves ignite.",
     "bestFor": "Autumn landscapes (*Momiji*), deciduous forests, and sunset foliage.",
     "heritage": "Official Canon Picture Style developed for Japanese autumn foliage coverage.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Autumn_Hues_Original.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Clear_Clean_Landscape",
@@ -7079,7 +7943,9 @@ window.CANON_PRESETS = [
     "look": "Cuts through atmospheric haze, enhancing blue skies and crisp foliage without distorting skin tones.",
     "bestFor": "Distant mountain panoramas, vistas with heat haze, and travel landscapes.",
     "heritage": "Official Canon Picture Style ('Clear') highly valued by landscape professionals.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Clear_Clean_Landscape.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Clear_Magic_Landscape",
@@ -7095,7 +7961,9 @@ window.CANON_PRESETS = [
     "look": "Cuts through atmospheric haze, enhancing blue skies and crisp foliage without distorting skin tones.",
     "bestFor": "Distant mountain panoramas, vistas with heat haze, and travel landscapes.",
     "heritage": "Official Canon Picture Style ('Clear') highly valued by landscape professionals.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Clear_Magic_Landscape.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Clear_Original",
@@ -7111,7 +7979,9 @@ window.CANON_PRESETS = [
     "look": "Cuts through atmospheric haze, enhancing blue skies and crisp foliage without distorting skin tones.",
     "bestFor": "Distant mountain panoramas, vistas with heat haze, and travel landscapes.",
     "heritage": "Official Canon Picture Style ('Clear') highly valued by landscape professionals.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Clear_Original.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Emerald_Original",
@@ -7127,7 +7997,9 @@ window.CANON_PRESETS = [
     "look": "Shifts marine waters toward luminous emerald and turquoise while keeping sands neutral.",
     "bestFor": "Coastal seascapes, glacial alpine lakes, waterfalls, and tropical lagoons.",
     "heritage": "Official Canon Picture Style developed for tropical waters and coastal scenery.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Emerald_Original.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Emerald_Water",
@@ -7143,7 +8015,9 @@ window.CANON_PRESETS = [
     "look": "Shifts marine waters toward luminous emerald and turquoise while keeping sands neutral.",
     "bestFor": "Coastal seascapes, glacial alpine lakes, waterfalls, and tropical lagoons.",
     "heritage": "Official Canon Picture Style developed for tropical waters and coastal scenery.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Emerald_Water.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Nostalgia_Original",
@@ -7159,7 +8033,9 @@ window.CANON_PRESETS = [
     "look": "Softens blues with a warm amber patina and gentle contrast evoking vintage family albums.",
     "bestFor": "Nostalgic portraits, rustic interiors, and vintage village scenes.",
     "heritage": "Official Canon Picture Style designed to reproduce antique photo album charm.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Nostalgia_Original.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Canon_Twilight_Original",
@@ -7175,7 +8051,9 @@ window.CANON_PRESETS = [
     "look": "Injects lavender, violet, and soft magenta into sky highlights during the blue hour.",
     "bestFor": "Blue hour seascapes, twilight skylines, and minutes following sunset.",
     "heritage": "Official Canon Picture Style created for twilight and nautical dusk.",
-    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*"
+    "author": "Canon Inc. *(Pack: Canon Official & Legacy Camera Profiles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Canon_Twilight_Original.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Cold",
@@ -7191,7 +8069,9 @@ window.CANON_PRESETS = [
     "look": "Overall cooling color shift with blue cast in shadows and midtones for an icy atmosphere.",
     "bestFor": "Winter snow, Nordic architecture, and cold urban isolation.",
     "heritage": "Cinematic color temperature adjustment filter.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Cold.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__ColorNegative",
@@ -7207,7 +8087,9 @@ window.CANON_PRESETS = [
     "look": "Raw uncorrected look of film negative stock with harsh contrast and acid shadows.",
     "bestFor": "Conceptual art, edgy fashion, and experimental analog projects.",
     "heritage": "Emulates the raw density of un-inverted negative film stock.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/ColorNegative.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Auto_Light_Optimizer",
@@ -7223,7 +8105,9 @@ window.CANON_PRESETS = [
     "look": "Optimizes dynamic range for indoor scenes with bright sunny windows.",
     "bestFor": "Real estate interiors and architectural spaces with challenging dynamic range.",
     "heritage": "Tuned to enhance the DIGIC Auto Lighting Optimizer (ALO) response.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Auto_Light_Optimizer.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_BasicColor_Clean",
@@ -7239,7 +8123,9 @@ window.CANON_PRESETS = [
     "look": "Zero color cast with pristine white point and surgical color fidelity.",
     "bestFor": "Commercial e-commerce, product catalog, and fashion lookbooks.",
     "heritage": "Clean commercial calibration avoiding magenta or green color casts.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_BasicColor_Clean.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_BrightVivid_Intense_Color",
@@ -7255,7 +8141,9 @@ window.CANON_PRESETS = [
     "look": "Intense saturation boost in foliage and sky with strong punchy contrast.",
     "bestFor": "Travel postcards, tourism brochures, and sunny scenic vistas.",
     "heritage": "High-saturation travel photography curve.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Bright.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Burning_Warm_Fire",
@@ -7271,7 +8159,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Warm.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Cafe_Warm_Tones",
@@ -7287,7 +8177,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Warm.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Creative_CaptureOne_ProLook",
@@ -7303,7 +8195,9 @@ window.CANON_PRESETS = [
     "look": "Refined micro-contrast, crisp midtone separation, and controlled highlight roll-off.",
     "bestFor": "High-end commercial fashion, studio portraits, and product stills.",
     "heritage": "Emulates the color science and tonal curve of Phase One Capture One Pro.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_CaptureOne_ProLook.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_ColorPass_Red_Only",
@@ -7319,7 +8213,9 @@ window.CANON_PRESETS = [
     "look": "Selective color key: converts full frame to black & white while retaining only pure vibrant reds.",
     "bestFor": "Conceptual photography, graphic street shots (red umbrellas, lips, vintage cars).",
     "heritage": "Popularized in stylized cinema (*Schindler's List*, *Sin City*) and digital cameras.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_ColorPass_Red_Only.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_CRC_5400K_Daylight",
@@ -7335,7 +8231,9 @@ window.CANON_PRESETS = [
     "look": "Spectral calibration balanced strictly to 5400K daylight with neutral whites and true skin.",
     "bestFor": "Direct-sunlight outdoor photography (10:00 to 16:00), sports, and outdoor events.",
     "heritage": "Developed by Canon CRC (Canon Resource Center) engineers for standardized 5400K JPEG output.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_CRC_5400K_Daylight.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_CRC_Daylight",
@@ -7351,7 +8249,9 @@ window.CANON_PRESETS = [
     "look": "Spectral calibration balanced strictly to 5400K daylight with neutral whites and true skin.",
     "bestFor": "Direct-sunlight outdoor photography (10:00 to 16:00), sports, and outdoor events.",
     "heritage": "Developed by Canon CRC (Canon Resource Center) engineers for standardized 5400K JPEG output.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_CRC_Daylight.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_CRC_Gamut",
@@ -7367,7 +8267,9 @@ window.CANON_PRESETS = [
     "look": "Expanded color gamut coverage preventing posterization in high-saturation colors.",
     "bestFor": "Vibrant floral macros, stage lighting, and intense sunset gradients.",
     "heritage": "Canon CRC technical profile testing CMOS native gamut limits.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_CRC_Gamut.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_CRC_RGBK",
@@ -7383,7 +8285,9 @@ window.CANON_PRESETS = [
     "look": "Four-channel tonal separation (RGB + K black key) deepening shadows without tinting pure colors.",
     "bestFor": "Night cityscapes, high-contrast architecture, and complex shadow scenes.",
     "heritage": "Canon CRC engineering profile based on print four-color separation principles.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_CRC_RGBK.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_CRC_Sunlight",
@@ -7399,7 +8303,9 @@ window.CANON_PRESETS = [
     "look": "Spectral calibration balanced strictly to 5400K daylight with neutral whites and true skin.",
     "bestFor": "Direct-sunlight outdoor photography (10:00 to 16:00), sports, and outdoor events.",
     "heritage": "Developed by Canon CRC (Canon Resource Center) engineers for standardized 5400K JPEG output.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_CRC_Sunlight.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_CRC_Sunlight_alt",
@@ -7415,7 +8321,9 @@ window.CANON_PRESETS = [
     "look": "Spectral calibration balanced strictly to 5400K daylight with neutral whites and true skin.",
     "bestFor": "Direct-sunlight outdoor photography (10:00 to 16:00), sports, and outdoor events.",
     "heritage": "Developed by Canon CRC (Canon Resource Center) engineers for standardized 5400K JPEG output.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_CRC_Sunlight_alt.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Dense_Landscape",
@@ -7431,7 +8339,9 @@ window.CANON_PRESETS = [
     "look": "Dense forest greens and deep shadows preventing overexposed leaves from turning yellow.",
     "bestFor": "Rainforests, dense national parks, and misty mountain woodlands.",
     "heritage": "Engineered to maintain lush green density in direct sunlight.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Dense_Landscape.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_DoSaturate_Extra_Color",
@@ -7447,7 +8357,9 @@ window.CANON_PRESETS = [
     "look": "Intelligent saturation push protecting red and yellow channels from digital clipping.",
     "bestFor": "Exotic travel, spice markets, and colorful folk festivals.",
     "heritage": "Smart saturation curve with gamut protection.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_DoSaturate_Extra_Color.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Emotion_Magic",
@@ -7463,7 +8375,9 @@ window.CANON_PRESETS = [
     "look": "Fantasy fairy-tale curve with violet-tinged shadows and golden highlights.",
     "bestFor": "Fine-art bridal, enchanted forest sessions, and fantasy portraits.",
     "heritage": "Popular Asian wedding and fantasy portrait color curve.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Emotion_Magic.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Emotion_Magic_Curve",
@@ -7479,7 +8393,9 @@ window.CANON_PRESETS = [
     "look": "Fantasy fairy-tale curve with violet-tinged shadows and golden highlights.",
     "bestFor": "Fine-art bridal, enchanted forest sessions, and fantasy portraits.",
     "heritage": "Popular Asian wedding and fantasy portrait color curve.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Emotion_Magic_Curve.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Eyer_Japanese_Light",
@@ -7495,7 +8411,9 @@ window.CANON_PRESETS = [
     "look": "Airy High-Key highlights, soft open shadows, and delicate pastel greens/magentas.",
     "bestFor": "Window-lit portraits, intimate lifestyle, everyday still life, and gentle travel.",
     "heritage": "Chinese photographer Eyer's emulation of contemporary Japanese lifestyle photography.",
-    "author": "Eyer *(Pack: Eyer Creative Color Styles)*"
+    "author": "Eyer *(Pack: Eyer Creative Color Styles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Eyer_Japanese_Light.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Eyer_Oil_Painting",
@@ -7511,7 +8429,9 @@ window.CANON_PRESETS = [
     "look": "Dense painterly textures with rich ochres, amber, and olive tones softening digital edge.",
     "bestFor": "Still life, formal studio portraits, historic architecture, and artwork reprography.",
     "heritage": "Eyer's signature artistic oil-painting profile for Canon EOS.",
-    "author": "Eyer *(Pack: Eyer Creative Color Styles)*"
+    "author": "Eyer *(Pack: Eyer Creative Color Styles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Eyer_Oil_Painting.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Eyer_Street_Snap",
@@ -7527,7 +8447,9 @@ window.CANON_PRESETS = [
     "look": "Punchy micro-contrast separating subject from street backgrounds with true-to-life skin tones.",
     "bestFor": "Fast street photography, urban documentary, and snapshot shooting with wide primes.",
     "heritage": "Calibrated by Eyer for reactive street photography on Canon DSLRs.",
-    "author": "Eyer *(Pack: Eyer Creative Color Styles)*"
+    "author": "Eyer *(Pack: Eyer Creative Color Styles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Eyer_Street_Snap.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Eyer_Tint_1",
@@ -7543,7 +8465,9 @@ window.CANON_PRESETS = [
     "look": "Artistic tone curve with cool greenish shadow tint with creamy highlights for cinematic mood.",
     "bestFor": "Author portraiture, editorial photography, and mood-driven travel stories.",
     "heritage": "Eyer Creative Color Styles collection.",
-    "author": "Eyer *(Pack: Eyer Creative Color Styles)*"
+    "author": "Eyer *(Pack: Eyer Creative Color Styles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Eyer_Tint_1.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Eyer_Tint_5",
@@ -7559,7 +8483,9 @@ window.CANON_PRESETS = [
     "look": "Artistic tone curve with warm amber honey split-toning for cinematic mood.",
     "bestFor": "Author portraiture, editorial photography, and mood-driven travel stories.",
     "heritage": "Eyer Creative Color Styles collection.",
-    "author": "Eyer *(Pack: Eyer Creative Color Styles)*"
+    "author": "Eyer *(Pack: Eyer Creative Color Styles)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Eyer_Tint_5.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Gamut_Lab",
@@ -7575,7 +8501,9 @@ window.CANON_PRESETS = [
     "look": "Experimental lab calibration maximizing the AdobeRGB color gamut in JPEG output.",
     "bestFor": "Large-format printing directly from camera and fine-art display.",
     "heritage": "Developed to test CMOS sensor native gamut limits.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Gamut_Lab.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Hade_Contrast",
@@ -7591,7 +8519,9 @@ window.CANON_PRESETS = [
     "look": "Bold Japanese high-contrast look (*Hade* means flashy/vibrant) for city nightscapes and neon.",
     "bestFor": "Night street photography in Shibuya/Shinjuku, concerts, and streetwear fashion.",
     "heritage": "Born in Tokyo night street photography communities.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Hade_Contrast.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Heavenly_Forest",
@@ -7607,7 +8537,9 @@ window.CANON_PRESETS = [
     "look": "Emerald shadows with golden light rays filtering through forest canopies (*Komorebi*).",
     "bestFor": "Forest photography, nature storytelling, and ethereal outdoor portraits.",
     "heritage": "Inspired by sunbeams filtering through sacred Japanese cedar forests.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Heavenly_Forest.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Howay_5",
@@ -7623,7 +8555,9 @@ window.CANON_PRESETS = [
     "look": "Smooth cinematic contrast with open shadows, flattering skin, and restrained saturation.",
     "bestFor": "Outdoor portraits with diffused natural light, weddings, and lifestyle.",
     "heritage": "Fifth release of Howay Studio's influential portrait color profiles in East Asia.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Howay_5.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Infrared_FakeIR",
@@ -7639,7 +8573,9 @@ window.CANON_PRESETS = [
     "look": "Infrared glow: glowing white foliage (Wood effect), inky black skies, and ethereal halation.",
     "bestFor": "Surreal landscapes, sunny foliage, and dreamlike architectural photography.",
     "heritage": "Kodak High-Speed Infrared (HIE) film without anti-halation backing.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Infrared_FakeIR.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Infrared_HalfIR",
@@ -7655,7 +8591,9 @@ window.CANON_PRESETS = [
     "look": "Infrared glow: glowing white foliage (Wood effect), inky black skies, and ethereal halation.",
     "bestFor": "Surreal landscapes, sunny foliage, and dreamlike architectural photography.",
     "heritage": "Kodak High-Speed Infrared (HIE) film without anti-halation backing.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Infrared_HalfIR.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Infrared_IR_1",
@@ -7671,7 +8609,9 @@ window.CANON_PRESETS = [
     "look": "Infrared glow: glowing white foliage (Wood effect), inky black skies, and ethereal halation.",
     "bestFor": "Surreal landscapes, sunny foliage, and dreamlike architectural photography.",
     "heritage": "Kodak High-Speed Infrared (HIE) film without anti-halation backing.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Infrared_IR_1.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Landscape_Variant_2",
@@ -7687,7 +8627,9 @@ window.CANON_PRESETS = [
     "look": "Enhanced foliage micro-contrast with calibrated yellows preventing neon-green leaf shift.",
     "bestFor": "Mountain vistas, lush forests, green valleys, and nature hikes.",
     "heritage": "Landscape photographer optimization correcting standard Canon Landscape greens.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Landscape_Variant_2.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_NagMan_WW06",
@@ -7703,7 +8645,9 @@ window.CANON_PRESETS = [
     "look": "White Wedding (WW) tuning: extreme highlight texture retention in bridal gowns with glowing skin.",
     "bestFor": "Wedding ceremonies, portraits with white attire, and high-contrast ceremonies.",
     "heritage": "Developed by wedding retoucher NagMan in the 'White Wedding' series for Canon EOS.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_NagMan_WW06.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_New_Standard",
@@ -7719,7 +8663,9 @@ window.CANON_PRESETS = [
     "look": "Versatile all-round color curve with healthy skin tones, controlled blacks, and natural vibrance.",
     "bestFor": "Daily family travel, general reportage, and high-quality baseline shooting.",
     "heritage": "Community standard replacement for flat factory default profiles.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_New_Standard.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_OilColor_1",
@@ -7735,7 +8681,9 @@ window.CANON_PRESETS = [
     "look": "Dense, painterly tonal texture emulating classic oil paintings with rich ochres and browns.",
     "bestFor": "Baroque still life, period portraits, museum interiors, and historic architecture.",
     "heritage": "Emulates the earthy pigment palette of Renaissance and Flemish oil painting.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_OilColor_1.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_R3_Look",
@@ -7751,7 +8699,9 @@ window.CANON_PRESETS = [
     "look": "Emulates the color science and tone curve of the RED ONE / RED R3D digital cinema camera.",
     "bestFor": "Narrative video and independent cinema stills with high-end digital film feel.",
     "heritage": "Created during the era of matching Canon DSLRs with RED digital cinema cameras.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_R3_Look.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_R6L_Hoppy",
@@ -7767,7 +8717,9 @@ window.CANON_PRESETS = [
     "look": "Modern cinematic grade for urban indie short films with natural skin tones.",
     "bestFor": "Independent video, modern documentary, and contemporary street reportage.",
     "heritage": "Developed by the independent filmmaking collective R6L.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_R6L_Hoppy.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_R6L_Neue",
@@ -7783,7 +8735,9 @@ window.CANON_PRESETS = [
     "look": "Modern cinematic grade for urban indie short films with natural skin tones.",
     "bestFor": "Independent video, modern documentary, and contemporary street reportage.",
     "heritage": "Developed by the independent filmmaking collective R6L.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_R6L_Neue.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Reminiscence_Nostalgia",
@@ -7799,7 +8753,9 @@ window.CANON_PRESETS = [
     "look": "Vintage Super 8 home-movie look with soft shadows, subtle sepia tint, and nostalgic warmth.",
     "bestFor": "Family memories, bohemian weddings, childhood portraits, and retro B-roll.",
     "heritage": "Inspired by Kodak Super 8mm color home-movie film stocks.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Reminiscence_Nostalgia.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_RGB_CRC",
@@ -7815,7 +8771,9 @@ window.CANON_PRESETS = [
     "look": "Neutral daylight colorimetry with balanced dynamic range for direct-from-camera JPEGs.",
     "bestFor": "Outdoor daylight photography without need for post-processing.",
     "heritage": "Canon Resource Center (CRC) standardized daylight curve.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_RGB_CRC.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Romantic_Pastel",
@@ -7831,7 +8789,9 @@ window.CANON_PRESETS = [
     "look": "Milky high-key highlights, airy lifted shadows, and soft pastel pink/cyan tones.",
     "bestFor": "Cosplay, anime-style portraiture, spring blossoms, and kawaii youth fashion.",
     "heritage": "Created by Taiwanese photographer Kevin Wang for Canon EOS bodies.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Romantic_Pastel.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Splendid_Vivid",
@@ -7847,7 +8807,9 @@ window.CANON_PRESETS = [
     "look": "Lavish color saturation for luxury architecture, resort pools, and travel advertising.",
     "bestFor": "Luxury hotels, cruise ships, tropical resorts, and commercial travel catalogs.",
     "heritage": "Commercial advertising profile for high-end travel destinations.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Splendid_Vivid.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_StepByStep_Gradation",
@@ -7863,7 +8825,9 @@ window.CANON_PRESETS = [
     "look": "Stepped gamma curve eliminating color banding and posterization in continuous sky gradients.",
     "bestFor": "Sunset skies, dawn horizons, and wide-angle seascape panoramas.",
     "heritage": "Technical anti-banding curve for 8-bit sRGB gradients.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_StepByStep_Gradation.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Style_1",
@@ -7879,7 +8843,9 @@ window.CANON_PRESETS = [
     "look": "Versatile all-round color curve with healthy skin tones, controlled blacks, and natural vibrance.",
     "bestFor": "Daily family travel, general reportage, and high-quality baseline shooting.",
     "heritage": "Community standard replacement for flat factory default profiles.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Style_1.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_T6NA_Look",
@@ -7895,7 +8861,9 @@ window.CANON_PRESETS = [
     "look": "Versatile all-round color curve with healthy skin tones, controlled blacks, and natural vibrance.",
     "bestFor": "Daily family travel, general reportage, and high-quality baseline shooting.",
     "heritage": "Community standard replacement for flat factory default profiles.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_T6NA_Look.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Town_Urban",
@@ -7911,7 +8879,9 @@ window.CANON_PRESETS = [
     "look": "Architectural contrast curve optimized for concrete, asphalt, and modern glass facades.",
     "bestFor": "Cityscapes, skyscraper geometry, and metropolitan street photography.",
     "heritage": "Urban architecture profile engineered for metropolitan cityscapes.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Town_Urban.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Creative_Zero_Base",
@@ -7927,7 +8897,9 @@ window.CANON_PRESETS = [
     "look": "Strict baseline profile with zero aggressive curves for photographers applying custom RAW recipes.",
     "bestFor": "Capture base for precise RAW color grading in Canon DPP or Lightroom.",
     "heritage": "Technical zero-base profile developed by Canon DPP power users.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Creative_Zero_Base.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__CrispWarm",
@@ -7943,7 +8915,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/CrispWarm.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__CrispWinter",
@@ -7959,7 +8933,9 @@ window.CANON_PRESETS = [
     "look": "Razor-sharp micro-contrast with brilliant clean whites and precise texture separation.",
     "bestFor": "Winter landscapes, modern steel and glass architecture, and frosty mornings.",
     "heritage": "High micro-contrast calibration for high-resolution digital sensors.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/CrispWinter.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Dark",
@@ -7975,7 +8951,9 @@ window.CANON_PRESETS = [
     "look": "Low-key exposure compression with deep inky shadows and focused highlights.",
     "bestFor": "Gothic scenes, chiaroscuro portraits, and dramatic dark still life.",
     "heritage": "Photographic emulation of Caravaggio's chiaroscuro painting technique.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Dark.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Dramatic",
@@ -7991,7 +8969,9 @@ window.CANON_PRESETS = [
     "look": "Contemporary color grading with mathematically balanced curves (Dramatic palette).",
     "bestFor": "Editorial fashion, modern lifestyle, social media content, and design lookbooks.",
     "heritage": "Designed by the color science team at Pixelmator Team (Vilnius, Lithuania) for Pixelmator Pro.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Dramatic.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__DropBlues",
@@ -8007,7 +8987,9 @@ window.CANON_PRESETS = [
     "look": "Selectively mutes blue channels into neutral grays, accentuating warm elements.",
     "bestFor": "Urban fashion, commercial automotive, and street portraits without sky distractions.",
     "heritage": "Modern commercial color grading technique.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/DropBlues.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__EdgyEmber",
@@ -8023,7 +9005,9 @@ window.CANON_PRESETS = [
     "look": "Fiery copper highlights with smoky charcoal shadows; atmosphere of sparks and fire.",
     "bestFor": "Blacksmith workshops, metal concerts, fireworks, and night bonfire scenes.",
     "heritage": "High-energy industrial color palette.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/EdgyEmber.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__FallColors",
@@ -8039,7 +9023,9 @@ window.CANON_PRESETS = [
     "look": "Dramatically boosts yellow, ochre, orange, and red foliage while keeping skies natural.",
     "bestFor": "Autumn forests, deciduous woodland in October, and mountain foliage.",
     "heritage": "Engineered to maximize autumn leaf color change.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/FallColors.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Flamboyant",
@@ -8055,7 +9041,9 @@ window.CANON_PRESETS = [
     "look": "Contemporary color grading with mathematically balanced curves (Flamboyant palette).",
     "bestFor": "Editorial fashion, modern lifestyle, social media content, and design lookbooks.",
     "heritage": "Designed by the color science team at Pixelmator Team (Vilnius, Lithuania) for Pixelmator Pro.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Flamboyant.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__FoggyNight",
@@ -8071,7 +9059,9 @@ window.CANON_PRESETS = [
     "look": "Lifts black levels with a milky gray veil simulating low-lying mist and atmospheric moisture.",
     "bestFor": "Streetlamps in foggy streets, mysterious landscapes, and atmospheric noir photography.",
     "heritage": "CreativePack atmospheric filter profile.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/FoggyNight.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__FuturisticBleak1",
@@ -8087,7 +9077,9 @@ window.CANON_PRESETS = [
     "look": "Cool desaturated palette with cyan-blue shadows creating a cold dystopian atmosphere.",
     "bestFor": "Brutalist architecture, industrial complexes, night streetscapes, and cyberpunk styling.",
     "heritage": "Dystopian science-fiction cinematic color grade.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/FuturisticBleak1.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__FuturisticBleak2",
@@ -8103,7 +9095,9 @@ window.CANON_PRESETS = [
     "look": "Cool desaturated palette with cyan-blue shadows creating a cold dystopian atmosphere.",
     "bestFor": "Brutalist architecture, industrial complexes, night streetscapes, and cyberpunk styling.",
     "heritage": "Dystopian science-fiction cinematic color grade.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/FuturisticBleak2.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__FuturisticBleak3",
@@ -8119,7 +9113,9 @@ window.CANON_PRESETS = [
     "look": "Cool desaturated palette with cyan-blue shadows creating a cold dystopian atmosphere.",
     "bestFor": "Brutalist architecture, industrial complexes, night streetscapes, and cyberpunk styling.",
     "heritage": "Dystopian science-fiction cinematic color grade.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/FuturisticBleak3.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__FuturisticBleak4",
@@ -8135,7 +9131,9 @@ window.CANON_PRESETS = [
     "look": "Cool desaturated palette with cyan-blue shadows creating a cold dystopian atmosphere.",
     "bestFor": "Brutalist architecture, industrial complexes, night streetscapes, and cyberpunk styling.",
     "heritage": "Dystopian science-fiction cinematic color grade.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/FuturisticBleak4.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Bright_Spring_Breeze",
@@ -8151,7 +9149,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Bright-Spring-Breeze.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Bright_Summer_Heat",
@@ -8167,7 +9167,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Bright-Summer-Heat.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Hot_Summer_Heat",
@@ -8183,7 +9185,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Hot-Summer-Heat.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Perfect_Sunset_01min",
@@ -8199,7 +9203,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Perfect-Sunset-01min.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Perfect_Sunset_05min",
@@ -8215,7 +9221,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Perfect-Sunset-05min.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Perfect_Sunset_10min",
@@ -8231,7 +9239,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Perfect-Sunset-10min.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Spring_Breeze",
@@ -8247,7 +9257,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Spring-Breeze.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__GoldFX_Summer_Heat",
@@ -8263,7 +9275,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*"
+    "author": "Christian Bloch *(Pack: PictureFX Film & Color Lab)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/GoldFX-Summer-Heat.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__HorrorBlue",
@@ -8279,7 +9293,9 @@ window.CANON_PRESETS = [
     "look": "Gloomy, desaturated blue-green tint characteristic of modern supernatural horror cinema.",
     "bestFor": "Horror narratives, abandoned buildings (urbex), and eerie night scenes.",
     "heritage": "Inspired by contemporary horror cinematography (*The Ring*, *Insidious*).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/HorrorBlue.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Intense",
@@ -8295,7 +9311,9 @@ window.CANON_PRESETS = [
     "look": "Contemporary color grading with mathematically balanced curves (Intense palette).",
     "bestFor": "Editorial fashion, modern lifestyle, social media content, and design lookbooks.",
     "heritage": "Designed by the color science team at Pixelmator Team (Vilnius, Lithuania) for Pixelmator Pro.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Intense.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Japan_Akiiro_Golden_Autumn",
@@ -8311,7 +9329,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_Akiiro_Golden_Autumn.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Japan_Huukei_Neutral_Landscape",
@@ -8327,7 +9347,9 @@ window.CANON_PRESETS = [
     "look": "Harmonious color balance tuned for Japanese seasonal aesthetics: traditional Japanese scenery.",
     "bestFor": "Autumn foliage, Zen gardens, traditional architecture, and travel in Japan.",
     "heritage": "Created by Japanese Canon landscape photographers.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_Huukei_Neutral_Landscape.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Japan_IchigoMoe_2",
@@ -8343,7 +9365,9 @@ window.CANON_PRESETS = [
     "look": "Milky high-key highlights, airy lifted shadows, and soft pastel pink/cyan tones.",
     "bestFor": "Cosplay, anime-style portraiture, spring blossoms, and kawaii youth fashion.",
     "heritage": "Created by Taiwanese photographer Kevin Wang for Canon EOS bodies.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_IchigoMoe_2.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Japan_IchigoMoe_Anime_Pink",
@@ -8359,7 +9383,9 @@ window.CANON_PRESETS = [
     "look": "Milky high-key highlights, airy lifted shadows, and soft pastel pink/cyan tones.",
     "bestFor": "Cosplay, anime-style portraiture, spring blossoms, and kawaii youth fashion.",
     "heritage": "Created by Taiwanese photographer Kevin Wang for Canon EOS bodies.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Anime.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Japan_Kouyou_Red_Foliage",
@@ -8375,7 +9401,9 @@ window.CANON_PRESETS = [
     "look": "Harmonious color balance tuned for Japanese seasonal aesthetics: Kouyou (autumn maple red).",
     "bestFor": "Autumn foliage, Zen gardens, traditional architecture, and travel in Japan.",
     "heritage": "Created by Japanese Canon landscape photographers.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_Kouyou_Red_Foliage.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Japan_OldTown_Neutral",
@@ -8391,7 +9419,9 @@ window.CANON_PRESETS = [
     "look": "Harmonious color balance tuned for Japanese seasonal aesthetics: traditional Japanese scenery.",
     "bestFor": "Autumn foliage, Zen gardens, traditional architecture, and travel in Japan.",
     "heritage": "Created by Japanese Canon landscape photographers.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_OldTown_Neutral.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Japan_Sittori_Serene_Landscape",
@@ -8407,7 +9437,9 @@ window.CANON_PRESETS = [
     "look": "Harmonious color balance tuned for Japanese seasonal aesthetics: traditional Japanese scenery.",
     "bestFor": "Autumn foliage, Zen gardens, traditional architecture, and travel in Japan.",
     "heritage": "Created by Japanese Canon landscape photographers.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_Sittori_Serene_Landscape.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Japan_Tsuyazakura_Cherry_Blossoms",
@@ -8423,7 +9455,9 @@ window.CANON_PRESETS = [
     "look": "Harmonious color balance tuned for Japanese seasonal aesthetics: Tsuyazakura (cherry blossom pink).",
     "bestFor": "Autumn foliage, Zen gardens, traditional architecture, and travel in Japan.",
     "heritage": "Created by Japanese Canon landscape photographers.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_Tsuyazakura_Cherry_Blossoms.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Japan_Wagokoro_Traditional",
@@ -8439,7 +9473,9 @@ window.CANON_PRESETS = [
     "look": "Harmonious color balance tuned for Japanese seasonal aesthetics: Wagokoro (temple woodwork).",
     "bestFor": "Autumn foliage, Zen gardens, traditional architecture, and travel in Japan.",
     "heritage": "Created by Japanese Canon landscape photographers.",
-    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*"
+    "author": "Japanese Canon EOS Community *(Pack: Japanese Seasonal & Aesthetic Presets)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Japan_Wagokoro_Traditional.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__KevinWang_Japanese_Pastel_Soft",
@@ -8455,7 +9491,9 @@ window.CANON_PRESETS = [
     "look": "Milky high-key highlights, airy lifted shadows, and soft pastel pink/cyan tones.",
     "bestFor": "Cosplay, anime-style portraiture, spring blossoms, and kawaii youth fashion.",
     "heritage": "Created by Taiwanese photographer Kevin Wang for Canon EOS bodies.",
-    "author": "Kevin Wang *(Pack: Kevin Wang Color Works)*"
+    "author": "Kevin Wang *(Pack: Kevin Wang Color Works)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/KevinWang_Japanese_Pastel_Soft.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__KevinWang_Japanese_Style_Pastel",
@@ -8471,7 +9509,9 @@ window.CANON_PRESETS = [
     "look": "Milky high-key highlights, airy lifted shadows, and soft pastel pink/cyan tones.",
     "bestFor": "Cosplay, anime-style portraiture, spring blossoms, and kawaii youth fashion.",
     "heritage": "Created by Taiwanese photographer Kevin Wang for Canon EOS bodies.",
-    "author": "Kevin Wang *(Pack: Kevin Wang Color Works)*"
+    "author": "Kevin Wang *(Pack: Kevin Wang Color Works)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/KevinWang_Japanese_Style_Pastel.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__LateSunset",
@@ -8487,7 +9527,9 @@ window.CANON_PRESETS = [
     "look": "Explosion of magentas, deep oranges, and golden tones capturing the final 5 minutes of sunset.",
     "bestFor": "Seacoast sunsets, backlit silhouettes, and mountain horizons.",
     "heritage": "Targeted spectral saturation curve calibrated for twilight dusk.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/LateSunset.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Loud",
@@ -8503,7 +9545,9 @@ window.CANON_PRESETS = [
     "look": "Maximum primary saturation with bold, punchy pop-art contrast.",
     "bestFor": "Youth fashion, advertising posters, street graffiti, and graphic art.",
     "heritage": "High-saturation aesthetic inspired by 1960s Pop Art.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Loud.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Mono",
@@ -8519,7 +9563,9 @@ window.CANON_PRESETS = [
     "look": "Direct clean monochrome with balanced contrast and clean blacks for daily reportage.",
     "bestFor": "Street photography, candid portraits, and everyday documentary.",
     "heritage": "Clean digital monochrome baseline.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Mono.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Moonlight",
@@ -8535,7 +9581,9 @@ window.CANON_PRESETS = [
     "look": "Deep lunar blue wash recreating the illumination of open landscape under full moonlight.",
     "bestFor": "Night landscapes, fantasy scenes, and forest photography under night skies.",
     "heritage": "Classic theatrical night-lighting cinematic effect.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Moonlight.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Amaryllis_Red",
@@ -8551,7 +9599,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Amaryllis Red' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Amaryllis_Red.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Blue_Sky",
@@ -8567,7 +9617,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Blue Sky' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Blue_Sky.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Blue_Sky_alt",
@@ -8583,7 +9635,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Blue Sky alt' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Blue_Sky_alt.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Emerald_Green_Sky",
@@ -8599,7 +9653,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Emerald Green Sky' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Emerald_Green_Sky.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Macro_Flowers",
@@ -8615,7 +9671,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Macro Flowers' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Macro_Flowers.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Pure_White_Snow",
@@ -8631,7 +9689,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Pure White Snow' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Pure_White_Snow.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Tropical_Saturated",
@@ -8647,7 +9707,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Tropical Saturated' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Tropical_Saturated.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__Nature_Vivid_Green",
@@ -8663,7 +9725,9 @@ window.CANON_PRESETS = [
     "look": "Targeted colorimetric calibration enhancing 'Vivid Green' with clean contrast.",
     "bestFor": "Nature photography, macro florals, alpine snow, or blue skies according to variant.",
     "heritage": "Canon EOS nature photography community profile series.",
-    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*"
+    "author": "Vision Wrangler & Canon Community *(Pack: Canon Community Picture Style Archive (2008-2016))*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/Nature_Vivid_Green.pf2",
+    "isLut": false
   },
   {
     "id": "07_Creative_and_Artistic__NightFromDay",
@@ -8679,7 +9743,9 @@ window.CANON_PRESETS = [
     "look": "Transforms bright daylight scenes into simulated night scenes with deep underexposure and blue cast.",
     "bestFor": "Cinematic in-camera special effects for productions without night lighting budgets.",
     "heritage": "Emulates the classic Hollywood *Day for Night* (*Nuit Américaine*) filming technique.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/NightFromDay.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__RedBlueYellow",
@@ -8695,7 +9761,9 @@ window.CANON_PRESETS = [
     "look": "Accentuation of the classic primary triad (red, blue, yellow) while neutralizing secondary tones.",
     "bestFor": "Geometric architecture, graphic design photography, and abstract urban compositions.",
     "heritage": "Inspired by the De Stijl movement and Piet Mondrian's color theory.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/RedBlueYellow.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Rosy",
@@ -8711,7 +9779,9 @@ window.CANON_PRESETS = [
     "look": "Delicate pink-rose tint in highlights and skin tones adding warmth and tender romance.",
     "bestFor": "Maternity portraits, newborn photography, floral close-ups, and dream scenes.",
     "heritage": "Classic romantic filter emulating vintage soft-focus diffusion filters.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Rosy.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Smokey",
@@ -8727,7 +9797,9 @@ window.CANON_PRESETS = [
     "look": "Lifted black point with smoky shadow haze evoking dimly-lit jazz clubs and taverns.",
     "bestFor": "Live music venues, night bar portraits, and bohemian atmospheric scenes.",
     "heritage": "Shadow-lift effect simulating light scatter in smoky rooms.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Smokey.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Smoky",
@@ -8743,7 +9815,9 @@ window.CANON_PRESETS = [
     "look": "Lifted black point with smoky shadow haze evoking dimly-lit jazz clubs and taverns.",
     "bestFor": "Live music venues, night bar portraits, and bohemian atmospheric scenes.",
     "heritage": "Shadow-lift effect simulating light scatter in smoky rooms.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Smoky.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__SoftWarming",
@@ -8759,7 +9833,9 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/SoftWarming.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TealMagentaGold",
@@ -8775,7 +9851,9 @@ window.CANON_PRESETS = [
     "look": "Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).",
     "bestFor": "Casual travel, summer holidays, family gatherings, and everyday street snapshots.",
     "heritage": "Kodak Gold 200, the classic American consumer color negative film.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TealMagentaGold.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TealOrange",
@@ -8791,7 +9869,9 @@ window.CANON_PRESETS = [
     "look": "Hollywood complementary color split: warm peach skin tones against rich teal shadows and skies.",
     "bestFor": "Music videos, night cityscapes with neon lighting, and cinematic portraits.",
     "heritage": "The definitive color grading scheme of 21st-century Hollywood blockbuster cinema.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TealOrange.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TealOrange1",
@@ -8807,7 +9887,9 @@ window.CANON_PRESETS = [
     "look": "Hollywood complementary color split: warm peach skin tones against rich teal shadows and skies.",
     "bestFor": "Music videos, night cityscapes with neon lighting, and cinematic portraits.",
     "heritage": "The definitive color grading scheme of 21st-century Hollywood blockbuster cinema.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TealOrange1.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TealOrange2",
@@ -8823,7 +9905,9 @@ window.CANON_PRESETS = [
     "look": "Hollywood complementary color split: warm peach skin tones against rich teal shadows and skies.",
     "bestFor": "Music videos, night cityscapes with neon lighting, and cinematic portraits.",
     "heritage": "The definitive color grading scheme of 21st-century Hollywood blockbuster cinema.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TealOrange2.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TealOrange3",
@@ -8839,7 +9923,9 @@ window.CANON_PRESETS = [
     "look": "Hollywood complementary color split: warm peach skin tones against rich teal shadows and skies.",
     "bestFor": "Music videos, night cityscapes with neon lighting, and cinematic portraits.",
     "heritage": "The definitive color grading scheme of 21st-century Hollywood blockbuster cinema.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TealOrange3.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TechnicalFX_Backlight_Filter",
@@ -8855,7 +9941,9 @@ window.CANON_PRESETS = [
     "look": "Compensates harsh backlighting, recovering facial shadow details without blowing silhouettes.",
     "bestFor": "Sunset portraits looking directly into the sun and high-contrast rim lighting.",
     "heritage": "Technical backlight compensation curve.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TechnicalFX-Backlight-Filter.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TensionGreen1",
@@ -8871,7 +9959,9 @@ window.CANON_PRESETS = [
     "look": "Subtle sickly green cast in midtones and shadows with desaturated skin for psychological unease.",
     "bestFor": "Suspense narratives, psychological drama, abandoned corridors, and thriller cinema.",
     "heritage": "Inspired by the greenish color palette of late-90s thrillers (*The Matrix*, *Fight Club*).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TensionGreen1.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TensionGreen2",
@@ -8887,7 +9977,9 @@ window.CANON_PRESETS = [
     "look": "Subtle sickly green cast in midtones and shadows with desaturated skin for psychological unease.",
     "bestFor": "Suspense narratives, psychological drama, abandoned corridors, and thriller cinema.",
     "heritage": "Inspired by the greenish color palette of late-90s thrillers (*The Matrix*, *Fight Club*).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TensionGreen2.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TensionGreen3",
@@ -8903,7 +9995,9 @@ window.CANON_PRESETS = [
     "look": "Subtle sickly green cast in midtones and shadows with desaturated skin for psychological unease.",
     "bestFor": "Suspense narratives, psychological drama, abandoned corridors, and thriller cinema.",
     "heritage": "Inspired by the greenish color palette of late-90s thrillers (*The Matrix*, *Fight Club*).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TensionGreen3.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__TensionGreen4",
@@ -8919,7 +10013,9 @@ window.CANON_PRESETS = [
     "look": "Subtle sickly green cast in midtones and shadows with desaturated skin for psychological unease.",
     "bestFor": "Suspense narratives, psychological drama, abandoned corridors, and thriller cinema.",
     "heritage": "Inspired by the greenish color palette of late-90s thrillers (*The Matrix*, *Fight Club*).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/TensionGreen4.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Vintage",
@@ -8935,7 +10031,9 @@ window.CANON_PRESETS = [
     "look": "Contemporary color grading with mathematically balanced curves (Vintage palette).",
     "bestFor": "Editorial fashion, modern lifestyle, social media content, and design lookbooks.",
     "heritage": "Designed by the color science team at Pixelmator Team (Vilnius, Lithuania) for Pixelmator Pro.",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Vintage.png",
+    "isLut": true
   },
   {
     "id": "07_Creative_and_Artistic__Warm",
@@ -8951,6 +10049,8 @@ window.CANON_PRESETS = [
     "look": "Cinematic S-curve with warm skin tones and film-like tonal separation.",
     "bestFor": "Narrative video shooting and cinematic documentary portraits.",
     "heritage": "DSLR cinema movement custom picture styles (2009-2015).",
-    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*"
+    "author": "Pat David & Open-Source Community *(Pack: Open-Source Film Simulation Collection)*",
+    "source": "presets Canon.pf3/07_Creative_and_Artistic/source_luts/Warm.png",
+    "isLut": true
   }
 ];

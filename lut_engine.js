@@ -393,7 +393,7 @@ const RawPreviewExtractor = {
             }
         }
 
-        throw new Error(`Formato no compatible o preview JPEG no encontrado en ${file.name}`);
+        throw new Error(`Unsupported file format or embedded JPEG preview not found in ${file.name}`);
     },
 
     extractJpegFromBuffer(arrayBuffer) {
