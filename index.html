@@ -45,7 +45,7 @@
             user-select: none;
         }
 
-        /* BARRA SUPERIOR ADAPTATIVA & FLEXIBLE (ESCALADO FLUIDO PORTÁTIL / 4K) */
+        /* ADAPTIVE & FLEXIBLE TOP BAR (FLUID SCALING FOR LAPTOP / 4K) */
         header.top-header {
             position: sticky;
             top: 0;
@@ -67,7 +67,7 @@
             overflow: visible;
         }
 
-        /* Ocultación TOTAL de la barra superior y restauración */
+        /* Full top bar collapse and restore */
         body.header-collapsed header.top-header {
             display: none !important;
         }
@@ -157,8 +157,8 @@
             flex-wrap: nowrap;
         }
 
-        /* DECKS CONTEXTUALES DE LA CABECERA UNIFICADA */
-        .mosaico-deck {
+        /* CONTEXTUAL DECKS IN UNIFIED HEADER */
+        .grid-deck {
             display: flex;
             align-items: center;
             gap: 4px clamp(5px, 0.6vw, 8px);
@@ -181,7 +181,7 @@
             display: none !important;
         }
 
-        body.view-mode-carousel .mosaico-deck {
+        body.view-mode-carousel .grid-deck {
             display: none !important;
         }
 
@@ -215,7 +215,7 @@
             white-space: nowrap;
         }
 
-        /* CONMUTADOR DE VISTAS (MOSAICO vs CARRUSEL) */
+        /* VIEW SWITCHER (GRID vs CAROUSEL) */
         .view-mode-tabs {
             display: flex;
             background: var(--bg-card);
@@ -258,7 +258,7 @@
             font-size: 11px;
         }
 
-        /* SELECTOR VISUAL DE FOTOS (DROPDOWN POPOVER) */
+        /* VISUAL PHOTO PICKER (DROPDOWN POPOVER) */
         .visual-photo-dropdown-wrap {
             position: relative;
             display: flex;
@@ -409,7 +409,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* SELECTORES DESPLEGABLES COMPACTOS & FLUIDOS */
+        /* COMPACT & FLUID DROPDOWN SELECTORS */
         .select-group {
             display: flex;
             align-items: center;
@@ -559,7 +559,7 @@
             flex-wrap: nowrap;
         }
 
-        /* Ocultar elementos de mosaico redundantes en carrusel */
+        /* Hide redundant grid elements in carousel mode */
         body.view-mode-carousel .header-right #btnFavFilter,
         body.view-mode-carousel .header-right #btnHoldBefore,
         body.view-mode-carousel .header-right #statusPill {
@@ -583,7 +583,7 @@
 
         .status-pill strong { color: var(--text-main); }
 
-        /* SLIDER INTENSIDAD GLOBAL COMPACTO & FLUIDO */
+        /* COMPACT & FLUID GLOBAL INTENSITY SLIDER */
         .intensity-control {
             display: flex;
             align-items: center;
@@ -632,7 +632,7 @@
             text-align: right;
         }
 
-        /* DENSIDAD DE GRILLA */
+        /* GRID DENSITY */
         .view-density-group {
             display: flex;
             background: var(--bg-card);
@@ -656,7 +656,7 @@
         .density-btn:hover { color: var(--text-main); }
         .density-btn.active { background: var(--border-highlight); color: #fff; }
 
-        /* BOTÓN TOGGLE FAVORITOS */
+        /* FAVORITES TOGGLE BUTTON */
         .fav-filter-btn {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -702,7 +702,7 @@
             border-color: #f43f5e;
         }
 
-        /* CONTENEDOR PRINCIPAL Y PANELES */
+        /* MAIN CONTAINER & PANELS */
         main.catalog-container {
             flex: 1 1 0%;
             min-height: 0;
@@ -728,7 +728,7 @@
         }
 
         /* ========================================================= */
-        /* VISTA 1: GRID DE TARJETAS (MOSAICO FLEXIBLE)             */
+        /* VIEW 1: CARD GRID (FLEXIBLE MOSAIC)                       */
         /* ========================================================= */
         .preset-grid {
             display: grid;
@@ -955,7 +955,7 @@
         }
 
         /* ========================================================= */
-        /* VISTA 2: CARRUSEL DE TRIAJE RÁPIDO (1 A 1 CON TECLADO)    */
+        /* VIEW 2: FAST TRIAGE CAROUSEL (1-BY-1 KEYBOARD WORKFLOW)   */
         /* ========================================================= */
         .view-panel-carousel {
             flex: 1 1 0%;
@@ -1039,7 +1039,7 @@
             flex-shrink: 0;
         }
 
-        /* CENTRO: MODO ANTES/DESPUÉS + FILTRO COLA */
+        /* CENTER: BEFORE/AFTER MODE + QUEUE FILTER */
         .triage-center-controls {
             display: flex;
             align-items: center;
@@ -1118,7 +1118,7 @@
             border: 1px solid #334155;
         }
 
-        /* DERECHA: BOTONES DE ACCIÓN RÁPIDA */
+        /* RIGHT: QUICK ACTION BUTTONS */
         .triage-actions-group {
             display: flex;
             align-items: center;
@@ -1262,7 +1262,7 @@
             border-color: #8b5cf6;
         }
 
-        /* MEDIA QUERIES PROGRESIVAS PARA ADAPTACIÓN A ZOOM Y PORTÁTILES */
+        /* PROGRESSIVE MEDIA QUERIES FOR ZOOM & LAPTOP ADAPTATION */
         @media (max-width: 1360px) {
             .brand-title {
                 display: none;
@@ -1288,12 +1288,12 @@
         @media (max-width: 720px) {
             header.top-header,
             .triage-deck,
-            .mosaico-deck {
+            .grid-deck {
                 flex-wrap: wrap;
             }
         }
 
-        /* VIEWPORT CENTRAL DEL CARRUSEL */
+        /* CENTRAL CAROUSEL VIEWPORT */
         .triage-viewport-wrap {
             flex: 1;
             position: relative;
@@ -1338,7 +1338,7 @@
             height: 100%;
         }
 
-        /* VISTA MULTI-ESCENAS SIMULTÁNEAS EN CARRUSEL (FLEXIBLE AL VIEWPORT) */
+        /* SIMULTANEOUS MULTI-SCENE CAROUSEL VIEW (FLEXIBLE TO VIEWPORT) */
         .triage-multi-wrap {
             width: 100%;
             height: 100%;
@@ -1492,7 +1492,7 @@
             opacity: 1;
         }
 
-        /* CORTINA SPLIT A/B EN EL CARRUSEL */
+        /* A/B SPLIT CURTAIN IN CAROUSEL */
         .carousel-split-bar {
             position: absolute;
             top: 0;
@@ -1524,7 +1524,7 @@
             pointer-events: none;
         }
 
-        /* INSIGNIAS FLOTANTES DE ORIGINAL Y PRESET */
+        /* FLOATING ORIGINAL & PRESET BADGES */
         .triage-badge-fl-left {
             position: absolute;
             top: 10px;
@@ -1559,7 +1559,7 @@
             z-index: 20;
         }
 
-        /* PANEL FLOTANTE DE METADATOS (HUD INFERIOR IZQUIERDO COMPACTO) */
+        /* FLOATING METADATA PANEL (COMPACT BOTTOM-LEFT HUD) */
         .triage-meta-hud {
             position: absolute;
             bottom: 6px;
@@ -1650,7 +1650,7 @@
             color: var(--text-muted);
         }
 
-        /* BARRA FLOTANTE DE ATAJOS (HUD INFERIOR DERECHO SIN COLISIÓN) */
+        /* FLOATING SHORTCUTS BAR (BOTTOM-RIGHT HUD WITHOUT COLLISION) */
         .triage-shortcuts-hud {
             position: absolute;
             bottom: 6px;
@@ -1699,7 +1699,7 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        /* BOTÓN DE ENCUADRE FLOTANTE (DESPEJANDO EL BORDE SUPERIOR) */
+        /* FLOATING FIT BUTTON (CLEARING TOP EDGE) */
         .triage-btn-fit {
             position: absolute;
             bottom: 38px;
@@ -1740,7 +1740,7 @@
             border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
-        /* PANTALLA EMPTY STATE (FIN DE CRIBA) */
+        /* EMPTY STATE SCREEN (END OF TRIAGE) */
         .triage-empty-state {
             display: none;
             width: 100%;
@@ -1772,7 +1772,7 @@
         .triage-empty-title { font-size: 20px; font-weight: 700; color: #fff; }
         .triage-empty-desc { font-size: 13px; line-height: 1.5; color: var(--text-muted); }
 
-        /* DRAWER LATERAL DE FAVORITOS & DESCARTADOS */
+        /* SIDE DRAWER FOR FAVORITES & DISCARDED */
         .triage-drawer-overlay {
             position: fixed;
             inset: 0;
@@ -1920,7 +1920,7 @@
         }
         .btn-item-del:hover { color: #f87171; }
 
-        /* MODAL DE GUARDAR CON NOTA EN CARRUSEL */
+        /* SAVE WITH NOTE MODAL IN CAROUSEL */
         .keep-modal-backdrop {
             position: fixed;
             inset: 0;
@@ -1962,7 +1962,7 @@
         .keep-input-field:focus { border-color: var(--color-keep); }
 
         /* ========================================================= */
-        /* MODAL DE INSPECCIÓN A/B (DESDE EL MOSAICO)                */
+        /* A/B INSPECTION MODAL (FROM GRID VIEW)                     */
         /* ========================================================= */
         .modal-backdrop {
             position: fixed;
@@ -2216,7 +2216,7 @@
             border-color: var(--border-highlight);
         }
 
-        /* OVERLAY DRAG & DROP GLOBAL */
+        /* GLOBAL DRAG & DROP OVERLAY */
         .drag-drop-overlay {
             position: fixed;
             inset: 0;
@@ -2247,7 +2247,7 @@
         .drag-title { font-size: 24px; font-weight: 700; color: #fff; }
         .drag-sub { font-size: 14px; color: var(--text-muted); }
 
-        /* TOAST NOTIFICACIONES */
+        /* TOAST NOTIFICATIONS */
         .toast-box {
             position: fixed;
             bottom: 24px;
@@ -2286,16 +2286,16 @@
         <div class="drag-sub">Supported formats: Canon RAW (.CR3 / .CR2 / .CRW) & JPG / PNG / WebP</div>
     </div>
 
-    <!-- HEADER SUPERIOR UNIFICADO -->
+    <!-- UNIFIED TOP HEADER -->
     <header class="top-header">
-        <!-- GLOBAL IZQUIERDA: MARCA + PESTAÑAS VISTA + FOTO SELECTOR -->
+        <!-- GLOBAL LEFT: BRAND + VIEW TABS + PHOTO PICKER -->
         <div class="header-left">
             <div class="brand-box" title="Canon Picture Styles Suite">
                 <span class="brand-badge">EOS</span>
                 <span class="brand-title">Picture Styles</span>
             </div>
 
-            <!-- Conmutador de Vistas (Mosaico vs Carrusel) -->
+            <!-- View Switcher (Grid vs Carousel) -->
             <div class="view-mode-tabs" role="tablist">
                 <button id="tabViewGrid" class="view-tab-btn active" title="Grid View (550 presets) - Key: V">
                     <span class="tab-icon">🗂️</span> <span class="tab-label">Grid</span>
@@ -2305,14 +2305,14 @@
                 </button>
             </div>
 
-            <!-- Selector Visual de Foto de Prueba -->
+            <!-- Visual Sample Photo Picker -->
             <div class="visual-photo-dropdown-wrap" id="photoDropdownWrap">
                 <button class="photo-picker-trigger" id="photoPickerTrigger" title="Select sample photo">
                     <img id="activePhotoThumb" class="active-photo-preview" src="samples/01_portrait_skin.jpg" alt="Photo">
                     <span class="dropdown-arrow">▾</span>
                 </button>
 
-                <!-- Menú desplegable visual -->
+                <!-- Visual dropdown menu -->
                 <div class="photo-picker-menu" id="photoPickerMenu">
                     <div class="photo-picker-header">Sample Photo</div>
                     <div class="photo-thumbs-grid" id="photoThumbsGrid"></div>
@@ -2324,9 +2324,9 @@
             </div>
         </div>
 
-        <!-- DECK MODO MOSAICO (Solo visible en Mosaico) -->
-        <div class="mosaico-deck" id="mosaicoDeck">
-            <!-- Desplegable Categoría -->
+        <!-- GRID MODE DECK (Visible in Grid only) -->
+        <div class="grid-deck" id="gridDeck">
+            <!-- Category Dropdown -->
             <div class="select-group" id="headerCategorySelectWrap" title="Filter by macro-category">
                 <span class="select-icon">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
@@ -2334,7 +2334,7 @@
                 <select id="categorySelect" class="compact-select"></select>
             </div>
 
-            <!-- Buscador -->
+            <!-- Search Bar -->
             <div class="header-center" id="headerSearchWrap">
                 <div class="search-box">
                     <span class="search-icon">🔍</span>
@@ -2343,30 +2343,30 @@
                 </div>
             </div>
 
-            <!-- Favoritos -->
+            <!-- Favorites -->
             <button id="btnFavFilter" class="fav-filter-btn" title="Show favorites only ⭐">
                 <span>⭐</span> <span id="favCountText">0</span>
             </button>
 
-            <!-- Densidad de Rejilla -->
+            <!-- Grid Density -->
             <div class="view-density-group" id="densityGroupWrap" title="Thumbnail size">
                 <button class="density-btn" data-density="compact" title="Compact view (more thumbnails)">▪▪▪</button>
                 <button class="density-btn active" data-density="normal" title="Standard view">◼◼</button>
                 <button class="density-btn" data-density="large" title="Large view">◼</button>
             </div>
 
-            <!-- Botón Global Original (Espacio) -->
+            <!-- Global Original Button (Spacebar) -->
             <button class="global-before-btn" id="btnHoldBefore" title="Hold click or press SPACEBAR to view original">
                 👁️ Original
             </button>
 
-            <!-- Conteo de presets -->
+            <!-- Preset Counter -->
             <div class="status-pill" id="statusPill" title="Visible presets / Total">
                 <strong id="visibleCountText">550</strong>/<span id="totalCountText">550</span>
             </div>
         </div>
 
-        <!-- DECK MODO CARRUSEL (Solo visible en Carrusel) -->
+        <!-- CAROUSEL MODE DECK (Visible in Carousel only) -->
         <div class="triage-deck" id="triageDeck">
             <div class="triage-info-box">
                 <span id="triageCatBadge" class="badge-cat" style="background: #0284c7; color: #fff;">Fujifilm</span>
@@ -2377,13 +2377,13 @@
             </div>
 
             <div class="triage-center-controls">
-                <!-- Botón Modo Antes / Después -->
+                <!-- Before / After Mode Toggle -->
                 <div id="btnTriageToggleMode" class="triage-mode-indicator" title="Toggle Before/After (Shortcut: SPACE or B)">
                     <div class="triage-indicator-dot"></div>
                     <span id="triageModeText" class="triage-mode-text">AFTER</span>
                 </div>
 
-                <!-- Conmutador: 11 Escenas vs Foto Grande -->
+                <!-- Switcher: 11 Scenes vs Single Large Photo -->
                 <div class="triage-view-mode-group" title="Carousel display mode (Shortcut: G)">
                     <button id="btnTriageModeMulti" class="triage-display-btn active" title="View all 11 sample scenes at once (Shortcut: G)">
                         ⊞ 11
@@ -2393,13 +2393,13 @@
                     </button>
                 </div>
 
-                <!-- Modo de Cola: Pendientes vs Todos -->
+                <!-- Queue Mode: Pending vs All -->
                 <div class="triage-filter-group" title="Triage queue mode">
                     <button id="btnTriageQueuePending" class="triage-filter-pill active" title="Continuous queue (excludes discarded presets)">Pending</button>
                     <button id="btnTriageQueueAll" class="triage-filter-pill" title="Browse full catalog">All</button>
                 </div>
 
-                <!-- Desplegable Carpeta / Categoría en Carrusel -->
+                <!-- Folder / Category Dropdown in Carousel -->
                 <div class="select-group" title="Filter carousel by folder">
                     <span class="select-icon">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
@@ -2430,66 +2430,66 @@
             </div>
         </div>
 
-        <!-- GLOBAL DERECHA: INTENSIDAD + UN SOLO BOTÓN DE OCULTAR -->
+        <!-- GLOBAL RIGHT: INTENSITY + SINGLE COLLAPSE BUTTON -->
         <div class="header-right">
-            <!-- Intensidad Global -->
+            <!-- Global Intensity -->
             <div class="intensity-control" title="Global grading intensity (0-100%)">
                 <span class="intensity-label">LUT</span>
                 <input type="range" id="globalIntensity" class="intensity-slider" min="0" max="100" value="100">
                 <span id="globalIntensityText" class="intensity-val">100%</span>
             </div>
 
-            <!-- UN ÚNICO Botón Ocultar Barra Superior -->
+            <!-- Single Collapse Top Bar Button -->
             <button class="btn-header-collapse" id="btnCollapseHeader" title="Hide top bar (Shortcut: H)">
                 ▴
             </button>
         </div>
     </header>
 
-    <!-- Pestaña flotante para restaurar la barra cuando está oculta -->
+    <!-- Floating tab to restore top bar when hidden -->
     <button class="btn-header-restore-tab" id="btnRestoreHeader" title="Show top bar (Shortcut: H)">
         <span>▾ UI Bar</span> <kbd>H</kbd>
     </button>
 
-    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- MAIN CONTAINER -->
     <main class="catalog-container">
         <!-- ========================================================= -->
-        <!-- VISTA 1: GRID DE PRESETS (MOSAICO 550)                    -->
+        <!-- VIEW 1: PRESET GRID (550 MOSAIC)                          -->
         <!-- ========================================================= -->
         <div id="viewGrid" class="view-panel">
             <div id="presetsGrid" class="preset-grid"></div>
         </div>
 
         <!-- ========================================================= -->
-        <!-- VISTA 2: CARRUSEL DE TRIAJE RÁPIDO 1 A 1                  -->
+        <!-- VIEW 2: 1-BY-1 FAST TRIAGE CAROUSEL                       -->
         <!-- ========================================================= -->
         <div id="viewCarousel" class="view-panel-carousel" style="display: none;">
-            <!-- VIEWPORT DEL CARRUSEL CON WEBGL 2.0 -->
+            <!-- WEBGL 2.0 CAROUSEL VIEWPORT -->
             <div class="triage-viewport-wrap" id="triageViewportWrap">
-                <!-- Botón de encuadre en el carrusel (visible tanto en 11 escenas como en foto individual) -->
+                <!-- Fit/Fill framing button in carousel (visible in both 11-scenes and single photo views) -->
                 <button id="btnTriageFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)">
                     ⛶ <span id="triageFitText">Full Photo</span> <kbd>F</kbd>
                 </button>
 
-                <!-- VISTA INDIVIDUAL (FOTO GRANDE) -->
+                <!-- SINGLE VIEW (LARGE PHOTO) -->
                 <div class="triage-single-wrap" id="triageSingleWrap" style="display: none;">
                     <canvas id="carouselGlCanvas" class="fit-contain"></canvas>
 
                     <div class="triage-badge-fl-left">ORIGINAL</div>
                     <div class="triage-badge-fl-right" id="triageRightBadge">PRESET APPLIED</div>
 
-                    <!-- Cortina partida A/B interactiva -->
+                    <!-- Interactive A/B split curtain -->
                     <div class="carousel-split-bar" id="carouselSplitBar" style="left: 50%;">
                         <div class="carousel-split-handle">↔</div>
                     </div>
                 </div>
 
-                <!-- VISTA MULTI-ESCENAS (11 ESCENAS SIMULTÁNEAS) -->
+                <!-- MULTI-SCENE VIEW (11 SIMULTANEOUS SCENES) -->
                 <div class="triage-multi-wrap" id="triageMultiWrap" style="display: block;">
                     <div class="triage-multi-grid" id="triageMultiGrid"></div>
                 </div>
 
-                <!-- PANEL FLOTANTE DE METADATOS (HUD) -->
+                <!-- FLOATING METADATA PANEL (HUD) -->
                 <div class="triage-meta-hud" id="triageMetaHud">
                     <div class="triage-hud-header">
                         <span class="triage-hud-title" id="hudPresetTitle">Preset Name</span>
@@ -2511,7 +2511,7 @@
                     </div>
                 </div>
 
-                <!-- BARRA FLOTANTE DE ATAJOS DE TECLADO -->
+                <!-- FLOATING KEYBOARD SHORTCUTS BAR -->
                 <div class="triage-shortcuts-hud" id="triageShortcutsHud">
                     <div class="triage-shortcut-item"><kbd>Space</kbd> Before/After</div>
                     <div class="triage-shortcut-item"><kbd>K / → / Enter</kbd> Keep</div>
@@ -2525,7 +2525,7 @@
                     <div class="triage-shortcut-item"><kbd>R</kbd> Reset</div>
                 </div>
 
-                <!-- PANTALLA EMPTY STATE (FIN DE CRIBA) -->
+                <!-- EMPTY STATE SCREEN (END OF TRIAGE) -->
                 <div class="triage-empty-state" id="triageEmptyState">
                     <div class="triage-empty-card">
                         <div class="triage-empty-icon">🎉</div>
@@ -2544,7 +2544,7 @@
         </div>
     </main>
 
-    <!-- DRAWER LATERAL DE FAVORITOS & DESCARTADOS -->
+    <!-- SIDE DRAWER FOR FAVORITES & DISCARDED -->
     <div class="triage-drawer-overlay" id="triageDrawerOverlay"></div>
     <div class="triage-drawer" id="triageDrawer">
         <div class="drawer-header">
@@ -2555,7 +2555,7 @@
             <button id="btnDrawerClose" class="drawer-close-btn" title="Close drawer">✕</button>
         </div>
         <div class="drawer-body">
-            <!-- Sección Guardados -->
+            <!-- Saved Section -->
             <div id="drawerSavedSection" style="display: flex; flex-direction: column; gap: 10px;">
                 <div class="drawer-toolbar">
                     <button id="btnCopyForEOS" class="drawer-action-btn" title="Copy preset names for Canon EOS camera user slots">
@@ -2568,7 +2568,7 @@
                 <div class="drawer-list" id="drawerSavedList"></div>
             </div>
 
-            <!-- Sección Descartados -->
+            <!-- Discarded Section -->
             <div id="drawerDiscardedSection" style="display: none; flex-direction: column; gap: 10px;">
                 <div class="drawer-toolbar">
                     <button id="btnRestoreAllDiscarded" class="drawer-action-btn" style="color: #38bdf8;">
@@ -2580,7 +2580,7 @@
         </div>
     </div>
 
-    <!-- MODAL DE GUARDAR CON NOTA EN CARRUSEL -->
+    <!-- SAVE WITH NOTE MODAL IN CAROUSEL -->
     <div id="carouselKeepModal" class="keep-modal-backdrop">
         <div class="keep-modal-box">
             <h3 style="font-size: 16px; font-weight: 700; color: #fff;">★ Save to Favorites</h3>
@@ -2600,7 +2600,7 @@
         </div>
     </div>
 
-    <!-- MODAL DE INSPECCIÓN DETALLADA A/B (DESDE EL MOSAICO) -->
+    <!-- DETAILED A/B INSPECTION MODAL (FROM GRID VIEW) -->
     <div id="modalInspection" class="modal-backdrop">
         <div class="modal-window">
             <div class="modal-header">
@@ -2672,13 +2672,13 @@
 
     <script>
     /**
-     * Canon Picture Styles Suite - Plataforma Unificada
-     * Modos: Mosaico General (550 presets) & Carrusel de Triaje Rápido 1 a 1.
-     * Persistencia y sincronización compartida al 100% con compare_saved y triage_app.
+     * Canon Picture Styles Suite - Unified Web Platform
+     * Modes: General Grid (550 presets) & 1-by-1 Fast Triage Carousel.
+     * 100% shared persistence and synchronization with compare_saved and triage_app.
      */
     (function() {
         // ==========================================
-        // ESTADO GLOBAL & PERSISTENCIA
+        // GLOBAL STATE & PERSISTENCE
         // ==========================================
         let currentView = 'grid'; // 'grid' | 'carousel'
         let currentCategory = 'ALL';
@@ -2691,22 +2691,22 @@
         let activeImageThumb = null;
         let activeImageName = '';
 
-        // Conjuntos sincronizados con localStorage
+        // Sets synchronized with localStorage
         let realFavoritesSet = new Set();  // canon_real_favorites (Array<string>)
         let savedPresetsList = [];          // canon_triage_saved (Array<Object>)
         let discardedIdsSet = new Set();   // canon_triage_discarded (Array<string>)
         let skippedIdsSet = new Set();     // canon_triage_skipped (Array<string>)
         let fitMode = 'contain';            // canon_triage_fit ('contain' | 'cover')
 
-        // Estado del Carrusel
+        // Carousel State
         let triageFilterMode = 'pending';  // 'pending' | 'all'
         let triageSelectedFolder = 'all';  // 'all' | category_id
         let triageQueueIndex = 0;
-        let currentPinnedPresetId = null;  // Mantiene visible el preset actual al marcar ⭐ hasta avanzar
+        let currentPinnedPresetId = null;  // Keeps current preset visible when toggling ⭐ until advancing
         let isTriageBefore = false;
         let activeDrawerTab = 'saved';     // 'saved' | 'discarded'
 
-        // Motores WebGL 2.0
+        // WebGL 2.0 Engines
         let offscreenLutEngine = null;
         let modalLutEngine = null;
         let carouselLutEngine = null;
@@ -2715,7 +2715,7 @@
         let currentModalIndex = -1;
         let thumbCache = new Map();
 
-        // Mapeo retrocompatible de identificadores antiguos a canónicos
+        // Backward-compatible mapping from legacy IDs to canonical IDs
         function migrateId(rawId) {
             if (!rawId) return rawId;
             if (window.CANON_PRESETS.some(p => p.id === rawId)) return rawId;
@@ -2741,18 +2741,22 @@
                 savedPresetsList = rawSaved.map(s => {
                     const mid = migrateId(s.id);
                     const p = window.CANON_PRESETS.find(item => item.id === mid);
+                    let desc = s.custom_desc || (p ? p.look : '');
+                    if (desc && desc.startsWith('Perfil de color ')) {
+                        desc = p ? p.look : '';
+                    }
                     return {
                         id: mid,
                         preset_name: s.preset_name || (p ? p.name : mid),
                         filename: s.filename || (p ? p.filename : mid),
                         category: s.category || (p ? p.catLabel : ''),
                         custom_name: s.custom_name || s.preset_name || (p ? p.name : mid),
-                        custom_desc: s.custom_desc || (p ? p.look : ''),
+                        custom_desc: desc,
                         saved_at: s.saved_at || new Date().toISOString()
                     };
                 });
 
-                // Unir favoritos bidireccionalmente
+                // Merge favorites bidirectionally
                 savedPresetsList.forEach(s => realFavoritesSet.add(s.id));
                 realFavoritesSet.forEach(id => {
                     if (!savedPresetsList.some(s => s.id === id)) {
@@ -2779,7 +2783,7 @@
                 const rawSkipped = JSON.parse(localStorage.getItem('canon_triage_skipped') || '[]');
                 skippedIdsSet = new Set(rawSkipped.map(migrateId));
 
-                // 5. Preferencias
+                // 5. Preferences
                 fitMode = localStorage.getItem('canon_triage_fit') || 'contain';
                 triageFilterMode = localStorage.getItem('canon_triage_filter_mode') || 'pending';
                 triageSelectedFolder = localStorage.getItem('canon_triage_selected_folder') || 'all';
@@ -2792,7 +2796,7 @@
                 persistAllState();
                 updateAllBadges();
             } catch (err) {
-                console.error('[Storage] Error cargando estado:', err);
+                console.error('[Storage] Error loading state:', err);
             }
         }
 
@@ -2808,7 +2812,7 @@
                 localStorage.setItem('canon_triage_filter_mode', triageFilterMode);
                 localStorage.setItem('canon_triage_selected_folder', triageSelectedFolder);
             } catch (err) {
-                console.error('[Storage] Error persistiendo estado:', err);
+                console.error('[Storage] Error persisting state:', err);
             }
         }
 
@@ -2839,7 +2843,7 @@
         }
 
         // ==========================================
-        // MOTORES WEBGL 2.0
+        // WEBGL 2.0 ENGINES
         // ==========================================
         function initEngines() {
             offscreenLutEngine = new LutEngine();
@@ -2937,7 +2941,7 @@
                         customCard.classList.add('active');
                     }
 
-                    // Integrar foto propia en la matriz de 11 escenas si no existía
+                    // Integrate custom photo into the 11-scene grid if not present
                     if (offscreenLutEngine) {
                         let customEntry = multiSceneData.find(e => e.isCustom);
                         const container = document.getElementById('triageMultiGrid');
@@ -2997,7 +3001,7 @@
         }
 
         // ==========================================
-        // VISTA 1: GRID & MOSAICO
+        // VIEW 1: GRID & MOSAIC
         // ==========================================
         let observer = null;
         function setupIntersectionObserver() {
@@ -3061,7 +3065,7 @@
                 const shimmer = card.querySelector('.card-canvas-shimmer');
                 if (shimmer) shimmer.style.display = 'none';
             } catch (err) {
-                console.warn(`Error renderizando tarjeta ${p.id}:`, err);
+                console.warn(`Error rendering card ${p.id}:`, err);
             }
         }
 
@@ -3258,19 +3262,24 @@
             updateDrawerLists();
 
             if (filterOnlyFavorites) applyFilters();
+            if (currentView === 'carousel' && triageSelectedFolder === 'favorites') {
+                renderCurrentTriage();
+            }
         }
 
         // ==========================================
-        // VISTA 2: CARRUSEL DE TRIAJE RÁPIDO
+        // VIEW 2: FAST TRIAGE CAROUSEL
         // ==========================================
         function getTriageQueue() {
             let list = window.CANON_PRESETS;
-            if (triageSelectedFolder !== 'all') {
+            if (triageSelectedFolder === 'favorites') {
+                list = list.filter(p => realFavoritesSet.has(p.id));
+            } else if (triageSelectedFolder !== 'all') {
                 list = list.filter(p => p.cat === triageSelectedFolder);
             }
 
             if (triageFilterMode === 'pending') {
-                // Excluye los descartados del bucle activo; mantiene en rotación pendientes, saltados y favoritos
+                // Excludes discarded presets from active loop; keeps pending, skipped, and favorites in rotation
                 return list.filter(p => !discardedIdsSet.has(p.id));
             }
             return list;
@@ -3281,6 +3290,7 @@
             if (!sel) return;
 
             let html = `<option value="all">All folders (${getPendingCountForFolder('all')} active / ${window.CANON_PRESETS.length})</option>`;
+            html += `<option value="favorites">⭐ Favorites (${getPendingCountForFolder('favorites')} active / ${realFavoritesSet.size})</option>`;
 
             window.CANON_CATEGORIES.forEach(c => {
                 const pend = getPendingCountForFolder(c.id);
@@ -3293,7 +3303,9 @@
 
         function getPendingCountForFolder(folderId) {
             let list = window.CANON_PRESETS;
-            if (folderId !== 'all') {
+            if (folderId === 'favorites') {
+                list = list.filter(p => realFavoritesSet.has(p.id));
+            } else if (folderId !== 'all') {
                 list = list.filter(p => p.cat === folderId);
             }
             return list.filter(p => !discardedIdsSet.has(p.id)).length;
@@ -3340,9 +3352,13 @@
                 document.getElementById('triageSkippedBadge').style.display = 'none';
 
                 const catObj = window.CANON_CATEGORIES.find(c => c.id === triageSelectedFolder);
-                const folderLabel = (triageSelectedFolder === 'all') ? 'the entire catalog' : (catObj ? catObj.label : triageSelectedFolder);
+                let folderLabel = (triageSelectedFolder === 'all') ? 'the entire catalog' : (catObj ? catObj.label : triageSelectedFolder);
+                if (triageSelectedFolder === 'favorites') folderLabel = 'Favorites';
+
                 document.getElementById('emptyStateTitle').innerText = (triageSelectedFolder === 'all') ? 'Triage Completed!' : `Folder Completed: ${folderLabel}!`;
-                document.getElementById('emptyStateDesc').innerHTML = `You have reviewed all styles in <b>${folderLabel}</b>.<br>You have <b style="color: #f59e0b;">${realFavoritesSet.size}</b> saved favorites and <b style="color: #f87171;">${discardedIdsSet.size}</b> discarded.<br><br>Click "Reset Loop" for a new pass or switch folders.`;
+                document.getElementById('emptyStateDesc').innerHTML = (triageSelectedFolder === 'favorites' && realFavoritesSet.size === 0)
+                    ? `You have no favorites saved yet.<br>Mark styles with ⭐ in the Grid or Carousel to review them here.`
+                    : `You have reviewed all styles in <b>${folderLabel}</b>.<br>You have <b style="color: #f59e0b;">${realFavoritesSet.size}</b> saved favorites and <b style="color: #f87171;">${discardedIdsSet.size}</b> discarded.<br><br>Click "Reset Loop" for a new pass or switch folders.`;
                 return;
             }
 
@@ -3354,7 +3370,7 @@
 
             const p = queue[triageQueueIndex];
 
-            // Datos de la cabecera del carrusel
+            // Carousel header data
             const originInfo = getPresetOrigin(p);
             const presetNameEl = document.getElementById('triagePresetName');
             presetNameEl.innerText = p.name;
@@ -3381,17 +3397,17 @@
 
             document.getElementById('triageSkippedBadge').style.display = skippedIdsSet.has(p.id) ? 'inline-block' : 'none';
 
-            // Botón estrella
+            // Star button
             const starBtn = document.getElementById('btnTriageStar');
             starBtn.classList.toggle('favorited', realFavoritesSet.has(p.id));
 
-            // Metadatos HUD
+            // HUD Metadata
             document.getElementById('hudPresetTitle').innerText = p.name;
             document.getElementById('hudMetaLook').innerText = p.look || 'No description';
             document.getElementById('hudMetaBestFor').innerText = p.bestFor || 'General';
             document.getElementById('hudMetaHeritage').innerText = p.heritage || 'EOS Emulation';
 
-            // Renderizado en WebGL 2.0
+            // WebGL 2.0 rendering
             if (triageDisplayMode === 'multi') {
                 renderTriageMultiGrid(p);
             }
@@ -3414,7 +3430,7 @@
         }
 
         // ==========================================
-        // LÓGICA DE 11 ESCENAS SIMULTÁNEAS EN CARRUSEL
+        // 11 SIMULTANEOUS SCENES LOGIC IN CAROUSEL
         // ==========================================
         let triageDisplayMode = localStorage.getItem('canon_triage_display_mode') || 'multi';
         const multiSceneData = [];
@@ -3500,7 +3516,7 @@
                     }
                 }
             } catch (err) {
-                console.warn('Error renderizando escena multi:', err);
+                console.warn('Error rendering multi-scene card:', err);
             }
         }
 
@@ -3513,7 +3529,7 @@
             try {
                 currentMultiLutTex = await offscreenLutEngine.getLutTexture(p.lut);
             } catch (err) {
-                console.warn('Error cargando LUT para multi-grid:', err);
+                console.warn('Error loading LUT for multi-grid:', err);
             }
 
             for (let i = 0; i < multiSceneData.length; i++) {
@@ -3581,8 +3597,8 @@
             currentPinnedPresetId = null;
             discardedIdsSet.add(p.id);
             skippedIdsSet.delete(p.id);
-            // Nota: Nunca eliminamos p.id de realFavoritesSet ni de savedPresetsList
-            // para no quitarle el favorito automáticamente si ya lo tenía.
+            // Note: Never remove p.id from realFavoritesSet or savedPresetsList
+            // so existing favorites are never stripped automatically.
 
             persistAllState();
             showToast(realFavoritesSet.has(p.id)
@@ -3639,7 +3655,7 @@
             const finalName = customName.trim() || p.name;
             const finalDesc = customDesc.trim() || p.look;
 
-            // Actualizar o insertar en savedPresetsList sin perder datos previos
+            // Update or insert in savedPresetsList without losing previous custom data
             const existingIdx = savedPresetsList.findIndex(s => s.id === p.id);
             if (existingIdx !== -1) {
                 if (customName.trim()) savedPresetsList[existingIdx].custom_name = finalName;
@@ -3679,6 +3695,9 @@
             currentPinnedPresetId = p.id;
             toggleFavorite(p.id, document.getElementById('btnTriageStar'));
             populateTriageFolderSelect();
+            if (triageSelectedFolder === 'favorites') {
+                renderCurrentTriage();
+            }
         }
 
         function stepBackTriage() {
@@ -3697,6 +3716,11 @@
             if (triageSelectedFolder === 'all') {
                 discardedIdsSet.clear();
                 skippedIdsSet.clear();
+            } else if (triageSelectedFolder === 'favorites') {
+                realFavoritesSet.forEach(id => {
+                    discardedIdsSet.delete(id);
+                    skippedIdsSet.delete(id);
+                });
             } else {
                 window.CANON_PRESETS.forEach(p => {
                     if (p.cat === triageSelectedFolder) {
@@ -3728,7 +3752,7 @@
             const isContain = fitMode === 'contain';
             const labelText = isContain ? 'Full Photo' : 'Fill Crop';
 
-            // Clases de contexto en contenedores
+            // Context classes on containers
             const viewportWrap = document.getElementById('triageViewportWrap');
             if (viewportWrap) {
                 viewportWrap.classList.toggle('fit-mode-contain', isContain);
@@ -3747,27 +3771,27 @@
                 modalViewport.classList.toggle('fit-mode-cover', !isContain);
             }
 
-            // Canvas individual de carrusel
+            // Single carousel canvas
             const canvas = document.getElementById('carouselGlCanvas');
             if (canvas) {
                 canvas.className = isContain ? 'fit-contain' : 'fit-cover';
             }
 
-            // Canvases del grid multi-escenas (11 escenas)
+            // Multi-scene grid canvases (11 scenes)
             const multiCanvases = document.querySelectorAll('.triage-scene-canvas');
             multiCanvases.forEach(c => {
                 c.classList.toggle('fit-contain', isContain);
                 c.classList.toggle('fit-cover', !isContain);
             });
 
-            // Canvas de inspección modal
+            // Modal inspection canvas
             const modalCanvas = document.getElementById('modalGlCanvas');
             if (modalCanvas) {
                 modalCanvas.classList.toggle('fit-contain', isContain);
                 modalCanvas.classList.toggle('fit-cover', !isContain);
             }
 
-            // Actualización de textos en botones
+            // Update button labels
             const txt = document.getElementById('triageFitText');
             if (txt) txt.innerText = labelText;
             const modalTxt = document.getElementById('modalFitText');
@@ -3775,7 +3799,7 @@
         }
 
         // ==========================================
-        // DRAWER DE FAVORITOS & DESCARTADOS
+        // FAVORITES & DISCARDED DRAWER
         // ==========================================
         function toggleDrawer(open = null) {
             const drawer = document.getElementById('triageDrawer');
@@ -3802,7 +3826,7 @@
         }
 
         function updateDrawerLists() {
-            // Lista de Favoritos Guardados
+            // Saved Favorites List
             const savedContainer = document.getElementById('drawerSavedList');
             savedContainer.innerHTML = '';
 
@@ -3827,7 +3851,7 @@
                 });
             }
 
-            // Lista de Descartados
+            // Discarded List
             const discardedContainer = document.getElementById('drawerDiscardedList');
             discardedContainer.innerHTML = '';
 
@@ -3910,7 +3934,7 @@
         }
 
         // ==========================================
-        // CONMUTADOR DE VISTAS (MOSAICO vs CARRUSEL)
+        // VIEW SWITCHER (GRID vs CAROUSEL)
         // ==========================================
         function switchView(view) {
             if (currentView === view) return;
@@ -3950,7 +3974,7 @@
         }
 
         // ==========================================
-        // MODAL DE INSPECCIÓN DETALLADA (MOSAICO)
+        // DETAILED INSPECTION MODAL (GRID VIEW)
         // ==========================================
         const modal = document.getElementById('modalInspection');
         const modalSplitBar = document.getElementById('modalSplitBar');
@@ -4008,7 +4032,7 @@
         }
 
         // ==========================================
-        // COLAPSO / VISIBILIDAD BARRA SUPERIOR
+        // TOP BAR COLLAPSE / VISIBILITY
         // ==========================================
         function toggleHeaderCollapse(forceState = null) {
             const isCurrentlyCollapsed = document.body.classList.contains('header-collapsed');
@@ -4026,22 +4050,22 @@
         }
 
         // ==========================================
-        // CONFIGURACIÓN DE EVENTOS
+        // EVENT LISTENERS SETUP
         // ==========================================
         function setupUIEvents() {
             const fileInput = document.getElementById('fileInput');
 
-            // Botones de colapso y restauración de la barra UI superior
+            // Top UI bar collapse and restore buttons
             const btnCollapse = document.getElementById('btnCollapseHeader');
             const btnRestore = document.getElementById('btnRestoreHeader');
             if (btnCollapse) btnCollapse.addEventListener('click', () => toggleHeaderCollapse(true));
             if (btnRestore) btnRestore.addEventListener('click', () => toggleHeaderCollapse(false));
 
-            // Tabs Mosaico vs Carrusel
+            // Grid vs Carousel tabs
             document.getElementById('tabViewGrid').addEventListener('click', () => switchView('grid'));
             document.getElementById('tabViewCarousel').addEventListener('click', () => switchView('carousel'));
 
-            // Selector visual de foto de prueba
+            // Visual sample photo picker
             const photoGrid = document.getElementById('photoThumbsGrid');
             const pickerTrigger = document.getElementById('photoPickerTrigger');
             const pickerMenu = document.getElementById('photoPickerMenu');
@@ -4094,7 +4118,7 @@
                 });
             }
 
-            // Drag & Drop universal
+            // Universal Drag & Drop
             const overlay = document.getElementById('dragDropOverlay');
             window.addEventListener('dragover', (e) => {
                 e.preventDefault();
@@ -4111,7 +4135,7 @@
                 }
             });
 
-            // Desplegable Categoría en cabecera (Mosaico)
+            // Header Category Dropdown (Grid)
             const categorySelect = document.getElementById('categorySelect');
             const allOpt = document.createElement('option');
             allOpt.value = 'ALL';
@@ -4130,7 +4154,7 @@
                 applyFilters();
             });
 
-            // Buscador
+            // Search Bar
             const searchInput = document.getElementById('searchInput');
             const clearBtn = document.getElementById('btnClearSearch');
             searchInput.addEventListener('input', (e) => {
@@ -4145,7 +4169,7 @@
                 applyFilters();
             });
 
-            // Filtro Favoritos
+            // Favorites Filter
             const favBtn = document.getElementById('btnFavFilter');
             favBtn.addEventListener('click', () => {
                 filterOnlyFavorites = !filterOnlyFavorites;
@@ -4153,7 +4177,7 @@
                 applyFilters();
             });
 
-            // Slider Intensidad Global
+            // Global Intensity Slider
             const globalIntensitySlider = document.getElementById('globalIntensity');
             globalIntensitySlider.addEventListener('input', (e) => {
                 globalIntensity = parseInt(e.target.value, 10) / 100.0;
@@ -4163,7 +4187,7 @@
                 else renderCurrentTriage();
             });
 
-            // Densidad de Rejilla
+            // Grid Density
             document.querySelectorAll('.density-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     document.querySelectorAll('.density-btn').forEach(b => b.classList.remove('active'));
@@ -4173,7 +4197,7 @@
                 });
             });
 
-            // Botón Hold Before
+            // Hold Before Button
             const holdBtn = document.getElementById('btnHoldBefore');
             const setGlobalBefore = (state) => {
                 if (isGlobalBefore === state) return;
@@ -4187,7 +4211,7 @@
             window.addEventListener('touchend', () => setGlobalBefore(false));
 
             // ==========================================
-            // EVENTOS ESPECÍFICOS DEL CARRUSEL DE TRIAJE
+            // TRIAGE CAROUSEL SPECIFIC EVENTS
             // ==========================================
             document.getElementById('btnTriageToggleMode').addEventListener('click', toggleTriageBeforeAfter);
             document.getElementById('btnTriageDiscard').addEventListener('click', discardCurrentTriage);
@@ -4213,11 +4237,11 @@
             document.getElementById('btnExportSavedJSON').addEventListener('click', exportSavedJSON);
             document.getElementById('btnRestoreAllDiscarded').addEventListener('click', restoreAllDiscarded);
 
-            // Botones de Modo 11 Escenas vs Foto Grande
+            // 11 Scenes vs Single Large Photo Mode Buttons
             document.getElementById('btnTriageModeMulti').addEventListener('click', () => setTriageDisplayMode('multi'));
             document.getElementById('btnTriageModeSingle').addEventListener('click', () => setTriageDisplayMode('single'));
 
-            // Minimizar / Colapsar HUD con flecha
+            // Minimize / Collapse HUD with arrow
             const triageHud = document.getElementById('triageMetaHud');
             const btnToggleHudMin = document.getElementById('btnToggleHudMin');
             const setHudCollapsed = (collapsed) => {
@@ -4236,27 +4260,27 @@
                 setHudCollapsed(true);
             }
 
-            // Atajos de Teclado Unificados
+            // Unified Keyboard Shortcuts
             window.addEventListener('keydown', (e) => {
                 if (document.activeElement === searchInput || document.activeElement.tagName === 'INPUT') {
                     if (e.key === 'Escape') searchInput.blur();
                     return;
                 }
 
-                // Cambio de vista con tecla V
+                // Switch view with key V
                 if (e.key === 'v' || e.key === 'V') {
                     switchView(currentView === 'grid' ? 'carousel' : 'grid');
                     return;
                 }
 
-                // Alternar encuadre con tecla F (disponible en Carrusel, Modal de inspección y Mosaico)
+                // Toggle framing with key F (available in Carousel, Inspection Modal, and Grid)
                 if (e.key === 'f' || e.key === 'F') {
                     e.preventDefault();
                     toggleFitMode();
                     return;
                 }
 
-                // Alternar visibilidad de la barra UI superior con tecla H
+                // Toggle top UI bar visibility with key H
                 if (e.key === 'h' || e.key === 'H') {
                     e.preventDefault();
                     toggleHeaderCollapse();
@@ -4292,7 +4316,7 @@
                         toggleDrawer(false);
                     }
                 } else {
-                    // Vista Mosaico
+                    // Grid View
                     if (e.code === 'Space') {
                         e.preventDefault();
                         setGlobalBefore(true);
@@ -4312,7 +4336,7 @@
                 }
             });
 
-            // Sincronización reactiva entre pestañas
+            // Reactive cross-tab synchronization
             window.addEventListener('storage', (e) => {
                 if (e.key === 'canon_real_favorites' || e.key === 'canon_triage_saved' || e.key === 'canon_triage_discarded') {
                     loadStorageState();
@@ -4372,7 +4396,7 @@
         }
 
         // ==========================================
-        // PUNTO DE ENTRADA
+        // ENTRY POINT
         // ==========================================
         window.addEventListener('DOMContentLoaded', () => {
             initEngines();
