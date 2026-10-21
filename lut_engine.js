@@ -1,17 +1,17 @@
 /**
  * Canon Picture Styles Suite - WebGL 2.0 Realtime LUT Engine & Client RAW Parser
- * Adaptado para el catálogo visual interactivo de presets Canon (.pf3 / .pf2 / .cube / Hald).
+ * Adapted for the interactive visual catalog of Canon presets (.pf3 / .pf2 / .cube / Hald).
  * 
- * Capacidades:
- * 1. Interpolación trilineal por hardware (sampler3D) en GPU (< 0.2 ms por frame).
- * 2. Offscreen rendering para transferir gradaciones a cuadrículas de 550 tarjetas 2D sin agotar contextos WebGL.
- * 3. Modo interactivo de alta resolución con cortina A/B interactiva a 60 fps y slider de intensidad.
- * 4. Extractor cliente de RAWs Canon (.CR3 / .CR2 / .CRW) y formatos estándar (JPG / PNG / WebP) en < 20 ms.
+ * Capabilities:
+ * 1. Hardware trilinear interpolation (sampler3D) on GPU (< 0.2 ms per frame).
+ * 2. Offscreen rendering to transfer color grading to 550 2D card canvases without exhausting WebGL contexts.
+ * 3. High-resolution interactive mode with 60 fps A/B split curtain and intensity slider.
+ * 4. Client-side extractor for Canon RAWs (.CR3 / .CR2 / .CRW) and standard formats (JPG / PNG / WebP) in < 20 ms.
  */
 
 class LutEngine {
     constructor(canvas = null) {
-        // Si no se proporciona canvas, crear uno offscreen
+        // Create offscreen canvas if none is provided
         this.canvas = canvas || document.createElement('canvas');
         this.gl = this.canvas.getContext('webgl2', {
             alpha: false,
@@ -21,7 +21,7 @@ class LutEngine {
         });
 
         if (!this.gl) {
-            console.error('[LutEngine] WebGL 2.0 no soportado en este entorno/navegador.');
+            console.error('[LutEngine] WebGL 2.0 is not supported in this browser/environment.');
             this.isSupported = false;
             return;
         }
@@ -73,7 +73,7 @@ class LutEngine {
         void main() {
             vec4 baseColor = texture(u_image, v_texCoord);
 
-            // Mapeo preciso al centro de las celdas del volumen 33x33x33
+            // Precise mapping to the center of the 33x33x33 volume cells
             float lutSize = 33.0;
             vec3 lutCoord = (baseColor.rgb * (lutSize - 1.0) + 0.5) / lutSize;
             vec3 gradedColor = texture(u_lut, lutCoord).rgb;
@@ -89,7 +89,7 @@ class LutEngine {
                 if (v_texCoord.x < u_split) {
                     fragColor = baseColor;
                 } else {
-                    // Línea divisoria blanca ultra-fina en la posición del split
+                    // Ultra-thin white divider line at the split position
                     if (abs(v_texCoord.x - u_split) < 0.002) {
                         fragColor = vec4(1.0, 1.0, 1.0, 1.0);
                     } else {
@@ -110,7 +110,7 @@ class LutEngine {
         gl.linkProgram(prog);
 
         if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-            console.error('[LutEngine] Error linkando shaders:', gl.getProgramInfoLog(prog));
+            console.error('[LutEngine] Error linking shaders:', gl.getProgramInfoLog(prog));
             return;
         }
 
@@ -133,7 +133,7 @@ class LutEngine {
         gl.shaderSource(shader, source);
         gl.compileShader(shader);
         if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-            console.error('[LutEngine] Error compilando shader:', gl.getShaderInfoLog(shader));
+            console.error('[LutEngine] Error compiling shader:', gl.getShaderInfoLog(shader));
             gl.deleteShader(shader);
             return null;
         }
@@ -218,7 +218,7 @@ class LutEngine {
             this.lutCache.set(lutPath, tex);
             return tex;
         } catch (err) {
-            console.warn(`[LutEngine] Fallback a identidad para ${lutPath}:`, err.message);
+            console.warn(`[LutEngine] Identity fallback for ${lutPath}:`, err.message);
             return this.identityLutTexture;
         }
     }
@@ -311,8 +311,8 @@ class LutEngine {
     }
 
     /**
-     * Renderiza usando la GPU en el canvas WebGL offscreen y transfiere el resultado
-     * a un canvas 2D de destino (por ejemplo, una tarjeta del catálogo).
+     * Renders on the GPU using the offscreen WebGL canvas and transfers the result
+     * to a target 2D canvas (e.g., a catalog card).
      */
     renderTo2DCanvas(target2DCanvas, lutTexture, options = {}) {
         if (!this.isSupported || !this.program) return false;
@@ -359,14 +359,14 @@ class LutEngine {
 }
 
 /**
- * Extractor ultra-rápido (< 20 ms) de preview JPEG incrustado en RAWs de Canon (.CR3 / .CR2 / .CRW)
- * y decodificador universal para JPG, PNG y WebP.
+ * Ultra-fast (< 20 ms) embedded JPEG preview extractor for Canon RAWs (.CR3 / .CR2 / .CRW)
+ * and universal decoder for JPG, PNG, and WebP.
  */
 const RawPreviewExtractor = {
     async loadFile(file) {
         const ext = file.name.split('.').pop().toLowerCase();
         
-        // Si es formato estándar, decodificar de inmediato
+        // Decode standard formats immediately
         if (['jpg', 'jpeg', 'png', 'webp'].includes(ext)) {
             const url = URL.createObjectURL(file);
             return {
@@ -377,7 +377,7 @@ const RawPreviewExtractor = {
             };
         }
 
-        // Si es RAW de Canon (.CR3 o .CR2), escanear el buffer en memoria
+        // Scan in-memory buffer for Canon RAWs (.CR3 / .CR2 / .CRW)
         if (['cr3', 'cr2', 'crw'].includes(ext)) {
             const buffer = await file.arrayBuffer();
             const jpegBlob = this.extractJpegFromBuffer(buffer);
@@ -403,7 +403,7 @@ const RawPreviewExtractor = {
         let largestChunk = null;
         let maxSize = 0;
 
-        // Escaneo rápido de marcadores SOI (0xFF 0xD8 0xFF) y EOI (0xFF 0xD9)
+        // Fast scan for SOI (0xFF 0xD8 0xFF) and EOI (0xFF 0xD9) markers
         while (pos < len - 4) {
             if (bytes[pos] === 0xFF && bytes[pos + 1] === 0xD8 && bytes[pos + 2] === 0xFF) {
                 const soi = pos;
@@ -412,7 +412,7 @@ const RawPreviewExtractor = {
                     if (bytes[pos] === 0xFF && bytes[pos + 1] === 0xD9) {
                         const eoi = pos + 2;
                         const chunkSize = eoi - soi;
-                        // Conservar el preview de mayor resolución (descarta thumbnails pequeños < 100 KB)
+                        // Keep the highest-resolution preview (skip small thumbnails < 100 KB)
                         if (chunkSize > maxSize && chunkSize > 100000) {
                             maxSize = chunkSize;
                             largestChunk = bytes.subarray(soi, eoi);
