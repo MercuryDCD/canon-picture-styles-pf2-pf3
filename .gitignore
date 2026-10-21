@@ -23,3 +23,12 @@ dev.html
 dev_*.html
 START_DEV.bat
 test.html
+
+# Modernization, assessment & temporary research files
+PLAN_MODERNIZACION_WEB.md
+PLAN_*.md
+*MODERNIZACION*.md
+mwg_*.md
+*.bak
+*.backup
+scratch/

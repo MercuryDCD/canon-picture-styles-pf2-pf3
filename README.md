@@ -3,7 +3,7 @@
 [![Canon](https://img.shields.io/badge/Canon-EOS%20M%20%7C%20EOS%20R%20%7C%20DSLR-red.svg)](https://canon.com)
 [![Presets](https://img.shields.io/badge/Presets-550%20Profiles-blue.svg)](.)
 [![Formats](https://img.shields.io/badge/Formats-.pf2%20%7C%20.pf3%20%7C%20.bin%20%7C%20Hald%20PNG-success.svg)](.)
-[![Live Demo](https://img.shields.io/badge/Demo-Interactive%20Web%20Catalog-brightgreen.svg)](https://mercurydcd.github.io/canon-picture-styles-pf2-pf3/)
+[![Live Demo](https://img.shields.io/badge/Demo-Interactive%20Web%20Catalog-brightgreen.svg)](https://mercurydcd.github.io/canon-picture-styles-pf3-catalog/)
 [![License](https://img.shields.io/badge/License-Community%20%2F%20Free-orange.svg)](LICENSE)
 
 A comprehensively curated, categorized, and standardized collection of **550 Picture Styles (`.pf2` & `.pf3`) and 3D LUTs** for Canon EOS cameras, Digital Photo Professional (DPP 4), and post-production suites.
@@ -16,7 +16,7 @@ This library consolidates community classics, discontinued Canon styles, iconic 
 
 You can explore, filter, compare, and triage all **550 Picture Styles live in your browser** with zero external dependencies and 100% client-side GPU acceleration.
 
-> 🚀 **[Try the Live Web Catalog on GitHub Pages](https://mercurydcd.github.io/canon-picture-styles-pf2-pf3/)**
+> 🚀 **[Try the Live Web Catalog on GitHub Pages](https://mercurydcd.github.io/canon-picture-styles-pf3-catalog/)**
 
 The platform features two synchronized operational modes (toggle with `V` or the top-left switch):
 

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
     <title>Canon Picture Styles — Interactive Catalog & Fast Triage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,25 +12,27 @@
     <script src="presets_data.js"></script>
     <style>
         :root {
-            --bg-body: #08090d;
-            --bg-surface: #10121a;
-            --bg-card: #151822;
-            --bg-card-hover: #1b1f2d;
-            --border-color: #222634;
-            --border-highlight: #333a4f;
-            --text-main: #f3f4f6;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.25);
+            color-scheme: dark;
+            --bg-body: #111215;
+            --bg-surface: #17181c;
+            --bg-card: #1c1d22;
+            --bg-card-hover: #24252c;
+            --border-color: #272830;
+            --border-highlight: #393b47;
+            --text-main: #f4f4f6;
+            --text-muted: #a1a1aa;
+            --text-dim: #797a86;
+            --accent: #dc2626;
+            --accent-glow: rgba(220, 38, 38, 0.22);
             --star-color: #f59e0b;
-            --star-glow: rgba(245, 158, 11, 0.3);
+            --star-glow: rgba(245, 158, 11, 0.25);
             --danger: #ef4444;
-            --radius-md: 10px;
-            --radius-lg: 14px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
             --color-before: #ef4444;
             --color-after: #10b981;
             --color-keep: #f59e0b;
+            scrollbar-color: #3f3f46 #18191d;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,11 +41,89 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
             height: 100vh;
             display: flex;
             flex-direction: column;
             overflow: hidden;
+        }
+
+        /* Selective user-select restriction on interactive chrome only */
+        header.top-header,
+        button,
+        .btn-triage,
+        .carousel-split-bar,
+        .split-curtain-bar,
+        .photo-picker-trigger,
+        .view-mode-tabs,
+        .triage-actions-group,
+        .select-group {
             user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .status-pill,
+        .intensity-val,
+        .triage-origin-tag,
+        .badge-origin-tiny,
+        .triage-badge-queue,
+        .triage-scene-badge {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .preset-name,
+        .modal-title,
+        .triage-preset-name {
+            text-wrap: balance;
+        }
+
+        .preset-look,
+        .meta-text,
+        .triage-hud-text {
+            text-wrap: pretty;
+        }
+
+        /* Universal optical icon & label vertical centering */
+        button,
+        .btn-triage,
+        .view-tab-btn,
+        .fav-filter-btn,
+        .global-before-btn,
+        .triage-btn-fit,
+        .btn-header-restore-tab,
+        .btn-quick-peek,
+        .btn-download-quick,
+        .btn-download-modal,
+        .drawer-tab,
+        .drawer-action-btn,
+        .modal-nav-btn {
+            line-height: 1;
+        }
+
+        button svg,
+        a svg,
+        .select-icon svg,
+        .tab-icon svg,
+        .search-icon svg,
+        .badge-cat svg,
+        .badge-origin-tiny svg,
+        .triage-origin-tag svg,
+        .triage-skipped-pill svg,
+        .triage-shortcut-item svg {
+            display: block;
+            flex-shrink: 0;
+            vertical-align: middle;
+        }
+
+        button > span,
+        button > strong,
+        button > kbd,
+        a > span,
+        .triage-shortcut-item > span,
+        .triage-shortcut-item > kbd {
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
         }
 
         /* ADAPTIVE & FLEXIBLE TOP BAR (FLUID SCALING FOR LAPTOP / 4K) */
@@ -123,7 +204,9 @@
             cursor: pointer;
             box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 6px;
+            line-height: 1;
             transition: all 0.2s ease;
         }
 
@@ -236,12 +319,14 @@
             padding: 3px clamp(5px, 0.6vw, 8px);
             border-radius: 4px;
             cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 4px;
             transition: all 0.15s ease;
             white-space: nowrap;
             height: 23px;
+            line-height: 1;
         }
 
         .view-tab-btn:hover {
@@ -255,7 +340,16 @@
         }
 
         .tab-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            flex-shrink: 0;
             font-size: 11px;
+        }
+
+        .tab-icon svg {
+            display: block;
         }
 
         /* VISUAL PHOTO PICKER (DROPDOWN POPOVER) */
@@ -264,6 +358,7 @@
             display: flex;
             align-items: center;
             flex-shrink: 0;
+            anchor-name: --photo-anchor;
         }
 
         .photo-picker-trigger {
@@ -305,8 +400,11 @@
 
         .photo-picker-menu {
             position: absolute;
+            position-anchor: --photo-anchor;
             top: calc(100% + 8px);
             left: 0;
+            margin: 0;
+            inset: auto;
             z-index: 150;
             background: rgba(16, 18, 26, 0.96);
             backdrop-filter: blur(20px);
@@ -319,16 +417,30 @@
             gap: 8px;
             min-width: 380px;
             max-width: 440px;
-            animation: fadeInDown 0.15s ease;
+            opacity: 0;
+            transform: translateY(-6px);
+            transition: opacity 0.15s ease, transform 0.15s ease, overlay 0.15s allow-discrete, display 0.15s allow-discrete;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-6px); }
-            to { opacity: 1; transform: translateY(0); }
+        @supports (position-anchor: --photo-anchor) {
+            .photo-picker-menu {
+                top: anchor(bottom);
+                left: anchor(left);
+                margin-top: 8px;
+            }
         }
 
-        .photo-picker-menu.open {
+        .photo-picker-menu:is(:popover-open, .open) {
             display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @starting-style {
+            .photo-picker-menu:is(:popover-open, .open) {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
         }
 
         .photo-picker-header {
@@ -604,24 +716,90 @@
         }
 
         .intensity-slider {
-            -webkit-appearance: none;
+            --slider-track-size: 4px;
+            --slider-thumb-size: 12px;
+            --slider-track-radius: 2px;
+            --slider-thumb-radius: 50%;
+            --slider-track-color: var(--border-color);
+            --slider-fill-color: var(--accent);
+            --slider-thumb-color: var(--accent);
+            --slider-progress: 100%;
+
             appearance: none;
-            width: clamp(38px, 4vw, 60px);
-            height: 4px;
-            background: var(--border-color);
-            border-radius: 2px;
-            outline: none;
+            -webkit-appearance: none;
+            width: clamp(44px, 5vw, 68px);
+            height: 20px;
+            background: transparent;
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        /* WebKit / Blink */
+        .intensity-slider::-webkit-slider-runnable-track {
+            height: var(--slider-track-size);
+            border: 0;
+            border-radius: var(--slider-track-radius);
+            background: linear-gradient(
+                to right,
+                var(--slider-fill-color) var(--slider-progress),
+                var(--slider-track-color) var(--slider-progress)
+            );
         }
 
         .intensity-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 11px;
-            height: 11px;
-            background: var(--accent);
-            border-radius: 50%;
-            cursor: pointer;
+            width: var(--slider-thumb-size);
+            height: var(--slider-thumb-size);
+            margin-block-start: calc((var(--slider-track-size) - var(--slider-thumb-size)) / 2);
+            border: 0;
+            border-radius: var(--slider-thumb-radius);
+            background: var(--slider-thumb-color);
             box-shadow: 0 0 6px var(--accent-glow);
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .intensity-slider:hover::-webkit-slider-thumb {
+            transform: scale(1.18);
+            box-shadow: 0 0 9px var(--accent-glow);
+        }
+
+        /* Firefox */
+        .intensity-slider::-moz-range-track {
+            height: var(--slider-track-size);
+            border: 0;
+            border-radius: var(--slider-track-radius);
+            background: var(--slider-track-color);
+        }
+
+        .intensity-slider::-moz-range-progress {
+            height: var(--slider-track-size);
+            border-radius: var(--slider-track-radius);
+            background: var(--slider-fill-color);
+        }
+
+        .intensity-slider::-moz-range-thumb {
+            width: var(--slider-thumb-size);
+            height: var(--slider-thumb-size);
+            border: 0;
+            border-radius: var(--slider-thumb-radius);
+            background: var(--slider-thumb-color);
+            box-shadow: 0 0 6px var(--accent-glow);
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .intensity-slider:hover::-moz-range-thumb {
+            transform: scale(1.18);
+            box-shadow: 0 0 9px var(--accent-glow);
+        }
+
+        /* Accessible Visible Focus */
+        .intensity-slider:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 2px;
         }
 
         .intensity-val {
@@ -666,12 +844,14 @@
             padding: 2px 8px;
             border-radius: 6px;
             cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 4px;
             height: 26px;
             flex-shrink: 0;
             transition: all 0.15s ease;
+            line-height: 1;
         }
 
         .fav-filter-btn.active {
@@ -694,6 +874,11 @@
             flex-shrink: 0;
             transition: all 0.15s ease;
             white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            line-height: 1;
         }
 
         .global-before-btn:active, .global-before-btn.holding {
@@ -756,6 +941,31 @@
             flex-direction: column;
             transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
             position: relative;
+            content-visibility: auto;
+            contain-intrinsic-size: auto 240px auto 320px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .preset-card:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent), 0 10px 28px rgba(220, 38, 38, 0.32);
+            transform: translateY(-2px);
+            z-index: 2;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card-canvas-shimmer {
+                display: none !important;
+                animation: none !important;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
         }
 
         .preset-card:hover {
@@ -897,6 +1107,11 @@
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            line-height: 1;
         }
 
         .btn-quick-peek:hover {
@@ -916,9 +1131,11 @@
             text-decoration: none;
             cursor: pointer;
             transition: all 0.15s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 4px;
+            line-height: 1;
         }
 
         .btn-download-quick:hover {
@@ -1033,9 +1250,18 @@
             background: rgba(56, 189, 248, 0.15);
             color: #38bdf8;
             border: 1px solid rgba(56, 189, 248, 0.35);
-            padding: 1.5px 4px;
+            padding: 1.5px 5px;
             border-radius: 4px;
             display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .triage-skipped-pill svg {
+            display: block;
             flex-shrink: 0;
         }
 
@@ -1050,17 +1276,19 @@
         }
 
         .triage-mode-indicator {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 4px;
+            justify-content: center;
+            gap: 5px;
             background: #090a0f;
             border: 1px solid var(--border-color);
-            padding: 2px 6px;
+            padding: 2px 7px;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.15s ease;
             height: 25px;
             flex-shrink: 0;
+            line-height: 1;
         }
 
         .triage-mode-indicator:hover {
@@ -1073,6 +1301,7 @@
             border-radius: 50%;
             background: var(--color-after);
             transition: background 0.15s ease;
+            flex-shrink: 0;
         }
 
         .triage-mode-text {
@@ -1080,6 +1309,9 @@
             font-weight: 700;
             letter-spacing: 0.2px;
             color: #6ee7b7;
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
         }
 
         .triage-mode-indicator.is-before .triage-indicator-dot { background: var(--color-before); }
@@ -1109,6 +1341,8 @@
             height: 21px;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
 
         .triage-filter-pill:hover { color: var(--text-main); }
@@ -1148,12 +1382,19 @@
             padding: 2px 5px;
             border-radius: 4px;
             cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 3px;
             transition: all 0.15s ease;
             white-space: nowrap;
             height: 21px;
+            line-height: 1;
+        }
+
+        .triage-display-btn svg {
+            display: block;
+            flex-shrink: 0;
         }
 
         .triage-display-btn:hover {
@@ -1186,80 +1427,84 @@
         }
 
         .btn-triage-discard {
-            background: #1e293b;
+            background: #1e2025;
             color: #f87171;
-            border-color: #475569;
+            border-color: #3a2528;
         }
         .btn-triage-discard:hover {
-            background: #991b1b;
+            background: #7f1d1d;
             color: #fff;
             border-color: #ef4444;
-            box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
         }
 
         .btn-triage-skip {
-            background: #1e293b;
-            color: #38bdf8;
-            border-color: #334155;
+            background: #1e2025;
+            color: #cbd5e1;
+            border-color: #333642;
         }
         .btn-triage-skip:hover {
-            background: #0284c7;
+            background: #2a2d36;
             color: #fff;
-            border-color: #38bdf8;
+            border-color: #4b4f5e;
         }
 
         .btn-triage-keep {
-            background: #d97706;
+            background: #b45309;
             color: #fff;
-            border-color: #f59e0b;
+            border-color: #d97706;
         }
         .btn-triage-keep:hover {
-            background: #b45309;
-            box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+            background: #92400e;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.35);
             transform: scale(1.02);
         }
 
         .btn-triage-star {
-            background: #1e293b;
+            background: var(--bg-card);
             color: var(--star-color);
-            border-color: #475569;
+            border-color: var(--border-color);
             padding: 2px 5px;
             height: 25px;
         }
         .btn-triage-star:hover {
-            background: rgba(245, 158, 11, 0.2);
+            background: rgba(245, 158, 11, 0.15);
             border-color: var(--star-color);
         }
         .btn-triage-star.favorited {
-            background: rgba(245, 158, 11, 0.3);
+            background: rgba(245, 158, 11, 0.22);
             border-color: var(--star-color);
-            box-shadow: 0 0 10px var(--star-glow);
+            color: var(--star-color);
+        }
+        .btn-triage-star.favorited svg {
+            fill: currentColor;
+            stroke: currentColor;
         }
 
         .btn-triage-drawer {
-            background: #10121a;
+            background: var(--bg-card);
             color: #cbd5e1;
             border-color: var(--border-color);
             height: 25px;
             padding: 2px 6px;
         }
         .btn-triage-drawer:hover {
-            background: #1e293b;
+            background: var(--bg-card-hover);
             color: #fff;
             border-color: var(--border-highlight);
         }
 
         .btn-triage-restart {
             background: transparent;
-            color: #a78bfa;
-            border-color: rgba(167, 139, 250, 0.3);
+            color: var(--text-dim);
+            border-color: var(--border-color);
             padding: 2px 5px;
             height: 25px;
         }
         .btn-triage-restart:hover {
-            background: rgba(139, 92, 246, 0.2);
-            color: #c4b5fd;
-            border-color: #8b5cf6;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-main);
+            border-color: var(--border-highlight);
         }
 
         /* PROGRESSIVE MEDIA QUERIES FOR ZOOM & LAPTOP ADAPTATION */
@@ -1680,12 +1925,13 @@
         }
 
         .triage-shortcut-item {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
             font-size: 10px;
             color: #94a3b8;
             white-space: nowrap;
+            line-height: 1;
         }
 
         .triage-shortcut-item kbd {
@@ -1697,6 +1943,9 @@
             padding: 1px 4px;
             border-radius: 3px;
             border: 1px solid rgba(255, 255, 255, 0.15);
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
         }
 
         /* FLOATING FIT BUTTON (CLEARING TOP EDGE) */
@@ -1719,7 +1968,9 @@
             z-index: 25;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 5px;
+            line-height: 1;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
             transition: all 0.15s ease;
         }
@@ -1772,35 +2023,65 @@
         .triage-empty-title { font-size: 20px; font-weight: 700; color: #fff; }
         .triage-empty-desc { font-size: 13px; line-height: 1.5; color: var(--text-muted); }
 
-        /* SIDE DRAWER FOR FAVORITES & DISCARDED */
+        /* SIDE DRAWER FOR FAVORITES & DISCARDED (NATIVE <dialog> TOP LAYER) */
         .triage-drawer-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 250;
-            display: none;
+            display: none !important; /* Replaced by native ::backdrop */
         }
 
-        .triage-drawer-overlay.open { display: block; }
-
+        dialog.triage-drawer,
         .triage-drawer {
             position: fixed;
             top: 0;
-            right: -480px;
+            right: 0;
             bottom: 0;
+            left: auto;
+            margin: 0;
+            height: 100vh;
+            max-height: 100vh;
             width: 460px;
             max-width: 90vw;
             background: var(--bg-surface);
+            border: none;
             border-left: 1px solid var(--border-color);
-            z-index: 260;
+            color: var(--text-main);
+            padding: 0;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
-            transition: right 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.6);
+            transform: translateX(100%);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+            overflow: hidden;
+            z-index: 260;
         }
 
-        .triage-drawer.open { right: 0; }
+        dialog.triage-drawer[open],
+        .triage-drawer.open {
+            transform: translateX(0);
+        }
+
+        @starting-style {
+            dialog.triage-drawer[open] {
+                transform: translateX(100%);
+            }
+        }
+
+        dialog.triage-drawer::backdrop {
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            opacity: 0;
+            transition: opacity 0.25s ease, overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+        }
+
+        dialog.triage-drawer[open]::backdrop {
+            opacity: 1;
+        }
+
+        @starting-style {
+            dialog.triage-drawer[open]::backdrop {
+                opacity: 0;
+            }
+        }
 
         .drawer-header {
             display: flex;
@@ -1825,6 +2106,11 @@
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            line-height: 1;
         }
 
         .drawer-tab:hover { color: #fff; background: #1e293b; }
@@ -1837,8 +2123,13 @@
             font-size: 18px;
             cursor: pointer;
             padding: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
         .drawer-close-btn:hover { color: #fff; }
+        .drawer-close-btn svg { display: block; }
 
         .drawer-body {
             flex: 1;
@@ -1867,6 +2158,11 @@
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            line-height: 1;
         }
         .drawer-action-btn:hover { color: #fff; border-color: var(--border-highlight); }
 
@@ -1964,21 +2260,49 @@
         /* ========================================================= */
         /* A/B INSPECTION MODAL (FROM GRID VIEW)                     */
         /* ========================================================= */
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            z-index: 200;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(12px);
+        dialog.modal-dialog {
+            border: none;
+            background: transparent;
+            padding: clamp(10px, 1.8vw, 24px);
+            margin: auto;
+            width: 100vw;
+            max-width: 1400px;
+            height: 100vh;
+            max-height: 900px;
+            box-sizing: border-box;
             display: none;
             align-items: center;
             justify-content: center;
-            padding: clamp(10px, 1.8vw, 24px);
+            overflow: visible;
+            outline: none;
             opacity: 0;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.2s ease, overlay 0.2s allow-discrete, display 0.2s allow-discrete;
         }
 
-        .modal-backdrop.open { display: flex; opacity: 1; }
+        dialog.modal-dialog[open] {
+            display: flex;
+            opacity: 1;
+        }
+
+        dialog.modal-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            transition: opacity 0.2s ease, overlay 0.2s allow-discrete, display 0.2s allow-discrete;
+        }
+
+        dialog.modal-dialog[open]::backdrop {
+            opacity: 1;
+        }
+
+        @starting-style {
+            dialog.modal-dialog[open] {
+                opacity: 0;
+            }
+            dialog.modal-dialog[open]::backdrop {
+                opacity: 0;
+            }
+        }
 
         .modal-window {
             background: var(--bg-surface);
@@ -2172,24 +2496,30 @@
         .btn-download-modal {
             background: var(--accent);
             color: #000;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 700;
-            padding: 12px;
+            padding: 11px 16px;
             border-radius: var(--radius-md);
             border: none;
             text-align: center;
             text-decoration: none;
             cursor: pointer;
             transition: all 0.2s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            line-height: 1;
         }
 
         .btn-download-modal:hover {
             box-shadow: 0 0 16px var(--accent-glow);
             transform: translateY(-1px);
+        }
+
+        .btn-download-modal svg {
+            display: block;
+            flex-shrink: 0;
         }
 
         .modal-nav-row {
@@ -2209,6 +2539,11 @@
             font-weight: 600;
             transition: all 0.15s ease;
             text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            line-height: 1;
         }
 
         .modal-nav-btn:hover {
@@ -2281,7 +2616,9 @@
 
     <!-- DRAG & DROP OVERLAY -->
     <div id="dragDropOverlay" class="drag-drop-overlay">
-        <div class="drag-icon">📸</div>
+        <div class="drag-icon">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        </div>
         <div class="drag-title">Drop your photo to preview the catalog</div>
         <div class="drag-sub">Supported formats: Canon RAW (.CR3 / .CR2 / .CRW) & JPG / PNG / WebP</div>
     </div>
@@ -2298,29 +2635,35 @@
             <!-- View Switcher (Grid vs Carousel) -->
             <div class="view-mode-tabs" role="tablist">
                 <button id="tabViewGrid" class="view-tab-btn active" title="Grid View (550 presets) - Key: V">
-                    <span class="tab-icon">🗂️</span> <span class="tab-label">Grid</span>
+                    <span class="tab-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </span>
+                    <span class="tab-label">Grid</span>
                 </button>
                 <button id="tabViewCarousel" class="view-tab-btn" title="1-by-1 Fast Triage (Carousel) - Key: V">
-                    <span class="tab-icon">⚡</span> <span class="tab-label">Carousel</span>
+                    <span class="tab-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </span>
+                    <span class="tab-label">Carousel</span>
                 </button>
             </div>
 
             <!-- Visual Sample Photo Picker -->
             <div class="visual-photo-dropdown-wrap" id="photoDropdownWrap">
-                <button class="photo-picker-trigger" id="photoPickerTrigger" title="Select sample photo">
-                    <img id="activePhotoThumb" class="active-photo-preview" src="samples/01_portrait_skin.jpg" alt="Photo">
+                <button class="photo-picker-trigger" id="photoPickerTrigger" popovertarget="photoPickerMenu" type="button" title="Select sample photo" aria-haspopup="dialog" aria-expanded="false" aria-controls="photoPickerMenu" aria-label="Select sample photo">
+                    <img id="activePhotoThumb" class="active-photo-preview" src="samples/01_portrait_skin.jpg" alt="Active photo preview">
                     <span class="dropdown-arrow">▾</span>
                 </button>
 
                 <!-- Visual dropdown menu -->
-                <div class="photo-picker-menu" id="photoPickerMenu">
+                <div class="photo-picker-menu" id="photoPickerMenu" popover="auto" role="region" aria-label="Sample photo gallery">
                     <div class="photo-picker-header">Sample Photo</div>
                     <div class="photo-thumbs-grid" id="photoThumbsGrid"></div>
                 </div>
-                <button class="btn-icon-upload" id="btnUploadTrigger" title="Upload your own photo (.CR3 / .CR2 / JPG / PNG)" style="margin-left: 3px;">
+                <button class="btn-icon-upload" id="btnUploadTrigger" title="Upload your own photo (.CR3 / .CR2 / JPG / PNG)" style="margin-left: 3px;" aria-label="Upload custom photo or RAW file">
                     <span class="select-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span> <span class="upload-label">Upload</span>
                 </button>
-                <input type="file" id="fileInput" accept=".cr3,.cr2,.crw,.jpg,.jpeg,.png,.webp" style="display: none;">
+                <input type="file" id="fileInput" accept=".cr3,.cr2,.crw,.jpg,.jpeg,.png,.webp" style="display: none;" aria-label="File upload input">
             </div>
         </div>
 
@@ -2331,21 +2674,26 @@
                 <span class="select-icon">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </span>
-                <select id="categorySelect" class="compact-select"></select>
+                <select id="categorySelect" class="compact-select" aria-label="Filter presets by macro-category"></select>
             </div>
 
             <!-- Search Bar -->
             <div class="header-center" id="headerSearchWrap">
                 <div class="search-box">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="searchInput" class="search-input" placeholder="Search preset, film stock, or author...">
-                    <button id="btnClearSearch" class="btn-clear-search">✕</button>
+                    <span class="search-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </span>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search preset, film stock, or author..." aria-label="Search presets by name, film stock, or author">
+                    <button id="btnClearSearch" class="btn-clear-search" aria-label="Clear search input">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
                 </div>
             </div>
 
             <!-- Favorites -->
-            <button id="btnFavFilter" class="fav-filter-btn" title="Show favorites only ⭐">
-                <span>⭐</span> <span id="favCountText">0</span>
+            <button id="btnFavFilter" class="fav-filter-btn" title="Show favorites only" aria-label="Toggle favorites filter">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span id="favCountText">0</span>
             </button>
 
             <!-- Grid Density -->
@@ -2356,8 +2704,9 @@
             </div>
 
             <!-- Global Original Button (Spacebar) -->
-            <button class="global-before-btn" id="btnHoldBefore" title="Hold click or press SPACEBAR to view original">
-                👁️ Original
+            <button class="global-before-btn" id="btnHoldBefore" title="Hold click or press SPACEBAR to view original" aria-label="Hold to preview original image">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Original</span>
             </button>
 
             <!-- Preset Counter -->
@@ -2373,7 +2722,7 @@
                 <span id="triagePresetName" class="triage-preset-name" title="Preset Name">Preset Name</span>
                 <span id="triageOriginTag" class="triage-origin-tag" title="Preset origin and source type">LUT</span>
                 <span id="triageQueueBadge" class="triage-badge-queue" title="Queue position">1/480</span>
-                <span id="triageSkippedBadge" class="triage-skipped-pill">↷ Skipped</span>
+                <span id="triageSkippedBadge" class="triage-skipped-pill"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px;"><polyline points="9 18 15 12 9 6"></polyline></svg> Skipped</span>
             </div>
 
             <div class="triage-center-controls">
@@ -2385,11 +2734,13 @@
 
                 <!-- Switcher: 11 Scenes vs Single Large Photo -->
                 <div class="triage-view-mode-group" title="Carousel display mode (Shortcut: G)">
-                    <button id="btnTriageModeMulti" class="triage-display-btn active" title="View all 11 sample scenes at once (Shortcut: G)">
-                        ⊞ 11
+                    <button id="btnTriageModeMulti" class="triage-display-btn active" title="View all 11 sample scenes at once (Shortcut: G)" aria-label="View 11 sample scenes">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        <span>11</span>
                     </button>
-                    <button id="btnTriageModeSingle" class="triage-display-btn" title="View single large photo (Shortcut: G)">
-                        🔲 1
+                    <button id="btnTriageModeSingle" class="triage-display-btn" title="View single large photo (Shortcut: G)" aria-label="View single large photo">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+                        <span>1</span>
                     </button>
                 </div>
 
@@ -2404,28 +2755,32 @@
                     <span class="select-icon">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                     </span>
-                    <select id="triageFolderSelect" class="compact-select"></select>
+                    <select id="triageFolderSelect" class="compact-select" aria-label="Filter carousel by folder"></select>
                 </div>
             </div>
 
             <div class="triage-actions-group">
                 <button id="btnTriageDiscard" class="btn-triage btn-triage-discard" title="Discard style from loop and move to next (Shortcut: D or Left Arrow)">
-                    <span>✕</span> <span class="action-label">Discard</span>
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <span class="action-label">Discard</span>
                 </button>
                 <button id="btnTriageSkip" class="btn-triage btn-triage-skip" title="Skip for now without discarding (Shortcut: S or Down Arrow)">
-                    <span>↷</span> <span class="action-label">Skip</span>
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <span class="action-label">Skip</span>
                 </button>
                 <button id="btnTriageKeep" class="btn-triage btn-triage-keep" title="Save to favorites and advance (Shortcut: K, ENTER, or Right Arrow)">
-                    <span>★</span> <span class="action-label">Keep</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span class="action-label">Keep</span>
                 </button>
                 <button id="btnTriageStar" class="btn-triage btn-triage-star" title="Toggle favorite star (Shortcut: M)">
-                    ⭐
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 </button>
                 <button id="btnTriageRestart" class="btn-triage btn-triage-restart" title="Reset loop and restore discarded presets (Shortcut: R)">
-                    ↺
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
                 </button>
                 <button id="btnTriageDrawer" class="btn-triage btn-triage-drawer" title="Open favorites & discarded drawer">
-                    ⭐ <span id="triageDrawerBadge">0</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                    <span id="triageDrawerBadge">0</span>
                 </button>
             </div>
         </div>
@@ -2435,20 +2790,21 @@
             <!-- Global Intensity -->
             <div class="intensity-control" title="Global grading intensity (0-100%)">
                 <span class="intensity-label">LUT</span>
-                <input type="range" id="globalIntensity" class="intensity-slider" min="0" max="100" value="100">
+                <input type="range" id="globalIntensity" class="intensity-slider" min="0" max="100" value="100" aria-label="Global LUT grading intensity" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
                 <span id="globalIntensityText" class="intensity-val">100%</span>
             </div>
 
             <!-- Single Collapse Top Bar Button -->
             <button class="btn-header-collapse" id="btnCollapseHeader" title="Hide top bar (Shortcut: H)">
-                ▴
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
             </button>
         </div>
     </header>
 
     <!-- Floating tab to restore top bar when hidden -->
     <button class="btn-header-restore-tab" id="btnRestoreHeader" title="Show top bar (Shortcut: H)">
-        <span>▾ UI Bar</span> <kbd>H</kbd>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <span>UI Bar</span> <kbd>H</kbd>
     </button>
 
     <!-- MAIN CONTAINER -->
@@ -2468,7 +2824,8 @@
             <div class="triage-viewport-wrap" id="triageViewportWrap">
                 <!-- Fit/Fill framing button in carousel (visible in both 11-scenes and single photo views) -->
                 <button id="btnTriageFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)">
-                    ⛶ <span id="triageFitText">Full Photo</span> <kbd>F</kbd>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                    <span id="triageFitText">Full Photo</span> <kbd>F</kbd>
                 </button>
 
                 <!-- SINGLE VIEW (LARGE PHOTO) -->
@@ -2518,7 +2875,7 @@
                     <div class="triage-shortcut-item"><kbd>D / ←</kbd> Discard</div>
                     <div class="triage-shortcut-item"><kbd>S / ↓</kbd> Skip</div>
                     <div class="triage-shortcut-item"><kbd>↑ / ⌫</kbd> Prev</div>
-                    <div class="triage-shortcut-item"><kbd>M</kbd> ⭐ Star</div>
+                    <div class="triage-shortcut-item"><kbd>M</kbd> Star</div>
                     <div class="triage-shortcut-item"><kbd>G</kbd> 11/1</div>
                     <div class="triage-shortcut-item"><kbd>F</kbd> Fit/Fill</div>
                     <div class="triage-shortcut-item"><kbd>H</kbd> UI Bar</div>
@@ -2528,15 +2885,23 @@
                 <!-- EMPTY STATE SCREEN (END OF TRIAGE) -->
                 <div class="triage-empty-state" id="triageEmptyState">
                     <div class="triage-empty-card">
-                        <div class="triage-empty-icon">🎉</div>
+                        <div class="triage-empty-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #10b981;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
                         <h2 class="triage-empty-title" id="emptyStateTitle">Triage Completed!</h2>
                         <p class="triage-empty-desc" id="emptyStateDesc">
                             You have reviewed all styles in this selection.<br>
                             Your favorites are saved and ready.
                         </p>
                         <div style="display: flex; gap: 10px; margin-top: 8px;">
-                            <button id="btnEmptyRestart" class="btn-triage btn-triage-keep">↺ Reset Loop</button>
-                            <button id="btnEmptyViewGrid" class="btn-triage btn-triage-drawer">🗂️ View in Grid</button>
+                            <button id="btnEmptyRestart" class="btn-triage btn-triage-keep">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
+                                <span>Reset Loop</span>
+                            </button>
+                            <button id="btnEmptyViewGrid" class="btn-triage btn-triage-drawer">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                <span>View in Grid</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -2544,25 +2909,34 @@
         </div>
     </main>
 
-    <!-- SIDE DRAWER FOR FAVORITES & DISCARDED -->
-    <div class="triage-drawer-overlay" id="triageDrawerOverlay"></div>
-    <div class="triage-drawer" id="triageDrawer">
+    <!-- SIDE DRAWER FOR FAVORITES & DISCARDED (NATIVE <dialog> TOP LAYER) -->
+    <dialog id="triageDrawer" class="triage-drawer" closedby="any" aria-label="Favorites and Discarded Drawer">
         <div class="drawer-header">
             <div class="drawer-tabs">
-                <button id="tabDrawerSaved" class="drawer-tab active">⭐ Favorites (<span id="drawerSavedCount">0</span>)</button>
-                <button id="tabDrawerDiscarded" class="drawer-tab">✕ Discarded (<span id="drawerDiscardedCount">0</span>)</button>
+                <button id="tabDrawerSaved" class="drawer-tab active">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>Favorites (<span id="drawerSavedCount">0</span>)</span>
+                </button>
+                <button id="tabDrawerDiscarded" class="drawer-tab">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                    <span>Discarded (<span id="drawerDiscardedCount">0</span>)</span>
+                </button>
             </div>
-            <button id="btnDrawerClose" class="drawer-close-btn" title="Close drawer">✕</button>
+            <button id="btnDrawerClose" class="drawer-close-btn" title="Close drawer (Esc)" aria-label="Close drawer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
         </div>
         <div class="drawer-body">
             <!-- Saved Section -->
             <div id="drawerSavedSection" style="display: flex; flex-direction: column; gap: 10px;">
                 <div class="drawer-toolbar">
                     <button id="btnCopyForEOS" class="drawer-action-btn" title="Copy preset names for Canon EOS camera user slots">
-                        📋 Copy for EOS Utility (Top 3)
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <span>Copy for EOS Utility (Top 3)</span>
                     </button>
                     <button id="btnExportSavedJSON" class="drawer-action-btn" title="Export your favorites as a JSON file">
-                        💾 Export JSON
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        <span>Export JSON</span>
                     </button>
                 </div>
                 <div class="drawer-list" id="drawerSavedList"></div>
@@ -2571,19 +2945,20 @@
             <!-- Discarded Section -->
             <div id="drawerDiscardedSection" style="display: none; flex-direction: column; gap: 10px;">
                 <div class="drawer-toolbar">
-                    <button id="btnRestoreAllDiscarded" class="drawer-action-btn" style="color: #38bdf8;">
-                        ↺ Restore all discarded
+                    <button id="btnRestoreAllDiscarded" class="drawer-action-btn" style="color: var(--accent);">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
+                        <span>Restore all discarded</span>
                     </button>
                 </div>
                 <div class="drawer-list" id="drawerDiscardedList"></div>
             </div>
         </div>
-    </div>
+    </dialog>
 
     <!-- SAVE WITH NOTE MODAL IN CAROUSEL -->
     <div id="carouselKeepModal" class="keep-modal-backdrop">
         <div class="keep-modal-box">
-            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">★ Save to Favorites</h3>
+            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">Save to Favorites</h3>
             <p style="font-size: 12px; color: var(--text-muted);">Assign a custom name or notes for your session:</p>
             <div style="display: flex; flex-direction: column; gap: 4px;">
                 <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Custom Name</label>
@@ -2601,16 +2976,20 @@
     </div>
 
     <!-- DETAILED A/B INSPECTION MODAL (FROM GRID VIEW) -->
-    <div id="modalInspection" class="modal-backdrop">
+    <dialog id="modalInspection" class="modal-dialog" closedby="any" aria-labelledby="modalPresetTitle">
         <div class="modal-window">
             <div class="modal-header">
                 <div class="modal-title-wrap">
                     <span id="modalCatBadge" class="badge-cat">Category</span>
                     <span id="modalOriginTag" class="triage-origin-tag" title="Preset origin and source type">LUT</span>
                     <h2 id="modalPresetTitle" class="modal-title">Preset Name</h2>
-                    <button id="modalStarBtn" class="btn-star" title="Toggle favorite">⭐</button>
+                    <button id="modalStarBtn" class="btn-star" title="Toggle favorite" aria-label="Toggle favorite star">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </button>
                 </div>
-                <button id="modalCloseBtn" class="modal-close-btn" title="Close (Esc)">✕</button>
+                <button id="modalCloseBtn" class="modal-close-btn" title="Close (Esc)" aria-label="Close modal dialog">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
             </div>
 
             <div class="modal-body">
@@ -2618,8 +2997,9 @@
                     <canvas id="modalGlCanvas" class="modal-gl-canvas"></canvas>
                     <div class="viewport-badge-left">ORIGINAL</div>
                     <div class="viewport-badge-right" id="modalRightBadge">PRESET</div>
-                    <button id="btnModalFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)">
-                        ⛶ <span id="modalFitText">Full Photo</span> <kbd>F</kbd>
+                    <button id="btnModalFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)" aria-label="Toggle image fit or fill framing">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                        <span id="modalFitText">Full Photo</span> <kbd>F</kbd>
                     </button>
                     <div class="split-curtain-bar" id="modalSplitBar" style="left: 50%;">
                         <div class="split-curtain-handle">↔</div>
@@ -2647,7 +3027,7 @@
                         <div class="meta-field">
                             <span class="meta-label">Modal Intensity</span>
                             <div class="intensity-control" style="margin-top: 4px;">
-                                <input type="range" id="modalIntensitySlider" class="intensity-slider" min="0" max="100" value="100" style="width: 100%;">
+                                <input type="range" id="modalIntensitySlider" class="intensity-slider" min="0" max="100" value="100" style="width: 100%;" aria-label="Modal inspection grading intensity" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
                                 <span id="modalIntensityVal" class="intensity-val">100%</span>
                             </div>
                         </div>
@@ -2655,17 +3035,18 @@
 
                     <div class="meta-actions-box">
                         <a id="modalDownloadBtn" href="#" download class="btn-download-modal">
-                            <span>⬇</span> Download Camera File
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download Camera File</span>
                         </a>
                         <div class="modal-nav-row">
-                            <button id="modalPrevBtn" class="modal-nav-btn">← Prev (←)</button>
-                            <button id="modalNextBtn" class="modal-nav-btn">Next (→) →</button>
+                            <button id="modalPrevBtn" class="modal-nav-btn" aria-label="Previous preset">← Prev (←)</button>
+                            <button id="modalNextBtn" class="modal-nav-btn" aria-label="Next preset">Next (→) →</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </dialog>
 
     <!-- TOAST -->
     <div id="toast" class="toast-box"></div>
@@ -2930,8 +3311,7 @@
                             if (triggerImg) triggerImg.src = res.url;
                             document.querySelectorAll('#photoThumbsGrid .photo-thumb-card').forEach(c => c.classList.remove('active'));
                             customCard.classList.add('active');
-                            document.getElementById('photoPickerMenu').classList.remove('open');
-                            document.getElementById('photoPickerTrigger').classList.remove('active');
+                            closePhotoPicker();
                             if (currentView === 'grid') renderAllVisibleCards();
                             else renderCurrentTriage();
                         });
@@ -3156,6 +3536,9 @@
                 card.className = 'preset-card';
                 card.setAttribute('data-preset-id', p.id);
                 card.setAttribute('data-index', idx);
+                card.setAttribute('tabindex', idx === 0 ? '0' : '-1');
+                card.setAttribute('role', 'article');
+                card.setAttribute('aria-label', `${p.name}, ${p.catLabel}`);
 
                 const isFav = realFavoritesSet.has(p.id);
                 const catColor = window.CANON_CATEGORIES.find(c => c.id === p.cat)?.color || { border: '#38bdf8', badge: '#0284c7' };
@@ -3167,15 +3550,21 @@
                             <span class="badge-cat" style="background: ${catColor.badge}; color: #fff;">${p.catLabel}</span>
                             <span class="badge-origin-tiny ${originInfo.isLut ? 'is-lut' : 'is-native'}" title="${originInfo.title}">${originInfo.isLut ? 'LUT' : 'Style'}</span>
                         </div>
-                        <button class="btn-star ${isFav ? 'favorited' : ''}" title="Toggle favorite" data-star-id="${p.id}">⭐</button>
+                        <button class="btn-star ${isFav ? 'favorited' : ''}" title="Toggle favorite" data-star-id="${p.id}">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </button>
                     </div>
                     <div class="card-canvas-wrap">
                         <canvas class="card-canvas"></canvas>
                         <div class="card-canvas-shimmer"></div>
                         <div class="card-overlay-actions">
-                            <button class="btn-quick-peek" data-peek-id="${p.id}">👁️ Original</button>
+                            <button class="btn-quick-peek" data-peek-id="${p.id}">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                <span>Original</span>
+                            </button>
                             <a class="btn-download-quick" href="${p.download}" download="${p.filename}" title="Download file">
-                                <span>⬇</span> Download
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                <span>Download</span>
                             </a>
                         </div>
                     </div>
@@ -3799,18 +4188,29 @@
         }
 
         // ==========================================
-        // FAVORITES & DISCARDED DRAWER
+        // FAVORITES & DISCARDED DRAWER (<dialog> Top Layer)
         // ==========================================
         function toggleDrawer(open = null) {
             const drawer = document.getElementById('triageDrawer');
-            const overlay = document.getElementById('triageDrawerOverlay');
-            const shouldOpen = open !== null ? open : !drawer.classList.contains('open');
-
-            drawer.classList.toggle('open', shouldOpen);
-            overlay.classList.toggle('open', shouldOpen);
+            if (!drawer) return;
+            const isOpen = drawer.open || drawer.hasAttribute('open');
+            const shouldOpen = open !== null ? open : !isOpen;
 
             if (shouldOpen) {
                 updateDrawerLists();
+                if (!drawer.open) {
+                    try {
+                        drawer.showModal();
+                    } catch (err) {
+                        drawer.setAttribute('open', '');
+                    }
+                }
+            } else {
+                if (drawer.open) {
+                    drawer.close();
+                } else {
+                    drawer.removeAttribute('open');
+                }
             }
         }
 
@@ -3839,7 +4239,9 @@
                     card.innerHTML = `
                         <div class="saved-item-top">
                             <span class="saved-item-title">#${idx+1} ${item.custom_name}</span>
-                            <button class="btn-item-del" title="Remove from favorites" data-del-id="${item.id}">✕</button>
+                            <button class="btn-item-del" title="Remove from favorites" data-del-id="${item.id}">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
                         </div>
                         ${item.custom_desc ? `<div class="saved-item-desc">"${item.custom_desc}"</div>` : ''}
                         <div class="saved-item-meta">${item.filename} · ${item.category}</div>
@@ -3865,7 +4267,9 @@
                     card.innerHTML = `
                         <div class="saved-item-top">
                             <span class="saved-item-title" style="font-weight:500;">${p.name}</span>
-                            <button class="drawer-action-btn" style="padding:2px 8px;font-size:10px;color:#38bdf8;" data-restore-id="${p.id}">↺ Restore</button>
+                            <button class="drawer-action-btn" style="padding:2px 8px;font-size:10px;color:var(--text-main);" data-restore-id="${p.id}">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg> <span>Restore</span>
+                            </button>
                         </div>
                         <div class="saved-item-meta">${p.filename} · ${p.catLabel}</div>
                     `;
@@ -3938,38 +4342,49 @@
         // ==========================================
         function switchView(view) {
             if (currentView === view) return;
-            currentView = view;
 
-            document.body.classList.toggle('view-mode-carousel', view === 'carousel');
-            document.body.classList.toggle('view-mode-grid', view === 'grid');
+            const applyView = () => {
+                currentView = view;
 
-            const tabGrid = document.getElementById('tabViewGrid');
-            const tabCarousel = document.getElementById('tabViewCarousel');
-            const viewGrid = document.getElementById('viewGrid');
-            const viewCarousel = document.getElementById('viewCarousel');
-            const searchWrap = document.getElementById('headerSearchWrap');
-            const densityWrap = document.getElementById('densityGroupWrap');
-            const catSelectWrap = document.getElementById('headerCategorySelectWrap');
+                document.body.classList.toggle('view-mode-carousel', view === 'carousel');
+                document.body.classList.toggle('view-mode-grid', view === 'grid');
 
-            if (view === 'grid') {
-                tabGrid.classList.add('active');
-                tabCarousel.classList.remove('active');
-                viewGrid.style.display = 'block';
-                viewCarousel.style.display = 'none';
-                searchWrap.style.display = 'flex';
-                densityWrap.style.display = 'flex';
-                catSelectWrap.style.display = 'flex';
-                renderAllVisibleCards();
+                const tabGrid = document.getElementById('tabViewGrid');
+                const tabCarousel = document.getElementById('tabViewCarousel');
+                const viewGrid = document.getElementById('viewGrid');
+                const viewCarousel = document.getElementById('viewCarousel');
+                const searchWrap = document.getElementById('headerSearchWrap');
+                const densityWrap = document.getElementById('densityGroupWrap');
+                const catSelectWrap = document.getElementById('headerCategorySelectWrap');
+
+                if (view === 'grid') {
+                    tabGrid.classList.add('active');
+                    tabCarousel.classList.remove('active');
+                    viewGrid.style.display = 'block';
+                    viewCarousel.style.display = 'none';
+                    searchWrap.style.display = 'flex';
+                    densityWrap.style.display = 'flex';
+                    catSelectWrap.style.display = 'flex';
+                    renderAllVisibleCards();
+                } else {
+                    tabGrid.classList.remove('active');
+                    tabCarousel.classList.add('active');
+                    viewGrid.style.display = 'none';
+                    viewCarousel.style.display = 'flex';
+                    searchWrap.style.display = 'none';
+                    densityWrap.style.display = 'none';
+                    catSelectWrap.style.display = 'none';
+                    applyFitMode();
+                    renderCurrentTriage();
+                }
+            };
+
+            if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.startViewTransition(() => {
+                    applyView();
+                });
             } else {
-                tabGrid.classList.remove('active');
-                tabCarousel.classList.add('active');
-                viewGrid.style.display = 'none';
-                viewCarousel.style.display = 'flex';
-                searchWrap.style.display = 'none';
-                densityWrap.style.display = 'none';
-                catSelectWrap.style.display = 'none';
-                applyFitMode();
-                renderCurrentTriage();
+                applyView();
             }
         }
 
@@ -4013,8 +4428,11 @@
             const starBtn = document.getElementById('modalStarBtn');
             starBtn.classList.toggle('favorited', realFavoritesSet.has(p.id));
 
-            modalIntensitySlider.value = Math.round(globalIntensity * 100);
-            document.getElementById('modalIntensityVal').innerText = `${Math.round(globalIntensity * 100)}%`;
+            const curVal = Math.round(globalIntensity * 100);
+            modalIntensitySlider.value = curVal;
+            modalIntensitySlider.setAttribute('aria-valuenow', curVal);
+            modalIntensitySlider.style.setProperty('--slider-progress', `${curVal}%`);
+            document.getElementById('modalIntensityVal').innerText = `${curVal}%`;
 
             if (modalLutEngine && activeImageSource) {
                 modalLutEngine.setImage(activeImageSource);
@@ -4023,12 +4441,51 @@
                 modalLutEngine.loadLut(p.lut);
             }
 
-            modal.classList.add('open');
+            if (!modal.open) {
+                if (typeof modal.showModal === 'function') {
+                    modal.showModal();
+                } else {
+                    modal.setAttribute('open', '');
+                }
+            }
         }
 
         function closeModal() {
-            modal.classList.remove('open');
+            if (modal.open) {
+                if (typeof modal.close === 'function') {
+                    modal.close();
+                } else {
+                    modal.removeAttribute('open');
+                }
+            }
             currentModalIndex = -1;
+        }
+
+        function closePhotoPicker() {
+            const pickerMenu = document.getElementById('photoPickerMenu');
+            const pickerTrigger = document.getElementById('photoPickerTrigger');
+            if (!pickerMenu) return;
+            if (typeof pickerMenu.hidePopover === 'function' && pickerMenu.matches(':popover-open')) {
+                pickerMenu.hidePopover();
+            } else {
+                pickerMenu.classList.remove('open');
+                if (pickerTrigger) {
+                    pickerTrigger.classList.remove('active');
+                    pickerTrigger.setAttribute('aria-expanded', 'false');
+                }
+            }
+        }
+
+        function positionPhotoPickerMenu() {
+            const pickerMenu = document.getElementById('photoPickerMenu');
+            const pickerTrigger = document.getElementById('photoPickerTrigger');
+            if (!pickerMenu || !pickerTrigger) return;
+            if (!window.CSS?.supports?.('position-anchor', '--a')) {
+                const rect = pickerTrigger.getBoundingClientRect();
+                pickerMenu.style.position = 'fixed';
+                pickerMenu.style.top = `${rect.bottom + 8}px`;
+                pickerMenu.style.left = `${rect.left}px`;
+            }
         }
 
         // ==========================================
@@ -4077,8 +4534,7 @@
                 card.innerHTML = `<img src="${s.file}" alt="Sample">`;
                 card.addEventListener('click', () => {
                     loadSamplePhoto(s);
-                    pickerMenu.classList.remove('open');
-                    pickerTrigger.classList.remove('active');
+                    closePhotoPicker();
                 });
                 photoGrid.appendChild(card);
             });
@@ -4089,24 +4545,36 @@
             uploadCard.innerHTML = `<span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span><span class="label">Upload</span>`;
             uploadCard.addEventListener('click', () => {
                 if (fileInput) fileInput.click();
-                pickerMenu.classList.remove('open');
-                pickerTrigger.classList.remove('active');
+                closePhotoPicker();
             });
             photoGrid.appendChild(uploadCard);
 
-            pickerTrigger.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = pickerMenu.classList.toggle('open');
-                pickerTrigger.classList.toggle('active', isOpen);
-            });
+            if (pickerMenu) {
+                pickerMenu.addEventListener('toggle', (e) => {
+                    const isOpen = e.newState === 'open';
+                    pickerTrigger.classList.toggle('active', isOpen);
+                    pickerTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (isOpen) positionPhotoPickerMenu();
+                });
+            }
 
-            document.addEventListener('click', (e) => {
-                const wrap = document.getElementById('photoDropdownWrap');
-                if (wrap && !wrap.contains(e.target)) {
-                    pickerMenu.classList.remove('open');
-                    pickerTrigger.classList.remove('active');
-                }
-            });
+            // Fallback para navegadores sin Popover API
+            if (!('popover' in HTMLElement.prototype) && pickerTrigger && pickerMenu) {
+                pickerTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = pickerMenu.classList.toggle('open');
+                    pickerTrigger.classList.toggle('active', isOpen);
+                    pickerTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (isOpen) positionPhotoPickerMenu();
+                });
+
+                document.addEventListener('click', (e) => {
+                    const wrap = document.getElementById('photoDropdownWrap');
+                    if (wrap && !wrap.contains(e.target)) {
+                        closePhotoPicker();
+                    }
+                });
+            }
 
             const uploadBtn = document.getElementById('btnUploadTrigger');
             if (uploadBtn && fileInput) uploadBtn.addEventListener('click', () => fileInput.click());
@@ -4114,6 +4582,7 @@
                 fileInput.addEventListener('change', (e) => {
                     if (e.target.files && e.target.files[0]) {
                         handleUserPhotoFile(e.target.files[0]);
+                        closePhotoPicker();
                     }
                 });
             }
@@ -4179,8 +4648,14 @@
 
             // Global Intensity Slider
             const globalIntensitySlider = document.getElementById('globalIntensity');
+            const syncGlobalIntensityProgress = () => {
+                globalIntensitySlider.style.setProperty('--slider-progress', `${globalIntensitySlider.value}%`);
+            };
+            syncGlobalIntensityProgress();
             globalIntensitySlider.addEventListener('input', (e) => {
+                syncGlobalIntensityProgress();
                 globalIntensity = parseInt(e.target.value, 10) / 100.0;
+                globalIntensitySlider.setAttribute('aria-valuenow', e.target.value);
                 document.getElementById('globalIntensityText').innerText = `${e.target.value}%`;
                 thumbCache.clear();
                 if (currentView === 'grid') renderAllVisibleCards();
@@ -4230,7 +4705,23 @@
             // Drawer
             document.getElementById('btnTriageDrawer').addEventListener('click', () => toggleDrawer(true));
             document.getElementById('btnDrawerClose').addEventListener('click', () => toggleDrawer(false));
-            document.getElementById('triageDrawerOverlay').addEventListener('click', () => toggleDrawer(false));
+            const overlayEl = document.getElementById('triageDrawerOverlay');
+            if (overlayEl) overlayEl.addEventListener('click', () => toggleDrawer(false));
+
+            const drawerEl = document.getElementById('triageDrawer');
+            if (drawerEl) {
+                // Light dismiss when clicking backdrop area outside the drawer
+                drawerEl.addEventListener('click', (e) => {
+                    const rect = drawerEl.getBoundingClientRect();
+                    const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+                                        rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+                    if (!isInDialog) toggleDrawer(false);
+                });
+                drawerEl.addEventListener('cancel', (e) => {
+                    e.preventDefault();
+                    toggleDrawer(false);
+                });
+            }
             document.getElementById('tabDrawerSaved').addEventListener('click', () => switchDrawerTab('saved'));
             document.getElementById('tabDrawerDiscarded').addEventListener('click', () => switchDrawerTab('discarded'));
             document.getElementById('btnCopyForEOS').addEventListener('click', copySavedForEOS);
@@ -4322,7 +4813,7 @@
                         setGlobalBefore(true);
                     } else if (e.key === 'Escape') {
                         closeModal();
-                    } else if (modal.classList.contains('open')) {
+                    } else if (modal.open) {
                         if (e.key === 'ArrowLeft' && currentModalIndex > 0) openModal(currentModalIndex - 1);
                         else if (e.key === 'ArrowRight' && currentModalIndex < filteredPresets.length - 1) openModal(currentModalIndex + 1);
                     }
@@ -4346,9 +4837,145 @@
             });
         }
 
+        // ==========================================
+        // 2D SPATIAL KEYBOARD NAVIGATION (GRID VIEW)
+        // ==========================================
+        function findSpatialCandidate(currentEl, direction, container) {
+            const candidates = Array.from(container.querySelectorAll('.preset-card')).filter(el => {
+                if (el === currentEl) return false;
+                if (typeof el.checkVisibility === 'function') {
+                    return el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true });
+                }
+                return el.offsetParent !== null;
+            });
+
+            if (candidates.length === 0) return null;
+
+            const curr = currentEl.getBoundingClientRect();
+            const tolerance = 2; // px sub-pixel rounding tolerance
+
+            // 1. Edge-based directional filter
+            const directional = candidates.filter(cand => {
+                const rect = cand.getBoundingClientRect();
+                switch (direction) {
+                    case 'right': return rect.left >= curr.right - tolerance;
+                    case 'left':  return rect.right <= curr.left + tolerance;
+                    case 'down':  return rect.top >= curr.bottom - tolerance;
+                    case 'up':    return rect.bottom <= curr.top + tolerance;
+                    default: return false;
+                }
+            });
+
+            if (directional.length === 0) return null;
+
+            // 2. Classify by perpendicular axis overlap
+            const isHorizontal = direction === 'left' || direction === 'right';
+            const overlapping = [];
+            const nonOverlapping = [];
+
+            for (const cand of directional) {
+                const r = cand.getBoundingClientRect();
+                const overlaps = isHorizontal
+                    ? (Math.min(curr.bottom, r.bottom) - Math.max(curr.top, r.top) > 0)
+                    : (Math.min(curr.right, r.right) - Math.max(curr.left, r.left) > 0);
+
+                if (overlaps) overlapping.push({ el: cand, rect: r });
+                else nonOverlapping.push({ el: cand, rect: r });
+            }
+
+            // 3. Score overlapping candidates: smallest gap, tie-break by perpendicular center
+            if (overlapping.length > 0) {
+                overlapping.sort((a, b) => {
+                    const gapA = isHorizontal ? Math.abs(a.rect.left - curr.left) : Math.abs(a.rect.top - curr.top);
+                    const gapB = isHorizontal ? Math.abs(b.rect.left - curr.left) : Math.abs(b.rect.top - curr.top);
+                    if (Math.abs(gapA - gapB) > 1) return gapA - gapB;
+
+                    const perpOffsetA = isHorizontal
+                        ? Math.abs((a.rect.top + a.rect.height / 2) - (curr.top + curr.height / 2))
+                        : Math.abs((a.rect.left + a.rect.width / 2) - (curr.left + curr.width / 2));
+                    const perpOffsetB = isHorizontal
+                        ? Math.abs((b.rect.top + b.rect.height / 2) - (curr.top + curr.height / 2))
+                        : Math.abs((b.rect.left + b.rect.width / 2) - (curr.left + curr.width / 2));
+                    return perpOffsetA - perpOffsetB;
+                });
+                return overlapping[0].el;
+            }
+
+            // 4. Fallback scoring: gap + weight * perpendicularCentreOffset (w = 2.5)
+            nonOverlapping.sort((a, b) => {
+                const gapA = isHorizontal ? Math.abs(a.rect.left - curr.left) : Math.abs(a.rect.top - curr.top);
+                const gapB = isHorizontal ? Math.abs(b.rect.left - curr.left) : Math.abs(b.rect.top - curr.top);
+                const perpOffsetA = isHorizontal
+                    ? Math.abs((a.rect.top + a.rect.height / 2) - (curr.top + curr.height / 2))
+                    : Math.abs((a.rect.left + a.rect.width / 2) - (curr.left + curr.width / 2));
+                const perpOffsetB = isHorizontal
+                    ? Math.abs((b.rect.top + b.rect.height / 2) - (curr.top + curr.height / 2))
+                    : Math.abs((b.rect.left + b.rect.width / 2) - (curr.left + curr.width / 2));
+
+                const scoreA = gapA + 2.5 * perpOffsetA;
+                const scoreB = gapB + 2.5 * perpOffsetB;
+                return scoreA - scoreB;
+            });
+
+            return nonOverlapping[0]?.el || null;
+        }
+
+        function initSpatialNavigation() {
+            const grid = document.getElementById('presetsGrid');
+            if (!grid) return;
+
+            grid.addEventListener('keydown', (e) => {
+                if (currentView !== 'grid') return;
+                const modal = document.getElementById('modalInspection');
+                if (modal && modal.open) return;
+                const drawer = document.getElementById('triageDrawer');
+                if (drawer && drawer.open) return;
+
+                const activeEl = document.activeElement;
+                const currentCard = activeEl ? activeEl.closest('.preset-card') : null;
+                if (!currentCard || !grid.contains(currentCard)) return;
+
+                if (activeEl.matches && activeEl.matches(':read-write, select, input[type="range"]')) return;
+
+                if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                    const direction = e.key.replace('Arrow', '').toLowerCase();
+                    const candidate = findSpatialCandidate(currentCard, direction, grid);
+                    if (candidate) {
+                        e.preventDefault();
+                        currentCard.setAttribute('tabindex', '-1');
+                        candidate.setAttribute('tabindex', '0');
+                        candidate.focus();
+                        candidate.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+                    }
+                    // Preserves native browser scroll if no candidate in that direction
+                } else if (e.key === 'Enter') {
+                    if (activeEl.tagName !== 'BUTTON' && !activeEl.closest('a')) {
+                        e.preventDefault();
+                        const idx = parseInt(currentCard.getAttribute('data-index'), 10);
+                        if (!isNaN(idx)) openModal(idx);
+                    }
+                } else if (e.key.toLowerCase() === 'm') {
+                    if (activeEl.tagName !== 'INPUT') {
+                        e.preventDefault();
+                        const pid = currentCard.getAttribute('data-preset-id');
+                        const starBtn = currentCard.querySelector('.btn-star');
+                        toggleFavorite(pid, starBtn);
+                    }
+                }
+            });
+        }
+
         function setupModalControls() {
             document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            
+            // Native cancel & Light-dismiss fallback
+            modal.addEventListener('cancel', () => {
+                currentModalIndex = -1;
+            });
+            modal.addEventListener('click', (e) => {
+                const win = modal.querySelector('.modal-window');
+                if (win && !win.contains(e.target)) closeModal();
+            });
 
             const btnModalFit = document.getElementById('btnModalFit');
             if (btnModalFit) btnModalFit.addEventListener('click', toggleFitMode);
@@ -4388,8 +5015,14 @@
             window.addEventListener('touchend', () => { isModalSplitDragging = false; });
 
             const modalIntensitySlider = document.getElementById('modalIntensitySlider');
+            const syncModalIntensityProgress = () => {
+                modalIntensitySlider.style.setProperty('--slider-progress', `${modalIntensitySlider.value}%`);
+            };
+            syncModalIntensityProgress();
             modalIntensitySlider.addEventListener('input', (e) => {
+                syncModalIntensityProgress();
                 const val = parseInt(e.target.value, 10) / 100.0;
+                modalIntensitySlider.setAttribute('aria-valuenow', e.target.value);
                 document.getElementById('modalIntensityVal').innerText = `${e.target.value}%`;
                 if (modalLutEngine) modalLutEngine.setIntensity(val);
             });
@@ -4411,6 +5044,7 @@
             }
 
             applyFilters();
+            initSpatialNavigation();
             applyFitMode();
             document.body.classList.add('view-mode-grid');
 

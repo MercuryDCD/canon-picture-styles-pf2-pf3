@@ -11,7 +11,7 @@ import re
 import json
 from pathlib import Path
 
-REPO_DIR = Path(r"C:\Users\Dani\Pictures\presets Canon.pf3")
+REPO_DIR = Path(__file__).resolve().parent
 DOC_PATH = REPO_DIR / "CATALOGO_FUENTES_Y_HISTORIA.md"
 OUTPUT_DATA_JS = REPO_DIR / "presets_data.js"
 
