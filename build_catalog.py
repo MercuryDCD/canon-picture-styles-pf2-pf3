@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 REPO_DIR = Path(__file__).resolve().parent
-DOC_PATH = REPO_DIR / "CATALOGO_FUENTES_Y_HISTORIA.md"
+DOC_PATH = REPO_DIR / "CATALOG_SOURCES_AND_HISTORY.md" if (REPO_DIR / "CATALOG_SOURCES_AND_HISTORY.md").exists() else REPO_DIR / "CATALOGO_FUENTES_Y_HISTORIA.md"
 OUTPUT_DATA_JS = REPO_DIR / "presets_data.js"
 
 CATEGORY_COLORS = {
