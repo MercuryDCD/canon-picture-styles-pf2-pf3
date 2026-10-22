@@ -3462,6 +3462,11 @@
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                         <span data-i18n="drawer.export_json">Export JSON</span>
                     </button>
+                    <button id="btnImportSavedJSON" class="drawer-action-btn" title="Import favorites from a JSON file" data-i18n-title="drawer.import_json">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        <span data-i18n="drawer.import_json">Import JSON</span>
+                    </button>
+                    <input type="file" id="importJsonFileInput" accept=".json,application/json" style="display: none;" aria-label="Import favorites JSON file">
                 </div>
                 <div class="drawer-list" id="drawerSavedList"></div>
             </div>
@@ -4931,7 +4936,8 @@
 
         function exportSavedJSON() {
             if (savedPresetsList.length === 0) {
-                alert('No saved favorites to export.');
+                const emptyMsg = window.I18N ? window.I18N.t('drawer.no_favorites') : 'No saved favorites to export.';
+                alert(emptyMsg);
                 return;
             }
             const blob = new Blob([JSON.stringify(savedPresetsList, null, 2)], { type: 'application/json' });
@@ -4940,6 +4946,154 @@
             a.href = url;
             a.download = 'my_canon_favorite_styles.json';
             a.click();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+            showToast(window.I18N ? window.I18N.t('toasts.exported_json', { count: savedPresetsList.length }) : `Exported ${savedPresetsList.length} favorites to JSON`);
+        }
+
+        function importFavoritesJSONFile(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    importFavoritesJSONText(e.target.result);
+                } catch (err) {
+                    console.error('[Import JSON] Parse error:', err);
+                    const errMsg = window.I18N ? window.I18N.t('toasts.import_invalid_json') : 'Invalid JSON file or structure';
+                    showToast(`⚠️ ${errMsg}`);
+                }
+            };
+            reader.onerror = () => {
+                const errMsg = window.I18N ? window.I18N.t('toasts.import_invalid_json') : 'Error reading JSON file';
+                showToast(`⚠️ ${errMsg}`);
+            };
+            reader.readAsText(file);
+        }
+
+        function importFavoritesJSONText(text) {
+            let parsed;
+            try {
+                parsed = JSON.parse(text);
+            } catch (err) {
+                const errMsg = window.I18N ? window.I18N.t('toasts.import_invalid_json') : 'Invalid JSON file';
+                showToast(`⚠️ ${errMsg}`);
+                return;
+            }
+
+            let rawList = [];
+            let rawDiscarded = [];
+            let rawSkipped = [];
+
+            if (Array.isArray(parsed)) {
+                rawList = parsed;
+            } else if (parsed && typeof parsed === 'object') {
+                if (Array.isArray(parsed.canon_triage_saved)) rawList = parsed.canon_triage_saved;
+                else if (Array.isArray(parsed.saved)) rawList = parsed.saved;
+                else if (Array.isArray(parsed.favorites)) rawList = parsed.favorites;
+                else if (Array.isArray(parsed.canon_real_favorites)) rawList = parsed.canon_real_favorites;
+
+                if (Array.isArray(parsed.canon_triage_discarded)) rawDiscarded = parsed.canon_triage_discarded;
+                else if (Array.isArray(parsed.discarded)) rawDiscarded = parsed.discarded;
+
+                if (Array.isArray(parsed.canon_triage_skipped)) rawSkipped = parsed.canon_triage_skipped;
+                else if (Array.isArray(parsed.skipped)) rawSkipped = parsed.skipped;
+            } else {
+                showToast(`⚠️ ${window.I18N ? window.I18N.t('toasts.import_invalid_json') : 'Invalid JSON structure'}`);
+                return;
+            }
+
+            let importedCount = 0;
+            let existingCount = 0;
+
+            rawList.forEach(item => {
+                if (!item) return;
+                const rawId = typeof item === 'string' ? item : (item.id || item.filename || item.name || item.preset_name);
+                if (!rawId) return;
+
+                const mid = migrateId(rawId);
+                const p = window.CANON_PRESETS.find(preset => preset.id === mid);
+                if (!p) return;
+
+                // Remove from discarded and skipped because saving as favorite takes precedence
+                discardedIdsSet.delete(mid);
+                skippedIdsSet.delete(mid);
+
+                const existingItem = savedPresetsList.find(s => s.id === mid);
+                if (existingItem) {
+                    if (typeof item === 'object') {
+                        if (item.custom_name && item.custom_name !== p.name && !existingItem.custom_name) {
+                            existingItem.custom_name = item.custom_name;
+                        }
+                        if (item.custom_desc && item.custom_desc !== p.look && !existingItem.custom_desc) {
+                            existingItem.custom_desc = item.custom_desc;
+                        }
+                    }
+                    existingCount++;
+                } else {
+                    let desc = (typeof item === 'object' && item.custom_desc) ? item.custom_desc : p.look;
+                    if (desc && desc.startsWith('Perfil de color ')) {
+                        desc = p.look;
+                    }
+                    savedPresetsList.push({
+                        id: mid,
+                        preset_name: (typeof item === 'object' && item.preset_name) || p.name,
+                        filename: (typeof item === 'object' && item.filename) || p.filename,
+                        category: (typeof item === 'object' && item.category) || p.catLabel,
+                        custom_name: (typeof item === 'object' && item.custom_name) || p.name,
+                        custom_desc: desc || '',
+                        saved_at: (typeof item === 'object' && item.saved_at) || new Date().toISOString()
+                    });
+                    importedCount++;
+                }
+                realFavoritesSet.add(mid);
+            });
+
+            // Restore discarded/skipped if provided in backup
+            if (rawDiscarded.length > 0) {
+                rawDiscarded.forEach(d => {
+                    const mid = migrateId(typeof d === 'string' ? d : (d.id || d.name));
+                    if (mid && !realFavoritesSet.has(mid)) {
+                        discardedIdsSet.add(mid);
+                    }
+                });
+            }
+            if (rawSkipped.length > 0) {
+                rawSkipped.forEach(s => {
+                    const mid = migrateId(typeof s === 'string' ? s : (s.id || s.name));
+                    if (mid && !realFavoritesSet.has(mid)) {
+                        skippedIdsSet.add(mid);
+                    }
+                });
+            }
+
+            if (importedCount === 0 && existingCount === 0) {
+                showToast(`⚠️ ${window.I18N ? window.I18N.t('toasts.import_no_presets') : 'No matching Picture Styles found in JSON file'}`);
+                return;
+            }
+
+            persistAllState();
+            updateAllBadges();
+            updateDrawerLists();
+
+            if (currentView === 'grid') {
+                if (filterOnlyFavorites) {
+                    applyFilters();
+                } else {
+                    document.querySelectorAll('.preset-card').forEach(card => {
+                        const pid = card.getAttribute('data-preset-id');
+                        const star = card.querySelector('.btn-star');
+                        if (star && pid) {
+                            star.classList.toggle('favorited', realFavoritesSet.has(pid));
+                        }
+                    });
+                }
+            } else if (currentView === 'carousel') {
+                renderCurrentTriage();
+            }
+
+            const msg = window.I18N
+                ? window.I18N.t('toasts.imported_json', { count: importedCount, existing: existingCount })
+                : `Imported ${importedCount} favorites (${existingCount} already saved)`;
+            showToast(`✓ ${msg}`);
         }
 
         // ==========================================
@@ -5346,7 +5500,12 @@
                 e.preventDefault();
                 overlay.classList.remove('active');
                 if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-                    handleUserPhotoFile(e.dataTransfer.files[0]);
+                    const droppedFile = e.dataTransfer.files[0];
+                    if (droppedFile.name.toLowerCase().endsWith('.json') || droppedFile.type === 'application/json') {
+                        importFavoritesJSONFile(droppedFile);
+                    } else {
+                        handleUserPhotoFile(droppedFile);
+                    }
                 }
             });
 
@@ -5511,6 +5670,17 @@
             document.getElementById('tabDrawerDiscarded').addEventListener('click', () => switchDrawerTab('discarded'));
             document.getElementById('btnCopyForEOS').addEventListener('click', copySavedForEOS);
             document.getElementById('btnExportSavedJSON').addEventListener('click', exportSavedJSON);
+            const btnImportSavedJSON = document.getElementById('btnImportSavedJSON');
+            const importJsonFileInput = document.getElementById('importJsonFileInput');
+            if (btnImportSavedJSON && importJsonFileInput) {
+                btnImportSavedJSON.addEventListener('click', () => importJsonFileInput.click());
+                importJsonFileInput.addEventListener('change', (e) => {
+                    if (e.target.files && e.target.files[0]) {
+                        importFavoritesJSONFile(e.target.files[0]);
+                        e.target.value = '';
+                    }
+                });
+            }
             document.getElementById('btnRestoreAllDiscarded').addEventListener('click', restoreAllDiscarded);
 
             // 11 Scenes vs Single Large Photo Mode Buttons

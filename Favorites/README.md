@@ -1,56 +1,49 @@
-# Canon Picture Styles — Favorites Collection
+# Canon Picture Styles — Favorites Collection (v1)
 
-Colección seleccionada tras la criba y triaje sobre las 11 escenas de prueba (RAW CR3).
+Colección curada de **30 estilos favoritos**, sincronizada con my_canon_favorite_stylesv1.json.
 
-## 🏆 Top 3 Asignado para Cámara (EOS Utility 3)
-
-| Ranura | Nombre del Estilo | Archivo | Formato | Categoría de Origen |
-| :---: | :--- | :--- | :---: | :--- |
-| **Usuario 1** | **Cinema Filmic Portrait** | `Cinema_Filmic_Portrait.pf3` | `.pf3` | Portraits and Skin Tones |
-| **Usuario 2** | **Nikon 35mm Whibal Calibrated** | `Nikon_35mm_Whibal_Calibrated.pf2` | `.pf2` | Classic Cameras and Brands |
-| **Usuario 3** | **Creative Dense Landscape** | `Creative_Dense_Landscape.pf2` | `.pf2` | Creative and Lomo |
-
----
-
-## 📋 Catálogo Completo de Favoritos (27 estilos)
+## 📋 Catálogo de Favoritos (30 perfiles listos para cámara)
 
 ### 01. Fujifilm Film Simulations
-- `Fuji_Astia_Retro_Lifted_Shadows.pf3`
-- `Fuji_Provia_100F_RDPIII.pf2`
-- `Fuji_Reala_Style_LSB.pf2`
-- `Fuji_Velvia_100F_RVP_Neutral.pf2`
-- `Fuji_Velvia_by_Giosi_v1.pf2`
-- `Fuji_Velvia_Official_Picture_Style.pf2`
+- `Fuji_160C_2.pf3` (.PF3) — *Box-speed baseline: crisp commercial contrast, neutral daylight primaries, and fine grain.*
+- `Fuji_160C_4_Plus_Plus.pf3` (.PF3) — *Ethereal low-contrast palette with milky lifted shadows and delicate pastels (+2 EV overexposure).*
+- `Fuji_400H_1.pf3` (.PF3) — *Denser mint greens and contrasty shadows with subtle cyan tint (-1 EV pull).*
+- `Fuji_400H_2.pf3` (.PF3) — *Standard 0 EV balance: signature fresh mint greens, gentle skin tones, and cool cyan shadows.*
+- `Fuji_800Z_1.pf3` (.PF3) — *Punchy warm contrast with deep amber cast in low-light shadows (-1 EV pull).*
+- `Fuji_Astia_Retro_Lifted_Shadows.pf3` (.PF3) — *Soft slide palette with lifted matte shadows and muted vintage highlights.*
+- `Fuji_FP_100c_3.pf3` (.PF3) — *Professional peel-apart instant color print: neutral whites, deep blacks, and rich skin (Box speed 0 EV).*
+- `Fuji_FP_100c_Cool_2.pf3` (.PF3) — *Cool-toned peel-apart instant print with cyan-blue shadow bias (Dense pull -1 EV).*
+- `Fuji_Provia_100_Generic.pf3` (.PF3) — *Neutral, highly balanced color rendition with faithful primaries and clean highlights.*
+- `Fuji_Provia_400X.pf3` (.PF3) — *Neutral, highly balanced color rendition with faithful primaries and clean highlights.*
 
 ### 02. Kodak Film Simulations
-- `Kodak_Portra_Soft_Skin_Tones.pf2`
+- `Kodak_Elite_Color_200.pf3` (.PF3) — *Vibrant consumer slide palette with punchy warm reds and deep blue skies.*
+- `Kodak_Portra_160_4_Plus_Plus.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant plus: plus.*
+- `Kodak_Portra_160_NC_3_Plus.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant plus: plus.*
+- `Kodak_Portra_160_VC_2.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).*
+- `Kodak_Portra_160_VC_3_Plus.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant plus: plus.*
+- `Kodak_Portra_400_2.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).*
+- `Kodak_Portra_400_NC_3_Plus.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant plus: plus.*
+- `Kodak_Portra_400_UC.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant uc: uc.*
+- `Kodak_Portra_400_UC_2.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant 2: baseline box speed (0 EV).*
+- `Kodak_Portra_400_VC_4_Plus_Plus.pf3` (.PF3) — *Kodak Portra 400 exposure matrix variant plus: plus.*
 
-### 03. Cinema & Log
-- `Cinema_AdvancedFlat_Log.pf2`
-- `Cinema_Filmic_Base.pf3`
+### 03. Black & White / Monochrome
+- `Ilford_Delta_3200_2.pf3` (.PF3) — *Modern tabular crystal grain (Core-Shell), crisp micro-contrast, and deep blacks (ISO 3200).*
+- `Polaroid_665_3.pf3` (.PF3) — *Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.*
 
-### 04. Black & White / Monochrome
-- `Kodak_TriX_T-Rex_Lifted_Shadows.pf3`
-- `Monochrome_BW_1_Soft.pf2`
+### 04. Cinema & Log
+- `Technicolor_CineStyle_Flat_Log.pf2` (.PF2) — *Extreme low-contrast log curve with lifted black level (IRE 16) maximizing sensor latitude.*
 
-### 05. Portraits & Skin Tones
-- `Canon_Studio_Portrait_Official.pf2`
-- `Cinema_Filmic_Portrait.pf3` *(Top 1)*
-- `Portrait_BeautyShot_Fashion_3.pf2`
-- `Portrait_Bridal_Hanayome_Fair_Skin.pf2`
+### 05. Vintage & Instant
+- `Polaroid_669_1.pf3` (.PF3) — *Instant photo aesthetic: lifted matte blacks, creamy warm highlights, and muted olive greens.*
 
-### 06. Classic Cameras & Specialty
-- `GAF_500_Vintage_Film.pf2`
-- `Nikon_35mm_Whibal_Calibrated.pf2` *(Top 2)*
-- `Olympus_Blue_Deep_Sky.pf2`
+### 06. Portraits & Brands
+- `Cinema_Filmic_Portrait.pf3` (.PF3) — *Gentle cinematic S-curve with lifted blacks and soft highlight transitions.*
+- `Nikon_D2X_Color_Profile.pf2` (.PF2) — *Clean technical color rendition with punchy greens, rich yellows, and crisp micro-contrast.*
 
-### 07. Creative & Nature
-- `Canon_Emerald_Water.pf2`
-- `Creative_ColorPass_Red_Only.pf2`
-- `Creative_Dense_Landscape.pf2` *(Top 3)*
-- `Creative_Landscape_Variant_2.pf2`
-- `Japan_Huukei_Neutral_Landscape.pf2`
-- `Japan_IchigoMoe_2.pf2`
-- `Japan_Wagokoro_Traditional.pf2`
-- `Nature_Blue_Sky.pf2`
-- `Nature_Tropical_Saturated.pf2`
+### 07. Creative & Artistic
+- `Creative_ColorPass_Red_Only.pf2` (.PF2) — *Selective color key: converts full frame to black & white while retaining only pure vibrant reds.*
+- `GoldFX_Spring_Breeze.pf3` (.PF3) — *Approachable warm nostalgic palette with golden-yellow highlights and pleasant skin (ISO 200).*
+- `Nature_Blue_Sky.pf2` (.PF2) — *Targeted colorimetric calibration enhancing 'Blue Sky' with clean contrast.*
+- `Warm.pf3` (.PF3) — *Cinematic S-curve with warm skin tones and film-like tonal separation.*
