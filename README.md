@@ -5,6 +5,8 @@
 [![Formats](https://img.shields.io/badge/Formats-.pf2%20%7C%20.pf3%20%7C%20.bin%20%7C%20Hald%20PNG-success.svg)](.)
 [![Live Demo](https://img.shields.io/badge/Demo-Interactive%20Web%20Catalog-brightgreen.svg)](https://mercurydcd.github.io/canon-picture-styles-pf3-catalog/)
 [![Technical Catalog](https://img.shields.io/badge/Documentation-Sources%20%26%20History-purple.svg)](CATALOG_SOURCES_AND_HISTORY.md)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20Project-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/dcorral)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?logo=github-sponsors&logoColor=white)](https://github.com/sponsors/MercuryDCD)
 [![License](https://img.shields.io/badge/License-Community%20%2F%20Free-orange.svg)](LICENSE)
 
 A comprehensively curated, categorized, and standardized collection of **550 Picture Styles (`.pf2` & `.pf3`) and 3D LUTs** for Canon EOS cameras, Digital Photo Professional (DPP 4), and post-production workflows.
@@ -153,6 +155,21 @@ This platform leverages high-precision mathematical transformations:
 * **12-bit Quantization:** Downsamples LUT matrices to Canon's official $33^3$ format (`0x40001070` and `0x40001071`) preserving highlight linearity and shadow fidelity.
 * **Firmware Validation:** Validated with Canon's official `EdsCFParse.dll` runtime from Picture Style Editor, ensuring 100% valid CRC checksums and camera firmware compliance.
 * **Client-Side RAW Decoding:** Custom binary parser reads the TIFF/IFD structure of Canon RAW files (`.CR3`, `.CR2`, `.CRW`) and streams the embedded preview JPEG in $< 20\text{ ms}$ without server-side processing.
+
+---
+
+## ☕ Support & Donations
+
+If this curated catalog, the real-time WebGL 2.0 triage engine, or the camera-ready Picture Style profiles bring value to your photography or filmmaking workflow, you can support ongoing maintenance, color science profiling, and continuous platform development:
+
+| Platform | Channel | Description |
+| :--- | :--- | :--- |
+| **Ko-fi** | [ko-fi.com/dcorral](https://ko-fi.com/dcorral) | One-time tips or regular coffees with zero friction. |
+| **GitHub Sponsors** | [github.com/sponsors/MercuryDCD](https://github.com/sponsors/MercuryDCD) | Open-source project sponsorship and developer support. |
+
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-Tip%20or%20Coffee-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dcorral)
+&nbsp;
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/MercuryDCD)
 
 ---
 

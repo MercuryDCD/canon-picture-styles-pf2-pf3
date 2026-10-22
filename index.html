@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
     <title>Canon Picture Styles — Interactive Catalog & Fast Triage</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/jpeg" href="samples/01_portrait_skin.jpg">
+    <link rel="apple-touch-icon" href="samples/01_portrait_skin.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <script src="lut_engine.js"></script>
     <script src="presets_data.js"></script>
+    <script src="i18n.js"></script>
     <style>
         :root {
             color-scheme: dark;
@@ -184,6 +189,326 @@
             color: var(--text-main);
             border-color: rgba(255, 255, 255, 0.25);
             transform: translateY(-1px);
+        }
+
+        /* ========================================================= */
+        /* MODERN DONATION & SUPPORT SYSTEM (POPOVER & ANCHOR SPECS) */
+        /* ========================================================= */
+        .donation-dropdown-wrap {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+            anchor-name: --donation-anchor;
+        }
+
+        .btn-donate-trigger {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 7px;
+            height: 25px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .btn-donate-trigger svg,
+        .kofi-icon-btn {
+            display: block;
+            flex-shrink: 0;
+            transition: transform 0.15s ease;
+        }
+
+        .btn-donate-trigger svg {
+            color: var(--accent);
+        }
+
+        .kofi-icon-btn {
+            width: 15px;
+            height: 12px;
+            object-fit: contain;
+        }
+
+        .btn-donate-trigger:hover,
+        .btn-donate-trigger.active {
+            background: rgba(220, 38, 38, 0.08);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .btn-donate-trigger:hover svg,
+        .btn-donate-trigger:hover .kofi-icon-btn,
+        .btn-drawer-donate:hover .kofi-icon-btn,
+        .btn-modal-donate:hover .kofi-icon-btn {
+            transform: scale(1.15);
+        }
+
+        /* BILINGUAL LANGUAGE SWITCHER (ES / EN) */
+        .btn-lang-switcher {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 7px;
+            height: 25px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .btn-lang-switcher:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-highlight);
+            color: #fff;
+        }
+
+        .btn-lang-switcher .lang-icon svg {
+            display: block;
+            color: var(--text-dim);
+            transition: color 0.15s ease;
+        }
+
+        .btn-lang-switcher:hover .lang-icon svg {
+            color: var(--text-main);
+        }
+
+        .btn-lang-switcher .lang-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+        }
+
+        /* VIEWPORT-AWARE ANCHOR POSITIONED POPOVER PANEL */
+        .donation-popover-panel {
+            position: absolute;
+            position-anchor: --donation-anchor;
+            position-area: block-end span-inline-start;
+            position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+            inset: auto;
+            margin: 0;
+            top: calc(100% + 8px);
+            right: 0;
+            z-index: 200;
+            background: rgba(16, 18, 26, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-highlight);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            width: 320px;
+            max-width: calc(100vw - 20px);
+            opacity: 0;
+            transform: translateY(-6px);
+            transition: opacity 0.15s ease, transform 0.15s ease, overlay 0.15s allow-discrete, display 0.15s allow-discrete;
+        }
+
+        @supports (position-anchor: --donation-anchor) {
+            .donation-popover-panel {
+                top: anchor(bottom);
+                right: anchor(right);
+                margin-top: 8px;
+            }
+        }
+
+        .donation-popover-panel:is(:popover-open, .\:popover-open) {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @starting-style {
+            .donation-popover-panel:is(:popover-open, .\:popover-open) {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+        }
+
+        .donation-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .donation-header-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .donation-badge {
+            background: rgba(220, 38, 38, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 1px 5px;
+            border-radius: 4px;
+            line-height: 1.2;
+        }
+
+        .donation-header h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+            letter-spacing: -0.2px;
+        }
+
+        .donation-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            padding: 2px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: color 0.15s ease;
+        }
+
+        .donation-close-btn:hover {
+            color: #fff;
+        }
+
+        .donation-desc {
+            font-size: 11px;
+            line-height: 1.45;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .donation-cards-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .donation-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 11px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.15s ease;
+            cursor: pointer;
+        }
+
+        .donation-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .donation-card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #d4d4d8;
+            transition: all 0.15s ease;
+        }
+
+        .donation-card:hover .donation-card-icon {
+            background: rgba(220, 38, 38, 0.12);
+            border-color: rgba(220, 38, 38, 0.35);
+            color: var(--accent);
+        }
+
+        .kofi-icon-card {
+            width: 20px;
+            height: 16px;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.15s ease;
+        }
+
+        .donation-card:hover .kofi-icon-card {
+            transform: scale(1.1);
+        }
+
+        .donation-card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .donation-card-top {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .donation-platform-name {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .donation-pill {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 1.5px 5px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.1;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-muted);
+        }
+
+        .donation-card-meta {
+            font-size: 10px;
+            color: var(--text-dim);
+            line-height: 1.3;
+            white-space: normal;
+        }
+
+        .donation-arrow {
+            color: var(--text-dim);
+            flex-shrink: 0;
+            transition: transform 0.15s ease, color 0.15s ease;
+        }
+
+        .donation-card:hover .donation-arrow {
+            color: #fff;
+            transform: translate(2px, -2px);
         }
 
         .btn-header-restore-tab {
@@ -1517,7 +1842,8 @@
         @media (max-width: 1140px) {
             #btnTriageDiscard .action-label,
             #btnTriageSkip .action-label,
-            .upload-label {
+            .upload-label,
+            .donate-label {
                 display: none;
             }
         }
@@ -2551,6 +2877,137 @@
             border-color: var(--border-highlight);
         }
 
+        .modal-nav-btn kbd {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 1px 4px;
+            border-radius: 3px;
+            color: var(--text-dim);
+            line-height: 1;
+            transition: all 0.15s ease;
+        }
+
+        .modal-nav-btn:hover kbd {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        /* DRAWER FOOTER DONATION CALLOUT */
+        .drawer-footer {
+            padding: 12px 18px;
+            border-top: 1px solid var(--border-color);
+            background: rgba(13, 15, 22, 0.98);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .drawer-donation-callout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 8px 10px;
+        }
+
+        .drawer-donation-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .drawer-donation-icon {
+            font-size: 14px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .drawer-donation-texts {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .drawer-donation-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .drawer-donation-desc {
+            font-size: 9.5px;
+            color: var(--text-dim);
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .btn-drawer-donate {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 9px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .btn-drawer-donate:hover {
+            border-color: var(--accent);
+            color: #fff;
+            background: rgba(220, 38, 38, 0.1);
+        }
+
+        /* MODAL SUPPORT BUTTON */
+        .btn-modal-donate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            padding: 6px 10px;
+            margin-top: 4px;
+            background: transparent;
+            border: 1px dashed var(--border-color);
+            border-radius: 6px;
+            color: var(--text-dim);
+            font-size: 11px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            line-height: 1;
+        }
+
+        .btn-modal-donate:hover {
+            border-color: var(--accent);
+            color: #fff;
+            background: rgba(220, 38, 38, 0.06);
+        }
+
+        .btn-modal-donate svg {
+            color: var(--accent);
+            display: block;
+            flex-shrink: 0;
+        }
+
         /* GLOBAL DRAG & DROP OVERLAY */
         .drag-drop-overlay {
             position: fixed;
@@ -2619,8 +3076,8 @@
         <div class="drag-icon">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
         </div>
-        <div class="drag-title">Drop your photo to preview the catalog</div>
-        <div class="drag-sub">Supported formats: Canon RAW (.CR3 / .CR2 / .CRW) & JPG / PNG / WebP</div>
+        <div class="drag-title" data-i18n="drag.title">Drop your photo to preview the catalog</div>
+        <div class="drag-sub" data-i18n="drag.sub">Supported formats: Canon RAW (.CR3 / .CR2 / .CRW) & JPG / PNG / WebP</div>
     </div>
 
     <!-- UNIFIED TOP HEADER -->
@@ -2629,39 +3086,39 @@
         <div class="header-left">
             <div class="brand-box" title="Canon Picture Styles Suite">
                 <span class="brand-badge">EOS</span>
-                <span class="brand-title">Picture Styles</span>
+                <span class="brand-title" data-i18n="brand.title">Picture Styles</span>
             </div>
 
             <!-- View Switcher (Grid vs Carousel) -->
             <div class="view-mode-tabs" role="tablist">
-                <button id="tabViewGrid" class="view-tab-btn active" title="Grid View (550 presets) - Key: V">
+                <button id="tabViewGrid" class="view-tab-btn active" title="Grid View (550 presets) - Key: V" data-i18n-title="header.view_grid_title">
                     <span class="tab-icon">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                     </span>
-                    <span class="tab-label">Grid</span>
+                    <span class="tab-label" data-i18n="header.view_grid">Grid</span>
                 </button>
-                <button id="tabViewCarousel" class="view-tab-btn" title="1-by-1 Fast Triage (Carousel) - Key: V">
+                <button id="tabViewCarousel" class="view-tab-btn" title="1-by-1 Fast Triage (Carousel) - Key: V" data-i18n-title="header.view_carousel_title">
                     <span class="tab-icon">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                     </span>
-                    <span class="tab-label">Carousel</span>
+                    <span class="tab-label" data-i18n="header.view_carousel">Carousel</span>
                 </button>
             </div>
 
             <!-- Visual Sample Photo Picker -->
             <div class="visual-photo-dropdown-wrap" id="photoDropdownWrap">
-                <button class="photo-picker-trigger" id="photoPickerTrigger" popovertarget="photoPickerMenu" type="button" title="Select sample photo" aria-haspopup="dialog" aria-expanded="false" aria-controls="photoPickerMenu" aria-label="Select sample photo">
+                <button class="photo-picker-trigger" id="photoPickerTrigger" popovertarget="photoPickerMenu" type="button" title="Select sample photo" aria-haspopup="dialog" aria-expanded="false" aria-controls="photoPickerMenu" aria-label="Select sample photo" data-i18n-title="header.sample_photo_title" data-i18n-aria="header.sample_photo_title">
                     <img id="activePhotoThumb" class="active-photo-preview" src="samples/01_portrait_skin.jpg" alt="Active photo preview">
                     <span class="dropdown-arrow">▾</span>
                 </button>
 
                 <!-- Visual dropdown menu -->
                 <div class="photo-picker-menu" id="photoPickerMenu" popover="auto" role="region" aria-label="Sample photo gallery">
-                    <div class="photo-picker-header">Sample Photo</div>
+                    <div class="photo-picker-header" data-i18n="header.sample_photo_header">Sample Photo</div>
                     <div class="photo-thumbs-grid" id="photoThumbsGrid"></div>
                 </div>
-                <button class="btn-icon-upload" id="btnUploadTrigger" title="Upload your own photo (.CR3 / .CR2 / JPG / PNG)" style="margin-left: 3px;" aria-label="Upload custom photo or RAW file">
-                    <span class="select-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span> <span class="upload-label">Upload</span>
+                <button class="btn-icon-upload" id="btnUploadTrigger" title="Upload your own photo (.CR3 / .CR2 / JPG / PNG)" style="margin-left: 3px;" aria-label="Upload custom photo or RAW file" data-i18n-title="header.upload_btn_title" data-i18n-aria="header.upload_btn_title">
+                    <span class="select-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></span> <span class="upload-label" data-i18n="header.upload_btn">Upload</span>
                 </button>
                 <input type="file" id="fileInput" accept=".cr3,.cr2,.crw,.jpg,.jpeg,.png,.webp" style="display: none;" aria-label="File upload input">
             </div>
@@ -2670,11 +3127,11 @@
         <!-- GRID MODE DECK (Visible in Grid only) -->
         <div class="grid-deck" id="gridDeck">
             <!-- Category Dropdown -->
-            <div class="select-group" id="headerCategorySelectWrap" title="Filter by macro-category">
+            <div class="select-group" id="headerCategorySelectWrap" title="Filter by macro-category" data-i18n-title="header.category_filter_title">
                 <span class="select-icon">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                 </span>
-                <select id="categorySelect" class="compact-select" aria-label="Filter presets by macro-category"></select>
+                <select id="categorySelect" class="compact-select" aria-label="Filter presets by macro-category" data-i18n-aria="header.category_filter_title"></select>
             </div>
 
             <!-- Search Bar -->
@@ -2683,34 +3140,34 @@
                     <span class="search-icon">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     </span>
-                    <input type="text" id="searchInput" class="search-input" placeholder="Search preset, film stock, or author..." aria-label="Search presets by name, film stock, or author">
-                    <button id="btnClearSearch" class="btn-clear-search" aria-label="Clear search input">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search preset, film stock, or author..." aria-label="Search presets by name, film stock, or author" data-i18n-placeholder="header.search_placeholder" data-i18n-aria="header.search_aria">
+                    <button id="btnClearSearch" class="btn-clear-search" aria-label="Clear search input" data-i18n-aria="header.clear_search_aria">
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
                 </div>
             </div>
 
             <!-- Favorites -->
-            <button id="btnFavFilter" class="fav-filter-btn" title="Show favorites only" aria-label="Toggle favorites filter">
+            <button id="btnFavFilter" class="fav-filter-btn" title="Show favorites only" aria-label="Toggle favorites filter" data-i18n-title="header.fav_filter_title" data-i18n-aria="header.fav_filter_title">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 <span id="favCountText">0</span>
             </button>
 
             <!-- Grid Density -->
-            <div class="view-density-group" id="densityGroupWrap" title="Thumbnail size">
-                <button class="density-btn" data-density="compact" title="Compact view (more thumbnails)">▪▪▪</button>
-                <button class="density-btn active" data-density="normal" title="Standard view">◼◼</button>
-                <button class="density-btn" data-density="large" title="Large view">◼</button>
+            <div class="view-density-group" id="densityGroupWrap" title="Thumbnail size" data-i18n-title="header.density_group_title">
+                <button class="density-btn" data-density="compact" title="Compact view (more thumbnails)" data-i18n-title="header.density_compact">▪▪▪</button>
+                <button class="density-btn active" data-density="normal" title="Standard view" data-i18n-title="header.density_normal">◼◼</button>
+                <button class="density-btn" data-density="large" title="Large view" data-i18n-title="header.density_large">◼</button>
             </div>
 
             <!-- Global Original Button (Spacebar) -->
-            <button class="global-before-btn" id="btnHoldBefore" title="Hold click or press SPACEBAR to view original" aria-label="Hold to preview original image">
+            <button class="global-before-btn" id="btnHoldBefore" title="Hold click or press SPACEBAR to view original" aria-label="Hold to preview original image" data-i18n-title="header.original_btn_title" data-i18n-aria="header.original_btn_title">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                <span>Original</span>
+                <span data-i18n="header.original_btn">Original</span>
             </button>
 
             <!-- Preset Counter -->
-            <div class="status-pill" id="statusPill" title="Visible presets / Total">
+            <div class="status-pill" id="statusPill" title="Visible presets / Total" data-i18n-title="header.status_pill_title">
                 <strong id="visibleCountText">550</strong>/<span id="totalCountText">550</span>
             </div>
         </div>
@@ -2722,23 +3179,23 @@
                 <span id="triagePresetName" class="triage-preset-name" title="Preset Name">Preset Name</span>
                 <span id="triageOriginTag" class="triage-origin-tag" title="Preset origin and source type">LUT</span>
                 <span id="triageQueueBadge" class="triage-badge-queue" title="Queue position">1/480</span>
-                <span id="triageSkippedBadge" class="triage-skipped-pill"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px;"><polyline points="9 18 15 12 9 6"></polyline></svg> Skipped</span>
+                <span id="triageSkippedBadge" class="triage-skipped-pill"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:2px;"><polyline points="9 18 15 12 9 6"></polyline></svg> <span data-i18n="carousel.skipped_badge">Skipped</span></span>
             </div>
 
             <div class="triage-center-controls">
                 <!-- Before / After Mode Toggle -->
-                <div id="btnTriageToggleMode" class="triage-mode-indicator" title="Toggle Before/After (Shortcut: SPACE or B)">
+                <div id="btnTriageToggleMode" class="triage-mode-indicator" title="Toggle Before/After (Shortcut: SPACE or B)" data-i18n-title="carousel.mode_toggle_title">
                     <div class="triage-indicator-dot"></div>
                     <span id="triageModeText" class="triage-mode-text">AFTER</span>
                 </div>
 
                 <!-- Switcher: 11 Scenes vs Single Large Photo -->
                 <div class="triage-view-mode-group" title="Carousel display mode (Shortcut: G)">
-                    <button id="btnTriageModeMulti" class="triage-display-btn active" title="View all 11 sample scenes at once (Shortcut: G)" aria-label="View 11 sample scenes">
+                    <button id="btnTriageModeMulti" class="triage-display-btn active" title="View all 11 sample scenes at once (Shortcut: G)" aria-label="View 11 sample scenes" data-i18n-title="carousel.mode_11_title">
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                         <span>11</span>
                     </button>
-                    <button id="btnTriageModeSingle" class="triage-display-btn" title="View single large photo (Shortcut: G)" aria-label="View single large photo">
+                    <button id="btnTriageModeSingle" class="triage-display-btn" title="View single large photo (Shortcut: G)" aria-label="View single large photo" data-i18n-title="carousel.mode_1_title">
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
                         <span>1</span>
                     </button>
@@ -2746,65 +3203,132 @@
 
                 <!-- Queue Mode: Pending vs All -->
                 <div class="triage-filter-group" title="Triage queue mode">
-                    <button id="btnTriageQueuePending" class="triage-filter-pill active" title="Continuous queue (excludes discarded presets)">Pending</button>
-                    <button id="btnTriageQueueAll" class="triage-filter-pill" title="Browse full catalog">All</button>
+                    <button id="btnTriageQueuePending" class="triage-filter-pill active" title="Continuous queue (excludes discarded presets)" data-i18n="carousel.queue_pending" data-i18n-title="carousel.queue_pending_title">Pending</button>
+                    <button id="btnTriageQueueAll" class="triage-filter-pill" title="Browse full catalog" data-i18n="carousel.queue_all" data-i18n-title="carousel.queue_all_title">All</button>
                 </div>
 
                 <!-- Folder / Category Dropdown in Carousel -->
-                <div class="select-group" title="Filter carousel by folder">
+                <div class="select-group" title="Filter carousel by folder" data-i18n-title="carousel.folder_filter_title">
                     <span class="select-icon">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                     </span>
-                    <select id="triageFolderSelect" class="compact-select" aria-label="Filter carousel by folder"></select>
+                    <select id="triageFolderSelect" class="compact-select" aria-label="Filter carousel by folder" data-i18n-aria="carousel.folder_filter_title"></select>
                 </div>
             </div>
 
             <div class="triage-actions-group">
-                <button id="btnTriageDiscard" class="btn-triage btn-triage-discard" title="Discard style from loop and move to next (Shortcut: D or Left Arrow)">
+                <button id="btnTriageDiscard" class="btn-triage btn-triage-discard" title="Discard style from loop and move to next (Shortcut: D or Left Arrow)" data-i18n-title="carousel.discard_title">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    <span class="action-label">Discard</span>
+                    <span class="action-label" data-i18n="carousel.discard_btn">Discard</span>
                 </button>
-                <button id="btnTriageSkip" class="btn-triage btn-triage-skip" title="Skip for now without discarding (Shortcut: S or Down Arrow)">
+                <button id="btnTriageSkip" class="btn-triage btn-triage-skip" title="Skip for now without discarding (Shortcut: S or Down Arrow)" data-i18n-title="carousel.skip_title">
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    <span class="action-label">Skip</span>
+                    <span class="action-label" data-i18n="carousel.skip_btn">Skip</span>
                 </button>
-                <button id="btnTriageKeep" class="btn-triage btn-triage-keep" title="Save to favorites and advance (Shortcut: K, ENTER, or Right Arrow)">
+                <button id="btnTriageKeep" class="btn-triage btn-triage-keep" title="Save to favorites and advance (Shortcut: K, ENTER, or Right Arrow)" data-i18n-title="carousel.keep_title">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <span class="action-label">Keep</span>
+                    <span class="action-label" data-i18n="carousel.keep_btn">Keep</span>
                 </button>
-                <button id="btnTriageStar" class="btn-triage btn-triage-star" title="Toggle favorite star (Shortcut: M)">
+                <button id="btnTriageStar" class="btn-triage btn-triage-star" title="Toggle favorite star (Shortcut: M)" data-i18n-title="carousel.star_title">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 </button>
-                <button id="btnTriageRestart" class="btn-triage btn-triage-restart" title="Reset loop and restore discarded presets (Shortcut: R)">
+                <button id="btnTriageRestart" class="btn-triage btn-triage-restart" title="Reset loop and restore discarded presets (Shortcut: R)" data-i18n-title="carousel.restart_title">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
                 </button>
-                <button id="btnTriageDrawer" class="btn-triage btn-triage-drawer" title="Open favorites & discarded drawer">
+                <button id="btnTriageDrawer" class="btn-triage btn-triage-drawer" title="Open favorites & discarded drawer" data-i18n-title="carousel.drawer_title">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
                     <span id="triageDrawerBadge">0</span>
                 </button>
             </div>
         </div>
 
-        <!-- GLOBAL RIGHT: INTENSITY + SINGLE COLLAPSE BUTTON -->
+        <!-- GLOBAL RIGHT: INTENSITY + DONATE / SUPPORT + BILINGUAL SWITCHER + SINGLE COLLAPSE BUTTON -->
         <div class="header-right">
             <!-- Global Intensity -->
-            <div class="intensity-control" title="Global grading intensity (0-100%)">
-                <span class="intensity-label">LUT</span>
+            <div class="intensity-control" title="Global grading intensity (0-100%)" data-i18n-title="header.intensity_title">
+                <span class="intensity-label" data-i18n="header.intensity_label">LUT</span>
                 <input type="range" id="globalIntensity" class="intensity-slider" min="0" max="100" value="100" aria-label="Global LUT grading intensity" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
                 <span id="globalIntensityText" class="intensity-val">100%</span>
             </div>
 
+            <!-- Donation & Support Trigger (Popover API + Anchor Positioning) -->
+            <div class="donation-dropdown-wrap" id="donationDropdownWrap">
+                <button class="btn-donate-trigger" id="btnDonationTrigger" popovertarget="donationPopover" type="button" title="Support this catalog / Donate" aria-label="Support this catalog / Donate" data-i18n-title="header.support_btn_title" data-i18n-aria="header.support_btn_title">
+                    <img src="kofi_symbol.png" alt="Ko-fi" class="kofi-icon-btn">
+                    <span class="donate-label" data-i18n="header.support_btn">Support</span>
+                </button>
+
+                <!-- Native Top Layer Popover Panel -->
+                <div class="donation-popover-panel" id="donationPopover" popover="auto" role="region" aria-label="Support and donation options">
+                    <div class="donation-header">
+                        <div class="donation-header-title">
+                            <span class="donation-badge" data-i18n="donation.badge">Support</span>
+                            <h4 data-i18n="donation.title">Support this Catalog</h4>
+                        </div>
+                        <button class="donation-close-btn" id="btnDonationClose" type="button" title="Close (Esc)" aria-label="Close donation popover" data-i18n-title="donation.close_title">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
+                    </div>
+
+                    <p class="donation-desc" data-i18n="donation.desc">
+                        This catalog is 100% free, open-source, and ad-free. If these styles save you time or help your photography, you can support ongoing maintenance through either platform:
+                    </p>
+
+                    <div class="donation-cards-group">
+                        <!-- Ko-fi Option -->
+                        <a href="https://ko-fi.com/dcorral" target="_blank" rel="noopener noreferrer" class="donation-card donation-card-kofi">
+                            <div class="donation-card-icon">
+                                <img src="kofi_symbol.png" alt="Ko-fi" class="kofi-icon-card">
+                            </div>
+                            <div class="donation-card-content">
+                                <div class="donation-card-top">
+                                    <strong class="donation-platform-name">Ko-fi</strong>
+                                    <span class="donation-pill" data-i18n="donation.kofi_pill">Quick Tip</span>
+                                </div>
+                                <span class="donation-card-meta" data-i18n="donation.kofi_meta">Card, Apple Pay, Google Pay or PayPal • No account required</span>
+                            </div>
+                            <svg class="donation-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                        </a>
+
+                        <!-- GitHub Sponsors Option -->
+                        <a href="https://github.com/sponsors/MercuryDCD" target="_blank" rel="noopener noreferrer" class="donation-card donation-card-github">
+                            <div class="donation-card-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                </svg>
+                            </div>
+                            <div class="donation-card-content">
+                                <div class="donation-card-top">
+                                    <strong class="donation-platform-name">GitHub Sponsors</strong>
+                                    <span class="donation-pill" data-i18n="donation.github_pill">GitHub Account</span>
+                                </div>
+                                <span class="donation-card-meta" data-i18n="donation.github_meta">One-time or monthly contribution via your GitHub profile</span>
+                            </div>
+                            <svg class="donation-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Switcher (ES / EN) -->
+            <button class="btn-lang-switcher" id="btnLangToggle" type="button" title="Switch language / Cambiar idioma" aria-label="Switch language / Cambiar idioma" data-i18n-title="meta.lang_switch_title">
+                <span class="lang-icon">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </span>
+                <span class="lang-code" id="langCodeLabel">ES</span>
+            </button>
+
             <!-- Single Collapse Top Bar Button -->
-            <button class="btn-header-collapse" id="btnCollapseHeader" title="Hide top bar (Shortcut: H)">
+            <button class="btn-header-collapse" id="btnCollapseHeader" title="Hide top bar (Shortcut: H)" data-i18n-title="header.collapse_header_title">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
             </button>
         </div>
     </header>
 
     <!-- Floating tab to restore top bar when hidden -->
-    <button class="btn-header-restore-tab" id="btnRestoreHeader" title="Show top bar (Shortcut: H)">
+    <button class="btn-header-restore-tab" id="btnRestoreHeader" title="Show top bar (Shortcut: H)" data-i18n-title="header.restore_header_title">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        <span>UI Bar</span> <kbd>H</kbd>
+        <span data-i18n="header.restore_header_label">Top Bar</span> <kbd>H</kbd>
     </button>
 
     <!-- MAIN CONTAINER -->
@@ -2823,7 +3347,7 @@
             <!-- WEBGL 2.0 CAROUSEL VIEWPORT -->
             <div class="triage-viewport-wrap" id="triageViewportWrap">
                 <!-- Fit/Fill framing button in carousel (visible in both 11-scenes and single photo views) -->
-                <button id="btnTriageFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)">
+                <button id="btnTriageFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)" data-i18n-title="carousel.fit_title">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
                     <span id="triageFitText">Full Photo</span> <kbd>F</kbd>
                 </button>
@@ -2832,8 +3356,8 @@
                 <div class="triage-single-wrap" id="triageSingleWrap" style="display: none;">
                     <canvas id="carouselGlCanvas" class="fit-contain"></canvas>
 
-                    <div class="triage-badge-fl-left">ORIGINAL</div>
-                    <div class="triage-badge-fl-right" id="triageRightBadge">PRESET APPLIED</div>
+                    <div class="triage-badge-fl-left" data-i18n="carousel.badge_original">ORIGINAL</div>
+                    <div class="triage-badge-fl-right" id="triageRightBadge" data-i18n="carousel.badge_applied">PRESET APPLIED</div>
 
                     <!-- Interactive A/B split curtain -->
                     <div class="carousel-split-bar" id="carouselSplitBar" style="left: 50%;">
@@ -2850,19 +3374,19 @@
                 <div class="triage-meta-hud" id="triageMetaHud">
                     <div class="triage-hud-header">
                         <span class="triage-hud-title" id="hudPresetTitle">Preset Name</span>
-                        <button id="btnToggleHudMin" class="btn-hud-toggle" title="Hide info (▾)">▾</button>
+                        <button id="btnToggleHudMin" class="btn-hud-toggle" title="Hide info (▾)" data-i18n-title="hud.hide_info">▾</button>
                     </div>
                     <div class="triage-hud-body" id="triageHudBody">
                         <div class="triage-hud-field">
-                            <span class="triage-hud-label">Tonal Profile (Look)</span>
+                            <span class="triage-hud-label" data-i18n="hud.look_label">Tonal Profile (Look)</span>
                             <p class="triage-hud-text" id="hudMetaLook">-</p>
                         </div>
                         <div class="triage-hud-field">
-                            <span class="triage-hud-label">Best For</span>
+                            <span class="triage-hud-label" data-i18n="hud.best_for_label">Best For</span>
                             <p class="triage-hud-text" id="hudMetaBestFor">-</p>
                         </div>
                         <div class="triage-hud-field">
-                            <span class="triage-hud-label">Heritage / Emulsion</span>
+                            <span class="triage-hud-label" data-i18n="hud.heritage_label">Heritage / Emulsion</span>
                             <p class="triage-hud-text" id="hudMetaHeritage">-</p>
                         </div>
                     </div>
@@ -2870,16 +3394,16 @@
 
                 <!-- FLOATING KEYBOARD SHORTCUTS BAR -->
                 <div class="triage-shortcuts-hud" id="triageShortcutsHud">
-                    <div class="triage-shortcut-item"><kbd>Space</kbd> Before/After</div>
-                    <div class="triage-shortcut-item"><kbd>K / → / Enter</kbd> Keep</div>
-                    <div class="triage-shortcut-item"><kbd>D / ←</kbd> Discard</div>
-                    <div class="triage-shortcut-item"><kbd>S / ↓</kbd> Skip</div>
-                    <div class="triage-shortcut-item"><kbd>↑ / ⌫</kbd> Prev</div>
-                    <div class="triage-shortcut-item"><kbd>M</kbd> Star</div>
-                    <div class="triage-shortcut-item"><kbd>G</kbd> 11/1</div>
-                    <div class="triage-shortcut-item"><kbd>F</kbd> Fit/Fill</div>
-                    <div class="triage-shortcut-item"><kbd>H</kbd> UI Bar</div>
-                    <div class="triage-shortcut-item"><kbd>R</kbd> Reset</div>
+                    <div class="triage-shortcut-item"><kbd>Space</kbd> <span data-i18n="shortcuts.space">Before/After</span></div>
+                    <div class="triage-shortcut-item"><kbd>K / → / Enter</kbd> <span data-i18n="shortcuts.keep">Keep</span></div>
+                    <div class="triage-shortcut-item"><kbd>D / ←</kbd> <span data-i18n="shortcuts.discard">Discard</span></div>
+                    <div class="triage-shortcut-item"><kbd>S / ↓</kbd> <span data-i18n="shortcuts.skip">Skip</span></div>
+                    <div class="triage-shortcut-item"><kbd>↑ / ⌫</kbd> <span data-i18n="shortcuts.prev">Prev</span></div>
+                    <div class="triage-shortcut-item"><kbd>M</kbd> <span data-i18n="shortcuts.star">Star</span></div>
+                    <div class="triage-shortcut-item"><kbd>G</kbd> <span data-i18n="shortcuts.scenes">11/1</span></div>
+                    <div class="triage-shortcut-item"><kbd>F</kbd> <span data-i18n="shortcuts.fit">Fit/Fill</span></div>
+                    <div class="triage-shortcut-item"><kbd>H</kbd> <span data-i18n="shortcuts.uibar">Top Bar</span></div>
+                    <div class="triage-shortcut-item"><kbd>R</kbd> <span data-i18n="shortcuts.reset">Reset</span></div>
                 </div>
 
                 <!-- EMPTY STATE SCREEN (END OF TRIAGE) -->
@@ -2888,19 +3412,19 @@
                         <div class="triage-empty-icon">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #10b981;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                         </div>
-                        <h2 class="triage-empty-title" id="emptyStateTitle">Triage Completed!</h2>
-                        <p class="triage-empty-desc" id="emptyStateDesc">
+                        <h2 class="triage-empty-title" id="emptyStateTitle" data-i18n="empty.title_all">Triage Completed!</h2>
+                        <p class="triage-empty-desc" id="emptyStateDesc" data-i18n="empty.desc_html">
                             You have reviewed all styles in this selection.<br>
                             Your favorites are saved and ready.
                         </p>
                         <div style="display: flex; gap: 10px; margin-top: 8px;">
                             <button id="btnEmptyRestart" class="btn-triage btn-triage-keep">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
-                                <span>Reset Loop</span>
+                                <span data-i18n="empty.btn_reset">Reset Loop</span>
                             </button>
                             <button id="btnEmptyViewGrid" class="btn-triage btn-triage-drawer">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                                <span>View in Grid</span>
+                                <span data-i18n="empty.btn_grid">View in Grid</span>
                             </button>
                         </div>
                     </div>
@@ -2915,14 +3439,14 @@
             <div class="drawer-tabs">
                 <button id="tabDrawerSaved" class="drawer-tab active">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <span>Favorites (<span id="drawerSavedCount">0</span>)</span>
+                    <span id="drawerSavedTabLabel">Favorites (<span id="drawerSavedCount">0</span>)</span>
                 </button>
                 <button id="tabDrawerDiscarded" class="drawer-tab">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                    <span>Discarded (<span id="drawerDiscardedCount">0</span>)</span>
+                    <span id="drawerDiscardedTabLabel">Discarded (<span id="drawerDiscardedCount">0</span>)</span>
                 </button>
             </div>
-            <button id="btnDrawerClose" class="drawer-close-btn" title="Close drawer (Esc)" aria-label="Close drawer">
+            <button id="btnDrawerClose" class="drawer-close-btn" title="Close drawer (Esc)" aria-label="Close drawer" data-i18n-title="drawer.close_title">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
@@ -2930,13 +3454,13 @@
             <!-- Saved Section -->
             <div id="drawerSavedSection" style="display: flex; flex-direction: column; gap: 10px;">
                 <div class="drawer-toolbar">
-                    <button id="btnCopyForEOS" class="drawer-action-btn" title="Copy preset names for Canon EOS camera user slots">
+                    <button id="btnCopyForEOS" class="drawer-action-btn" title="Copy preset names for Canon EOS camera user slots" data-i18n-title="drawer.copy_eos">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                        <span>Copy for EOS Utility (Top 3)</span>
+                        <span data-i18n="drawer.copy_eos">Copy for EOS Utility (Top 3)</span>
                     </button>
-                    <button id="btnExportSavedJSON" class="drawer-action-btn" title="Export your favorites as a JSON file">
+                    <button id="btnExportSavedJSON" class="drawer-action-btn" title="Export your favorites as a JSON file" data-i18n-title="drawer.export_json">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        <span>Export JSON</span>
+                        <span data-i18n="drawer.export_json">Export JSON</span>
                     </button>
                 </div>
                 <div class="drawer-list" id="drawerSavedList"></div>
@@ -2947,10 +3471,25 @@
                 <div class="drawer-toolbar">
                     <button id="btnRestoreAllDiscarded" class="drawer-action-btn" style="color: var(--accent);">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg>
-                        <span>Restore all discarded</span>
+                        <span data-i18n="drawer.restore_all">Restore all discarded</span>
                     </button>
                 </div>
                 <div class="drawer-list" id="drawerDiscardedList"></div>
+            </div>
+        </div>
+        <div class="drawer-footer">
+            <div class="drawer-donation-callout">
+                <div class="drawer-donation-info">
+                    <span class="drawer-donation-icon"><img src="kofi_symbol.png" alt="Ko-fi" class="kofi-icon-btn"></span>
+                    <div class="drawer-donation-texts">
+                        <strong class="drawer-donation-title" data-i18n="drawer.support_title">Support this Catalog</strong>
+                        <span class="drawer-donation-desc" data-i18n="drawer.support_desc">Kept free & maintained by community donations</span>
+                    </div>
+                </div>
+                <button type="button" class="btn-drawer-donate" popovertarget="donationPopover" title="View donation options">
+                    <img src="kofi_symbol.png" alt="Ko-fi" class="kofi-icon-btn">
+                    <span data-i18n="drawer.support_btn">Support</span>
+                </button>
             </div>
         </div>
     </dialog>
@@ -2958,19 +3497,19 @@
     <!-- SAVE WITH NOTE MODAL IN CAROUSEL -->
     <div id="carouselKeepModal" class="keep-modal-backdrop">
         <div class="keep-modal-box">
-            <h3 style="font-size: 16px; font-weight: 700; color: #fff;">Save to Favorites</h3>
-            <p style="font-size: 12px; color: var(--text-muted);">Assign a custom name or notes for your session:</p>
+            <h3 style="font-size: 16px; font-weight: 700; color: #fff;" data-i18n="keep_modal.title">Save to Favorites</h3>
+            <p style="font-size: 12px; color: var(--text-muted);" data-i18n="keep_modal.desc">Assign a custom name or notes for your session:</p>
             <div style="display: flex; flex-direction: column; gap: 4px;">
-                <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Custom Name</label>
+                <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;" data-i18n="keep_modal.name_label">Custom Name</label>
                 <input type="text" id="keepModalCustomName" class="keep-input-field">
             </div>
             <div style="display: flex; flex-direction: column; gap: 4px;">
-                <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Notes / Tonal Feel</label>
-                <input type="text" id="keepModalCustomDesc" class="keep-input-field" placeholder="e.g., Warm tones for golden hour portraits...">
+                <label style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;" data-i18n="keep_modal.notes_label">Notes / Tonal Feel</label>
+                <input type="text" id="keepModalCustomDesc" class="keep-input-field" placeholder="e.g., Warm tones for golden hour portraits..." data-i18n-placeholder="keep_modal.notes_placeholder">
             </div>
             <div style="display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px;">
-                <button id="btnKeepModalCancel" class="btn-triage" style="background: transparent; color: var(--text-muted); border-color: var(--border-color);">Cancel</button>
-                <button id="btnKeepModalConfirm" class="btn-triage btn-triage-keep">Save (Enter)</button>
+                <button id="btnKeepModalCancel" class="btn-triage" style="background: transparent; color: var(--text-muted); border-color: var(--border-color);" data-i18n="keep_modal.cancel_btn">Cancel</button>
+                <button id="btnKeepModalConfirm" class="btn-triage btn-triage-keep" data-i18n="keep_modal.save_btn">Save (Enter)</button>
             </div>
         </div>
     </div>
@@ -2980,14 +3519,14 @@
         <div class="modal-window">
             <div class="modal-header">
                 <div class="modal-title-wrap">
-                    <span id="modalCatBadge" class="badge-cat">Category</span>
+                    <span id="modalCatBadge" class="badge-cat" data-i18n="modal.category_badge">Category</span>
                     <span id="modalOriginTag" class="triage-origin-tag" title="Preset origin and source type">LUT</span>
                     <h2 id="modalPresetTitle" class="modal-title">Preset Name</h2>
-                    <button id="modalStarBtn" class="btn-star" title="Toggle favorite" aria-label="Toggle favorite star">
+                    <button id="modalStarBtn" class="btn-star" title="Toggle favorite" aria-label="Toggle favorite star" data-i18n-title="modal.star_title" data-i18n-aria="modal.star_title">
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                     </button>
                 </div>
-                <button id="modalCloseBtn" class="modal-close-btn" title="Close (Esc)" aria-label="Close modal dialog">
+                <button id="modalCloseBtn" class="modal-close-btn" title="Close (Esc)" aria-label="Close modal dialog" data-i18n-title="modal.close_title" data-i18n-aria="modal.close_title">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
             </div>
@@ -2995,9 +3534,9 @@
             <div class="modal-body">
                 <div class="modal-viewport-area" id="modalViewport">
                     <canvas id="modalGlCanvas" class="modal-gl-canvas"></canvas>
-                    <div class="viewport-badge-left">ORIGINAL</div>
+                    <div class="viewport-badge-left" data-i18n="carousel.badge_original">ORIGINAL</div>
                     <div class="viewport-badge-right" id="modalRightBadge">PRESET</div>
-                    <button id="btnModalFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)" aria-label="Toggle image fit or fill framing">
+                    <button id="btnModalFit" class="triage-btn-fit" title="Toggle between Fit (full photo) and Fill (crop) (Shortcut: F)" aria-label="Toggle image fit or fill framing" data-i18n-title="carousel.fit_title">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
                         <span id="modalFitText">Full Photo</span> <kbd>F</kbd>
                     </button>
@@ -3009,23 +3548,23 @@
                 <div class="modal-sidebar">
                     <div class="meta-section">
                         <div class="meta-field">
-                            <span class="meta-label">Tonal Profile (Look)</span>
+                            <span class="meta-label" data-i18n="modal.look_label">Tonal Profile (Look)</span>
                             <p class="meta-text" id="modalMetaLook">-</p>
                         </div>
                         <div class="meta-field">
-                            <span class="meta-label">Best For</span>
+                            <span class="meta-label" data-i18n="modal.best_for_label">Best For</span>
                             <p class="meta-text" id="modalMetaBestFor">-</p>
                         </div>
                         <div class="meta-field">
-                            <span class="meta-label">Emulsion / Historical Heritage</span>
+                            <span class="meta-label" data-i18n="modal.heritage_label">Emulsion / Historical Heritage</span>
                             <p class="meta-text" id="modalMetaHeritage">-</p>
                         </div>
                         <div class="meta-field">
-                            <span class="meta-label">Origin / Author</span>
+                            <span class="meta-label" data-i18n="modal.author_label">Origin / Author</span>
                             <p class="meta-text" id="modalMetaAuthor">-</p>
                         </div>
                         <div class="meta-field">
-                            <span class="meta-label">Modal Intensity</span>
+                            <span class="meta-label" data-i18n="modal.intensity_label">Modal Intensity</span>
                             <div class="intensity-control" style="margin-top: 4px;">
                                 <input type="range" id="modalIntensitySlider" class="intensity-slider" min="0" max="100" value="100" style="width: 100%;" aria-label="Modal inspection grading intensity" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
                                 <span id="modalIntensityVal" class="intensity-val">100%</span>
@@ -3036,12 +3575,16 @@
                     <div class="meta-actions-box">
                         <a id="modalDownloadBtn" href="#" download class="btn-download-modal">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            <span>Download Camera File</span>
+                            <span data-i18n="modal.download_btn">Download Camera File</span>
                         </a>
                         <div class="modal-nav-row">
-                            <button id="modalPrevBtn" class="modal-nav-btn" aria-label="Previous preset">← Prev (←)</button>
-                            <button id="modalNextBtn" class="modal-nav-btn" aria-label="Next preset">Next (→) →</button>
+                            <button id="modalPrevBtn" class="modal-nav-btn" aria-label="Previous preset"><kbd>←</kbd> <span data-i18n="modal.prev_btn">Prev</span></button>
+                            <button id="modalNextBtn" class="modal-nav-btn" aria-label="Next preset"><span data-i18n="modal.next_btn">Next</span> <kbd>→</kbd></button>
                         </div>
+                        <button id="modalDonateBtn" class="btn-modal-donate" type="button" popovertarget="donationPopover" title="Support catalog maintenance">
+                            <img src="kofi_symbol.png" alt="Ko-fi" class="kofi-icon-btn">
+                            <span data-i18n="modal.donate_btn">Support catalog maintenance</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -3210,6 +3753,15 @@
 
             const drawerDiscardedCount = document.getElementById('drawerDiscardedCount');
             if (drawerDiscardedCount) drawerDiscardedCount.innerText = discardedIdsSet.size;
+
+            const drawerSavedTabLabel = document.getElementById('drawerSavedTabLabel');
+            if (drawerSavedTabLabel && window.I18N) {
+                drawerSavedTabLabel.innerHTML = `${window.I18N.t('drawer.tab_favorites', { count: `<span id="drawerSavedCount">${savedPresetsList.length}</span>` })}`;
+            }
+            const drawerDiscardedTabLabel = document.getElementById('drawerDiscardedTabLabel');
+            if (drawerDiscardedTabLabel && window.I18N) {
+                drawerDiscardedTabLabel.innerHTML = `${window.I18N.t('drawer.tab_discarded', { count: `<span id="drawerDiscardedCount">${discardedIdsSet.size}</span>` })}`;
+            }
         }
 
         function showToast(msg) {
@@ -3275,14 +3827,14 @@
                 } else {
                     renderCurrentTriage();
                 }
-                showToast(`Sample changed: ${sample.name}`);
+                showToast(window.I18N ? window.I18N.t('toasts.sample_changed', { name: sample.name }) : `Sample changed: ${sample.name}`);
             };
             img.src = sample.file;
         }
 
         async function handleUserPhotoFile(file) {
             try {
-                showToast(`Loading ${file.name}...`);
+                showToast(window.I18N && window.I18N.locale === 'es' ? `Cargando ${file.name}...` : `Loading ${file.name}...`);
                 const res = await RawPreviewExtractor.loadFile(file);
                 const img = new Image();
                 img.onload = () => {
@@ -3354,14 +3906,14 @@
                                 activeImageSource = img;
                                 activeImageName = file.name;
                                 setTriageDisplayMode('single');
-                                showToast(`Enlarging your photo: ${file.name}`);
+                                showToast(window.I18N && window.I18N.locale === 'es' ? `Ampliando tu foto: ${file.name}` : `Enlarging your photo: ${file.name}`);
                             });
                             multiSceneData.unshift(customEntry);
                             container.insertBefore(card, container.firstChild);
                         } else if (customEntry) {
                             customEntry.img = img;
                             customEntry.texture = offscreenLutEngine.createImageTexture(img);
-                            customEntry.card.querySelector('.triage-scene-title').innerText = `⭐ Your photo: ${file.name}`;
+                            customEntry.card.querySelector('.triage-scene-title').innerText = (window.I18N && window.I18N.locale === 'es' ? `⭐ Tu foto: ${file.name}` : `⭐ Your photo: ${file.name}`);
                         }
                         if (customEntry) {
                             customEntry.canvas.width = 600;
@@ -3372,7 +3924,7 @@
                     if (currentView === 'grid') renderAllVisibleCards();
                     else renderCurrentTriage();
 
-                    showToast(`Custom photo loaded: ${file.name}`);
+                    showToast(window.I18N && window.I18N.locale === 'es' ? `Foto propia cargada: ${file.name}` : `Custom photo loaded: ${file.name}`);
                 };
                 img.src = res.url;
             } catch (err) {
@@ -3473,12 +4025,18 @@
                 }
             }
 
+            const isSpanish = window.I18N && window.I18N.locale === 'es';
+            const styleWord = isSpanish ? 'Estilo' : 'Style';
+            const canonStyleWord = isSpanish ? 'Estilo Canon' : 'Canon Style';
             const label = isLut ?
                 (authorShort ? `LUT · ${authorShort}` : 'LUT') :
-                (authorShort ? `Style · ${authorShort}` : 'Canon Style');
+                (authorShort ? `${styleWord} · ${authorShort}` : canonStyleWord);
 
-            const fullSource = p.source ? `Source: ${p.source}` : (isLut ? 'Source: External 3D LUT' : 'Source: Native Canon Picture Style');
-            const authorDetail = p.author ? ` | Author/Pack: ${p.author}` : '';
+            const sourcePrefix = isSpanish ? 'Origen' : 'Source';
+            const defaultExtLut = isSpanish ? 'Origen: 3D LUT externo' : 'Source: External 3D LUT';
+            const defaultNatStyle = isSpanish ? 'Origen: Estilo Canon nativo' : 'Source: Native Canon Picture Style';
+            const fullSource = p.source ? `${sourcePrefix}: ${p.source}` : (isLut ? defaultExtLut : defaultNatStyle);
+            const authorDetail = p.author ? ` | ${isSpanish ? 'Autor/Pack' : 'Author/Pack'}: ${p.author}` : '';
 
             return {
                 isLut,
@@ -3543,12 +4101,17 @@
                 const isFav = realFavoritesSet.has(p.id);
                 const catColor = window.CANON_CATEGORIES.find(c => c.id === p.cat)?.color || { border: '#38bdf8', badge: '#0284c7' };
                 const originInfo = getPresetOrigin(p);
+                const isSpanish = window.I18N && window.I18N.locale === 'es';
+                const originBadgeText = originInfo.isLut ? 'LUT' : (isSpanish ? 'Estilo' : 'Style');
+                const dlTitle = isSpanish ? 'Descargar archivo para cámara' : 'Download file';
+                const dlText = isSpanish ? 'Descargar' : 'Download';
+                const peekTitle = isSpanish ? 'Mantén pulsado o barra espaciadora para ver el original' : 'Hold click or press SPACEBAR to view original';
 
                 card.innerHTML = `
                     <div class="card-header">
                         <div class="card-tags">
-                            <span class="badge-cat" style="background: ${catColor.badge}; color: #fff;">${p.catLabel}</span>
-                            <span class="badge-origin-tiny ${originInfo.isLut ? 'is-lut' : 'is-native'}" title="${originInfo.title}">${originInfo.isLut ? 'LUT' : 'Style'}</span>
+                            <span class="badge-cat" style="background: ${catColor.badge}; color: #fff;">${window.I18N ? window.I18N.getCategory(p.cat) : p.catLabel}</span>
+                            <span class="badge-origin-tiny ${originInfo.isLut ? 'is-lut' : 'is-native'}" title="${originInfo.title}">${originBadgeText}</span>
                         </div>
                         <button class="btn-star ${isFav ? 'favorited' : ''}" title="Toggle favorite" data-star-id="${p.id}">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -3558,13 +4121,13 @@
                         <canvas class="card-canvas"></canvas>
                         <div class="card-canvas-shimmer"></div>
                         <div class="card-overlay-actions">
-                            <button class="btn-quick-peek" data-peek-id="${p.id}">
+                            <button class="btn-quick-peek" data-peek-id="${p.id}" title="${peekTitle}">
                                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                                 <span>Original</span>
                             </button>
-                            <a class="btn-download-quick" href="${p.download}" download="${p.filename}" title="Download file">
+                            <a class="btn-download-quick" href="${p.download}" download="${p.filename}" title="${dlTitle}">
                                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                                <span>Download</span>
+                                <span>${dlText}</span>
                             </a>
                         </div>
                     </div>
@@ -3626,7 +4189,7 @@
                 realFavoritesSet.delete(id);
                 savedPresetsList = savedPresetsList.filter(s => s.id !== id);
                 if (starBtn) starBtn.classList.remove('favorited');
-                showToast('Removed from favorites');
+                showToast(window.I18N && window.I18N.locale === 'es' ? 'Eliminado de favoritos' : 'Removed from favorites');
             } else {
                 realFavoritesSet.add(id);
                 discardedIdsSet.delete(id);
@@ -3643,7 +4206,7 @@
                     });
                 }
                 if (starBtn) starBtn.classList.add('favorited');
-                showToast('Added to favorites ⭐');
+                showToast(window.I18N && window.I18N.locale === 'es' ? 'Añadido a favoritos ⭐' : 'Added to favorites ⭐');
             }
 
             persistAllState();
@@ -3678,12 +4241,17 @@
             const sel = document.getElementById('triageFolderSelect');
             if (!sel) return;
 
-            let html = `<option value="all">All folders (${getPendingCountForFolder('all')} active / ${window.CANON_PRESETS.length})</option>`;
-            html += `<option value="favorites">⭐ Favorites (${getPendingCountForFolder('favorites')} active / ${realFavoritesSet.size})</option>`;
+            const allFoldersText = window.I18N ? window.I18N.t('carousel.all_folders') : 'All folders';
+            const favsText = window.I18N ? window.I18N.t('categories.favorites') : 'Favorites';
+            const activeWord = window.I18N ? window.I18N.t('carousel.badge_active') : 'active';
+
+            let html = `<option value="all">${allFoldersText} (${getPendingCountForFolder('all')} ${activeWord} / ${window.CANON_PRESETS.length})</option>`;
+            html += `<option value="favorites">⭐ ${favsText} (${getPendingCountForFolder('favorites')} ${activeWord} / ${realFavoritesSet.size})</option>`;
 
             window.CANON_CATEGORIES.forEach(c => {
                 const pend = getPendingCountForFolder(c.id);
-                html += `<option value="${c.id}">${c.num}. ${c.label} (${pend} active / ${c.count})</option>`;
+                const catLabel = window.I18N ? window.I18N.getCategory(c.id) : c.label;
+                html += `<option value="${c.id}">${c.num}. ${catLabel} (${pend} ${activeWord} / ${c.count})</option>`;
             });
 
             sel.innerHTML = html;
@@ -3708,7 +4276,7 @@
             isTriageBefore = false;
             updateTriageModeUI();
             renderCurrentTriage();
-            showToast('Filtering carousel by folder');
+            showToast(window.I18N && window.I18N.locale === 'es' ? 'Filtrando carrusel por carpeta' : 'Filtering carousel by folder');
         }
 
         function setTriageFilterMode(mode) {
@@ -3736,18 +4304,24 @@
             if (queue.length === 0) {
                 emptyState.style.display = 'flex';
                 hud.style.display = 'none';
-                document.getElementById('triagePresetName').innerText = 'End of triage';
+                document.getElementById('triagePresetName').innerText = window.I18N ? window.I18N.t('carousel.end_of_triage') : 'End of triage';
                 document.getElementById('triageQueueBadge').innerText = '0 / 0';
                 document.getElementById('triageSkippedBadge').style.display = 'none';
 
                 const catObj = window.CANON_CATEGORIES.find(c => c.id === triageSelectedFolder);
-                let folderLabel = (triageSelectedFolder === 'all') ? 'the entire catalog' : (catObj ? catObj.label : triageSelectedFolder);
-                if (triageSelectedFolder === 'favorites') folderLabel = 'Favorites';
+                let folderLabel = (triageSelectedFolder === 'all') 
+                    ? (window.I18N ? window.I18N.t('carousel.entire_catalog') : 'the entire catalog') 
+                    : (window.I18N ? window.I18N.getCategory(triageSelectedFolder) : (catObj ? catObj.label : triageSelectedFolder));
+                if (triageSelectedFolder === 'favorites') folderLabel = window.I18N ? window.I18N.t('categories.favorites') : 'Favorites';
 
-                document.getElementById('emptyStateTitle').innerText = (triageSelectedFolder === 'all') ? 'Triage Completed!' : `Folder Completed: ${folderLabel}!`;
+                document.getElementById('emptyStateTitle').innerText = (triageSelectedFolder === 'all') 
+                    ? (window.I18N ? window.I18N.t('empty.title_all') : 'Triage Completed!') 
+                    : (window.I18N ? window.I18N.t('empty.title_folder', { folder: folderLabel }) : `Folder Completed: ${folderLabel}!`);
                 document.getElementById('emptyStateDesc').innerHTML = (triageSelectedFolder === 'favorites' && realFavoritesSet.size === 0)
-                    ? `You have no favorites saved yet.<br>Mark styles with ⭐ in the Grid or Carousel to review them here.`
-                    : `You have reviewed all styles in <b>${folderLabel}</b>.<br>You have <b style="color: #f59e0b;">${realFavoritesSet.size}</b> saved favorites and <b style="color: #f87171;">${discardedIdsSet.size}</b> discarded.<br><br>Click "Reset Loop" for a new pass or switch folders.`;
+                    ? (window.I18N ? window.I18N.t('empty.desc_no_favs') : `You have no favorites saved yet.<br>Mark styles with ⭐ in the Grid or Carousel to review them here.`)
+                    : (window.I18N && window.I18N.locale === 'es'
+                        ? `Has revisado todos los estilos en <b>${folderLabel}</b>.<br>Tienes <b style="color: #f59e0b;">${realFavoritesSet.size}</b> favoritos guardados y <b style="color: #f87171;">${discardedIdsSet.size}</b> descartados.<br><br>Haz clic en "Reiniciar Bucle" para una nueva pasada o cambia de carpeta.`
+                        : `You have reviewed all styles in <b>${folderLabel}</b>.<br>You have <b style="color: #f59e0b;">${realFavoritesSet.size}</b> saved favorites and <b style="color: #f87171;">${discardedIdsSet.size}</b> discarded.<br><br>Click "Reset Loop" for a new pass or switch folders.`);
                 return;
             }
 
@@ -3767,12 +4341,12 @@
 
             const originTag = document.getElementById('triageOriginTag');
             if (originTag) {
-                originTag.innerText = originInfo.isLut ? 'LUT' : 'Style';
+                originTag.innerText = originInfo.isLut ? 'LUT' : (window.I18N && window.I18N.locale === 'es' ? 'Estilo' : 'Style');
                 originTag.title = `${originInfo.label} — ${originInfo.title || ''}`;
                 originTag.className = `triage-origin-tag ${originInfo.isLut ? 'is-lut' : 'is-native'}`;
             }
 
-            document.getElementById('triageCatBadge').innerText = p.catLabel;
+            document.getElementById('triageCatBadge').innerText = window.I18N ? window.I18N.getCategory(p.cat) : p.catLabel;
             const catColor = window.CANON_CATEGORIES.find(c => c.id === p.cat)?.color || { badge: '#0284c7' };
             document.getElementById('triageCatBadge').style.background = catColor.badge;
 
@@ -3832,6 +4406,10 @@
             multiSceneData.length = 0;
 
             window.CANON_SAMPLES.forEach((sample, idx) => {
+                const sInfo = window.I18N ? window.I18N.getSample(sample.id) : null;
+                const sName = sInfo ? sInfo.name : sample.name;
+                const sDesc = sInfo ? sInfo.desc : sample.desc;
+
                 const card = document.createElement('div');
                 card.className = 'triage-scene-card';
                 card.setAttribute('data-scene-id', sample.id);
@@ -3842,7 +4420,7 @@
                         <span class="triage-scene-hint">🔍 Click to enlarge</span>
                     </div>
                     <div class="triage-scene-footer">
-                        <span class="triage-scene-title" title="${sample.name}: ${sample.desc}">${sample.name}</span>
+                        <span class="triage-scene-title" title="${sName}: ${sDesc}">${sName}</span>
                         <span class="triage-scene-badge after">PRESET</span>
                     </div>
                 `;
@@ -3864,7 +4442,7 @@
                 card.addEventListener('click', () => {
                     loadSamplePhoto(sample);
                     setTriageDisplayMode('single');
-                    showToast(`Enlarging: ${sample.name} (Press G to return to 11 scenes)`);
+                    showToast(window.I18N && window.I18N.locale === 'es' ? `Ampliando: ${sName} (Pulsa G para volver a 11 escenas)` : `Enlarging: ${sName} (Press G to return to 11 scenes)`);
                 });
 
                 container.appendChild(card);
@@ -3901,7 +4479,7 @@
                         entry.badge.innerText = 'ORIGINAL';
                     } else {
                         entry.badge.className = 'triage-scene-badge after';
-                        entry.badge.innerText = 'PRESET';
+                        entry.badge.innerText = window.I18N && window.I18N.locale === 'es' ? 'ESTILO' : 'PRESET';
                     }
                 }
             } catch (err) {
@@ -3956,6 +4534,20 @@
             }
         }
 
+        function updateMultiSceneTitles() {
+            multiSceneData.forEach(entry => {
+                if (entry.isCustom) return;
+                const titleEl = entry.card.querySelector('.triage-scene-title');
+                if (titleEl && window.I18N) {
+                    const sInfo = window.I18N.getSample(entry.sample.id);
+                    if (sInfo) {
+                        titleEl.innerText = sInfo.name;
+                        titleEl.title = `${sInfo.name}: ${sInfo.desc}`;
+                    }
+                }
+            });
+        }
+
         function updateTriageModeUI() {
             const btn = document.getElementById('btnTriageToggleMode');
             const txt = document.getElementById('triageModeText');
@@ -3963,16 +4555,16 @@
 
             if (isTriageBefore) {
                 btn.classList.add('is-before');
-                txt.innerText = 'BEFORE';
+                txt.innerText = window.I18N ? window.I18N.t('carousel.before_mode') : 'BEFORE';
                 if (rBadge) {
-                    rBadge.innerText = 'ORIGINAL (UNPROCESSED)';
+                    rBadge.innerText = window.I18N ? window.I18N.t('carousel.badge_original') : 'ORIGINAL (UNPROCESSED)';
                     rBadge.style.color = '#f87171';
                 }
             } else {
                 btn.classList.remove('is-before');
-                txt.innerText = 'AFTER';
+                txt.innerText = window.I18N ? window.I18N.t('carousel.after_mode') : 'AFTER';
                 if (rBadge) {
-                    rBadge.innerText = 'PRESET APPLIED';
+                    rBadge.innerText = window.I18N ? window.I18N.t('carousel.badge_applied') : 'PRESET APPLIED';
                     rBadge.style.color = '#34d399';
                 }
             }
@@ -3990,9 +4582,10 @@
             // so existing favorites are never stripped automatically.
 
             persistAllState();
+            const isSpanish = window.I18N && window.I18N.locale === 'es';
             showToast(realFavoritesSet.has(p.id)
-                ? `✕ Hidden from loop (kept in ⭐ Favorites): ${p.name}`
-                : `✕ Discarded from loop: ${p.name}`);
+                ? (isSpanish ? `✕ Ocultado de la cola (conservado en ⭐ Favoritos): ${p.name}` : `✕ Hidden from loop (kept in ⭐ Favorites): ${p.name}`)
+                : (isSpanish ? `✕ Descartado de la cola: ${p.name}` : `✕ Discarded from loop: ${p.name}`));
 
             isTriageBefore = false;
             updateTriageModeUI();
@@ -4019,7 +4612,7 @@
             currentPinnedPresetId = null;
             skippedIdsSet.add(p.id);
             persistAllState();
-            showToast(`↷ Skipped (remains in loop): ${p.name}`);
+            showToast(window.I18N && window.I18N.locale === 'es' ? `↷ Saltado (permanece en la cola): ${p.name}` : `↷ Skipped (remains in loop): ${p.name}`);
 
             isTriageBefore = false;
             updateTriageModeUI();
@@ -4062,7 +4655,7 @@
             }
 
             persistAllState();
-            showToast(`★ Saved to favorites: ${finalName}`);
+            showToast(window.I18N && window.I18N.locale === 'es' ? `★ Guardado en favoritos: ${finalName}` : `★ Saved to favorites: ${finalName}`);
 
             isTriageBefore = false;
             updateTriageModeUI();
@@ -4127,19 +4720,25 @@
             updateTriageModeUI();
             updateDrawerLists();
             renderCurrentTriage();
-            showToast(`🔄 Carousel reset to start (your ${countFav} favorites ⭐ are preserved).`);
+            showToast(window.I18N && window.I18N.locale === 'es'
+                ? `🔄 Carrusel reiniciado al inicio (se conservan tus ${countFav} favoritos ⭐).`
+                : `🔄 Carousel reset to start (your ${countFav} favorites ⭐ are preserved).`);
         }
 
         function toggleFitMode() {
             fitMode = (fitMode === 'contain') ? 'cover' : 'contain';
             localStorage.setItem('canon_triage_fit', fitMode);
             applyFitMode();
-            showToast(fitMode === 'contain' ? '⛶ Full Photo (no crop)' : '🔲 Fill Crop (full frame)');
+            showToast(fitMode === 'contain'
+                ? (window.I18N ? window.I18N.t('toasts.fit_contain') : '⛶ Full Photo (no crop)')
+                : (window.I18N ? window.I18N.t('toasts.fit_cover') : '🔲 Fill Crop (full frame)'));
         }
 
         function applyFitMode() {
             const isContain = fitMode === 'contain';
-            const labelText = isContain ? 'Full Photo' : 'Fill Crop';
+            const labelText = isContain 
+                ? (window.I18N ? window.I18N.t('carousel.fit_full') : 'Full Photo')
+                : (window.I18N ? window.I18N.t('carousel.fit_fill') : 'Fill Crop');
 
             // Context classes on containers
             const viewportWrap = document.getElementById('triageViewportWrap');
@@ -4185,6 +4784,10 @@
             if (txt) txt.innerText = labelText;
             const modalTxt = document.getElementById('modalFitText');
             if (modalTxt) modalTxt.innerText = labelText;
+
+            if (modal && modal.open) {
+                requestAnimationFrame(() => syncModalSplit(modalSplitPos, false));
+            }
         }
 
         // ==========================================
@@ -4231,7 +4834,8 @@
             savedContainer.innerHTML = '';
 
             if (savedPresetsList.length === 0) {
-                savedContainer.innerHTML = `<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:30px;">You haven't saved any presets yet.</div>`;
+                const emptyMsg = window.I18N ? window.I18N.t('drawer.no_favorites') : "You haven't saved any presets yet.";
+                savedContainer.innerHTML = `<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:30px;">${emptyMsg}</div>`;
             } else {
                 savedPresetsList.forEach((item, idx) => {
                     const card = document.createElement('div');
@@ -4239,7 +4843,7 @@
                     card.innerHTML = `
                         <div class="saved-item-top">
                             <span class="saved-item-title">#${idx+1} ${item.custom_name}</span>
-                            <button class="btn-item-del" title="Remove from favorites" data-del-id="${item.id}">
+                            <button class="btn-item-del" title="${window.I18N ? window.I18N.t('drawer.remove_title') : 'Remove from favorites'}" data-del-id="${item.id}">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                             </button>
                         </div>
@@ -4258,7 +4862,8 @@
             discardedContainer.innerHTML = '';
 
             if (discardedIdsSet.size === 0) {
-                discardedContainer.innerHTML = `<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:30px;">No discarded presets.</div>`;
+                const emptyMsg = window.I18N ? window.I18N.t('drawer.no_discarded') : "No discarded presets.";
+                discardedContainer.innerHTML = `<div style="color:var(--text-dim);font-size:12px;text-align:center;padding:30px;">${emptyMsg}</div>`;
             } else {
                 const discList = window.CANON_PRESETS.filter(p => discardedIdsSet.has(p.id));
                 discList.forEach(p => {
@@ -4268,10 +4873,10 @@
                         <div class="saved-item-top">
                             <span class="saved-item-title" style="font-weight:500;">${p.name}</span>
                             <button class="drawer-action-btn" style="padding:2px 8px;font-size:10px;color:var(--text-main);" data-restore-id="${p.id}">
-                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg> <span>Restore</span>
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg> <span>${window.I18N ? window.I18N.t('drawer.restore_btn') : 'Restore'}</span>
                             </button>
                         </div>
-                        <div class="saved-item-meta">${p.filename} · ${p.catLabel}</div>
+                        <div class="saved-item-meta">${p.filename} · ${window.I18N ? window.I18N.getCategory(p.cat) : p.catLabel}</div>
                     `;
                     card.querySelector('[data-restore-id]').addEventListener('click', () => {
                         restoreDiscardedItem(p.id);
@@ -4290,7 +4895,7 @@
             updateDrawerLists();
             if (currentView === 'grid') applyFilters();
             else renderCurrentTriage();
-            showToast('Removed from favorites');
+            showToast(window.I18N && window.I18N.locale === 'es' ? 'Eliminado de favoritos' : 'Removed from favorites');
         }
 
         function restoreDiscardedItem(id) {
@@ -4298,7 +4903,7 @@
             persistAllState();
             updateDrawerLists();
             if (currentView === 'carousel') renderCurrentTriage();
-            showToast('↺ Preset restored to loop');
+            showToast(window.I18N && window.I18N.locale === 'es' ? '↺ Estilo restaurado a la cola' : '↺ Preset restored to loop');
         }
 
         function restoreAllDiscarded() {
@@ -4307,7 +4912,7 @@
             persistAllState();
             updateDrawerLists();
             if (currentView === 'carousel') renderCurrentTriage();
-            showToast('↺ All discarded presets restored to loop');
+            showToast(window.I18N ? window.I18N.t('toasts.restored_all') : '↺ All discarded presets restored to loop');
         }
 
         function copySavedForEOS() {
@@ -4397,13 +5002,83 @@
         let isModalSplitDragging = false;
         let modalSplitPos = 0.5;
 
+        /**
+         * Mathematically synchronizes the DOM wiper bar and WebGL shader split
+         * taking into account letterboxing, pillarboxing, and cover-crop margins.
+         */
+        function syncModalSplit(posOrClientX, isClientX = false) {
+            const modalCanvas = document.getElementById('modalGlCanvas');
+            const vPort = document.getElementById('modalViewport');
+            const splitBar = document.getElementById('modalSplitBar');
+            if (!modalCanvas || !vPort || !splitBar) return;
+
+            const vRect = vPort.getBoundingClientRect();
+            const cRect = modalCanvas.getBoundingClientRect();
+            if (vRect.width <= 0 || cRect.width <= 0) return;
+
+            const isCover = modalCanvas.classList.contains('fit-cover') || vPort.classList.contains('fit-mode-cover');
+            const imgW = modalCanvas.width || 1;
+            const imgH = modalCanvas.height || 1;
+            const imgAR = imgW / imgH;
+            const canvasAR = cRect.width / cRect.height;
+
+            let texX = 0.5;
+            let barLeftPx = cRect.left + cRect.width * 0.5;
+
+            if (isClientX) {
+                const clientX = posOrClientX;
+                if (!isCover) {
+                    // fit-contain: canvas DOM element strictly matches rendered photo boundaries
+                    const clampedX = Math.max(cRect.left, Math.min(cRect.right, clientX));
+                    texX = (clampedX - cRect.left) / cRect.width;
+                    barLeftPx = clampedX;
+                } else {
+                    // fit-cover: canvas fills viewport, handle potential crop margins
+                    if (canvasAR < imgAR) {
+                        const scaledW = cRect.height * imgAR;
+                        const cropX = (scaledW - cRect.width) / 2;
+                        const clampedX = Math.max(cRect.left, Math.min(cRect.right, clientX));
+                        texX = (clampedX - cRect.left + cropX) / scaledW;
+                        barLeftPx = clampedX;
+                    } else {
+                        const clampedX = Math.max(cRect.left, Math.min(cRect.right, clientX));
+                        texX = (clampedX - cRect.left) / cRect.width;
+                        barLeftPx = clampedX;
+                    }
+                }
+            } else {
+                texX = typeof posOrClientX === 'number' ? posOrClientX : modalSplitPos;
+                if (!isCover) {
+                    barLeftPx = cRect.left + cRect.width * texX;
+                } else {
+                    if (canvasAR < imgAR) {
+                        const scaledW = cRect.height * imgAR;
+                        const cropX = (scaledW - cRect.width) / 2;
+                        barLeftPx = cRect.left + (texX * scaledW - cropX);
+                    } else {
+                        barLeftPx = cRect.left + cRect.width * texX;
+                    }
+                }
+            }
+
+            texX = Math.max(0.001, Math.min(0.999, texX));
+            modalSplitPos = texX;
+
+            const barOffset = Math.max(0, Math.min(vRect.width, barLeftPx - vRect.left));
+            splitBar.style.left = `${barOffset.toFixed(1)}px`;
+
+            if (modalLutEngine) {
+                modalLutEngine.setSplit(texX, true);
+            }
+        }
+
         function openModal(index) {
             if (index < 0 || index >= filteredPresets.length) return;
             currentModalIndex = index;
             const p = filteredPresets[index];
 
             document.getElementById('modalPresetTitle').innerText = p.name;
-            document.getElementById('modalCatBadge').innerText = p.catLabel;
+            document.getElementById('modalCatBadge').innerText = window.I18N ? window.I18N.getCategory(p.cat) : p.catLabel;
 
             const originInfo = getPresetOrigin(p);
             const modalOriginTag = document.getElementById('modalOriginTag');
@@ -4411,6 +5086,11 @@
                 modalOriginTag.innerText = originInfo.label;
                 modalOriginTag.title = originInfo.title;
                 modalOriginTag.className = `triage-origin-tag ${originInfo.isLut ? 'is-lut' : 'is-native'}`;
+            }
+
+            const modalRightBadge = document.getElementById('modalRightBadge');
+            if (modalRightBadge) {
+                modalRightBadge.innerText = window.I18N && window.I18N.locale === 'es' ? 'ESTILO' : 'PRESET';
             }
 
             const catColor = window.CANON_CATEGORIES.find(c => c.id === p.cat)?.color || { badge: '#0284c7' };
@@ -4437,7 +5117,6 @@
             if (modalLutEngine && activeImageSource) {
                 modalLutEngine.setImage(activeImageSource);
                 modalLutEngine.setIntensity(globalIntensity);
-                modalLutEngine.setSplit(modalSplitPos, true);
                 modalLutEngine.loadLut(p.lut);
             }
 
@@ -4448,6 +5127,10 @@
                     modal.setAttribute('open', '');
                 }
             }
+
+            requestAnimationFrame(() => {
+                syncModalSplit(modalSplitPos, false);
+            });
         }
 
         function closeModal() {
@@ -4485,6 +5168,19 @@
                 pickerMenu.style.position = 'fixed';
                 pickerMenu.style.top = `${rect.bottom + 8}px`;
                 pickerMenu.style.left = `${rect.left}px`;
+            }
+        }
+
+        function positionDonationPopover() {
+            const pop = document.getElementById('donationPopover');
+            const trigger = document.getElementById('btnDonationTrigger');
+            if (!pop || !trigger) return;
+            if (!window.CSS?.supports?.('position-anchor', '--a')) {
+                const rect = trigger.getBoundingClientRect();
+                pop.style.position = 'fixed';
+                pop.style.top = `${rect.bottom + 8}px`;
+                pop.style.right = `${Math.max(10, window.innerWidth - rect.right)}px`;
+                pop.style.left = 'auto';
             }
         }
 
@@ -4587,6 +5283,56 @@
                 });
             }
 
+            // Donation popover controls & fallback
+            const donationPopover = document.getElementById('donationPopover');
+            const donationTrigger = document.getElementById('btnDonationTrigger');
+            const btnDonationClose = document.getElementById('btnDonationClose');
+
+            if (donationPopover) {
+                donationPopover.addEventListener('toggle', (e) => {
+                    const isOpen = e.newState === 'open';
+                    if (donationTrigger) {
+                        donationTrigger.classList.toggle('active', isOpen);
+                        donationTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    }
+                    if (isOpen) positionDonationPopover();
+                });
+            }
+
+            if (btnDonationClose && donationPopover) {
+                btnDonationClose.addEventListener('click', () => {
+                    if (typeof donationPopover.hidePopover === 'function') {
+                        donationPopover.hidePopover();
+                    } else {
+                        donationPopover.classList.remove('open');
+                        if (donationTrigger) {
+                            donationTrigger.classList.remove('active');
+                            donationTrigger.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            }
+
+            // Fallback for browsers without native Popover API
+            if (!('popover' in HTMLElement.prototype) && donationTrigger && donationPopover) {
+                donationTrigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = donationPopover.classList.toggle('open');
+                    donationTrigger.classList.toggle('active', isOpen);
+                    donationTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (isOpen) positionDonationPopover();
+                });
+
+                document.addEventListener('click', (e) => {
+                    const wrap = document.getElementById('donationDropdownWrap');
+                    if (wrap && !wrap.contains(e.target) && donationPopover.classList.contains('open')) {
+                        donationPopover.classList.remove('open');
+                        donationTrigger.classList.remove('active');
+                        donationTrigger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
             // Universal Drag & Drop
             const overlay = document.getElementById('dragDropOverlay');
             window.addEventListener('dragover', (e) => {
@@ -4605,22 +5351,58 @@
             });
 
             // Header Category Dropdown (Grid)
+            function populateHeaderCategorySelect() {
+                const categorySelect = document.getElementById('categorySelect');
+                if (!categorySelect) return;
+                const prevVal = categorySelect.value || currentCategory || 'ALL';
+                categorySelect.innerHTML = '';
+                const allOpt = document.createElement('option');
+                allOpt.value = 'ALL';
+                const allLabel = window.I18N ? window.I18N.t('header.all_categories') : 'All categories';
+                allOpt.innerText = `${allLabel} (${window.CANON_PRESETS.length})`;
+                categorySelect.appendChild(allOpt);
+
+                window.CANON_CATEGORIES.forEach(c => {
+                    const opt = document.createElement('option');
+                    opt.value = c.id;
+                    const catLabel = window.I18N ? window.I18N.getCategory(c.id) : c.label;
+                    opt.innerText = `${c.num}. ${catLabel} (${c.count})`;
+                    categorySelect.appendChild(opt);
+                });
+                categorySelect.value = prevVal;
+            }
+            populateHeaderCategorySelect();
+
             const categorySelect = document.getElementById('categorySelect');
-            const allOpt = document.createElement('option');
-            allOpt.value = 'ALL';
-            allOpt.innerText = `All categories (${window.CANON_PRESETS.length})`;
-            categorySelect.appendChild(allOpt);
+            if (categorySelect) {
+                categorySelect.addEventListener('change', (e) => {
+                    currentCategory = e.target.value;
+                    applyFilters();
+                });
+            }
 
-            window.CANON_CATEGORIES.forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c.id;
-                opt.innerText = `${c.num}. ${c.label} (${c.count})`;
-                categorySelect.appendChild(opt);
-            });
+            // Bilingual Language Switcher (ES / EN)
+            const btnLang = document.getElementById('btnLangToggle');
+            if (btnLang) {
+                btnLang.addEventListener('click', () => {
+                    if (window.I18N) window.I18N.toggleLocale();
+                });
+            }
 
-            categorySelect.addEventListener('change', (e) => {
-                currentCategory = e.target.value;
-                applyFilters();
+            // Reactive Locale Change Event
+            window.addEventListener('canon-locale-changed', () => {
+                populateHeaderCategorySelect();
+                populateTriageFolderSelect();
+                updateMultiSceneTitles();
+                updateTriageModeUI();
+                applyFitMode();
+                if (currentView === 'grid') {
+                    renderAllVisibleCards();
+                } else {
+                    renderCurrentTriage();
+                }
+                updateDrawerLists();
+                showToast(window.I18N.t('toasts.lang_switched'));
             });
 
             // Search Bar
@@ -4678,6 +5460,9 @@
                 if (isGlobalBefore === state) return;
                 isGlobalBefore = state;
                 holdBtn.classList.toggle('holding', state);
+                if (modal && modal.open && modalLutEngine) {
+                    modalLutEngine.render({ showBefore: state });
+                }
                 if (currentView === 'grid') renderAllVisibleCards();
             };
             holdBtn.addEventListener('mousedown', () => setGlobalBefore(true));
@@ -4738,7 +5523,9 @@
             const setHudCollapsed = (collapsed) => {
                 triageHud.classList.toggle('collapsed', collapsed);
                 btnToggleHudMin.innerHTML = collapsed ? '▴' : '▾';
-                btnToggleHudMin.title = collapsed ? 'Expand info (▴)' : 'Hide info (▾)';
+                btnToggleHudMin.title = collapsed 
+                    ? (window.I18N ? window.I18N.t('hud.show_info') : 'Show info (▴)')
+                    : (window.I18N ? window.I18N.t('hud.hide_info') : 'Hide info (▾)');
                 localStorage.setItem('canon_triage_hud_collapsed', collapsed ? '1' : '0');
             };
 
@@ -4998,21 +5785,31 @@
 
             const onMove = (e) => {
                 if (!isModalSplitDragging) return;
-                const rect = modalViewport.getBoundingClientRect();
-                const clientX = e.clientX || (e.touches ? e.touches[0].clientX : 0);
-                let pos = (clientX - rect.left) / rect.width;
-                pos = Math.max(0.02, Math.min(0.98, pos));
-                modalSplitPos = pos;
-                modalSplitBar.style.left = `${(pos * 100).toFixed(2)}%`;
-                if (modalLutEngine) modalLutEngine.setSplit(pos, true);
+                const clientX = e.clientX ?? (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
+                syncModalSplit(clientX, true);
             };
 
-            modalViewport.addEventListener('mousedown', (e) => { isModalSplitDragging = true; onMove(e); });
+            modalViewport.addEventListener('mousedown', (e) => {
+                if (e.target.closest('button')) return;
+                isModalSplitDragging = true;
+                onMove(e);
+            });
             window.addEventListener('mousemove', onMove);
             window.addEventListener('mouseup', () => { isModalSplitDragging = false; });
-            modalViewport.addEventListener('touchstart', (e) => { isModalSplitDragging = true; onMove(e); }, { passive: true });
+
+            modalViewport.addEventListener('touchstart', (e) => {
+                if (e.target.closest('button')) return;
+                isModalSplitDragging = true;
+                onMove(e);
+            }, { passive: true });
             window.addEventListener('touchmove', onMove, { passive: true });
             window.addEventListener('touchend', () => { isModalSplitDragging = false; });
+
+            window.addEventListener('resize', () => {
+                if (modal && modal.open) {
+                    syncModalSplit(modalSplitPos, false);
+                }
+            });
 
             const modalIntensitySlider = document.getElementById('modalIntensitySlider');
             const syncModalIntensityProgress = () => {
@@ -5032,6 +5829,9 @@
         // ENTRY POINT
         // ==========================================
         window.addEventListener('DOMContentLoaded', () => {
+            if (window.I18N) {
+                window.I18N.translateDOM();
+            }
             initEngines();
             loadStorageState();
             setupUIEvents();
