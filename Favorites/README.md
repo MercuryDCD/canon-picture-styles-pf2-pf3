@@ -2,6 +2,9 @@
 
 Colección curada de **30 estilos favoritos**, sincronizada con my_canon_favorite_stylesv1.json.
 
+## ⭐ Packs Especiales
+- **[Mercury's Daily's (13 estilos)](Mercury's%20Daily's/README.md)**: Selección diaria y esencial curada con notas personales (`mercurys_dailys.json`).
+
 ## 📋 Catálogo de Favoritos (30 perfiles listos para cámara)
 
 ### 01. Fujifilm Film Simulations

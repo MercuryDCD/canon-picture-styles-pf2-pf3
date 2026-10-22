@@ -1,0 +1,119 @@
+[
+  {
+    "id": "06_Portraits_and_Brands__Cinema_Filmic_Portrait",
+    "preset_name": "Cinema Filmic Portrait",
+    "filename": "Cinema_Filmic_Portrait.pf3",
+    "category": "Portraits and Brands",
+    "custom_name": "Cinema Filmic Portrait",
+    "custom_desc": "muy buen basic -----",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "01_Fujifilm__Fuji_400H_1",
+    "preset_name": "Fuji 400H 1",
+    "filename": "Fuji_400H_1.pf3",
+    "category": "Fujifilm",
+    "custom_name": "Fuji 400H 1",
+    "custom_desc": "basic con sombras azules",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "01_Fujifilm__Fuji_Astia_Retro_Lifted_Shadows",
+    "preset_name": "Fuji Astia Retro Lifted Shadows",
+    "filename": "Fuji_Astia_Retro_Lifted_Shadows.pf3",
+    "category": "Fujifilm",
+    "custom_name": "Fuji Astia Retro Lifted Shadows",
+    "custom_desc": "basic bastante basic pero chulo -----",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "01_Fujifilm__Fuji_FP_100c_3",
+    "preset_name": "Fuji FP 100c 3",
+    "filename": "Fuji_FP_100c_3.pf3",
+    "category": "Fujifilm",
+    "custom_name": "Fuji FP 100c 3",
+    "custom_desc": "slightly lifted shadows tinte un pelín morado",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "01_Fujifilm__Fuji_FP_100c_Cool_2",
+    "preset_name": "Fuji FP 100c Cool 2",
+    "filename": "Fuji_FP_100c_Cool_2.pf3",
+    "category": "Fujifilm",
+    "custom_name": "Fuji FP 100c Cool 2",
+    "custom_desc": "basic con tinte azul, me encanta -----",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "01_Fujifilm__Fuji_Provia_100_Generic",
+    "preset_name": "Fuji Provia 100 Generic",
+    "filename": "Fuji_Provia_100_Generic.pf3",
+    "category": "Fujifilm",
+    "custom_name": "Fuji Provia 100 Generic",
+    "custom_desc": "basic más contraste y sat ----",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "01_Fujifilm__Fuji_Provia_400X",
+    "preset_name": "Fuji Provia 400X",
+    "filename": "Fuji_Provia_400X.pf3",
+    "category": "Fujifilm",
+    "custom_name": "Fuji Provia 400X",
+    "custom_desc": "bastante chulo para un basic ----",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "07_Creative_and_Artistic__GoldFX_Spring_Breeze",
+    "preset_name": "GoldFX Spring Breeze",
+    "filename": "GoldFX_Spring_Breeze.pf3",
+    "category": "Creative and Artistic",
+    "custom_name": "GoldFX Spring Breeze",
+    "custom_desc": "general hacia el verde/azul",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "03_Black_and_White__Ilford_Delta_3200_2",
+    "preset_name": "Ilford Delta 3200 2",
+    "filename": "Ilford_Delta_3200_2.pf3",
+    "category": "Black and White",
+    "custom_name": "Ilford Delta 3200 2",
+    "custom_desc": "go to black and White con lifted shadows ------",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "02_Kodak__Kodak_Portra_160_4_Plus_Plus",
+    "preset_name": "Kodak Portra 160 4 Plus Plus",
+    "filename": "Kodak_Portra_160_4_Plus_Plus.pf3",
+    "category": "Kodak",
+    "custom_name": "Kodak Portra 160 4 Plus Plus",
+    "custom_desc": "vintage suave",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "02_Kodak__Kodak_Portra_160_NC_3_Plus",
+    "preset_name": "Kodak Portra 160 NC 3 Plus",
+    "filename": "Kodak_Portra_160_NC_3_Plus.pf3",
+    "category": "Kodak",
+    "custom_name": "Kodak Portra 160 NC 3 Plus",
+    "custom_desc": "vintage azul me encanta ----",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "02_Kodak__Kodak_Portra_160_VC_3_Plus",
+    "preset_name": "Kodak Portra 160 VC 3 Plus",
+    "filename": "Kodak_Portra_160_VC_3_Plus.pf3",
+    "category": "Kodak",
+    "custom_name": "Kodak Portra 160 VC 3 Plus",
+    "custom_desc": "el NC 3 PLUS PERO MÁS VINTAGE",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  },
+  {
+    "id": "02_Kodak__Kodak_Portra_400_UC_2",
+    "preset_name": "Kodak Portra 400 UC 2",
+    "filename": "Kodak_Portra_400_UC_2.pf3",
+    "category": "Kodak",
+    "custom_name": "Kodak Portra 400 UC 2",
+    "custom_desc": "basic con tono verde y slightly lifted shadows",
+    "saved_at": "2026-10-22T13:12:00.000Z"
+  }
+]
